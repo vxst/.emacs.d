@@ -1,0 +1,16 @@
+Installation instructions
+=========================
+
+unpack gimpmode
+
+ tar xjvf gimp-mode.tar.gz (or: unzip gimp-mode.zip)
+
+open up Emacs 
+
+load gimp-install.el:
+
+ M-x load-file /path/to/gimp-install.el RET
+
+follow the directions
+
+See the file gimpmode.pdf in this directory for more information.

@@ -1,0 +1,141 @@
+
+
+* This is actually the first time I realised how a mixin might be what I need: 
+
+  You have an interactive, console-like buffer, and multiple source
+  buffers in which to edit text. There is a plethora of commands,
+  functions and variables that you'd like to make available in both
+  modes.  Say we want some keys to perform certain actions in both
+  modes, but the console mode is derived from - say - comint-mode and
+  the text buffer mode is derived from lisp-mode.  
+
+
+; (modify-coding-system-alist 'process "ypsilon" '(utf-8 . utf-8))
+
+  the text buffer mode is derived from lisp-mode.  
+
+add constants to font-locking
+
+step inside for breakpoints ... 
+
+need pattern matching I guess...
+
+lambda 
+define
+let
+let*
+letrec 
+letrec*
+define-macro
+do
+dolist
+
+(lambda ()
+	.....)
+==>
+(db 
+  (lambda ()
+    (db-recurse ....)))
+
+
+(define (fun args*)
+  body*)
+==>
+(db (define (fun args*)
+  (db-recurse body*)))
+
+(let loop? (())
+     ...)
+==>
+(db (let loop (())
+  (db-recurse body*)))
+
+(letrec (())
+   body*)
+==>
+(db (letrec (())
+  (db-recurse body*)))
+
+(do ((var init step)*)
+    (test)
+  (body))
+==>
+(db (do ((var (db-recurse init) (db-recurse step)) *)
+    	((db-recurse test) (db result))
+  (db-recurse body*)))
+
+
+Actually, I do not think instructing beforehand is good, better do it
+lazily: let fud-break give you the option to step inside, upon which
+all immediate subforms that can handle it are instructed with a
+fud-break spec.
+
+So, on fud-break + step-inside:
+
+(fud-break "" 
+	   (let ((behold 1))
+	   	1 (mapcar (lambda () ..) '(129 304)))) => 
+
+(let ((behold (fud-break "" 1)))
+     (fud-break 1)	 
+     (fud-break (mapcar (lambda () ..) '(129 304)))) ;lazy
+
+(define (fud-instruct sxp)
+	 (mapcar 
+	 (lambda (sxp)
+	 	 )))
+
+
+thus:
+
+(let ((in-let #f))
+    (mapcar (lambda (th)
+	      (cond ((memq th '(let))
+		     (begin
+		       (set! in-let #t)
+		       th))
+		    (in-let
+		     (if (symbol? th) th
+			 (begin
+			   (set! in-let #f)
+			   (mapcar (lambda (th)
+				       (list (car th)
+					     (fud-breakify (cadr th)))) th))))
+		    (else
+		     (fud-breakify th))))
+	  '(let loop ((behold 4))
+	     1
+	     (mapcar (lambda (b) (+ n 19)) '(129 304)))))
+
+(define (fud-instruct-1 thunk)
+  (let ((in-let #f)
+	(in-lambda #f)
+	(num 0))
+    (mapcar (lambda (th)
+	      (set! num (+ 1 num))
+	      (cond ((and (= num 1)
+			  (memq th '(let)))
+		     (set! in-let #t)
+		     th)
+		    (in-let		;special let rule
+		     (if (symbol? th) th
+			 (begin
+			   (set! in-let #f)
+			   (mapcar (lambda (th)
+				     (list (car th)
+					   (fud-breakify (cadr th)))) th))))
+		    ((and (= num 1)
+			  (memq th '(lambda)))
+		     (set! in-lambda #t)
+		     'lambda)
+		    (in-lambda		;simple lambda rule
+		     (set! in-lambda #f)
+		     th)
+		    (else
+		     (fud-breakify th))))
+	    thunk)))
+
+ranking system for completions according to number of times chosen/being part of the
+language.
+
+
