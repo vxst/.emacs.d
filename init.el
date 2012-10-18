@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-10-12 19:10:55 Zeno Zeng>
+;; Time-stamp: <2012-10-17 22:43:22 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -298,63 +298,63 @@
       '("xelatex -interaction nonstopmode %b"
 	"xelatex -interaction nonstopmode %b"))
 
-(require 'org-latex)
-(unless (boundp 'org-export-latex-classes)
-  (setq org-export-latex-classes nil))
-(add-to-list 'org-export-latex-classes
-	     '("article"
-	       "\\documentclass[11pt]{article}"
-	       ("\\section{%s}" . "\\section*{%s}")
-	       ("\\subsection{%s}" . "\\subsection*{%s}")
-	       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-	       ("\\paragraph{%s}" . "\\paragraph*{%s}")
-	       ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-(add-to-list 'org-export-latex-classes
-	     '("simpledoc"
-	       "\\documentclass[11pt]{article}
-\\usepackage[utf8]{inputenc}
-\\usepackage[T1]{fontenc}
-\\usepackage{fixltx2e}
-\\usepackage{graphicx}
-\\usepackage{longtable}
-\\usepackage{float}
-\\usepackage{wrapfig}
-\\usepackage{soul}
-\\usepackage{textcomp}
-\\usepackage{marvosym}
-\\usepackage{wasysym}
-\\usepackage{latexsym}
-\\usepackage{amssymb}
-\\tolerance=1000
-\\usepackage{fontspec}
-\\usepackage{xeCJK}
-\\usepackage{titlesec}
-\\usepackage{indentfirst}
-\\usepackage{geometry}
-\\usepackage[hidelinks,CJKbookmarks=true]{hyperref}%不显示链接的边框和颜色
-\\setcounter{tocdepth}{1}
-\\setcounter{secnumdepth}{0}
-         [NO-DEFAULT-PACKAGES]"
-	       ("\\section{%s}"."\\section*{%s}\n\\addcontentsline{toc}{section}{}\n\\phantomsection")
-	       ("\\subsection{%s}" . "\\subsection*{%s}")
-	       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-	       ("\\paragraph{%s}" . "\\paragraph*{%s}")
-	       ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-(add-to-list 'org-export-latex-classes
-	     '("book"
-	       "\\documentclass[11pt]{book}"
-	       ("\\part{%s}" . "\\part*{%s}")
-	       ("\\chapter{%s}" . "\\chapter*{%s}")
-	       ("\\section{%s}" . "\\section*{%s}")
-	       ("\\subsection{%s}" . "\\subsection*{%s}")
-	       ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
-	     )
+;; (require 'org-latex)
+;; (unless (boundp 'org-export-latex-classes)
+;;   (setq org-export-latex-classes nil))
+;; (add-to-list 'org-export-latex-classes
+;; 	     '("article"
+;; 	       "\\documentclass[11pt]{article}"
+;; 	       ("\\section{%s}" . "\\section*{%s}")
+;; 	       ("\\subsection{%s}" . "\\subsection*{%s}")
+;; 	       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+;; 	       ("\\paragraph{%s}" . "\\paragraph*{%s}")
+;; 	       ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+;; (add-to-list 'org-export-latex-classes
+;; 	     '("simpledoc"
+;; 	       "\\documentclass[11pt]{article}
+;; \\usepackage[utf8]{inputenc}
+;; \\usepackage[T1]{fontenc}
+;; \\usepackage{fixltx2e}
+;; \\usepackage{graphicx}
+;; \\usepackage{longtable}
+;; \\usepackage{float}
+;; \\usepackage{wrapfig}
+;; \\usepackage{soul}
+;; \\usepackage{textcomp}
+;; \\usepackage{marvosym}
+;; \\usepackage{wasysym}
+;; \\usepackage{latexsym}
+;; \\usepackage{amssymb}
+;; \\tolerance=1000
+;; \\usepackage{fontspec}
+;; \\usepackage{xeCJK}
+;; \\usepackage{titlesec}
+;; \\usepackage{indentfirst}
+;; \\usepackage{geometry}
+;; \\usepackage[hidelinks,CJKbookmarks=true]{hyperref}%不显示链接的边框和颜色
+;; \\setcounter{tocdepth}{1}
+;; \\setcounter{secnumdepth}{0}
+;;          [NO-DEFAULT-PACKAGES]"
+;; 	       ("\\section{%s}"."\\section*{%s}\n\\addcontentsline{toc}{section}{}\n\\phantomsection")
+;; 	       ("\\subsection{%s}" . "\\subsection*{%s}")
+;; 	       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+;; 	       ("\\paragraph{%s}" . "\\paragraph*{%s}")
+;; 	       ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+;; (add-to-list 'org-export-latex-classes
+;; 	     '("book"
+;; 	       "\\documentclass[11pt]{book}"
+;; 	       ("\\part{%s}" . "\\part*{%s}")
+;; 	       ("\\chapter{%s}" . "\\chapter*{%s}")
+;; 	       ("\\section{%s}" . "\\section*{%s}")
+;; 	       ("\\subsection{%s}" . "\\subsection*{%s}")
+;; 	       ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
+;; 	     )
 ;; 不产生目录
-(defun org-export-latex-no-toc (depth)  
-  (when depth
-    (format "%% Org-mode is exporting headings to %s levels.\n"
-	    depth)))
-(setq org-export-latex-format-toc-function 'org-export-latex-no-toc)
+;; (defun org-export-latex-no-toc (depth)  
+;;   (when depth
+;;     (format "%% Org-mode is exporting headings to %s levels.\n"
+;; 	    depth)))
+;; (setq org-export-latex-format-toc-function 'org-export-latex-no-toc)
 
 (require 'org-publish)
 (setq org-publish-project-alist
