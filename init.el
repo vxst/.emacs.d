@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-10-27 11:40:06 Zeno Zeng>
+;; Time-stamp: <2012-10-27 15:10:54 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -183,6 +183,7 @@
 (add-hook 'perl-mode-hook       'my-hs)
 (add-hook 'sh-mode-hook         'my-hs)
 (add-hook 'scheme-mode-hook     'my-hs)
+(add-hook 'css-mode-hook     'my-hs)
 (add-hook 'php-mode-hook     (lambda ()
                                (my-hs)
                                (hs-hide-level 2)))
