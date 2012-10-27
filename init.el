@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-10-26 22:17:03 Zeno Zeng>
+;; Time-stamp: <2012-10-27 11:40:06 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -219,13 +219,14 @@
       (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
 ;; PHP
-;;(autoload 'html-php-mode "html-php.el"
-  "multi-mode PHP embedded in HTML" t)
+;; (autoload 'html-php-mode "html-php.el"
+;;   "multi-mode PHP embedded in HTML" t)
 (autoload 'php-mode "php-mode.el"
   "Major mode for editing PHP files" t)
+;; (setq auto-mode-alist
+;;       (cons '("\\.php" . html-php-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.php" . php-mode) auto-mode-alist))
-;;      (cons '("\\.php" . html-php-mode) auto-mode-alist))
 ;; Less
 (autoload 'less-css-mode "less-css-mode.el"
   "Major mode for editing less-css files" t)
