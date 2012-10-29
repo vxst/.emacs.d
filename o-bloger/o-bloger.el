@@ -3,7 +3,7 @@
 ;; Copyright © 2012 Sébastien Gross <seb•ɑƬ•chezwam•ɖɵʈ•org> and Zeno Zeng <zenoes@qq.com>
 
 ;; Author: Zeno Zeng
-;; Time-stamp: <2012-10-11 21:57:45 Zeno Zeng>
+;; Time-stamp: <2012-10-29 19:08:33 Zeno Zeng>
 ;; Keywords: emacs,org,blog
 ;; Created: 2012-07-16
 ;; Version: 0.0.2
@@ -218,8 +218,12 @@ defined, or interactivelly called with `prefix-arg'.
 ;;;###autoload
 (defun org-publish-blog-sync (file)
   "Publish FILE synchronously."
-  (with-current-buffer (set-buffer (find-file-noselect file))
+  (with-temp-buffer (set-buffer (find-file-noselect file))
+
     (run-hooks 'o-blog-before-publish-hook)
+
+    (setq BLOG (ob-parse-blog-headers))
+
 
     ;; (setq blog::ini (buffer-string))
     (goto-char (point-min))
@@ -233,7 +237,6 @@ defined, or interactivelly called with `prefix-arg'.
 						  (file-string
 						   (replace-regexp-in-string ".*blog::insert::" "" blog::insert))))))
 
-    (setq BLOG (ob-parse-blog-headers))
 
     (goto-char (point-min))
     (while (re-search-forward "blog::album::.*" nil t)
@@ -396,6 +399,7 @@ A copy function COPYF and its arguments ARGS could be specified."
   "Parse blog related variable from current-buffer."
   (let* ((file (or file (buffer-file-name)))
 	 (blog (make-ob:blog :file file :buffer (current-buffer))))
+    (setf (ob:blog-disqus blog) (ob:get-header "DISQUS"))
     (setq blog::copyright (ob:get-header "COPYRIGHT"))
     (setq blog::copyright-life (ob:get-header "COPYRIGHT_LIFE"))
     (setq blog::ftpdir (ob:get-header "FTP_DIR"))
@@ -1021,9 +1025,12 @@ variable.
 Returns only fist match except if ALL is defined."
   (with-current-buffer
       ;; Be sure we are in blog buffer
-      (if (boundp 'BLOG)
-	  (ob:blog-buffer BLOG)
-	(current-buffer))
+      ;; (if (boundp 'BLOG)
+      ;; 	  (ob:blog-buffer BLOG)
+      ;; 	(current-buffer))
+
+    (current-buffer)
+
     (save-excursion
       (save-restriction
 	(save-match-data
