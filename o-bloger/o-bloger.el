@@ -3,7 +3,7 @@
 ;; Copyright © 2012 Sébastien Gross <seb•ɑƬ•chezwam•ɖɵʈ•org> and Zeno Zeng <zenoes@qq.com>
 
 ;; Author: Zeno Zeng
-;; Time-stamp: <2012-10-29 19:08:33 Zeno Zeng>
+;; Time-stamp: <2012-10-29 19:10:34 Zeno Zeng>
 ;; Keywords: emacs,org,blog
 ;; Created: 2012-07-16
 ;; Version: 0.0.2
