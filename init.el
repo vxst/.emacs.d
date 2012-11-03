@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-03 18:56:52 Zeno Zeng>
+;; Time-stamp: <2012-11-03 20:10:31 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -242,7 +242,6 @@
   "Major mode for editing less-css files" t)
 (setq auto-mode-alist
       (cons '("\\.less" . less-css-mode) auto-mode-alist))
-(setq less-css-compile-at-save t)
 ;; Html mode
 (setq auto-mode-alist
       (cons '("\\.html" . html-mode) auto-mode-alist))
@@ -463,6 +462,8 @@
  ;; If there is more than one, they won't work right.
  '(chm-view-delay 1)
  '(hl-paren-colors (quote ("#f00" "#ff0" "#0f0" "#00ced1" "#9400d3")))
+ '(less-css-compile-at-save t)
+ '(less-css-lessc-options (list "-x"))
  '(org-agenda-span (quote month))
  '(org-clock-out-remove-zero-time-clocks t)
  '(tags-table-list (quote ("~/src/emacs-24.1/lisp/TAGS"))))
