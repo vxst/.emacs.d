@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-03 08:56:31 Zeno Zeng>
+;; Time-stamp: <2012-11-03 18:56:52 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -7,8 +7,8 @@
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/init/emacs-w3m")
 (add-to-list 'load-path "~/.emacs.d/o-bloger")
-(add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-0.5.2/")
 (add-to-list 'load-path "~/.emacs.d/elpa/org-20120903")
+(add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-0.5.4")
 
 ;;;; UNDO TREE
 (require 'undo-tree)
@@ -182,6 +182,8 @@
 (add-hook 'c-mode-common-hook   'my-hs)
 (add-hook 'emacs-lisp-mode-hook 'my-hs)
 (add-hook 'java-mode-hook       'my-hs)
+(add-hook 'js2-mode-hook        'my-hs)
+(add-hook 'css-mode-hook        'my-hs)
 (add-hook 'ess-mode-hook        'my-hs)
 (add-hook 'perl-mode-hook       'my-hs)
 (add-hook 'sh-mode-hook         'my-hs)
@@ -190,7 +192,6 @@
 (add-hook 'php-mode-hook     (lambda ()
                                (my-hs)
                                (hs-hide-level 2)))
-
 
 ;; 导出的时候就不必隐藏了。
 (add-hook 'htmlize-before-hook   'hs-show-all)
@@ -213,15 +214,9 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/modes/ac-mode/dict")
 (ac-config-default)
-
-;; Markdown
-(autoload 'markdown-mode "markdown-mode.el"
-  "Major mode for editing Markdown files" t)
-(setq auto-mode-alist
-      (cons '("\\.mkd" . markdown-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.md" . markdown-mode) auto-mode-alist))
-
+;; fix for css-mode
+(add-hook 'css-mode-hook (lambda ()
+			   (auto-complete-mode)))
 ;; PHP
 ;; (autoload 'html-php-mode "html-php.el"
 ;;   "multi-mode PHP embedded in HTML" t)
@@ -231,6 +226,17 @@
 ;;       (cons '("\\.php" . html-php-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.php" . php-mode) auto-mode-alist))
+
+
+
+;; Markdown
+(autoload 'markdown-mode "markdown-mode.el"
+  "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+      (cons '("\\.mkd" . markdown-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
 ;; Less
 (autoload 'less-css-mode "less-css-mode.el"
   "Major mode for editing less-css files" t)
@@ -577,9 +583,9 @@
 				   (delete-overlay ovl)) ovl)))))
 (defun my-js2-mode-hook ()
   (require 'espresso)
-  (setq espresso-indent-level 8
+  (setq espresso-indent-level 4
 	indent-tabs-mode nil
-	c-basic-offset 8)
+	c-basic-offset 4)
   (c-toggle-auto-state 0)
   (c-toggle-hungry-state 1)
   (set (make-local-variable 'indent-line-function) 'my-js2-indent-function)
@@ -601,9 +607,18 @@
 
 (add-hook 'js2-mode-hook 'my-js2-mode-hook)
 
+;; Emacs 软件源 (stable releases)
+(require 'package)
+(add-to-list 'package-archives 
+    '("marmalade" .
+      "http://marmalade-repo.org/packages/"))
+(package-initialize)			    
+                            
+
+
 ;; 填入大中小括号，双单引号的匹配
 ;; 放最后，不然导致缩进错误
 (setq skeleton-pair t)
 (setq skeleton-pair-alist '((?\" _ "\"" >)(?\' _ "\'" >)(?《 _"》">)(?（ _"）">)(?\( _ ")" >)(?\[ _ "]" >)(?\{ _ "}" >)))
                             
-			    
+
