@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-02 23:31:10 Zeno Zeng>
+;; Time-stamp: <2012-11-03 08:48:41 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -147,8 +147,11 @@
 (defun indent-buffer ()
   "Indent the current buffer"
   (interactive)
-  (save-excursion (indent-region (point-min) (point-max) nil))
-  )
+  (save-excursion
+    (goto-char (point-min))
+    (while (search-forward "\n" nil t)
+      (ignore-errors
+        (indent-for-tab-command)))))
 
 ;;设定删除保存记录为200，可以方便以后无限恢复
 (setq kill-ring-max 200)
@@ -378,16 +381,16 @@
 	 :style-include-scripts nil
 	 :creator-info nil
 	 :html-preamble t)
-
-
+        
+        
 	("other"
 	 :base-directory "~/org/notes/"
 	 :base-extension "css\\|js"
 	 :publishing-directory "/ftp:zvame@216.18.217.25#21:/domains/zenoes.com/public_html/notes/style/"
 	 :publishing-function org-publish-attachment)
-
+        
 	("np" :components ("notepublish" "other"))
-
+        
 	("notes" :components ("orgfiles" "other"))))
 
 
@@ -470,141 +473,142 @@
 ;; 填入大中小括号，双单引号的匹配
 (setq skeleton-pair t)
 (setq skeleton-pair-alist '((?\" _ "\"" >)(?\' _ "\'" >)(?《 _"》">)(?（ _"）">)(?\( _ ")" >)(?\[ _ "]" >)(?\{ _ "}" >)))
-
-
+                            
+                            
 ;;;; Keymap
-
-(global-set-key (kbd "C-/") 'undo-tree-undo)
-(global-unset-key (kbd "C-."))
-(global-set-key (kbd "C-;") 'undo-tree-redo)
-(global-set-key (kbd "C-.") 'undo-tree-redo)
-(global-set-key (kbd "C-,") 'indent-buffer)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "C-y") 'my-yank)
-(global-set-key (kbd "C-'") 'hs-toggle-hiding)
-;; 防止find-file时的误按
-(global-unset-key "\C-xf")
-;; 大小写转换，这里默认转换左边的单词
-(global-set-key (kbd "M-u") (lambda () (interactive) (upcase-word -1)))
-(global-set-key (kbd "M-l") (lambda () (interactive) (downcase-word -1)))
-(global-set-key (kbd "M-c") (lambda () (interactive) (capitalize-word -1)))
-
-;;(global-set-key (kbd "S-SPC C-i") 'zeno-emacs)
-
-(global-set-key (kbd "C-c C-x C-o") 'org-agenda-clock-out)
-
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(define-key global-map "\C-cc" 'org-capture)
-
-;; C-x C-j open the directory of current buffer
-(global-set-key (kbd "C-x C-j")
-                (lambda ()
-                  (interactive)
-                  (if (buffer-file-name)
-                      (dired default-directory))))
-
-;; 这里重启两次是为了 防止toggle类的fun出现问题
-(global-set-key [f1] '(lambda ()
-                        (interactive)
-                        ;; (backup-this-file)
-			(indent-buffer)))
-(global-set-key [f2] 'hs-hide-all)
-(global-set-key [f5] '(lambda ()
-			(interactive)
-			(eval-buffer)))
-(global-set-key [f6] 'toggle-truncate-lines)
-
-;; 全屏
-(global-set-key [f11] '(lambda ()
-			 (interactive)
-			 (x-send-client-message
-			  nil 0 nil "_NET_WM_STATE" 32
-			  '(2 "_NET_WM_STATE_FULLSCREEN" 0))))
-
-(global-set-key [f12] 'archive-region)
-
-
-(setq less-css-compile-at-save t)
-(autoload 'espresso-mode "espresso")
-
-(defun my-js2-indent-function ()
-  (interactive)
-  (save-restriction
-    (widen)
-    (let* ((inhibit-point-motion-hooks t)
-           (parse-status (save-excursion (syntax-ppss (point-at-bol))))
-           (offset (- (current-column) (current-indentation)))
-           (indentation (espresso--proper-indentation parse-status))
-           node)
-
-      (save-excursion
-
-        ;; I like to indent case and labels to half of the tab width
-        (back-to-indentation)
-        (if (looking-at "case\\s-")
-            (setq indentation (+ indentation (/ espresso-indent-level 2))))
-
-        ;; consecutive declarations in a var statement are nice if
-        ;; properly aligned, i.e:
-        ;;
-        ;; var foo = "bar",
-        ;;     bar = "foo";
-        (setq node (js2-node-at-point))
-        (when (and node
-                   (= js2-NAME (js2-node-type node))
-                   (= js2-VAR (js2-node-type (js2-node-parent node))))
-          (setq indentation (+ 4 indentation))))
-
-      (indent-line-to indentation)
-      (when (> offset 0) (forward-char offset)))))
-
-(defun my-indent-sexp ()
-  (interactive)
-  (save-restriction
-    (save-excursion
-      (widen)
-      (let* ((inhibit-point-motion-hooks t)
-             (parse-status (syntax-ppss (point)))
-             (beg (nth 1 parse-status))
-             (end-marker (make-marker))
-             (end (progn (goto-char beg) (forward-list) (point)))
-             (ovl (make-overlay beg end)))
-        (set-marker end-marker end)
-        (overlay-put ovl 'face 'highlight)
-        (goto-char beg)
-        (while (< (point) (marker-position end-marker))
-          ;; don't reindent blank lines so we don't set the "buffer
-          ;; modified" property for nothing
-          (beginning-of-line)
-          (unless (looking-at "\\s-*$")
-            (indent-according-to-mode))
-          (forward-line))
-        (run-with-timer 0.5 nil '(lambda(ovl)
-                                   (delete-overlay ovl)) ovl)))))
-
-(defun my-js2-mode-hook ()
-  (require 'espresso)
-  (setq espresso-indent-level 8
-        indent-tabs-mode nil
-        c-basic-offset 8)
-  (c-toggle-auto-state 0)
-  (c-toggle-hungry-state 1)
-  (set (make-local-variable 'indent-line-function) 'my-js2-indent-function)
-  (define-key js2-mode-map [(meta control |)] 'cperl-lineup)
-  (define-key js2-mode-map [(meta control \;)] 
-    '(lambda()
-       (interactive)
-       (insert "/* -----[ ")
-       (save-excursion
-         (insert " ]----- */"))
-       ))
-  (define-key js2-mode-map [(return)] 'newline-and-indent)
-  (define-key js2-mode-map [(backspace)] 'c-electric-backspace)
-  (define-key js2-mode-map [(control d)] 'c-electric-delete-forward)
-  (define-key js2-mode-map [(control meta q)] 'my-indent-sexp)
-  (if (featurep 'js2-highlight-vars)
-    (js2-highlight-vars-mode))
-  (message "My JS2 hook"))
-
-(add-hook 'js2-mode-hook 'my-js2-mode-hook)
+                            
+			    (global-set-key (kbd "C-/") 'undo-tree-undo)
+			    (global-unset-key (kbd "C-."))
+			    (global-set-key (kbd "C-;") 'undo-tree-redo)
+			    (global-set-key (kbd "C-.") 'undo-tree-redo)
+			    (global-set-key (kbd "C-,") 'indent-buffer)
+			    (global-set-key (kbd "C-x C-b") 'ibuffer)
+			    (global-set-key (kbd "C-y") 'my-yank)
+			    (global-set-key (kbd "C-'") 'hs-toggle-hiding)
+			    ;; 防止find-file时的误按
+			    (global-unset-key "\C-xf")
+			    ;; 大小写转换，这里默认转换左边的单词
+			    (global-set-key (kbd "M-u") (lambda () (interactive) (upcase-word -1)))
+			    (global-set-key (kbd "M-l") (lambda () (interactive) (downcase-word -1)))
+			    (global-set-key (kbd "M-c") (lambda () (interactive) (capitalize-word -1)))
+                            
+			    ;;(global-set-key (kbd "S-SPC C-i") 'zeno-emacs)
+                            
+			    (global-set-key (kbd "C-c C-x C-o") 'org-agenda-clock-out)
+                            
+			    (define-key global-map "\C-cl" 'org-store-link)
+			    (define-key global-map "\C-ca" 'org-agenda)
+			    (define-key global-map "\C-cc" 'org-capture)
+                            
+			    ;; C-x C-j open the directory of current buffer
+			    (global-set-key (kbd "C-x C-j")
+					    (lambda ()
+					      (interactive)
+					      (if (buffer-file-name)
+						  (dired default-directory))))
+                            
+			    ;; 这里重启两次是为了 防止toggle类的fun出现问题
+			    (global-set-key [f1] '(lambda ()
+						    (interactive)
+						    (indent-buffer)))
+			    (global-set-key [f2] 'hs-hide-all)
+			    (global-set-key [f5] '(lambda ()
+						    (interactive)
+						    (eval-buffer)))
+			    (global-set-key [f6] 'toggle-truncate-lines)
+                            
+			    ;; 全屏
+			    (global-set-key [f11] '(lambda ()
+						     (interactive)
+						     (x-send-client-message
+						      nil 0 nil "_NET_WM_STATE" 32
+						      '(2 "_NET_WM_STATE_FULLSCREEN" 0))))
+                            
+			    (global-set-key [f12] 'archive-region)
+                            
+                            
+			    (setq less-css-compile-at-save t)
+			    (autoload 'espresso-mode "espresso")
+                            
+			    (defun my-js2-indent-function ()
+			      (interactive)
+			      (save-restriction
+				(widen)
+				(let* ((inhibit-point-motion-hooks t)
+				       (parse-status (save-excursion (syntax-ppss (point-at-bol))))
+				       (offset (- (current-column) (current-indentation)))
+				       (indentation (espresso--proper-indentation parse-status))
+				       node)
+                                  
+				  (save-excursion
+                                    
+				    ;; I like to indent case and labels to half of the tab width
+				    (back-to-indentation)
+				    (if (looking-at "case\\s-")
+					(setq indentation (+ indentation (/ espresso-indent-level 2))))
+                                    
+				    ;; consecutive declarations in a var statement are nice if
+				    ;; properly aligned, i.e:
+				    ;;
+				    ;; var foo = "bar",
+				    ;;     bar = "foo";
+				    (setq node (js2-node-at-point))
+				    (when (and node
+					       (= js2-NAME (js2-node-type node))
+					       (= js2-VAR (js2-node-type (js2-node-parent node))))
+				      (setq indentation (+ 4 indentation))))
+                                  
+				  (indent-line-to indentation)
+				  (when (> offset 0) (forward-char offset)))))
+                            
+			    (defun my-indent-sexp ()
+			      (interactive)
+			      (save-restriction
+				(save-excursion
+				  (widen)
+				  (let* ((inhibit-point-motion-hooks t)
+					 (parse-status (syntax-ppss (point)))
+					 (beg (nth 1 parse-status))
+					 (end-marker (make-marker))
+					 (end (progn (goto-char beg) (forward-list) (point)))
+					 (ovl (make-overlay beg end)))
+				    (set-marker end-marker end)
+				    (overlay-put ovl 'face 'highlight)
+				    (goto-char beg)
+				    (while (< (point) (marker-position end-marker))
+				      ;; don't reindent blank lines so we don't set the "buffer
+				      ;; modified" property for nothing
+				      (beginning-of-line)
+				      (unless (looking-at "\\s-*$")
+					(indent-according-to-mode))
+				      (forward-line))
+				    (run-with-timer 0.5 nil '(lambda(ovl)
+							       (delete-overlay ovl)) ovl)))))
+                            
+			    (defun my-js2-mode-hook ()
+			      (require 'espresso)
+			      (setq espresso-indent-level 8
+				    indent-tabs-mode nil
+				    c-basic-offset 8)
+			      (c-toggle-auto-state 0)
+			      (c-toggle-hungry-state 1)
+			      (set (make-local-variable 'indent-line-function) 'my-js2-indent-function)
+			      (define-key js2-mode-map [(meta control |)] 'cperl-lineup)
+			      (define-key js2-mode-map [(meta control \;)] 
+				'(lambda()
+				   (interactive)
+				   (insert "/* -----[ ")
+				   (save-excursion
+				     (insert " ]----- */"))
+				   ))
+			      (define-key js2-mode-map [(return)] 'newline-and-indent)
+			      (define-key js2-mode-map [(backspace)] 'c-electric-backspace)
+			      (define-key js2-mode-map [(control d)] 'c-electric-delete-forward)
+			      (define-key js2-mode-map [(control meta q)] 'my-indent-sexp)
+			      (if (featurep 'js2-highlight-vars)
+				  (js2-highlight-vars-mode))
+			      (message "My JS2 hook"))
+                            
+			    (add-hook 'js2-mode-hook 'my-js2-mode-hook)
+                            
+                            
