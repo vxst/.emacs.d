@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-03 20:10:31 Zeno Zeng>
+;; Time-stamp: <2012-11-06 14:57:27 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -147,6 +147,10 @@
 (defun indent-buffer ()
   "Indent the current buffer"
   (interactive)
+
+  ;; 先缩进当前行先
+  (indent-for-tab-command)
+
   (save-excursion
     (goto-char (point-min))
     (while (search-forward "\n" nil t)
