@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-09 15:36:22 Zeno Zeng>
+;; Time-stamp: <2012-11-09 16:12:48 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -147,10 +147,10 @@
 (defun indent-buffer ()
   "Indent the current buffer"
   (interactive)
-
+  
   ;; 先缩进当前行
   (indent-for-tab-command)
-
+  
   (save-excursion
     (goto-char (point-min))
     (while (search-forward "\n" nil t)
@@ -558,13 +558,133 @@
 ;; Emacs 软件源 (stable releases)
 (require 'package)
 (add-to-list 'package-archives 
-    '("marmalade" .
-      "http://marmalade-repo.org/packages/"))
+             '("marmalade" .
+               "http://marmalade-repo.org/packages/"))
 (package-initialize)			    
+
+;; GTD
+(defun zeno-comm (date &optional show-all)
+  "Common function for summary of agenda files"
+  (let ((count-canceled-sum 0)
+        (count-done-sum 0)
+        (count-postponed-sum 0))
+    
+    (if show-all
+        (setq output (concat output "* " date "<>\n")))
+    
+    (dolist (file org-agenda-files)
+      (find-file file)
+      (goto-char (point-min))
+      
+      (setq count-canceled (count-matches (format "State \"CANCELED\".*%s" date))
+            count-done (count-matches (format "State \"DONE\".*%s" date))
+            count-postponed (count-matches (format "State \"POSTPONED\".*%s" date))
+            count-sum (+ count-canceled count-done count-postponed)
+            count-canceled-sum (+ count-canceled count-canceled-sum)
+            count-postponed-sum (+ count-postponed count-postponed-sum)
+            count-done-sum (+ count-done count-done-sum))
+      
+      (when show-all
+        (setq new (format "** %s\n*** DONE : %d\n*** CANCELED : %d\n*** 任务总数 : %d\n*** 完成率 : %f\n*** 延滞率 : %f\n\n"
+                          (buffer-name)
+                          count-done
+                          count-canceled
+                          count-sum
+                          (if (= count-sum 0)
+                              0
+                            (/ count-done (float count-sum)))
+                          (if (= count-sum 0)
+                              0
+                            (/ count-postponed (float count-sum))))
+              output (concat output new))))
+    
+    (setq count-sum-sum (+ count-canceled-sum count-postponed-sum count-done-sum))
+    
+    (when show-all
+      (setq new (format "** %s\n*** DONE : %d\n*** CANCELED : %d\n*** 任务总数 : %d\n*** 完成率 : %f\n*** 延滞率 : %f\n\n"
+                        "Sum"
+                        count-done-sum
+                        count-canceled-sum
+                        count-sum-sum
+                        (if (= 0 count-sum-sum)
+                            0
+                          (/ count-done-sum (float count-sum-sum)))
+                        (if (= count-sum-sum 0)
+                            0
+                          (/ count-postponed-sum (float count-sum-sum))))
+            output (concat output new))
+      
+      (setq output (replace-regexp-in-string
+                    (concat date "<>") (format "%s <%f>"
+                                               date
+                                               (if (= 0 count-sum-sum)
+                                                   0
+                                                 (/ count-done-sum (float count-sum-sum)))) output)))
+    
+    ;; 返回percent
+    (if (= 0 count-sum-sum)
+        0
+      (/ count-done-sum (float count-sum-sum)))))
+(defun zeno()
+  "Summary for my agenda files"
+  (interactive)
+  (let (output)
+    (zeno-comm (format-time-string "%Y") t)
+    (zeno-comm (format-time-string "%Y-%m") t)
+    (zeno-comm (format-time-string "%Y-%m-%d") t)
+    
+    
+    (setq var (- (zeno-comm (format-time-string "%Y-%m-%d"))
+                 (zeno-comm (format-time-string "%Y-%m-%d" (time-add (current-time) (days-to-time -1))) nil))
+          output (replace-regexp-in-string
+                  (format-time-string "%Y-%m-%d")
+                  (format "%s [%f]" (format-time-string "%Y-%m-%d") var)
+                  output))
+    
+    (setq var (- (zeno-comm (format-time-string "%Y-%m"))
+                 (zeno-comm (format-time-string "%Y-%m" (time-add (current-time) (days-to-time (- -1 (string-to-int (format-time-string "%d")))))) nil))
+          output (replace-regexp-in-string
+                  (format-time-string "%Y-%m <")
+                  (format "%s [%f] <" (format-time-string "%Y-%m") var)
+                  output))
+    
+    
+    (dotimes (i 6)
+      (zeno-comm (format-time-string
+                  "%Y-%m-%d"
+                  (time-add (current-time) (days-to-time (- -1 i)))) t))
+    
+    (find-file (format-time-string "~/.archive/zeno/%Y-%m-%d.org" (current-time)))
+    (erase-buffer)
+    (insert output)
+    (save-buffer)
+    (goto-char (point-min))
+    (org-global-cycle t)
+    (next-line)
+    (next-line)
+    (show-subtree)
+    (delete-other-windows)
+    (org-agenda-list)))
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "WAIT(w@/!)" "POSTPONED(p!)""|" "DONE(d!)" "FAILED(f!)" "CANCELED(c!)")))
+
+;;;; English Writing
+
+;; 自动拼写检查
+(setq-default ispell-program-name "aspell")     ;用aspell替换ispell, 更加智能
+(setq-default ispell-extra-args '("--reverse")) ;修复aspell与ispell冲突的bug
+(setq ispell-dictionary "english")      ;设置英文词典
+(add-hook 'text-mode-hook 'flyspell-mode)
+
+;;;; END ENGLISH 
 
 ;; 填入大中小括号，双单引号的匹配
 ;; 放最后，不然导致缩进错误
 (setq skeleton-pair t)
 (setq skeleton-pair-alist '((?\" _ "\"" >)(?\' _ "\'" >)(?《 _"》">)(?（ _"）">)(?\( _ ")" >)(?\[ _ "]" >)(?\{ _ "}" >)))
                             
-
+                            
+                            
+                            
+                            
+                            
