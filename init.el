@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-09 20:26:10 Zeno Zeng>
+;; Time-stamp: <2012-11-09 20:54:09 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -681,18 +681,18 @@
 ;; 单词自动补全
 (defun my-dabbrev-buffer-for-en ()
   (get-buffer 'words))
-
 (defun my-writting-auto-complete ()
   (let* ((beg
-        (save-excursion
-          (backward-word)
-          (point)))
-	 (dabbrev-ignored-buffer-regexps
-	  (list "[^\(words\)]")))
+	  (save-excursion
+	    (backward-word)
+	    (point)))
+	 (dabbrev-search-these-buffers-only
+	  (list "words")))
+    ;; (dabbrev-ignored-buffer-regexps
+    ;;  (list "[^\(words\)]")))
     (if (> (- (point) beg) 3)
         (when (eq major-mode 'text-mode)
           (dabbrev-completion 16)))))
-
 (add-hook 'text-mode-hook 'auto-complete-mode)
 (add-hook 'post-self-insert-hook 'my-writting-auto-complete)
 (find-file-noselect "/usr/share/dict/words")
@@ -723,3 +723,5 @@
                             
                             
                             
+			    
+			    
