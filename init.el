@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-09 19:54:04 Zeno Zeng>
+;; Time-stamp: <2012-11-09 19:59:54 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -687,7 +687,6 @@
           (point))))
     (if (> (- (point) beg) 3)
         (when (eq major-mode 'text-mode)
-          (goto-char (point-max))
           (dabbrev-completion 16)))))
 
 (add-hook 'text-mode-hook 'auto-complete-mode)
