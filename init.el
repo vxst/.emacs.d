@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-06 14:57:27 Zeno Zeng>
+;; Time-stamp: <2012-11-09 15:36:22 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -148,7 +148,7 @@
   "Indent the current buffer"
   (interactive)
 
-  ;; 先缩进当前行先
+  ;; 先缩进当前行
   (indent-for-tab-command)
 
   (save-excursion
@@ -304,7 +304,8 @@
 ;;;; END Backup
 
 ;;;; ORG MODE
-;;(setq org-agenda-files (list  "~/org/tasks.org"))
+(setq org-agenda-files (list  "~/org/mobileorg/index.org" "~/org/life.org"))
+(setq org-mobile-directory "~/org/mobileorg")
 (setq org-hide-leading-stars t)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done 'time)
@@ -313,64 +314,6 @@
 (setq org-latex-to-pdf-process
       '("xelatex -interaction nonstopmode %b"
 	"xelatex -interaction nonstopmode %b"))
-
-;; (require 'org-latex)
-;; (unless (boundp 'org-export-latex-classes)
-;;   (setq org-export-latex-classes nil))
-;; (add-to-list 'org-export-latex-classes
-;; 	     '("article"
-;; 	       "\\documentclass[11pt]{article}"
-;; 	       ("\\section{%s}" . "\\section*{%s}")
-;; 	       ("\\subsection{%s}" . "\\subsection*{%s}")
-;; 	       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-;; 	       ("\\paragraph{%s}" . "\\paragraph*{%s}")
-;; 	       ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-;; (add-to-list 'org-export-latex-classes
-;; 	     '("simpledoc"
-;; 	       "\\documentclass[11pt]{article}
-;; \\usepackage[utf8]{inputenc}
-;; \\usepackage[T1]{fontenc}
-;; \\usepackage{fixltx2e}
-;; \\usepackage{graphicx}
-;; \\usepackage{longtable}
-;; \\usepackage{float}
-;; \\usepackage{wrapfig}
-;; \\usepackage{soul}
-;; \\usepackage{textcomp}
-;; \\usepackage{marvosym}
-;; \\usepackage{wasysym}
-;; \\usepackage{latexsym}
-;; \\usepackage{amssymb}
-;; \\tolerance=1000
-;; \\usepackage{fontspec}
-;; \\usepackage{xeCJK}
-;; \\usepackage{titlesec}
-;; \\usepackage{indentfirst}
-;; \\usepackage{geometry}
-;; \\usepackage[hidelinks,CJKbookmarks=true]{hyperref}%不显示链接的边框和颜色
-;; \\setcounter{tocdepth}{1}
-;; \\setcounter{secnumdepth}{0}
-;;          [NO-DEFAULT-PACKAGES]"
-;; 	       ("\\section{%s}"."\\section*{%s}\n\\addcontentsline{toc}{section}{}\n\\phantomsection")
-;; 	       ("\\subsection{%s}" . "\\subsection*{%s}")
-;; 	       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-;; 	       ("\\paragraph{%s}" . "\\paragraph*{%s}")
-;; 	       ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-;; (add-to-list 'org-export-latex-classes
-;; 	     '("book"
-;; 	       "\\documentclass[11pt]{book}"
-;; 	       ("\\part{%s}" . "\\part*{%s}")
-;; 	       ("\\chapter{%s}" . "\\chapter*{%s}")
-;; 	       ("\\section{%s}" . "\\section*{%s}")
-;; 	       ("\\subsection{%s}" . "\\subsection*{%s}")
-;; 	       ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
-;; 	     )
-;; 不产生目录
-;; (defun org-export-latex-no-toc (depth)  
-;;   (when depth
-;;     (format "%% Org-mode is exporting headings to %s levels.\n"
-;; 	    depth)))
-;; (setq org-export-latex-format-toc-function 'org-export-latex-no-toc)
 
 (require 'org-publish)
 (setq org-publish-project-alist
@@ -618,8 +561,6 @@
     '("marmalade" .
       "http://marmalade-repo.org/packages/"))
 (package-initialize)			    
-                            
-
 
 ;; 填入大中小括号，双单引号的匹配
 ;; 放最后，不然导致缩进错误
