@@ -1,3 +1,0 @@
-* DONE 选择性PDATE
-  CLOSED: [2012-07-18 Wed 13:04]
-  
