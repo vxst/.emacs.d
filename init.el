@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-09 19:59:54 Zeno Zeng>
+;; Time-stamp: <2012-11-09 20:26:10 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -679,12 +679,16 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 
 ;; 单词自动补全
+(defun my-dabbrev-buffer-for-en ()
+  (get-buffer 'words))
 
 (defun my-writting-auto-complete ()
-  (let ((beg
+  (let* ((beg
         (save-excursion
           (backward-word)
-          (point))))
+          (point)))
+	 (dabbrev-ignored-buffer-regexps
+	  (list "[^\(words\)]")))
     (if (> (- (point) beg) 3)
         (when (eq major-mode 'text-mode)
           (dabbrev-completion 16)))))
