@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-09 16:12:48 Zeno Zeng>
+;; Time-stamp: <2012-11-09 19:54:04 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -670,11 +670,31 @@
 
 ;;;; English Writing
 
+(setq default-major-mode 'text-mode)
+
 ;; 自动拼写检查
 (setq-default ispell-program-name "aspell")     ;用aspell替换ispell, 更加智能
 (setq-default ispell-extra-args '("--reverse")) ;修复aspell与ispell冲突的bug
 (setq ispell-dictionary "english")      ;设置英文词典
 (add-hook 'text-mode-hook 'flyspell-mode)
+
+;; 单词自动补全
+
+(defun my-writting-auto-complete ()
+  (let ((beg
+        (save-excursion
+          (backward-word)
+          (point))))
+    (if (> (- (point) beg) 3)
+        (when (eq major-mode 'text-mode)
+          (goto-char (point-max))
+          (dabbrev-completion 16)))))
+
+(add-hook 'text-mode-hook 'auto-complete-mode)
+(add-hook 'post-self-insert-hook 'my-writting-auto-complete)
+(find-file-noselect "/usr/share/dict/words")
+
+
 
 ;;;; END ENGLISH 
 
@@ -682,6 +702,18 @@
 ;; 放最后，不然导致缩进错误
 (setq skeleton-pair t)
 (setq skeleton-pair-alist '((?\" _ "\"" >)(?\' _ "\'" >)(?《 _"》">)(?（ _"）">)(?\( _ ")" >)(?\[ _ "]" >)(?\{ _ "}" >)))
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             
                             
                             
