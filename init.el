@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-10 12:46:13 Zeno Zeng>
+;; Time-stamp: <2012-11-10 19:31:52 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -119,7 +119,7 @@
 
 ;; 设置个人信息
 (setq user-full-name "Zeno Zeng")
-(setq user-mail-address "i@zva.me")
+(setq user-mail-address "zenoes@qq.com")
 
 ;;;; PHP Mode
 (setq php-manual-path "~/doc/php-manual/")
@@ -669,16 +669,17 @@
       '((sequence "TODO(t)" "WAIT(w@/!)" "POSTPONED(p!)""|" "DONE(d!)" "FAILED(f!)" "CANCELED(c!)")))
 
 ;;;; English Writing
+(require 'english-writing-mode)
 
 ;; 自动拼写检查
 (setq-default ispell-program-name "aspell")     ;用aspell替换ispell, 更加智能
 (setq-default ispell-extra-args '("--reverse")) ;修复aspell与ispell冲突的bug
 (setq ispell-dictionary "english")      ;设置英文词典
-(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'english-writing-mode-hook 'flyspell-mode)
 
 ;; 单词自动补全
 (defun my-writting-auto-complete ()
-  (when (eq major-mode 'text-mode)
+  (when (eq major-mode 'english-writing-mode)
     (let* ((beg
 	    (save-excursion
 	      (backward-word)
@@ -687,7 +688,7 @@
 	    (list "words")))
       (if (> (- (point) beg) 3)
 	  (dabbrev-completion 16)))))
-(add-hook 'text-mode-hook 'auto-complete-mode)
+(add-hook 'english-writing-mode-hook 'auto-complete-mode)
 (add-hook 'post-self-insert-hook 'my-writting-auto-complete)
 (find-file-noselect "/usr/share/dict/words")
 
