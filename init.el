@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-10 12:44:50 Zeno Zeng>
+;; Time-stamp: <2012-11-10 12:46:13 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -669,8 +669,6 @@
       '((sequence "TODO(t)" "WAIT(w@/!)" "POSTPONED(p!)""|" "DONE(d!)" "FAILED(f!)" "CANCELED(c!)")))
 
 ;;;; English Writing
-
-(setq default-major-mode 'text-mode)
 
 ;; 自动拼写检查
 (setq-default ispell-program-name "aspell")     ;用aspell替换ispell, 更加智能
