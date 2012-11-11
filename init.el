@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-10 19:31:52 Zeno Zeng>
+;; Time-stamp: <2012-11-11 14:05:28 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -187,8 +187,7 @@
 (add-hook 'emacs-lisp-mode-hook 'my-hs)
 (add-hook 'java-mode-hook       'my-hs)
 (add-hook 'js2-mode-hook        'my-hs)
-(add-hook 'css-mode-hook        'my-hs)
-(add-hook 'ess-mode-hook        'my-hs)
+(add-hook 'less-mode-hook       'my-hs)
 (add-hook 'perl-mode-hook       'my-hs)
 (add-hook 'sh-mode-hook         'my-hs)
 (add-hook 'scheme-mode-hook     'my-hs)
@@ -217,10 +216,10 @@
 ;; AC
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/modes/ac-mode/dict")
-(ac-config-default)
-;; fix for css-mode
-(add-hook 'css-mode-hook (lambda ()
-			   (auto-complete-mode)))
+(add-hook 'less-mode-hook 'auto-complete-mode)
+(add-hook 'js2-mode-hook 'auto-complete-mode)
+
+
 ;; PHP
 ;; (autoload 'html-php-mode "html-php.el"
 ;;   "multi-mode PHP embedded in HTML" t)
@@ -259,14 +258,6 @@
 ;;;; END Modes
 
 
-;;;; Firefox
-(defun ff()
-  "Start Firefox and clock in."
-  (interactive)
-  (save-excursion
-    (eshell-command "firefox")))
-;;;; END Firefox
-
 ;;;; Backup
 (defun backup-this-file ()
   "Backup this file"
@@ -282,12 +273,6 @@
       (mkdir (file-name-directory bakfile) t)
       (copy-file (buffer-file-name) bakfile t)
       )))
-(defadvice find-file (after zeno-advice-find-file-clock)
-  (backup-this-file))
-(ad-activate 'find-file)
-(defadvice ido-find-file (after zeno-advice-ido-find-file-clock)
-  (backup-this-file))
-(ad-activate 'ido-find-file)
 ;; 备份文档路径
 (setq backup-directory-alist (quote (("." . "~/.backups"))))
 ;;生成临时文件
@@ -310,10 +295,6 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done 'time)
 
-;; Tex
-(setq org-latex-to-pdf-process
-      '("xelatex -interaction nonstopmode %b"
-	"xelatex -interaction nonstopmode %b"))
 
 (require 'org-publish)
 (setq org-publish-project-alist
@@ -668,29 +649,29 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "WAIT(w@/!)" "POSTPONED(p!)""|" "DONE(d!)" "FAILED(f!)" "CANCELED(c!)")))
 
-;;;; English Writing
-(require 'english-writing-mode)
+;; ;;;; English Writing
+;; (require 'english-writing-mode)
 
-;; 自动拼写检查
-(setq-default ispell-program-name "aspell")     ;用aspell替换ispell, 更加智能
-(setq-default ispell-extra-args '("--reverse")) ;修复aspell与ispell冲突的bug
-(setq ispell-dictionary "english")      ;设置英文词典
-(add-hook 'english-writing-mode-hook 'flyspell-mode)
+;; ;; 自动拼写检查
+;; (setq-default ispell-program-name "aspell")     ;用aspell替换ispell, 更加智能
+;; (setq-default ispell-extra-args '("--reverse")) ;修复aspell与ispell冲突的bug
+;; (setq ispell-dictionary "english")      ;设置英文词典
+;; (add-hook 'english-writing-mode-hook 'flyspell-mode)
 
-;; 单词自动补全
-(defun my-writting-auto-complete ()
-  (when (eq major-mode 'english-writing-mode)
-    (let* ((beg
-	    (save-excursion
-	      (backward-word)
-	      (point)))
-	   (dabbrev-search-these-buffers-only
-	    (list "words")))
-      (if (> (- (point) beg) 3)
-	  (dabbrev-completion 16)))))
-(add-hook 'english-writing-mode-hook 'auto-complete-mode)
-(add-hook 'post-self-insert-hook 'my-writting-auto-complete)
-(find-file-noselect "/usr/share/dict/words")
+;; ;; 单词自动补全
+;; (defun my-writting-auto-complete ()
+;;   (when (eq major-mode 'english-writing-mode)
+;;     (let* ((beg
+;; 	    (save-excursion
+;; 	      (backward-word)
+;; 	      (point)))
+;; 	   (dabbrev-search-these-buffers-only
+;; 	    (list "words")))
+;;       (if (> (- (point) beg) 3)
+;; 	  (dabbrev-completion 16)))))
+;; (add-hook 'english-writing-mode-hook 'auto-complete-mode)
+;; (add-hook 'post-self-insert-hook 'my-writting-auto-complete)
+;; (find-file-noselect "/usr/share/dict/words")
 
 
 
