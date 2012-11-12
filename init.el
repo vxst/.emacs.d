@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-11 14:05:28 Zeno Zeng>
+;; Time-stamp: <2012-11-12 10:57:23 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -217,6 +217,8 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/modes/ac-mode/dict")
 (add-hook 'less-mode-hook 'auto-complete-mode)
+(add-hook 'php-mode-hook 'auto-complete-mode)
+(add-hook 'html-mode-hook 'auto-complete-mode)
 (add-hook 'js2-mode-hook 'auto-complete-mode)
 
 
@@ -437,11 +439,11 @@
 		      (dired default-directory))))
 
 ;; 这里重启两次是为了 防止toggle类的fun出现问题
-(global-set-key [f1] '(lambda ()
+(global-set-key (kbd "H-i") '(lambda ()
 			(interactive)
 			(indent-buffer)))
 (global-set-key [f2] 'hs-hide-all)
-(global-set-key [f5] '(lambda ()
+(global-set-key (kbd "H-e") '(lambda ()
 			(interactive)
 			(eval-buffer)))
 (global-set-key [f6] 'toggle-truncate-lines)
