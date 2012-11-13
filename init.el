@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-12 10:57:23 Zeno Zeng>
+;; Time-stamp: <2012-11-13 20:30:02 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -96,6 +96,9 @@
 (global-font-lock-mode 1)
 ;; 开启 ido mode
 (ido-mode nil)
+(global-set-key "\C-xk" (lambda ()
+                          (interactive)
+			  (kill-buffer (buffer-name))))
 ;; highlight-parentheses
 (require 'highlight-parentheses)
 (define-globalized-minor-mode global-highlight-parentheses-mode
@@ -218,6 +221,7 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/modes/ac-mode/dict")
 (add-hook 'less-mode-hook 'auto-complete-mode)
 (add-hook 'php-mode-hook 'auto-complete-mode)
+(add-hook 'emacs-lisp-mode-hook 'auto-complete-mode)
 (add-hook 'html-mode-hook 'auto-complete-mode)
 (add-hook 'js2-mode-hook 'auto-complete-mode)
 
@@ -232,6 +236,10 @@
 (setq auto-mode-alist
       (cons '("\\.php" . php-mode) auto-mode-alist))
 
+;; firefox
+(defun ff()
+  (interactive)
+  (shell-command "firefox"))
 
 
 ;; Markdown
@@ -356,7 +364,6 @@
 (epa-file-enable)
 ;; 总是使用对称加密
 (setq epa-file-encrypt-to nil)
-;; 允许缓存密码，否则编辑\保存时每次保存都要输入密码
 ;;(setq epa-file-cache-passphrase-for-symmetric-encryption t)
 ;; 允许自动保存
 ;;(setq epa-file-inhibit-auto-save nil)
@@ -442,6 +449,8 @@
 (global-set-key (kbd "H-i") '(lambda ()
 			(interactive)
 			(indent-buffer)))
+(global-set-key (kbd "H-x") 'execute-extended-command)
+(global-set-key (kbd "H-r") 'replace-regexp)
 (global-set-key [f2] 'hs-hide-all)
 (global-set-key (kbd "H-e") '(lambda ()
 			(interactive)
@@ -548,7 +557,7 @@
 ;; GTD
 (defun zeno-comm (date &optional show-all)
   "Common function for summary of agenda files"
-  (let ((count-canceled-sum 0)
+  (let ((count-failed-sum 0)
         (count-done-sum 0)
         (count-postponed-sum 0))
     
@@ -559,19 +568,19 @@
       (find-file file)
       (goto-char (point-min))
       
-      (setq count-canceled (count-matches (format "State \"CANCELED\".*%s" date))
+      (setq count-failed (count-matches (format "State \"FAILED\".*%s" date))
             count-done (count-matches (format "State \"DONE\".*%s" date))
             count-postponed (count-matches (format "State \"POSTPONED\".*%s" date))
-            count-sum (+ count-canceled count-done count-postponed)
-            count-canceled-sum (+ count-canceled count-canceled-sum)
+            count-sum (+ count-failed count-done count-postponed)
+            count-failed-sum (+ count-failed count-failed-sum)
             count-postponed-sum (+ count-postponed count-postponed-sum)
             count-done-sum (+ count-done count-done-sum))
       
       (when show-all
-        (setq new (format "** %s\n*** DONE : %d\n*** CANCELED : %d\n*** 任务总数 : %d\n*** 完成率 : %f\n*** 延滞率 : %f\n\n"
+        (setq new (format "** %s\n*** DONE : %d\n*** FAILED : %d\n*** 任务总数 : %d\n*** 完成率 : %f\n*** 延滞率 : %f\n\n"
                           (buffer-name)
                           count-done
-                          count-canceled
+                          count-failed
                           count-sum
                           (if (= count-sum 0)
                               0
@@ -581,13 +590,13 @@
                             (/ count-postponed (float count-sum))))
               output (concat output new))))
     
-    (setq count-sum-sum (+ count-canceled-sum count-postponed-sum count-done-sum))
+    (setq count-sum-sum (+ count-failed-sum count-postponed-sum count-done-sum))
     
     (when show-all
-      (setq new (format "** %s\n*** DONE : %d\n*** CANCELED : %d\n*** 任务总数 : %d\n*** 完成率 : %f\n*** 延滞率 : %f\n\n"
+      (setq new (format "** %s\n*** DONE : %d\n*** FAILED : %d\n*** 任务总数 : %d\n*** 完成率 : %f\n*** 延滞率 : %f\n\n"
                         "Sum"
                         count-done-sum
-                        count-canceled-sum
+                        count-failed-sum
                         count-sum-sum
                         (if (= 0 count-sum-sum)
                             0

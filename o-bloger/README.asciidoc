@@ -1,7 +1,5 @@
 = o-blog quick start
 
-依赖：
-  (debian-file->string file))
 
 How to use https://github.com/renard/o-blog[o-blog].
 
