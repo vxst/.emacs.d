@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-14 19:04:40 Zeno Zeng>
+;; Time-stamp: <2012-11-14 19:20:31 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -254,7 +254,7 @@
       (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
 ;; Less
-(autoload 'less-css-mode "less-css-mode.el"
+(autoload 'less-css-mode "less-css-mode-rm-flymake.el"
   "Major mode for editing less-css files" t)
 (setq auto-mode-alist
       (cons '("\\.less" . less-css-mode) auto-mode-alist))
