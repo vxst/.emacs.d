@@ -1,10 +1,10 @@
-;; Time-stamp: <2012-11-13 20:30:02 Zeno Zeng>
+;; Time-stamp: <2012-11-14 16:29:18 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
 (add-to-list 'load-path "~/.emacs.d/modes")
-(add-to-list 'load-path "~/.emacs.d/modes/ac-mode")
 (add-to-list 'load-path "~/.emacs.d/init")
+(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.4")
 (add-to-list 'load-path "~/.emacs.d/init/emacs-w3m")
 (add-to-list 'load-path "~/.emacs.d/o-bloger")
 (add-to-list 'load-path "~/.emacs.d/elpa/org-20120903")
@@ -16,46 +16,46 @@
 
 ;;;; END Undo Tree
 
-;;;; 有道 API ::依赖xml.el,xml-parse.el
-;;获取要翻译的词典  
-(defun get-current-word ()  
-  (interactive)  
-  (let ((begin (point-min)) (end (point-max)))  
-    (save-excursion        
-      (when (not mark-active)          
-	(backward-word)  
-	(mark-word))  
-      (setq begin (region-beginning)  
-	    end (region-end)))  
-    (buffer-substring begin end)))  
+;; ;;;; 有道 API ::依赖xml.el,xml-parse.el
+;; ;;获取要翻译的词典  
+;; (defun get-current-word ()  
+;;   (interactive)  
+;;   (let ((begin (point-min)) (end (point-max)))  
+;;     (save-excursion        
+;;       (when (not mark-active)          
+;; 	(backward-word)  
+;; 	(mark-word))  
+;;       (setq begin (region-beginning)  
+;; 	    end (region-end)))  
+;;     (buffer-substring begin end)))  
 
-;;抓取翻译结果  
-(defun get-translate-result (word)  
-  (shell-command-to-string (concat (format "curl 'http://fanyi.youdao.com/openapi.do?keyfrom=ZenoBlog&key=636489742&type=data&doctype=xml&version=1.1&q=%s' 2>/dev/null" word))))  
+;; ;;抓取翻译结果  
+;; (defun get-translate-result (word)  
+;;   (shell-command-to-string (concat (format "curl 'http://fanyi.youdao.com/openapi.do?keyfrom=ZenoBlog&key=636489742&type=data&doctype=xml&version=1.1&q=%s' 2>/dev/null" word))))  
 
-;;分析翻译结果,并返回显示字符串  
-(defun analytic-translate-result (translateresult)  
-  (let* ((root (with-temp-buffer (insert translateresult)  
-				 (xml-parse-region (point-min) (point-max))))  
-	 (youdao-fanyi (car root))  
-	 (basic (car (xml-get-children youdao-fanyi 'basic)))  
-	 (explains-ex (xml-get-children (car (xml-get-children basic 'explains)) 'ex))  
-	 (phonetic-texts (car (xml-node-children (car (xml-get-children basic 'phonetic)))))   
-	 (explains-texts (concat phonetic-texts "\n")))  
-    (loop for ex in explains-ex  
-	  do (setq explains-texts (concat explains-texts  (car (xml-node-children ex)) "\n")))  
-    explains-texts))  
+;; ;;分析翻译结果,并返回显示字符串  
+;; (defun analytic-translate-result (translateresult)  
+;;   (let* ((root (with-temp-buffer (insert translateresult)  
+;; 				 (xml-parse-region (point-min) (point-max))))  
+;; 	 (youdao-fanyi (car root))  
+;; 	 (basic (car (xml-get-children youdao-fanyi 'basic)))  
+;; 	 (explains-ex (xml-get-children (car (xml-get-children basic 'explains)) 'ex))  
+;; 	 (phonetic-texts (car (xml-node-children (car (xml-get-children basic 'phonetic)))))   
+;; 	 (explains-texts (concat phonetic-texts "\n")))  
+;;     (loop for ex in explains-ex  
+;; 	  do (setq explains-texts (concat explains-texts  (car (xml-node-children ex)) "\n")))  
+;;     explains-texts))  
 
-;;主函数  
-(defun lookup-word ()  
-  (interactive)  
-  (let* ((word (get-current-word))  
-	 (translate-result (get-translate-result word))  
-	 (explains-texts (analytic-translate-result translate-result)))  
-    (tooltip-show explains-texts t)))  
-;;绑定到Ctrl-c f组合键上  
-(global-set-key (kbd "C-c f") 'lookup-word)  
-;;;; END 有道 API
+;; ;;主函数  
+;; (defun lookup-word ()  
+;;   (interactive)  
+;;   (let* ((word (get-current-word))  
+;; 	 (translate-result (get-translate-result word))  
+;; 	 (explains-texts (analytic-translate-result translate-result)))  
+;;     (tooltip-show explains-texts t)))  
+;; ;;绑定到Ctrl-c f组合键上  
+;; (global-set-key (kbd "C-c f") 'lookup-word)  
+;; ;;;; END 有道 API
 
 ;;;; Frames and Graphical Displays
 
@@ -151,9 +151,11 @@
   "Indent the current buffer"
   (interactive)
   
-  ;; 先缩进当前行
-  (indent-for-tab-command)
-  
+  ;; 尝试直接缩进
+  (ignore-errors
+    (indent-region (point-min) (point-max)))
+
+  ;; 尝试逐行缩进
   (save-excursion
     (goto-char (point-min))
     (while (search-forward "\n" nil t)
@@ -190,11 +192,11 @@
 (add-hook 'emacs-lisp-mode-hook 'my-hs)
 (add-hook 'java-mode-hook       'my-hs)
 (add-hook 'js2-mode-hook        'my-hs)
-(add-hook 'less-mode-hook       'my-hs)
 (add-hook 'perl-mode-hook       'my-hs)
 (add-hook 'sh-mode-hook         'my-hs)
 (add-hook 'scheme-mode-hook     'my-hs)
 (add-hook 'css-mode-hook     'my-hs)
+(add-hook 'less-mode-hook     'my-hs)
 (add-hook 'php-mode-hook     (lambda ()
                                (my-hs)
                                (hs-hide-level 2)))
@@ -209,21 +211,36 @@
   (hs-minor-mode)
   (hs-hide-all))
 
-(defun archive-region (beg end)
-  (interactive (list (point) (mark)))
-  (let ((file (concat (replace-regexp-in-string "/home/zys/" "/home/zys/.archive/" (buffer-file-name)))))
-    (mkdir (file-name-directory file) t)
-    (append-to-file beg end file)
-    (kill-region beg end)))
+;; (defun archive-region (beg end)
+;;   (interactive (list (point) (mark)))
+;;   (let ((file (concat (replace-regexp-in-string "/home/zys/" "/home/zys/.archive/" (buffer-file-name)))))
+;;     (mkdir (file-name-directory file) t)
+;;     (append-to-file beg end file)
+;;     (kill-region beg end)))
 
 ;; AC
+(require 'auto-complete)
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/modes/ac-mode/dict")
-(add-hook 'less-mode-hook 'auto-complete-mode)
-(add-hook 'php-mode-hook 'auto-complete-mode)
-(add-hook 'emacs-lisp-mode-hook 'auto-complete-mode)
-(add-hook 'html-mode-hook 'auto-complete-mode)
-(add-hook 'js2-mode-hook 'auto-complete-mode)
+
+(define-key ac-completing-map (kbd "C-n") 'ac-next)
+(define-key ac-completing-map (kbd "C-p") 'ac-previous)
+
+(set-default 'ac-sources
+             '(ac-source-dictionary
+               ac-source-words-in-buffer
+               ac-source-words-in-same-mode-buffers))
+
+(defun my-ac-mode ()
+  (ac-flyspell-workaround)
+  (auto-complete-mode)
+  (ac-flyspell-workaround))
+
+(dolist (hook '(
+                js2-mode-hook
+		css-mode-hook
+		less-css-mode-hook
+		))
+  (add-hook hook 'my-ac-mode))
 
 
 ;; PHP
@@ -692,24 +709,3 @@
 ;; 放最后，不然导致缩进错误
 (setq skeleton-pair t)
 (setq skeleton-pair-alist '((?\" _ "\"" >)(?\' _ "\'" >)(?《 _"》">)(?（ _"）">)(?\( _ ")" >)(?\[ _ "]" >)(?\{ _ "}" >)))
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-			    
-			    
-			    
