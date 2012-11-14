@@ -1,10 +1,12 @@
-;; Time-stamp: <2012-11-14 17:12:46 Zeno Zeng>
+;; Time-stamp: <2012-11-14 19:04:40 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
 (add-to-list 'load-path "~/.emacs.d/modes")
 (add-to-list 'load-path "~/.emacs.d/init")
+(add-to-list 'load-path "~/.emacs.d/modes/less-css-mode")
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.4")
+(add-to-list 'load-path "~/.emacs.d/elpa/popup-0.5")
 (add-to-list 'load-path "~/.emacs.d/init/emacs-w3m")
 (add-to-list 'load-path "~/.emacs.d/o-bloger")
 (add-to-list 'load-path "~/.emacs.d/elpa/org-20120903")
@@ -154,7 +156,7 @@
   ;; 尝试直接缩进
   (ignore-errors
     (indent-region (point-min) (point-max)))
-
+  
   ;; 尝试逐行缩进
   (save-excursion
     (goto-char (point-min))
@@ -195,8 +197,8 @@
 (add-hook 'perl-mode-hook       'my-hs)
 (add-hook 'sh-mode-hook         'my-hs)
 (add-hook 'scheme-mode-hook     'my-hs)
-(add-hook 'css-mode-hook       'my-hs)
-(add-hook 'less-mode-hook     'my-hs)
+(add-hook 'css-mode-hook        'my-hs)
+(add-hook 'less-mode-hook       'my-hs)
 (add-hook 'php-mode-hook     (lambda ()
                                (my-hs)
                                (hs-hide-level 2)))
@@ -214,23 +216,18 @@
 ;; AC
 (require 'auto-complete)
 (require 'auto-complete-config)
-(ac-flyspell-workaround)
-
-(define-key ac-completing-map (kbd "C-n") 'ac-next)
-(define-key ac-completing-map (kbd "C-p") 'ac-previous)
-
 (set-default 'ac-sources
              '(ac-source-dictionary
                ac-source-words-in-buffer
                ac-source-words-in-same-mode-buffers))
 
 (defun my-ac-mode ()
-  (auto-complete-mode 1)
-  (ac-flyspell-workaround))
+    (auto-complete-mode 1)
+    (ac-flyspell-workaround))
 
 (dolist (hook '(
                 js2-mode-hook
-		css-mode-hook
+		html-mode-hook
 		less-css-mode-hook
 		))
   (add-hook hook 'my-ac-mode))
@@ -437,14 +434,14 @@
 
 ;; 这里重启两次是为了 防止toggle类的fun出现问题
 (global-set-key (kbd "H-i") '(lambda ()
-			(interactive)
-			(indent-buffer)))
+			       (interactive)
+			       (indent-buffer)))
 (global-set-key (kbd "H-x") 'execute-extended-command)
 (global-set-key (kbd "H-r") 'replace-regexp)
 (global-set-key [f2] 'hs-hide-all)
 (global-set-key (kbd "H-e") '(lambda ()
-			(interactive)
-			(eval-buffer)))
+			       (interactive)
+			       (eval-buffer)))
 (global-set-key [f6] 'toggle-truncate-lines)
 
 ;; 全屏
@@ -681,3 +678,4 @@
 ;; 放最后，不然导致缩进错误
 (setq skeleton-pair t)
 (setq skeleton-pair-alist '((?\" _ "\"" >)(?\' _ "\'" >)(?《 _"》">)(?（ _"）">)(?\( _ ")" >)(?\[ _ "]" >)(?\{ _ "}" >)))
+			    

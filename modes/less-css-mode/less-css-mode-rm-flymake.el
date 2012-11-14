@@ -1,4 +1,3 @@
-
 ;;; less-css-mode.el --- Major mode for editing LESS CSS files (lesscss.org)
 ;;
 ;; Copyright 2011 Steve Purcell
@@ -59,7 +58,6 @@
 
 (require 'derived)
 (require 'compile)
-(require 'flymake)
 
 ;; There are at least three css-mode.el implementations, but we need
 ;; the right one in order to work as expected, not the versions by
@@ -190,26 +188,6 @@ Special commands:
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.less" . less-css-mode))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Wiring for `flymake-mode'
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;;###autoload
-(defun flymake-less-css-init ()
-  "Flymake support for LESS files"
-  (let* ((temp-file   (flymake-init-create-temp-buffer-copy
-                       'flymake-create-temp-inplace))
-         (local-file  (file-relative-name
-                       temp-file
-                       (file-name-directory buffer-file-name))))
-    (list less-css-lessc-command (append less-css-lessc-options (list local-file)))))
-
-(push '(".+\\.less$" flymake-less-css-init) flymake-allowed-file-name-masks)
-
-(push (list less-css-default-error-regex 2 3 4 1) flymake-err-line-patterns)
-
 
 (provide 'less-css-mode)
 ;;; less-css-mode.el ends here
