@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-14 16:29:18 Zeno Zeng>
+;; Time-stamp: <2012-11-14 17:12:46 Zeno Zeng>
 (setq user-login-name "Zeno Zeng")
 ;;;; load-path
 
@@ -195,7 +195,7 @@
 (add-hook 'perl-mode-hook       'my-hs)
 (add-hook 'sh-mode-hook         'my-hs)
 (add-hook 'scheme-mode-hook     'my-hs)
-(add-hook 'css-mode-hook     'my-hs)
+(add-hook 'css-mode-hook       'my-hs)
 (add-hook 'less-mode-hook     'my-hs)
 (add-hook 'php-mode-hook     (lambda ()
                                (my-hs)
@@ -211,16 +211,10 @@
   (hs-minor-mode)
   (hs-hide-all))
 
-;; (defun archive-region (beg end)
-;;   (interactive (list (point) (mark)))
-;;   (let ((file (concat (replace-regexp-in-string "/home/zys/" "/home/zys/.archive/" (buffer-file-name)))))
-;;     (mkdir (file-name-directory file) t)
-;;     (append-to-file beg end file)
-;;     (kill-region beg end)))
-
 ;; AC
 (require 'auto-complete)
 (require 'auto-complete-config)
+(ac-flyspell-workaround)
 
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
 (define-key ac-completing-map (kbd "C-p") 'ac-previous)
@@ -231,8 +225,7 @@
                ac-source-words-in-same-mode-buffers))
 
 (defun my-ac-mode ()
-  (ac-flyspell-workaround)
-  (auto-complete-mode)
+  (auto-complete-mode 1)
   (ac-flyspell-workaround))
 
 (dolist (hook '(
@@ -244,12 +237,8 @@
 
 
 ;; PHP
-;; (autoload 'html-php-mode "html-php.el"
-;;   "multi-mode PHP embedded in HTML" t)
 (autoload 'php-mode "php-mode.el"
   "Major mode for editing PHP files" t)
-;; (setq auto-mode-alist
-;;       (cons '("\\.php" . html-php-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.php" . php-mode) auto-mode-alist))
 
@@ -285,21 +274,6 @@
 ;;;; END Modes
 
 
-;;;; Backup
-(defun backup-this-file ()
-  "Backup this file"
-  (interactive)
-  (unless
-      (or (string-match ".jpg" (buffer-name))
-          (string-match "ftp" (buffer-file-name)))
-    (let ((bakfile (concat (replace-regexp-in-string "/home/zys/" "/home/zys/.backups/" (buffer-file-name))
-			   (format-time-string "/%Y-%m-%d/%H:%M:%S" (current-time))
-			   "."
-			   (file-name-extension (buffer-file-name)))))
-      (save-buffer)
-      (mkdir (file-name-directory bakfile) t)
-      (copy-file (buffer-file-name) bakfile t)
-      )))
 ;; 备份文档路径
 (setq backup-directory-alist (quote (("." . "~/.backups"))))
 ;;生成临时文件
@@ -321,7 +295,6 @@
 (setq org-hide-leading-stars t)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done 'time)
-
 
 (require 'org-publish)
 (setq org-publish-project-alist
@@ -482,7 +455,6 @@
 			  '(2 "_NET_WM_STATE_FULLSCREEN" 0))))
 
 (global-set-key [f12] 'archive-region)
-
 
 (autoload 'espresso-mode "espresso")
 (defun my-js2-indent-function ()
