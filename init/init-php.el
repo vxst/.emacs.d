@@ -7,6 +7,4 @@
 (add-hook 'php-mode-hook '(lambda ()
 			    (eldoc-mode)))
 
-(defun my-php-mode-stuff ()
-  (local-set-key (kbd "<f1>") 'my-php-symbol-lookup))
 (provide 'init-php)
