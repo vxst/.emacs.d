@@ -23,6 +23,7 @@
   (hs-minor-mode)
   (hs-hide-all))
 
+;; 依照缩进来折叠代码
 (define-key global-map (kbd "H-'") 'my-toggle-selective-display)
 (defun my-toggle-selective-display()
   "set-selective-display to current column or toggle selective-display --lgfang"
