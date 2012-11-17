@@ -23,5 +23,12 @@
   (hs-minor-mode)
   (hs-hide-all))
 
+(define-key global-map (kbd "H-'") 'my-toggle-selective-display)
+(defun my-toggle-selective-display()
+  "set-selective-display to current column or toggle selective-display --lgfang"
+  (interactive)
+  (let ((arg (progn (back-to-indentation) (current-column))))
+    (set-selective-display (if (eq arg selective-display) nil arg))))
+
 
 (provide 'init-hs)
