@@ -21,15 +21,18 @@
 (defun my-hs ()
   "My hideshow mode."
   (hs-minor-mode)
+  (local-set-key (kbd "C-'") 'hs-toggle-hiding)
   (hs-hide-all))
 
 ;; 依照缩进来折叠代码
-(define-key global-map (kbd "H-'") 'my-toggle-selective-display)
+;; (define-key global-map (kbd "H-'") 'my-toggle-selective-display)
 (defun my-toggle-selective-display()
   "set-selective-display to current column or toggle selective-display --lgfang"
   (interactive)
   (let ((arg (progn (back-to-indentation) (current-column))))
     (set-selective-display (if (eq arg selective-display) nil arg))))
 
+(add-hook 'html-mode-hook (lambda ()
+			    (local-set-key (kbd "C-'") 'my-toggle-selective-display)))
 
 (provide 'init-hs)
