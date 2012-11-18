@@ -1,5 +1,4 @@
-;; Time-stamp: <2012-11-18 14:15:13 Zeno Zeng>
-;; todo: 重写english-writing-mode.el
+;; Time-stamp: <2012-11-18 14:28:25 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/modes")
