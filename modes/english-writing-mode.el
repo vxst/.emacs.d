@@ -32,6 +32,28 @@
     map)
   "Keymap for this major mode")
 
+
+;; 自动拼写检查
+(setq ispell-dictionary "english")      ;设置英文词典
+(add-hook 'english-writing-mode-hook 'flyspell-mode)
+
+;; 单词自动补全
+(defun my-writting-auto-complete ()
+  (when (eq major-mode 'english-writing-mode)
+    (let* ((beg
+	    (save-excursion
+	      (backward-word)
+	      (point)))
+	   (dabbrev-search-these-buffers-only
+	    (list "words")))
+      (if (> (- (point) beg) 3)
+	  (dabbrev-completion 16)))))
+
+(add-hook 'english-writing-mode-hook 'auto-complete-mode)
+(add-hook 'post-self-insert-hook 'my-writting-auto-complete)
+(find-file-noselect "/usr/share/dict/words")
+
+
 (define-derived-mode english-writing-mode text-mode "EnWriting"
   "Major mode for english writing"
   (interactive)
