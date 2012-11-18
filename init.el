@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-18 14:46:35 Zeno Zeng>
+;; Time-stamp: <2012-11-18 19:16:49 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/modes")
@@ -64,6 +64,10 @@
  ;; If there is more than one, they won't work right.
  '(chm-view-delay 1)
  '(hl-paren-colors (quote ("#f00" "#ff0" "#0f0" "#00ced1" "#9400d3")))
+ '(js3-consistent-level-indent-inner-bracket t)
+ '(js3-curly-indent-offset 2)
+ '(js3-global-externs (list "$" "localStorage"))
+ '(js3-indent-level 2)
  '(less-css-compile-at-save t)
  '(less-css-lessc-options (list "-x"))
  '(org-agenda-span (quote month))
