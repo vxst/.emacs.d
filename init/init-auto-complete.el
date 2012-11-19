@@ -10,7 +10,7 @@
   (ac-flyspell-workaround))
 
 (dolist (hook '(
-                js2-mode-hook
+                js3-mode-hook
                 html-mode-hook
                 php-mode-hook
 		emacs-lisp-mode-hook
