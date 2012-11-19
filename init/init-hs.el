@@ -3,7 +3,7 @@
 (add-hook 'c-mode-common-hook   'my-hs)
 (add-hook 'emacs-lisp-mode-hook 'my-hs)
 (add-hook 'java-mode-hook       'my-hs)
-(add-hook 'js2-mode-hook        'my-hs)
+(add-hook 'js3-mode-hook        'my-hs)
 (add-hook 'perl-mode-hook       'my-hs)
 (add-hook 'sh-mode-hook         'my-hs)
 (add-hook 'scheme-mode-hook     'my-hs)
