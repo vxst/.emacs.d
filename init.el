@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-19 19:44:28 Zeno Zeng>
+;; Time-stamp: <2012-11-19 21:05:05 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/modes")
@@ -22,9 +22,9 @@
 (require 'init-hs)
 (require 'init-auto-complete)
 (require 'init-backup)
+(require 'init-vc)
 
 (require 'init-w3m)
-(require 'init-vc)
 (require 'init-org)
 
 (require 'init-js)
@@ -33,6 +33,7 @@
 (require 'init-markdown)
 (require 'init-gimp)
 (require 'init-html)
+(require 'init-lisp)
 
 (require 'init-etc)
 
@@ -71,7 +72,10 @@
  '(js3-consistent-level-indent-inner-bracket t)
  '(js3-curly-indent-offset 2)
  '(js3-global-externs (quote ("$" "localStorage" "JSON" "setInterval" "clearInterval" "setTimeout")))
- '(js3-highlight-level 3)
+ '(js3-auto-indent-p t)         ; it's nice for commas to right themselves.
+ '(js3-enter-indents-newline t) ; don't need to push tab before typing
+ '(js3-indent-on-enter-key t)   ; fix indenting before moving on
+
  '(js3-indent-level 2)
  '(less-css-compile-at-save t)
  '(less-css-lessc-options (list "-x"))
