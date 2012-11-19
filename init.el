@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-19 18:21:54 Zeno Zeng>
+;; Time-stamp: <2012-11-19 19:44:28 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/modes")
@@ -7,6 +7,7 @@
 (add-to-list 'load-path "~/.emacs.d/modes/js3-mode")
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.4")
 (add-to-list 'load-path "~/.emacs.d/elpa/popup-0.5")
+(add-to-list 'load-path "~/.emacs.d/elpa/gitty-1.0")
 (add-to-list 'load-path "~/.emacs.d/require/emacs-w3m")
 (add-to-list 'load-path "~/.emacs.d/require/o-bloger")
 (add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-0.5.4")
@@ -23,6 +24,7 @@
 (require 'init-backup)
 
 (require 'init-w3m)
+(require 'init-vc)
 (require 'init-org)
 
 (require 'init-js)
@@ -68,7 +70,7 @@
  '(js3-allow-member-expr-as-function-name t)
  '(js3-consistent-level-indent-inner-bracket t)
  '(js3-curly-indent-offset 2)
- '(js3-global-externs (quote ("$" "localStorage" "JSON" "setInterval" "clearInterval")))
+ '(js3-global-externs (quote ("$" "localStorage" "JSON" "setInterval" "clearInterval" "setTimeout")))
  '(js3-highlight-level 3)
  '(js3-indent-level 2)
  '(less-css-compile-at-save t)
