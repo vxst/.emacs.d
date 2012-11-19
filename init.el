@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-18 19:25:46 Zeno Zeng>
+;; Time-stamp: <2012-11-19 18:21:54 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/modes")
@@ -48,6 +48,7 @@
  '(fringe ((t (:background "#000"))))
  '(header-line ((t (:background "#000" :foreground "#333"))))
  '(hl-paren-face ((t (:weight bold))) t)
+ '(js3-private-function-call-face ((t (:foreground "firebrick"))))
  '(mode-line ((t (:background "#000" :foreground "#999" :box (:line-width 1 :color "#999") :height 0.75))))
  '(mode-line-highlight ((t (:box (:line-width 2 :color "grey40" :style released-button) :height 0.6))))
  '(mode-line-inactive ((t (:inherit mode-line :background "#000" :foreground "#333"))))
@@ -64,9 +65,11 @@
  ;; If there is more than one, they won't work right.
  '(chm-view-delay 1)
  '(hl-paren-colors (quote ("#f00" "#ff0" "#0f0" "#00ced1" "#9400d3")))
+ '(js3-allow-member-expr-as-function-name t)
  '(js3-consistent-level-indent-inner-bracket t)
  '(js3-curly-indent-offset 2)
- '(js3-global-externs (list "$" "localStorage" "JSON"))
+ '(js3-global-externs (quote ("$" "localStorage" "JSON" "setInterval" "clearInterval")))
+ '(js3-highlight-level 3)
  '(js3-indent-level 2)
  '(less-css-compile-at-save t)
  '(less-css-lessc-options (list "-x"))
