@@ -13,12 +13,6 @@
                                (hs-hide-level 2)))
 
 
-;; dirty fix for js3-mode
-(defadvice js3-mode-advice (after js3-mode)
-  (my-hs))
-(ad-activate 'js3-mode-advice)
-
-
 ;; 导出的时候就不必隐藏了。
 (add-hook 'htmlize-before-hook   'hs-show-all)
 
@@ -40,5 +34,8 @@
 
 (add-hook 'html-mode-hook (lambda ()
 			    (local-set-key (kbd "C-'") 'my-toggle-selective-display)))
+
+(add-hook 'js3-mode-hook (lambda ()
+			   (local-set-key (kbd "C-'") 'js3-mode-toggle-element)))
 
 (provide 'init-hs)
