@@ -60,7 +60,7 @@
  (position . 1))
 ("org-capture-last-stored"
  (filename . "~/org/journal.org")
- (front-context-string . "**** 偶记\n\n     最近")
- (rear-context-string . " 2012-11-13 星期二\n")
- (position . 22367))
+ (front-context-string . "**** 求是潮两个月总结\n**")
+ (rear-context-string . " 2012-11-23 星期五\n")
+ (position . 22475))
 )

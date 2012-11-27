@@ -11,8 +11,8 @@
 ;; (menu-bar-mode (quote toggle))
 ;;; Modeline
 ;; 电池
-(setq battery-mode-line-format "[%b%p%%]")
-(display-battery-mode 1)
+;; (setq battery-mode-line-format "[%b%p%%]")
+;; (display-battery-mode)
 ;; 时间
 (setq display-time-24hr-format t)
 (setq display-time-day-and-date t)
@@ -65,6 +65,16 @@
         ))
 (golden-ratio-enable)
 
+;; SmartMode Line
+(require 'smart-mode-line)
+(sml/setup)
+(add-to-list 'sml/replacer-regexp-list '("^~/Dropbox/Projects/In-Development/" ":ProjDev:"))
+(add-to-list 'sml/replacer-regexp-list '("^~/Documents/Work/" ":Work:"))
 
+;; Added in the right order, they even work sequentially:
+(add-to-list 'sml/replacer-regexp-list '("^:DB:Documents" ":DDocs:"))
+(add-to-list 'sml/replacer-regexp-list '("^~/Dropbox/" ":DB:"))
+(add-to-list 'sml/replacer-regexp-list '("^~/Git-Projects/" ":Git:"))
+(add-to-list 'sml/replacer-regexp-list '("^:Git:\\(.*\\)/src/main/java/" ":G/\\1/SMJ:"))
 
 (provide 'init-ui)

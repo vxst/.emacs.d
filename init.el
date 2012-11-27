@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-27 12:52:48 Zeno Zeng>
+;; Time-stamp: <2012-11-27 13:08:52 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/modes")
@@ -6,6 +6,7 @@
 (add-to-list 'load-path "~/.emacs.d/modes/less-css-mode")
 (add-to-list 'load-path "~/.emacs.d/modes/js3-mode")
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.4")
+(add-to-list 'load-path "~/.emacs.d/elpa/smart-mode-line-1.7.1")
 (add-to-list 'load-path "~/.emacs.d/elpa/popup-0.5")
 (add-to-list 'load-path "~/.emacs.d/elpa/gitty-1.0")
 (add-to-list 'load-path "~/.emacs.d/require/emacs-w3m")
