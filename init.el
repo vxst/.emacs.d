@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-19 21:05:05 Zeno Zeng>
+;; Time-stamp: <2012-11-27 12:52:48 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/modes")
@@ -12,7 +12,6 @@
 (add-to-list 'load-path "~/.emacs.d/require/o-bloger")
 (add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-0.5.4")
 (add-to-list 'load-path "~/.emacs.d/elpa/org-20120903")
-
 
 (require 'init-ui)
 (require 'init-personal)
@@ -43,7 +42,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#000" :foreground "#fff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "文泉驿等宽正黑"))))
+ '(default ((t (:inherit nil :stipple nil :background "#000" :foreground "#fff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "Source Code Pro"))))
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:background "#111" :foreground "#999" :height 1.0))))
  '(font-lock-constant-face ((t (:foreground "#20b2aa"))))
