@@ -13,16 +13,16 @@
 ;; 电池
 ;; (setq battery-mode-line-format "[%b%p%%]")
 ;; (display-battery-mode)
-;; 时间
-(setq display-time-24hr-format t)
-(setq display-time-day-and-date t)
-(setq display-time-format "[%m-%d %a %H:%M]")
-;; 不要显示load average
-(setq display-time-load-average-threshold 100)
-(display-time)
-(setq display-time-24hr-format t)
-(setq column-number-mode t)
-(setq line-number-mode t)
+;; ;; 时间
+;; (setq display-time-24hr-format t)
+;; (setq display-time-day-and-date t)
+;; (setq display-time-format "[%m-%d %a %H:%M]")
+;;  ;; 不要显示load average
+;; (setq display-time-load-average-threshold 100)
+;; (display-time)
+;; (setq display-time-24hr-format t)
+;; (setq column-number-mode t)
+;; (setq line-number-mode t)
 ;; 标题栏 
 (setq frame-title-format "%f")
 ;; bu显示匹配括号

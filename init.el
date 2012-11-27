@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-27 13:08:52 Zeno Zeng>
+;; Time-stamp: <2012-11-27 14:10:32 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/modes")
@@ -6,7 +6,6 @@
 (add-to-list 'load-path "~/.emacs.d/modes/less-css-mode")
 (add-to-list 'load-path "~/.emacs.d/modes/js3-mode")
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.4")
-(add-to-list 'load-path "~/.emacs.d/elpa/smart-mode-line-1.7.1")
 (add-to-list 'load-path "~/.emacs.d/elpa/popup-0.5")
 (add-to-list 'load-path "~/.emacs.d/elpa/gitty-1.0")
 (add-to-list 'load-path "~/.emacs.d/require/emacs-w3m")
@@ -36,7 +35,6 @@
 (require 'init-lisp)
 
 (require 'init-etc)
-
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -69,16 +67,18 @@
  '(chm-view-delay 1)
  '(hl-paren-colors (quote ("#f00" "#ff0" "#0f0" "#00ced1" "#9400d3")))
  '(js3-allow-member-expr-as-function-name t)
+ '(js3-auto-indent-p t)
  '(js3-consistent-level-indent-inner-bracket t)
  '(js3-curly-indent-offset 2)
+ '(js3-enter-indents-newline t)
  '(js3-global-externs (quote ("$" "localStorage" "JSON" "setInterval" "clearInterval" "setTimeout")))
- '(js3-auto-indent-p t)         ; it's nice for commas to right themselves.
- '(js3-enter-indents-newline t) ; don't need to push tab before typing
- '(js3-indent-on-enter-key t)   ; fix indenting before moving on
-
  '(js3-indent-level 2)
+ '(js3-indent-on-enter-key t)
  '(less-css-compile-at-save t)
  '(less-css-lessc-options (list "-x"))
  '(org-agenda-span (quote month))
  '(org-clock-out-remove-zero-time-clocks t)
+ '(sml/show-battery nil)
+ '(sml/show-client t)
+ '(sml/show-time t)
  '(tags-table-list (quote ("~/src/emacs-24.1/lisp/TAGS"))))

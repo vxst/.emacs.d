@@ -422,7 +422,7 @@ Otherwise, setup the mode-line."
                            'help-echo "Read-Only Buffer"))
               
               ((buffer-modified-p)
-               (propertize "×"
+               (propertize "Ã—"
                            'face 'sml/modified
                            'help-echo (if (buffer-file-name)
                                           (format-time-string
