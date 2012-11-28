@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-11-27 19:37:02 Zeno Zeng>
+;; Time-stamp: <2012-11-28 22:20:30 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/modes")
@@ -19,6 +19,15 @@
 (require 'init-personal)
 (require 'init-functions)
 
+(require 'init-gimp)
+(require 'init-js)
+(require 'init-css)
+(require 'init-php)
+(require 'init-markdown)
+(require 'init-html)
+(require 'init-lisp)
+
+
 (require 'init-elpa)
 (require 'init-hs)
 (require 'init-auto-complete)
@@ -28,13 +37,6 @@
 (require 'init-w3m)
 (require 'init-org)
 
-(require 'init-js)
-(require 'init-css)
-(require 'init-php)
-(require 'init-markdown)
-(require 'init-gimp)
-(require 'init-html)
-(require 'init-lisp)
 
 (require 'init-etc)
 
