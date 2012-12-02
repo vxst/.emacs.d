@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-12-02 14:18:37 Zeno Zeng>
+;; Time-stamp: <2012-12-02 14:20:31 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/modes")
@@ -35,6 +35,7 @@
 (require 'init-backup)
 (require 'init-vc)
 (require 'init-dired)
+(require 'init-shell)
 
 (require 'init-w3m)
 (require 'init-org)
