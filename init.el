@@ -1,9 +1,10 @@
-;; Time-stamp: <2012-11-28 22:20:30 Zeno Zeng>
+;; Time-stamp: <2012-12-02 14:18:37 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/modes")
 (add-to-list 'load-path "~/.emacs.d/require")
 (add-to-list 'load-path "~/.emacs.d/require/php-eldoc")
+(add-to-list 'load-path "~/.emacs.d/require/css-eldoc")
 (add-to-list 'load-path "~/.emacs.d/modes/less-css-mode")
 (add-to-list 'load-path "~/.emacs.d/modes/js3-mode")
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.4")
@@ -33,6 +34,7 @@
 (require 'init-auto-complete)
 (require 'init-backup)
 (require 'init-vc)
+(require 'init-dired)
 
 (require 'init-w3m)
 (require 'init-org)
