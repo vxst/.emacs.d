@@ -1,0 +1,2218 @@
+  1040tt		      available	 U.S. tax calculator for form 1040 filers
+  123-menu		      available	 Simple menuing system, reminiscent of Lotus 123 in DOS
+  Enhanced-Ruby-Mode	      available	 Replacement for ruby-mode which uses ruby 1.9's Ripper to parse and indent
+  Execute		      available	 
+  LazyCatDepend		      available	 
+  LazyCatFont		      available	 
+  LazyCatKeystoke	      available	 
+  LazyCatRedefine	      available	 
+  LazyCatSetup		      available	 
+  LazyCatStartup	      available	 
+  LazyCatTheme		      available	 
+  PowerShell-Mode	      available	 Mode for editing Powershell scripts
+  Powershell		      available	 run powershell as an inferior shell in emacs
+  ProofGeneral		      available	 Proof General is a generic front-end for proof assistants (also known as interactive theorem provers)
+  STING-software-engineering-glossary available	
+  SuperDuperRedundantPlus+    available	 
+  TeXMed		      available	 Query and retrieve BibTeX from NCBI pubmed via TeXMed in Emacs
+  UniBasic		      available	 
+  a-menu		      available	 create a menu from a specified directory
+  abbrev-complete	      available	 Abbrev mode completion function
+  abc-mode		      available	 Major mode for editing abc music files
+  ac-R			      available	 Auto-completion-mode support for R
+  ac-anything		      available	 Auto Complete with Anything
+  ac-anything2		      available	 ac-anything.el for the latest version of auto-complete.el
+  ac-dabbrev		      available	 Emacs auto-complete plugin for Dynamic Abbreviations
+  ac-ghc-mod		      available	 
+  ac-lilypond		      available	 Set up the use of LilyPond with auto-complete
+  ac-math		      available	 This is an add-on which defines three ac-sources for the auto-complete package
+  ac-octave		      available	 octave completions support for auto-complete
+  ac-python		      available	 Simple Python Completion Source for Auto-Complete
+  ac-slime		      available	 Emacs auto-complete plugin for Slime symbols
+  accelerate		      available	 pump numeric arg for auto-repeated interactive commands
+  acd			      available	 A major mode to edit emboss acd files
+  ace-jump-mode		      available	 A quick cursor location minor mode for emacs
+  ack			      available	 Use ack where you might usually use grep.
+  acme-search		      available	 right-click searching
+  actionscript-mode-connors   available	 actionscript mode derived from cc-mode
+  actionscript-mode-haas-5.6  available	 major mode for editing actionscript code
+  actionscript-mode-haas-7.0  available	 A simple mode for editing Actionscript 3 files
+  active-menu		      available	 Active Menu toggles the display of the menu bar automatically when the mouse comes close to it. Otherwise you get one more line of code.
+  ada-gpr		      available	 major-mode for editing GNAT project files
+  adc			      available	 
+  adoc-mode		      available	 A major-mode for editing AsciiDoc files in Emacs.
+  aes			      available	 Implementation of AES
+  ahg			      available	 An Emacs front-end for the Mercurial SCM.
+  ajc-java-complete-my-config-example available	Auto Java Completion for GNU Emacs
+  akkadian		      available	 
+  alarm			      available	 Alarm
+  alert			      available	 Growl-style notification system for Emacs
+  align			      available	 aling text seperated by whitespaces in columns
+  align-by-current-symbol     available	 Align lines containing a symbol according to that symbol.
+  align-let		      available	 Align command for `let' forms and `setq' lists
+  alpha-window		      available	 
+  alt-font-menu		      available	 alternative (auto generated) font menu for x
+  amarok		      available	 Simple interface to Amarok music player
+  amazon		      available	 Emacs client for Amazon E-Commerce Service (i.e. use Emacs to search books on Amazon.com)
+  amigo			      available	 interface with friendfeed.com
+  ampc			      available	 Asynchronous Music Player Controller
+  analog		      available	 monitor lists of files or command output
+  anaphora		      available	 anaphoric macros providing implicit temp variables
+  anchored-transpose	      available	 Transposes a phrase around an anchor phrase
+  android-mode		      available	 Emacs minor mode for Android application development
+  annotate		      available	 simple file annotation system
+  ansi			      available	 This package defines functions that turns simple strings to ansi strings. Turning a string into an ansi string can be to add color to a text, add color in the background of a text or adding a style, such as bold, underscore or italic.
+  ansi-color		      available	 translate ANSI escape sequences into faces
+  ansys-mod		      available	 editing Ansys log files under Emacs
+  ant			      available	 Helpers for using ant with emacs.
+  any-ini-mode		      available	 Keyword highlighting for .ini files etc based on a 'source of truth'
+  anything		      available	 Open anything / QuickSilver-like candidate-selection framework
+  anything-R		      available	 anything-sources and some utilities for GNU R.
+  anything-TamasPatrovics     available	 open anything
+  anything-ack		      available	 search refinement of ack result with anything
+  anything-adaptive	      available	 Sort candidates by usage frequency
+  anything-auto-install	      available	 Integrate auto-install.el with anything.el
+  anything-books	      available	 Anything command for PDF books
+  anything-c-aspell-interactively available Interactive aspell with `anything'.
+  anything-c-javadoc	      available	 anything-sources for opening javadocs.
+  anything-c-shell-history    available	 shell history anything.el interface
+  anything-complete	      available	 completion with anything
+  anything-config	      available	 Applications libary for `anything.el'
+  anything-dabbrev-expand     available	 dabbrev-expand / dabbrev-completion / partial-dabbrev using anything.el
+  anything-delicious	      available	 
+  anything-el-swank-fuzzy     available	 anything-sources for el-swank-fuzzy.el
+  anything-emms		      available	 Integrate EMMS with `anything.el'
+  anything-eproject	      available	 Anything integration for eproject.
+  anything-etags	      available	 
+  anything-extension	      available	 Extension functions for anything.el
+  anything-exuberant-ctags    available	 Exuberant ctags anything.el interface
+  anything-grep		      available	 search refinement of grep result with anything
+  anything-gtags	      available	 GNU GLOBAL anything.el interface
+  anything-howm		      available	 `anything' interface for `howm'
+  anything-include	      available	 
+  anything-ipa		      available	 Anything interface of In Place Annotation
+  anything-ipython	      available	 
+  anything-irfc		      available	 Integration irfc.el with anything.el
+  anything-kyr		      available	 Show context-aware commands
+  anything-kyr-config	      available	 Configuration of anything-kyr.el
+  anything-match-plugin	      available	 Multiple regexp matching methods for anything
+  anything-menu		      available	 anything.el candidate selection outside Emacs 
+  anything-mercurial	      available	 
+  anything-migemo	      available	 Migemo plug-in for anything
+  anything-obsolete	      available	 obsolete functions of anything
+  anything-orgcard	      available	 browse the orgcard by anything
+  anything-rcodetools	      available	 accurate Ruby method completion with anything
+  anything-rurima	      available	 Look up Japanese Ruby Reference Manual with anything.el
+  anything-search-file	      available	 Search file by locate or find.
+  anything-show-completion    available	 Show selection in buffer for anything completion
+  anything-slime	      available	 anything-sources and some utilities for SLIME.
+  anything-startup	      available	 anything.el startup file
+  anything-traverse	      available	 Use traverselisp within anything.
+  anything-yaetags	      available	 Yet another etags interface with anything.
+  aok			      available	 various useful ways to do `multi-occur'
+  apache-mode		      available	 Major mode for editing Apache configuration files
+  apel			      available	 APEL (A Portable Emacs Library) is a library to support to write portable Emacs Lisp programs.
+  applescript-mode	      available	 Emacs mode for editing AppleScript.
+  application		      available	 start application for files matching entries from application-caller-list
+  apply-mode-line-format      available	 Return `mode-line-format' as a string
+  appt			      available	 Notification of appointments from your diary file.
+  apropos+		      available	 Extensions to `apropos.el'
+  apropos-fn+var	      available	 Apropos for functions and variables
+  apt-utils		      available	 Emacs interface to APT (Debian package management)
+  archive-region	      available	 Move region to archive file instead of killing
+  armenian		      available	 
+  arrange-buffers	      available	 display all buffers which name and mode match a regexp 
+  artbollocks-mode	      available	 A minor mode to guide art writers
+  artist-xmas		      available	 xemacs port of artist.el
+  arxiv-reader		      available	 an interface for reading and sorting arXiv abstracts.
+  ascii			      available	 ASCII code display.
+  ascii-table		      available	 simple ASCII table
+  asciidoc		      available	 Emacs support for writing Asciidoc
+  ascope		      available	 
+  atim-unscroll		      available	 Minor mode for restoring buffer look as it was before scrolling.
+  atom-blogger		      available	 Utilities for Atom Blogger API
+  auctex		      available	 AUCTeX is an extensible package for writing and formatting TeX files in GNU Emacs and XEmacs. It supports many different TeX macro packages, including AMS-TeX, LaTeX, Texinfo, ConTeXt, and docTeX (dtx files).
+  audel			      available	 An audtool frontend for Emacs
+  auto-async-byte-compile     available	 Automatically byte-compile when saved
+  auto-capitalize	      available	 Automatically capitalize (or upcase) words
+  auto-complete		      available	 The most intelligent auto-completion extension.
+  auto-complete+	      available	 Auto complete plus
+  auto-complete-chunk	      available	 Auto-completion for dot.separated.words.
+  auto-complete-clang	      available	 Auto-complete sources for Clang. Combine the power of AC, Clang and Yasnippet.
+  auto-complete-css	      available	 Auto-complete sources for CSS
+  auto-complete-emacs-lisp    available	 Auto-complete sources for emacs lisp
+  auto-complete-etags	      available	 Auto-complete sources for etags
+  auto-complete-extension     available	 Some extension for auto-complete-mode
+  auto-complete-latex	      available	 A LaTeX extention for auto-complete-mode
+  auto-complete-rst	      available	 Auto-complete extension for ReST and Sphinx
+  auto-complete-ruby	      available	 Auto-complete sources for Ruby
+  auto-complete-verilog	      available	 Auto-completion source for verilog
+  auto-complete-yasnippet     available	 Auto-complete sources for YASnippet
+  auto-dictionnary	      available	 Auto-dictionary-mode tries to guess the buffer's text language and adjusts flyspell automatically.  Currently English, German, French, Spanish, Swedish, Slovenian, Hungarian, Romanian and Portuguese are somewhat supported.  Additional languages are easily added.
+  auto-document		      available	 Automatic document generator of Emacs Lisp
+  auto-indent		      available	 automatically indent source code
+  auto-indent-mode	      available	 Automatically Indent  when pressing return, pasting, and other customizable features.
+  auto-insert-choose	      available	 
+  auto-install		      available	 Auto install elisp file
+  auto-install-batch-list     available	 Data file of auto-install.el
+  auto-install-extension      available	 Some extension functions for auto-install.el
+  auto-mark		      available	 Mark automatically
+  auto-pair+		      available	 Autopair handler to extend Autopair behavior.
+  auto-pair-plus	      available	 Autopair handler to extend Autopair behavior.
+  auto-preamble		      available	 
+  auto-recomp		      available	 Automatically recompile Emacs Lisp files
+  auto-scroll		      available	 Automatically scroll down line.
+  auto-yasnippet	      available	 Quickly create disposable yasnippets
+  autofit-frame		      available	 Automatically resize one-window frames to fit
+  autoinfo		      available	 show automatic information for the current selection
+  autoload+		      available	 Extensions to `autoload.el'.
+  autopair		      available	 Autopair is an extension to the Emacs text editor that automatically pairs braces and quotes.
+  autosmiley		      available	 Convert smileys into their graphical representation
+  autotest		      available	 ZenTest's autotest integration with emacs.
+  avenue-mode		      available	 major mode for editing ESRI avenue scrips
+  awk-it		      available	 Little utility that combines awk and yasnippet.
+  axcess		      available	 Axcess and Netlinx editing support
+  ayr-china-util	      available	 
+  babel			      available	 An Emacs interface to different translation services available on the Internet.
+  back-button		      available	 Visual navigation through mark rings
+  background		      available	 
+  backport-package	      available	 lift package.el from emacs 24 for use in emacs 23
+  backup-each-save	      available	 backup each savepoint of a file
+  basic			      available	 major mode for editing basic and visual basic code
+  basic-edit-toolkit	      available	 Basic edit toolkit.
+  batch-mode		      available	 major mode for editing ESRI batch scrips
+  bazaar		      available	 
+  bbcode-mode		      available	 A simple derived-mode for editing bbcode in emacs.
+  bbdb			      available	 The Insidious Big Brother Database (BBDB) is a contact management utility.
+  bbdb-mew		      available	 BBDB interface to Mew
+  bbdb-sms		      available	 bbdb functions for sending SMS text messages with sms-mode
+  bbdb-vcard		      available	 vCard Import and Export for The Insidious Big Brother Database (BBDB)
+  bbdb-vcard-export	      available	 export BBDB as vCard files
+  bc-mode		      available	 BC code editing commands for Emacs
+  bc-mode-original	      available	 
+  befunge-mode		      available	 An interpreter/debugger for the 2D Befunge programming language
+  beginner		      available	 simplify Emacs
+  bencode		      available	 Serialize integers, strings, lists, and hash-tables
+  better-registers	      available	 facilities for more powerful registers
+  bf			      available	 BrainFuck compiler written in Emacs-Lisp
+  bfocus		      available	 
+  bg-rlogin-setup	      available	 Rlogin setup
+  bhl			      available	 From (P)lain text to (H)tml and (L)aTeX.
+  bibretrieve		      available	 Retrieve BibTeX entries from the web.
+  bibsnarf		      available	 get BibTeX format bibliography entries from the net
+  bibtex-utils		      available	 utilities for BibTeX
+  bibus			      available	 Major mode for displaying and managing reference keys
+  bidi			      available	 bidi support for Emacs
+  bidi-table-test	      available	 test bidi type categories for Emacs -*- coding: iso-2022-7bit -*-
+  bindings+		      available	 Enhancements to standard library `bindings.el'.
+  birds-of-paradise-plus-theme available A Emacs port of Joseph Bergantine's light-on-dark theme by the same name.
+  bitlbee		      available	 Help get Bitlbee (http://www.bitlbee.org) up and running
+  bitly			      available	 Shorten URLs with bit.ly from emacs
+  bk			      available	 Emacs support for BitKeeper configuration management
+  blank-mode		      available	 minor mode to visualize TAB, (HARD) SPACE, NEWLINE
+  blender-python-mode	      available	 The Blender Python Mode makes it easy to use Emacs for Blender Python development.
+  blip			      available	 interface with blip.pl
+  blorg			      available	 Blogging engine using Emacs Org-mode to create static pages
+  bm-ext		      available	 List all bookmarks in all buffers
+  bmi			      available	 Calculate body mass index (BMI)
+  bookmark+		      available	 Extensions to standard library `bookmark.el'
+  bookmark+-1		      available	 First part of package Bookmark+.
+  bookmark+-bmu		      available	 Bookmark+ code for the `*Bookmark List*' (bmenu).
+  bookmark+-chg		      available	 Change logs for Bookmark+ libraries.
+  bookmark+-doc		      available	 Documentation for package Bookmark+.
+  bookmark+-key		      available	 Bookmark+ key and menu bindings.
+  bookmark+-lit		      available	 Bookmark highlighting for Bookmark+.
+  bookmark+-mac		      available	 Macros for Bookmark+.
+  bookmark-add		      available	 creates the buffer for work with bookmarks
+  bookmark-extensions	      available	 Extensions to standard library bookmark.el.
+  bookmark-iterator	      available	 iterate through tags - similar to DevStudio
+  boxquote		      available	 Quote text with a semi-box.
+  bpath			      available	 small bookmark tool
+  bracketphobia		      available	 Protect the user from the Bracket Invasion
+  breadcrumb		      available	 Breadcrumb is an add-on module for Emacs that allows you to set a series of quick bookmarks in the file buffers, and jump back to them quickly.
+  browse-kill-ring	      available	 Interactively insert items from kill-ring
+  browse-kill-ring+	      available	 Extensions to `browse-kill-ring.el'.
+  browse-url-dwim	      available	 Context-sensitive external browse URL or Internet search
+  browse-urn		      available	 Functionality for browsing URNs
+  bs-ext		      available	 Extensions to emacs buffer-selection library (bs.el)
+  bst-mode		      available	 major mode for editing BibTeX style files
+  btjunkie-search	      available	 brutal query engine against btjunkie.org
+  buff-menu+		      available	 Extensions to `buff-menu.el'.    -*- coding:utf-8 -*-
+  buffer-extension	      available	 Some enhanced functions for buffer manipulate.
+  buffer-move		      available	 Swap buffers without typing C-x b on each window
+  buffer-ring		      available	 A torus for buffer navigation. A ring of buffers, and a ring of buffer rings.
+  buffer-stack		      available	 Enhanced intelligent switch-to-other-buffer replacement.
+  buffer-stack-suppl	      available	 Bubble though buffers of the same major-mode
+  buffer-time-stamp	      available	 display buffer time stamps in the mode line
+  buffer-utils		      available	 Buffer-manipulation utility functions
+  bug			      available	 A simple, alternative interface to the ant command line
+  bundler		      available	 Interact with Bundler from Emacs
+  buqis			      available	 Quick buffers switcher.
+  button-lock		      available	 Clickable text defined by regular expression
+  byrd-biff		      available	 Mail notification
+  byte-code-cache	      available	 Automatically cache byte-compiled versions of .el files as they're loaded, automatically recompiling them as necessary.
+  bzr-ui		      available	 Utility functions to navigate a working copy of a bazaar repository
+  c-eldoc		      available	 helpful description of the arguments to C functions
+  c-toggle-dot-pointer	      available	 Functions for toggling a variable in a C function between pointer and non-pointer
+  cabecera		      available	 
+  cacoo			      available	 Minor mode for Cacoo (http://cacoo.com)
+  cal-china-x		      available	 Chinese calendar extras
+  cal-desk-calendar	      available	 Desk calendar style extensions to Emacs' Calendar/Diary
+  cal-html		      available	 calendar functions for printing calendars with HTML.
+  cal-opts		      available	 Set various calendar, diary etc. options.
+  calc-inline		      available	 Evaluate calc-expression within ordinary text.
+  calendar+		      available	 Calendar, diary and appointments stuff.
+  calfw			      available	 A calendar framework for Emacs (with support for `org-mode', `howm' and iCal files)
+  caml-mode		      available	 O'Caml code editing commands for Emacs
+  cc-mode+		      available	 Extensions to `c-mode.el' & `cc-mode.el'.
+  cdb-gud		      available	 Grand Unified Debugger mode for running CDB
+  cdi			      available	 interface between Emacs and command line CD players
+  cdlatex-mode		      available	 a minor mode which re-implements many features also found in the AUCTeX LaTeX mode.
+  cedet			      available	 CEDET is a Collection of Emacs Development Environment Tools written with the end goal of creating an advanced development environment in Emacs.
+  celssc-mode		      available	 Major mode for editing celestia script files
+  centered-cursor-mode	      available	 cursor stays vertically centered
+  cexp			      available	 Poorman's implementation of combined expressions.
+  cfml-helper-mode	      available	 Major mode for composing cfml files.
+  cg-mode		      available	 mode for editing cg programs
+  cgi			      available	 using Emacs for CGI scripting
+  cgi+			      available	 Run CGI inside emacs
+  cheat			      available	 Provide a handy interface to cheat
+  cheezburger		      available	 ICanHasCheezburger.com viewer for emacs!
+  chill-mode		      available	 
+  chill-modee		      available	 major mode for editing CHILL code.
+  chinese-chess		      available	 Chinese Chess Game   -*- coding: utf-8 -*-
+  chinese-chess-pvc	      available	 a chinese chess computer player -*- coding: utf-8 -*-
+  chinese-menu		      available	 Add chinese menu bar -*- coding: utf-8 -*-
+  chinese-t-menu	      available	 Add chinese-t menu bar -*- coding: utf-8 -*-
+  chm-view		      available	 View CHM file.
+  chuck-mode		      available	 An editing mode for the chuck language.
+  circe			      available	 Circe is yet another client for IRC in Emacs. It provides most features one would expect from an IRC client, with sane defaults to start from.
+  cisco-router-mode	      available	 Major mode for editing Cisco router configuration files
+  cite			      available	 Citing engine for Gnus
+  cj5input		      available	 
+  cl-array		      available	 
+  claire-mode		      available	 for claire, an object oriented language
+  clang-completion-mode	      available	 Clang Code-Completion minor mode, for use with C/Objective-C/C++
+  clevercss		      available	 This is a Emacs major mode for editing CleverCSS files. It provides smart indentation, syntax highlighting and basic text manipulation commands.
+  clibpc		      available	 partial complete functions for c libraries
+  clojure-mode		      available	 Emacs support for the Clojure language.
+  closure		      available	 Experimental closure prototypes
+  closure2		      available	 closures for elisp
+  cm-mode		      available	 Wrapper for CodeMirror-style emacs modes.
+  cm-path		      available	 
+  cm-string		      available	 
+  cmake-mode		      available	 Provides syntax highlighting and indentation for CMakeLists.txt and *.cmake source files.
+  cmd-mode		      available	 Edit of MS Windows cmd and bat files ;; -*- coding: sjis-dos -*-
+  cobol-mode		      available	 Handles only what little Cobol I happen to know
+  code-definition-window      available	 
+  codepad		      available	 Emacs integration for codepad.org (a web paste service).
+  coffee-mode		      available	 Emacs Major Mode for CoffeeScript
+  col-highlight		      available	 Highlight the current column.
+  color-browser		      available	 A utility for designing Emacs color themes.
+  color-moccur		      available	  multi-buffer occur (grep) mode
+  color-occur		      available	 
+  color-theme		      available	 An Emacs-Lisp package with more than 50 color themes for your use. For questions about color-theme
+  color-theme-ahei	      available	 Color Theme by ahei
+  color-theme-almost-monokai  available	 A beautiful, fruity, calm, yet dark color theme for Emacs.
+  color-theme-black-purple    available	 
+  color-theme-chocolate-rain  available	 Chocolate rain color theme for Emacs based on Ludvig Widman's Choco TextMate theme
+  color-theme-desert	      available	 A port of VIM's desert color theme to Emacs.
+  color-theme-domq	      available	 DominiqueQuatravaux's very own color theme!
+  color-theme-emacs-revert-theme available 
+  color-theme-empty-void      available	 
+  color-theme-inkpot	      available	 
+  color-theme-ir-black	      available	 IR Black Color Theme for Emacs.
+  color-theme-mac-classic     available	 A emacs colour theme which resembles the TextMate Mac Classic colour theme.
+  color-theme-maker	      available	 install color themes
+  color-theme-railscasts      available	 Railscasts color theme for Emacs.
+  color-theme-reg	      available	 is modified based on color-theme-x.el, convert color themes to win32 register settings. 
+  color-theme-sanityinc	      available	 Two pleasant medium-contrast Emacs color themes in light and dark flavours
+  color-theme-solarized	      available	 Emacs highlighting using Ethan Schoonover's Solarized color scheme
+  color-theme-subdued	      available	 Color theme based on the Tango color palette
+  color-theme-tango	      available	 Color theme based on Tango Palette. Created by danranx@gmail.com
+  color-theme-tango-2	      available	 A color theme based on Tango Palette.
+  color-theme-tangotango      available	 Another color theme based on the Tango palette.
+  color-theme-tomorrow	      available	 Emacs highlighting using Chris Charles's Tomorrow color scheme
+  color-theme-twilight	      available	 Twilight color theme for GNU Emacs inspired by TextMate.
+  color-theme-ubuntu2	      available	 
+  color-theme-vim-insert-mode available	 
+  color-theme-x		      available	 convert color themes to X11 resource settings
+  color-theme-zen-and-art     available	 Irfn's zen with a bit of art.
+  color-theme-zenburn	      available	 Just some alien fruit salad to keep you in the zone
+  column-marker		      available	 Highlight certain character columns
+  columnize		      available	 Formats a list of items into columns (pillars)
+  comint-kill-output-to-kill-ring available  Kill last comint output and put it in the kill ring
+  comint-scroll-to-bottom     available	 Keep the comint prompt at the bottom
+  command-frequency	      available	 This page lists emacs's commands in the order of their frequency of use.
+  command-remapping-settings  available	 Remap commands in all modes from a custom variable
+  compile+		      available	 Extensions to `compile.el'.
+  compile+20		      available	 Extensions to `compile.el'.
+  compile-		      available	 Extensions to `compile.el'.
+  compile-20		      available	 Extensions to `compile.el'.
+  compile-dwim		      available	 Automatic generate compile-command
+  compile-helper	      available	 
+  completion-11-4	      available	 
+  completion-selection	      available	 Completion mechanism selection for completion-ui
+  completion-ui-more-sources  available	 Completion-UI more completion sources
+  confluence-el		      available	 Atlassian has a wiki called Confluence. This extension allows you to interact with Confluence from Emacs.
+  constraint		      available	 a constraint propagation library in elisp
+  contentswitch		      available	 switch to buffer/file by content
+  context		      available	 
+  control-lock		      available	 Like caps-lock, but for your control key.  Give your pinky a rest!
+  cook-mode		      available	 Major mode for writing cook (a make replacement) files
+  coptic		      available	 
+  copy-from-surrounding-lines available	 
+  copyedit		      available	 tweak editing commands for handling prose.
+  corba			      available	 A Client Side CORBA Implementation for Emacs
+  coroutine		      available	 Coroutines for Emacs Lisp
+  couchdb-document	      available	 couchdb document handler
+  couchdb-document-text	      available	 couchdb document as text
+  cperl-auto-name	      available	 auto name pm buffers
+  cperl-mode		      available	 Perl code editing commands for Emacs
+  cppsense		      available	 Simple, heuristic, tag-based C++ coding assistant
+  cricket		      available	 Get live cricket scores and news updates from inside emacs.
+  crontab-mode		      available	 Mode for editing crontab files
+  crosshairs		      available	 Highlight the current line and column.
+  cruisecontrol		      available	 Talking to a cruisecontrol server with emacs
+  cscope		      available	 Interface to cscope browser
+  csharp-mode		      available	 This is a mode for editing C# in emacs. It's based on cc-mode, v5.30.3 and above.
+  css-mode		      available	 Minor mode for CSS
+  css-mode-simple	      available	 A (very) minimal CSS mode.
+  css-palette		      available	 
+  cssh			      available	 ClusterSSH meets Emacs 
+  csv			      available	 Functions for reading and parsing CSV (Comma Separated Value) files.
+  csv-mode		      available	 CsvMode, csv-mode, is a package by FrancisJWright for editing comma separated value files (.csv).
+  csv-nav		      available	 Navigate and edit CSV files
+  ctypes		      available	 Enhanced Font lock support for custom defined types.
+  cursor-chg		      available	 Change cursor dynamically, depending on the context.
+  cus-edit+		      available	 Enhancements to `cus-edit.el'.
+  cycle-buffer		      available	 select buffer by cycling through
+  cygwin-mount		      available	 Teach EMACS about cygwin styles and mount points.
+  cyril-win-util	      available	  utilities for Cyrillic-CP1251 scripts. 
+  cyrillic-dvorak	      available	 
+  cyrillic-folding	      available	 support for Cyrillic -*- coding: iso-2022-7bit; -*-
+  cyrillic-win		      available	 support for Cyrillic-CP1251 -*- coding: iso-2022-7bit; -*-
+  cython-mode		      available	 Major mode for the Cython language
+  d-insert-assert	      available	 Automagical verbose assert insertion for D Programming Language
+  d-insert-import	      available	 insert import statement for D language
+  d-insert-import-data	      available	 Data file of d-insert-import.el
+  d-mode		      available	 Digitalmars-D-Mode for emacs
+  dabbrev-expand-multiple     available	 dabbrev-expand for multiple
+  darcsum		      available	 A pcl-cvs like interface for managing darcs patches
+  date-calc		      available	 date calculation and parsing routines
+  db-sql		      available	 Connect to SQL server using tramp syntax
+  dbgr			      available	 The Grand "Cathedral" Debugger rewrite: Towards a modular framework for interacting with external debuggers.
+  dbk			      available	 convert docbook to muse
+  ddl-mode		      available	 Handles the Tandem-Compaq-HP DDL language.
+  ddskk			      available	 A Japanese input method on Emacs.
+  def-face-const	      available	 Macro for defining faces & their variables.
+  defaultcontent	      available	 a templating tool. Fill new files with default content.
+  deferred		      available	 Simple asynchronous functions for emacs lisp
+  deferred-flyspell	      available	 Defer spell checking
+  defshell		      available	 Define inferior shells -*-unibyte: t; coding: iso-8859-1;-*-
+  deft			      available	 Deft is an Emacs mode for quickly browsing, filtering, and editing directories of plain text notes, inspired by Notational Velocity.
+  delim-col		      available	 prettify all columns in a region or rectangle
+  delsel		      available	 Delete the region (selection) upon char insertion or DEL.
+  descbinds-anything	      available	 Yet Another describe-bindings with anything
+  descr-text+		      available	 Extensions to `descr-text.el'.
+  desktop-menu		      available	 menu for managing Emacs desktops
+  devel-notes		      available	 Add annotation to sources and track them in an org file.
+  devkitemacs		      available	 Helper functions for working with the devkitpro package (NDS and PSP development)
+  df-mode		      available	 Minor mode to show space left on devices in the mode line 
+  dgpg			      available	 David's GPG Extensions for Emacs
+  di			      available	 Simple directory editor for GNU Emacs
+  dialog		      available	 dialog box interface using widgets, frames and windows
+  diameter-avp		      available	 Compute diameter-avp in hexadecimal-form
+  dict			      available	 Emacs interface to dict client
+  dictem		      available	 dict lookup
+  dictionary		      available	 Emacs package for talking to a dictionary server
+  diff+			      available	 Extensions to `diff.el' for Emacs 21 and later.
+  diff+20		      available	 Extensions to `diff.el' for Emacs 20 or older.
+  diff-git		      available	 A small emacs extension for working with the git index from within diff-mode
+  diff-mode-		      available	 Extensions to `diff-mode.el'.
+  diffstat		      available	 a mode for showing the summary of diff
+  dig			      available	 Domain Name System dig interface
+  dim-google		      available	 
+  diminish		      available	 An Emacs package that diminishes the amount of space taken on the mode line by the names of minor modes.
+  dired+		      available	 Extensions to Dired
+  dired-column-widths	      available	 Corrects column widths after entry modification.
+  dired-details		      available	 Make file details hide-able in dired
+  dired-details+	      available	 Extensions to `dired-details.el'.
+  dired-efap		      available	 Edit Filename At Point in a dired buffer
+  dired-extension	      available	 Some extension for dired
+  dired-filetype-face	      available	 set different faces for different filetype in dired buffer.
+  dired-isearch		      available	 isearch in Dired
+  dired-lis		      available	 Letter isearch in dired-mode
+  dired-open		      available	 Open varoius files in dired.
+  dired-plus		      available	 Extensions to Dired
+  dired-single		      available	 Reuse the current dired buffer to visit another directory
+  dired-sort		      available	 Sort files in dired.
+  dired-sort-map	      available	 
+  dired-sort-menu	      available	 provide menu/dialogue for dired sort options
+  dired-sort-menu+	      available	 Extensions to `dired-sort-menu.el'
+  dired-sync		      available	 Sync directories within dired
+  dired-toggle-sudo	      available	 Browse directory with sudo privileges.
+  dired-view		      available	 Dired view mode
+  diredful		      available	 colorful file names in dired buffers
+  direx			      available	 Directory Explorer
+  dirnav		      available	 Navigate folders and files with TAB
+  dirtree		      available	 Functions for building directory-tree lists
+  dirvars		      available	 Local variables that apply to an entire directory -*- local-enable-local-variables: nil -*-
+  disk			      available	 simplified find-file, revert-file, save-buffer interface
+  display-buffer-for-wide-screen available Set `display-buffer-function' for wide-screen display
+  display-hatebu	      available	 はてなブックマークでブックマークされた数をモードラインに表示する
+  distel		      available	 Distributed Emacs Lisp for Erlang.
+  dizzee		      available	 Utilities for managing subprocesses in Emacs
+  django-mode		      available	 Major mode for Django web framework.
+  dmacro		      available	 Dynamic MACRO
+  doc-mode		      available	 Fontlocking for AsciiDoc files. Dress up AsciiDoc text files with nice highlights.
+  doc-view-extension	      available	 Simple extensions for `doc-view'
+  docmap		      available	 display document map window
+  doi			      available	 Do Or Insert
+  doi-extension		      available	 Extension for doi.el
+  doit-mode		      available	 A major mode for organizing tasks.
+  dom			      available	 DOM implementation
+  doremi		      available	 Do Re Mi: Incremental change using arrow keys or mouse wheel.
+  doremi-cmd		      available	 Miscellaneous Do Re Mi commands
+  doremi-frm		      available	 Incrementally adjust face attributes and frame parameters.
+  doremi-mac		      available	 A macro for defining Do Re Mi commands.
+  dos			      available	 major mode for editing Dos scripts (batch files)
+  dos-indent		      available	 Adds indentation to Dos-mode
+  dot-emacs-helper	      available	 Some helper functions for .emacs
+  dot-mode		      available	 Minor mode to repeat typing or commands
+  dotemacs-xfq		      available	 
+  double-char		      available	 Get different insertion when you hit a char twice fast enought
+  double-type		      available	 keyboard operation method corresponding to double click on a mouse.
+  dove-ext		      available	 Emacs minor extensions written by David young
+  download-icicles	      available	 Download the Icicles Package
+  doxymacs		      available	 Doxymacs is Doxygen + {X}Emacs.
+  doxymacs-yard		      available	 
+  dpans2texi		      available	 onverts the TeX sources of the draft ANSI Common Lisp standard
+  dpaste		      available	 Emacs integration for dpaste.com
+  drag-stuff		      available	 Drag Stuff is a minor mode for Emacs that makes it possible to drag stuff, such as words, region and lines, around in Emacs.
+  drill-instructor	      available	  Enforce key-bind of Emacs.
+  drivein		      available	 
+  dropdown-list		      available	 Drop-down menu interface
+  dsvn			      available	 This is an interface for managing Subversion working copies.  It can show you an up-to-date view of the current status, and commit changes. If also helps you do other tasks such as updating, switching, diffing and more.
+  dtrt-indent		      available	 A minor mode that guesses the indentation offset originally used for creating source code files and transparently adjusts the corresponding settings in Emacs, making it more convenient to edit foreign files.
+  duck			      available	 A few utilities for Scheme programming
+  dummy-h-mode		      available	 switch major mode to c-/c++-/objc-mode on .h file
+  duplicate-line	      available	 Easily dublicate a line
+  duplicates		      available	 
+  durendal		      available	 A bucket of Emacs tricks for Clojure.
+  dvc			      available	 A unified emacs interface for a bunch of distributed revision control systems
+  dvc-init		      available	 
+  dvi-view		      available	 View a DVI file in an Emacs buffer
+  dying			      available	 Minor mode kills own buffer after lifetime
+  dynamic-fonts		      available	 Set faces based on available fonts
+  dynamic-ring		      available	 A dynamically sized ring structure.
+  e2wm			      available	 simple window manager for emacs
+  eassist		      available	 EmacsAssist, C/C++/Java/Python/ELisp method/function navigator.
+  ebay-template-mode	      available	 A handy template for editing auction listings.
+  ebay-template-tools	      available	 
+  ebib			      available	 Application to manage BibTeX database
+  ebs			      available	 easy buffer switch (ebs)
+  ecasound		      available	 Interactive and programmatic interface to Ecasound
+  ecasound-ewf		      available	 Ecasound .ewf major mode
+  ecb			      available	 Emacs Code Browser
+  echoline-mode		      available	 A minor mode for octave which highlights 
+  eclim			      available	 This project brings some of the great eclipse features to emacs developers.
+  ecmascript-mode	      available	 major mode for editing ECMAScript code
+  ectags-select		      available	 Select from multiple tags
+  edi-mode		      available	 edit raw EDI files
+  edict			      available	 emacs interface for edict
+  ediff+		      available	 Enhancements to Ediff
+  ediff-trees		      available	 Recursively ediff two directory trees 
+  edit-server		      available	 Emacs edit-server. This provides an edit server to respond to requests from the Chrome Emacs Chrome plugin.
+  edje-mode		      available	 Major mode for editing Edje files
+  eev-thierry		      available	 
+  eform			      available	 Web form like forms
+  egg			      available	 Egg is an Emacs interface to git. It's a suite composed of a minor-mode and various special-buffers presenting different UIs to help the user performing many git operations.
+  egocentric		      available	 Highlight your name inside emacs buffers
+  eight-puzzle		      available	 A simple little puzzle game
+  eijiro		      available	 英辞郎をanything.elを使って検索する
+  eim			      available	 emacs input method
+  eim-extension		      available	 Some extension for eim (Emacs Input Method)
+  eimp			      available	 Emacs Image Manipulation Package
+  ein			      available	 IPython notebook client in Emacs
+  eiv			      available	 emacs image viewer
+  el-autoyas		      available	 Automatic yasnippet creation for emacs lisp.
+  el-expectations	      available	 Minimalist unit testing framework
+  el-expectations-failure-sample available failure example of Emacs Lisp Expectations.
+  el-expectations-success-sample available success example of Emacs Lisp Expectations.
+  el-get		      installed	 Manage the external elisp bits and pieces you depend upon.
+  el-markup		      available	 Emacs Lisp to Markup
+  el-mock		      available	 Tiny Mock and Stub framework in Emacs Lisp
+  el-swank-fuzzy	      available	 fuzzy symbol completion.
+  eldoc-extension	      available	 Some extension for eldoc
+  electric-dot-and-dash	      available	 Different way to enter brackets
+  elein			      available	 Running leiningen commands from emacs
+  elhome		      available	 A scalable Emacs configuration framework
+  elisp-depend		      available	 
+  elisp-format		      available	 Format elisp code
+  elnode		      available	 Asynchronous HttpServer framework.
+  elscreen		      available	 Screen Manager for Emacsen
+  elscreen-buffer-list	      available	 
+  elscreen-edit-server	      available	 work together chrome and elscreen
+  elunit		      available	 A unit testing framework for Emacs Lisp code.
+  emacs-async		      available	 Simple library for asynchronous processing in Emacs
+  emacs-goodies-el	      available	 Miscellaneous add-ons for Emacs
+  emacs-grads		      available	 Grid Analysis and Display System (GrADS)
+  emacs-http-server	      available	 A rudimentary HTTP server in elisp.
+  emacs-init		      available	 Drew Adams's Emacs init file.
+  emacs-init-check	      available	 Automatic init file checker
+  emacs-jabber		      available	 A minimal jabber client
+  emacs-lock+		      available	 extensions to standard library `emacs-lock.el'
+  emacs-textmate	      available	 TextMate behaviour in Emacs
+  emacs-w3m		      installed	 A simple Emacs interface to w3m
+  emacs-wiki-finddead	      available	 Find dead files in your EmacsWiki
+  emacschrome		      available	 A Chromium "clone" of It's All Text for spawning an editor to edit text areas in browsers. Based on David Hilley's original Chromium extension.
+  emacsserver		      available	 A server in emacs-lisp
+  email			      available	 Extensions to mail-mode
+  embeddedchangelog	      available	 edit a change log embedded in a file
+  emboss		      available	 Commands to browse and write emboss code
+  emdroid		      available	 Android Wrappers for Emacs
+  emms			      available	 The Emacs Multimedia System
+  emms-extension	      available	 Some extensions for emms
+  emms-get-lyrics	      available	 Get the lyrics of the song emms is currently playing
+  emms-player-streaming-fix   available	 mplayer url fix
+  emms-seek-minor-mode	      available	 like emacs-volume-minor-mode except +/- seek
+  emoticons		      available	 Replace text with emoticons
+  enclose		      available	 Enclose cursor within punctuation pairs
+  encrypt		      available	 encrypt and decrypt using coding system
+  enform-mode		      available	 Handles the Tandem/NSK/Guardian ENFORM report language.
+  english-menu		      available	 mule-menu template
+  enotify		      available	 a TCP based notification system for the emacs modeline
+  enscript		      available	 Joel's Custom printing functions
+  ensime		      available	 ENhanced Scala Interaction Mode for Emacs
+  env-print		      available	 print an envelope
+  eol-conversion	      available	 Set end-of-line conversion for current buffer
+  eoops			      available	 An Object Oriented Programming System in Elisp
+  eperiodic		      available	 periodic table for Emacs
+  epkg			      available	 The stupid package tracker for Emacs
+  epresent		      available	 make presentation slides from a org-mode file within emacs
+  eproject		      available	 File grouping ("project") extension for emacs
+  epubmode		      available	 Minor mode for reading epub e-books in Emacs
+  erc			      available	 A powerful, modular, and extensible Emacs InternetRelayChat client.
+  erc-babel		      available	 communicate in different languages with ERC, using automatic translation
+  erc-extension		      available	 Some extension for erc
+  erc-extras		      available	 Some of ERC's modules aren't part of GnuEmacs due to copyright assignment issues or because they depend on other packages that aren't a part of it.
+  erc-highlight-nicknames     available	 Highlights nicknames
+  erc-highlight-nicknames-xemacs available 
+  erc-input-fill	      available	 
+  erc-nick-notify	      available	 Notify popup for ERC
+  erc-robot		      available	 A robot for ERC.
+  erc-tex		      available	 LaTeX mathematical expressions rendering for ERC
+  erc-track-score	      available	 Add score support to tracked channel buffers
+  erc-track-xmas	      available	 
+  erec			      available	 Minor mode to record and play back audio
+  eredis		      available	 A simple emacs interface to redis
+  erefactor		      available	 Emacs-Lisp tools
+  ergo-movement-mode	      available	 Eronomic keybindings for cursor movement
+  ergoemacs-keybindings	      available	 A emacs keybinding set based on ergonomics.
+  erlang-dired-mode	      available	 erlang dired mode    -*- coding:utf-8 -*-
+  erlware-mode		      available	 Major modes for editing and running Erlang
+  erobot		      available	 game with elisp functions trying to survive
+  ert-expectations	      available	 The simplest unit test framework in the world
+  escreen		      available	 Emacs window session manager
+  esh-myparser		      available	 Define original Eshell cmdline parser by bypassing original parser
+  ess			      available	 Emacs Speaks Statistics: statistical programming within Emacs
+  ess-edit		      available	 convenient editing of R code
+  ess-smart-underscore	      available	 Smarter underscore behavior in emacs
+  essh			      available	 a set of commands that emulate for bash what ESS is to R.
+  esv			      available	 Support for Crossway's ESV API in Emacs
+  etags-extension	      available	 A collect extensions for etags.
+  etags-select		      available	 Select from multiple tags
+  etags-stack		      available	 Navigate the tags stack
+  etags-table		      available	 Set tags table(s) based on current file
+  etags-u		      available	 (auto)updating TAGS file using etags
+  ethan-wspace		      available	 Whitespace customizations for emacs
+  etom			      available	 Emacs to Maya communication
+  etop			      available	 run 
+  etxt			      available	 major mode for reading etexts
+  eukleides		      available	 Major mode to edit eukleides files.
+  eval-sexp-fu		      available	 Tiny functionality enhancements for evaluating sexps.
+  eval-to-texi		      available	 
+  everything		      available	 Bridge to MS Windows desktop-search engine Everything
+  evil			      available	 Evil is an extensible vi layer for Emacs. It        emulates the main features of Vim, and provides facilities        for writing custom extensions.
+  evil-leader		      available	 Add <leader> shortcuts to Evil, the extensible vim        emulation layer
+  evil-numbers		      available	 Increment/decrement numbers in Evil, the extensible vim        emulation layer. Like C-a/C-x in vim.         After installation, you will need to add a key-binding for evil-numbers.        For example:         (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)        (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt)
+  evil-surround		      available	 Emulate Tim Pope's surround.vim in evil, the extensible vim        emulation layer for emacs
+  ewb			      available	 Emacs Web Browser
+  exec-abbrev-cmd	      available	 Execute commands by giving an abbreviation
+  execute		      available	 
+  expand-a-word		      available	 expand-a-word
+  expand-region		      available	 Expand region increases the selected region by semantic units. Just keep pressing the key until it selects what you want.
+  extend-dnd		      available	 Extended Drag and Drop support
+  external-abook	      available	 An interface to Mutt external query tools.
+  extract-ical		      available	 Import iCalendar events from buffers to OS X iCal
+  extraedit		      available	 Extra useful edit functions and macros
+  extview		      available	 open files with external viewer
+  eyedropper		      available	 Pick foreground and background colors at cursor or pointer.
+  face-list		      available	 convenience functions for face customization
+  face-remap+		      available	 Extensions to standard library `face-remap.el'.
+  facebook		      available	 Access the Facebook API from emacs
+  facemenu+		      available	 Extensions to `facemenu.el'.
+  faces+		      available	 Extensions to `faces.el'.
+  fade-out-kill-buffer	      available	 fade to black when killing buffer
+  faith			      available	 hepls spreading the true faith
+  fastnav		      available	 Fast navigation and editing routines.
+  fcsh-mode		      available	 Adobe Flex Compiler Shell helper
+  fdlcap		      available	 Cycle through case and capitalization of words.
+  feature-mode		      available	 Major mode for Cucumber feature files
+  fenc			      available	 Detect CJK coding system by counting most frequence charaters
+  festival		      available	 emacs interface into festival.
+  festival-extension	      available	 Simple festival extension for festival.el
+  fetch			      available	 Fetch a file from a java hierarchy
+  fetchmail-mode	      available	 Mode for editing .fetchmailrc files  -*- Emacs-Lisp -*-
+  ffap-			      available	 Extensions to library `ffap.el'
+  fic-ext-mode		      available	 Show FIXME/TODO/BUG(...) in special face only in comments and strings
+  fic-mode		      available	 Show FIXME/TODO/BUG(...) in special face only in comments and strings
+  file-journal		      available	 revisit files by date
+  file-props		      available	 Add file properties to your files
+  file-template		      available	 File templates
+  files+		      available	 Enhancements of standard library `files.el'.
+  filesets+		      available	 Extensions to `filesets.el'.
+  fill-column-indicator	      available	 An Emacs minor mode that graphically indicates the fill column.
+  fill-column-indicator-legacy available graphically indicate the fill column
+  filladapt		      available	 Filladapt enhances the behavior of Emacs' fill functions by guessing the proper fill prefix in many contexts. Emacs has a built-in adaptive fill mode but Filladapt is much better.
+  fillcode		      available	 Fillcode minor mode
+  find-dired+		      available	 Extensions to `find-dired.el'.
+  find-dired++		      available	 Redefinition of find-dired
+  find-dired-		      available	 Extensions to `find-dired.el'.
+  find-file-in-project	      available	 Quick access to project files in Emacs
+  find-file-in-tags	      available	 directly open files referenced in TAGS files
+  find-func+		      available	 Extensions to `find-func.el'.
+  find-func-extension	      available	 Some extension functions for `find-func.el'.
+  find-library		      available	 Find emacs-lisp library with completion
+  finder+		      available	 Extensions to standard library finder.el
+  findr			      available	 Breadth-first file-finding facility for (X)Emacs
+  finkinfo		      available	 major mode for Fink package info files
+  fit-frame		      available	 Resize a frame. In particular, fit a frame to its buffers.
+  fix-buffers-list	      available	 New M status and colors in buffers list
+  fixme-mode		      available	 Makes FIXME, TODO, etc. appear in big, angry letters
+  fixmee		      available	 Quickly navigate to FIXME notices in code
+  flashcard-sm5		      available	 SuperMemo algorithm for Emacs flashcard
+  flashmaker		      available	 created flashcard decks using existing dicitonary files
+  flex-isearch		      available	 
+  flex-mode		      available	 Major mode for editing flex files
+  flim			      available	 A library to provide basic features about message representation or encoding
+  flip-tables		      available	 put a flipping table emoji on your kill ring
+  fliptext		      available	 Input method for flipping characters upside down
+  flobl			      available	 frame-local buffer list
+  flydoc		      available	 on-the-fly documentation -*- coding: utf-8 -*-
+  flyguess		      available	 Guess language/dictionary for a buffer
+  flymake-cursor	      available	 displays flymake error msg in minibuffer after delay
+  flymake-extension	      available	 Some extension for flymake
+  flymake-for-csharp	      available	 C# mode derived mode
+  flymake-fringe-icons	      available	 Add icons in the fringe, for flymake
+  flymake-helper	      available	 flymake helper methods
+  flymake-html-validator      available	 Make flymake work with Validator.nu.
+  flymake-lua		      available	 Flymake support for Lua.
+  flymake-point		      available	 Show flymake errors under the point in the minibuffer
+  flymake-ruby		      available	 Steve Purcell's Ruby Flymake support, with stricter warnings.
+  flyphpcs		      available	 Flymake for PHP via PHP-CodeSniffer
+  flyspell-guess	      available	 flyspell dictionary guesser
+  flyspell-lazy		      available	 Improve flyspell responsiveness using idle timers
+  fold			      available	 Folding
+  fold-dwim-org		      available	 Fold DWIM bound to org key-strokes.
+  folding		      available	 A folding-editor-like minor mode.
+  folding-2.107		      available	 A folding-editor-like minor mode.
+  folding-2.99		      available	 A folding-editor-like minor mode.
+  follow-mouse		      available	 Automatically select the window under the mouse -*-unibyte: t; coding: iso-8859-1;-*-
+  font-lock+		      available	 Enhancements to standard library `font-lock.el'.
+  font-lock-color-test	      available	 Tool to test new font lock colors.
+  font-lock-escape-char	      available	 
+  font-lock-menus	      available	 Font-lock menus: enhanced `font-menus.el'
+  font-menus-da		      available	 
+  font-utils		      available	 Utility functions for working with fonts
+  foo			      available	 example file
+  foreach		      available	 simple list iteration macros.
+  fortune-mode		      available	 Interface to write fortunes quickly
+  frame+		      available	 Extensions to `frame.el'.
+  frame-bufs		      available	 a minor mode for frame-relative buffer lists
+  frame-cmds		      available	 Frame and window commands (interactive functions).
+  frame-fns		      available	 Non-interactive frame and window functions.
+  frame-restore		      available	 save/restore frame size&position at shutdown/startup
+  framemove		      available	 directional frame selection routines
+  free-tagging		      available	 A global Status bar for emacs
+  french-holidays	      available	 
+  fringe-helper		      available	 Helper functions for fringe bitmaps.
+  fsdired		      available	 sort files to go to different places in dired
+  fsharp-mode		      available	 Major mode for editing fsharp code.
+  fsproject		      available	 File System Project Viewer
+  full-ack		      available	 A front-end for ack
+  fullscreen		      available	 Full screen
+  fuzzy			      available	 Fuzzy matching utilities for GNU Emacs
+  fuzzy-format		      available	 Select indent-tabs-mode and format code automatically.
+  fuzzy-match		      available	 fuzzy matching
+  g-client		      available	 Google Client
+  gb-po-mode		      available	  po-mode extensions and fixes
+  gds			      available	 Emacs interface to Google Desktop Search
+  geiser		      available	 Geiser is a collection of Emacs major and minor modes that conspire with one or more Scheme interpreters to keep the Lisp Machine Spirit alive. It draws inspiration (and a bit more) from environments such as Common Lisp's Slime, Factor's FUEL, Squeak or Emacs itself, and does its best to make Scheme hacking inside Emacs (even more) fun.
+  georgian		      available	 
+  get-rfc		      available	 Getting and viewing RFCs
+  ghc-mod		      available	 Happy Haskell programming
+  ghc-modules		      available	 
+  gist			      available	 Emacs integration for gist.github.com
+  git-auto-commit	      available	 Git auto commit directory within emacs.
+  git-blame		      available	 Minor mode for incremental blame for Git
+  git-commit-mode	      available	 Major mode for editing git commit messages
+  git-dwim		      available	 Context-aware git commands such as branch handling
+  git-emacs		      available	 Yet another git emacs mode for newbies
+  git-modeline		      available	 Mode line decoration support, part of git-emacs.
+  gitconfig-mode	      available	 Major mode for editing .gitconfig files
+  glade-mode		      available	 A mode to view glade interface using tree-widget
+  glagolitic		      available	 
+  glimpse		      available	 Interface to glimpse 
+  globalff		      available	 Global find file
+  globrep		      available	 Search for and replace strings in multiple files
+  gm-bots		      available	 Here you can define new bots used by gm-webbot.el.
+  gm-webbot		      available	 An implementation of Webbots known from MS Frontpage.
+  gmail-message-send-mail     available	 advice for that function to use gmail smtp when appropriate
+  gnugo			      available	 Run GNU Go in a buffer.
+  gnuplot-mode		      available	 Drive gnuplot from within emacs
+  gnus-alias		      available	 an alternative to gnus-posting-styles
+  gnus-autocheck	      available	 
+  gnus-extension	      available	 Simple description
+  gnus-gravatar		      available	 Gnus Gravatar support
+  gnus-hardsort		      available	 permanently sort group by date
+  gnus-harvest		      available	 Harvest e-mail address from read/written articles
+  gnus-identities	      available	 Change identity when composing a message.
+  gnus-notify		      available	 use the modeline to indicate groups with new messages
+  gnus-notify+		      available	 Gnus notify
+  gnus-propfont		      available	  adding faces to *Article* buffer in Gnus 
+  gnus-summary-stripe	      available	 Strip gnus summary buffer
+  gnus-switch		      available	 Smart switch with gnus buffers
+  gnuslog		      available	 Gnus Splitting Log Facility
+  go-mode		      available	 Major mode for the Go programming language
+  go-to-char		      available	 Go to char
+  gob			      available	 A code generator for GObject
+  gobject-class		      available	 functions to easy GObject-based class developers
+  golb			      available	 A simple blog and webpage generator
+  google-c-style	      available	 Google's C/C++ style for c-mode
+  google-contacts	      available	 Access Google Contacts from Emacs
+  google-define		      available	 Pull definitions from google and displays them in a buffer.
+  google-define-redux	      available	 extends google-define.el 
+  google-define-redux-supplemental available supplemental functions for google-define-redux
+  google-maps		      available	 Access Google Maps from Emacs
+  google-weather	      available	 Fetch Google Weather forecasts.
+  googleaccount		      available	 Google Accounts login from Emacs
+  gosh			      available	 an interface to Gauche
+  gothic		      available	 
+  goto-chg		      available	 Goto the point of the most recent edit in the buffer.
+  goto-last-change	      available	 Move point through buffer-undo-list positions
+  goto-random-line	      available	 
+  grab-and-drag		      available	 Scroll a window by mouse dragging
+  gradebook		      available	 major mode for keeping a simple plain-text gradebook
+  grail			      available	 
+  grail-fn		      available	 
+  grail-groups		      available	 
+  grail-profile		      available	 
+  graphviz-dot-mode	      available	 graphviz dot language mode
+  gravatar		      available	 Get Gravatars
+  grep+			      available	 Extensions to standard library `grep.el'.
+  grep-a-lot		      available	 manages multiple search results buffers for grep.el
+  grep-buffers		      available	 grep through buffers (a la 'moccur')
+  grep-ed		      available	 Edit the results of a grep
+  grep-edit		      available	 edit grep buffer and apply the changes to files
+  grep-o-matic		      available	 auto grep word under cursor
+  groovy-emacs-mode	      available	 Emacs major mode for the Groovy programming language
+  growl			      available	 Emacs interface to Growl via growlnotify
+  gst-inspect		      available	 wrapper for gst-inspect
+  gtk-perl		      available	 A minor mode to help write gtk-perl code
+  gtk2hs		      available	 This is tools package for gtk2hs
+  gtranslate		      available	 Use google translate api to perform translations
+  guess-offset		      available	 Automatically determine c-basic-offset
+  hachette		      available	 Lookup a word on the Hachette's online french dictionary.
+  haml-mode		      available	 Major mode for editing Haml files
+  hanconvert		      available	 coding: utf-8 -*-
+  handbook		      available	 Quick access to the FreeBSD handbook
+  hangul		      available	 Korean Hangul input method
+  hannum		      available	 convert han number  -*- coding: utf-8 -*-
+  hardhat		      available	 Protect against clobbering user-writable files
+  haskell-extension	      available	 Some extension for haskell mode.
+  haskell-mode		      available	 A Haskell editing mode
+  haskell-mode-exts	      available	 Modular Emacs extensions to Haskell's editing and interactive modes.
+  haskell-tweet-errors	      available	 
+  haskellmode-emacs	      available	 Haskell 2010 community editing mode
+  header-button		      available	 Clickable buttons in header lines
+  header2		      available	 Support for creation and update of file headers.
+  helm			      available	 Emacs incremental and narrowing framework
+  help+			      available	 Extensions to `help.el'.
+  help+20		      available	 Extensions to `help.el' for Emacs 20.
+  help-dwim		      available	 Show help information
+  help-dwim-perlapi	      available	 Show help of perlapi
+  help-dwim-perldoc	      available	 dwim interface to perldoc
+  help-fns+		      available	 Extensions to `help-fns.el'.
+  help-macro+		      available	 Extensions to `help-macro.el'.
+  help-mode+		      available	 Extensions to `help-mode.el'
+  help-url		      available	 Un module pour se connecter aux aides en lignes de php ou de coldfusion
+  hexcolour		      available	 Highlight HTML-style colour specifications
+  hexrgb		      available	 Functions to manipulate colors, including RGB hex strings.
+  hexview-mode		      available	 A simple & fast hexadecimal file viewer
+  hgw-init-wl		      available	 Configuration file for the Wanderlust Email client
+  hide-comnt		      available	 Hide/show comments in code.
+  hide-lines		      available	 Commands for hiding lines based on a regexp
+  hide-region		      available	 hide regions of text using overlays
+  hide-url		      available	 Hide annoyingly long URLs
+  hidesearch		      available	 Incremental search while hiding non-matching lines.
+  hideshow-fringe	      available	 
+  hideshow-org		      available	 Provides org-mode like hide and show for hideshow.el
+  hideshowvis		      available	 Add markers to the fringe for regions foldable by hideshow.el
+  highlight		      available	 Highlighting commands.
+  highlight-beyond-fill-column available font-lock-add-keywords aid for Emacs
+  highlight-chars	      available	 Highlight specified sets of characters, including whitespace.
+  highlight-cl		      available	 Highlighting `cl' functions.
+  highlight-current-line      available	 highlight line where the cursor is.
+  highlight-indentation	      available	 Function for highlighting indentation
+  highlight-parentheses	      available	 Highlight the matching parentheses surrounding point.
+  highlight-sexp	      available	 
+  highlight-symbol	      available	 Quickly highlight a symbol throughout the buffer and cycle through its locations.
+  highlight-tail	      available	 draw a colourful 
+  highline		      available	 minor mode to highlight current line in buffer
+  himark		      available	 marking text by highlighting
+  himarks-mode		      available	 Highlight marks in buffer.
+  hippie-exp-ext	      available	 Extension of hippie-expand
+  hippie-namespace	      available	 Special treatment for namespace prefixes in hippie-expand
+  historyf		      available	 file history library like browser
+  hl-line+		      available	 Extensions to hl-line.el.
+  hl-sexp		      available	 Highlight the current sexp
+  hl-spotlight		      available	 Extension of hl-line.el to spotlight current few lines.
+  hl-tags-mode		      available	 if the cursor is inside of a '<div ....>' tag, it will highlight it and the corresponding '</div>' tag
+  hlinum		      available	 Extension for linum.el to highlight current line number
+  howm			      available	 Write fragmentarily and read collectively.
+  hqw-goto		      available	 A quick way to go to specific window line and position.
+  hs-lint		      available	 Minor mode for HLint code checking
+  hs-mode		      available	 Haskell editing mode.
+  hsv2rgb		      available	 Transformation from HSV to RGB
+  html-accent		      available	 Function that replace accented char by its html representation
+  html-lite		      available	 Construct html with sexp
+  html-parse		      available	 html parser for Emacs
+  html-script-src	      available	 Insert <script src=".."> for popular JavaScript libraries
+  html5			      available	 Umbrella project for projects adding HTML5 support to Emacs.   This recipe is a work in progress.
+  htmlize		      available	 Convert buffer text and decorations to HTML.
+  htmlr			      available	 HTML rendering in Elisp
+  http-post-curl	      available	 simple HTTP POST
+  http-post-simple	      available	 HTTP POST requests using the url library
+  httpgetwin32		      available	 small utility interactive fn to perform an HTTP GET
+  i-ching		      available	 Cast an i-ching, and come up with a hexagram.
+  ibuffer-vc		      available	 Group ibuffer's list by VC project, or show VC status
+  ibus			      available	 IBus client for GNU Emacs
+  icicles		      available	 Minibuffer input completion and cycling.
+  icicles-chg		      available	 Change logs for Icicles libraries.
+  icicles-cmd1		      available	 Top-level commands for Icicles
+  icicles-cmd2		      available	 Top-level commands for Icicles
+  icicles-doc1		      available	 Minibuffer input completion and cycling.
+  icicles-doc2		      available	 Minibuffer input completion and cycling.
+  icicles-face		      available	 Faces for Icicles
+  icicles-fn		      available	 Non-interactive functions for Icicles
+  icicles-install	      available	 Download and optionally byte-compile Icicles 
+  icicles-iswitchb	      available	 Using iswitchb with Icicles
+  icicles-mac		      available	 Macros for Icicles
+  icicles-mcmd		      available	 Minibuffer commands for Icicles
+  icicles-menu-xmas	      available	 xemacs port (beta) of icicles-menu.el
+  icicles-mode		      available	 Icicle Mode definition for Icicles
+  icicles-opt		      available	 User options (variables) for Icicles
+  icicles-var		      available	 Internal variables for Icicles
+  icicles-xmas		      available	 xemacs port (beta) of icicles.el
+  icomplete+		      available	 Extensions to `icomplete.el'.
+  ide-skel		      available	 IDE skeleton for Emacs Lisp hackers
+  identica-mode		      available	 An identi.ca/status.net client
+  idle-highlight-mode	      available	 Idle Highlight Mode.
+  idle-scroll		      available	 scroll down a line when Emacs is idle
+  idlehelp		      available	 Display help when being idle.
+  ido-hacks		      available	 Advices for ido-mode.
+  ido-load-library	      available	 Load-library alternative using ido-completing-read
+  ido-preview		      available	 commands for viewing current option contests before opening
+  ido-ubiquitous	      available	 Use ido (nearly) everywhere
+  ido-yes-or-no		      available	 Use Ido to answer yes-or-no questions
+  idomenu		      available	 imenu tag selection a la ido
+  iedit			      available	 Edit multiple regions with the same content simultaneously.
+  ifind			      available	 An interface to `find` based on igrep.el
+  ifind-mode		      available	 A minor mode based on isearch, for interactively finding
+  ignoramus		      available	 Ignore backups, build files, et al.
+  igrep			      available	 An improved interface to `grep` and `find`
+  igrep-next-error	      available	 Highlight text matched by `igrep'
+  imap			      available	 
+  imapua		      available	 a purely IMAP based email client for EMACS
+  imaxima		      available	 Maxima mode with images
+  imdb			      available	 Interface to the Internet Movie DB
+  imdb-adds-mode	      available	 Major mode for editing IMDb data submissions
+  imdbs			      available	 compute movies statistic using your imdb vote history
+  imenu+		      available	 Extensions to `imenu.el'.
+  imenu-tree		      available	 A mode to view imenu using tree-widget
+  incr			      available	 Increase everything as you want -*- coding: utf-8 -*-
+  indent-file		      available	 
+  indirect-region	      available	 Act like indirect buffer for region.
+  inertial-scroll	      available	 global minor mode for inertial scrolling 
+  inf-perl		      available	 Perl
+  inf-ruby		      available	 Inferior Ruby Mode
+  inf-ruby-bond		      available	 Use Bond autocompletion from inf-ruby buffers
+  inferior-apl		      available	  Basic Apl (Aplus) in a buffer functionality
+  info+			      available	 Extensions to `info.el'.
+  inhibit-clash-detection     available	 suppress lockfiles
+  init-anything		      available	 Anything configuration
+  init-auto-complete	      available	 Configuration for auto-complete mode
+  init-auto-save	      available	 自动保存的设置
+  init-backup		      available	 备份设置
+  init-bbbd		      available	 Bbbd configuration
+  init-company-mode	      available	 Company-mode configuration
+  init-dired		      available	 Dired configuration
+  init-eldoc		      available	 Eldoc configuration
+  init-emms		      available	 Emms configuration
+  init-erc		      available	 Configuration for erc
+  init-etags		      available	 Etags configuration
+  init-flymake		      available	 Flymake configuration
+  init-gnus		      available	 Configuration file for gnus
+  init-haskell		      available	 Haskell configuration
+  init-hideshow		      available	 Hideshow configuration
+  init-icicles		      available	 Config file for icicles.el
+  init-ide		      available	 IDE configuration
+  init-ido		      available	 Ido configuration
+  init-ispell		      available	 Ispell configuration
+  init-linum		      available	 Linum 模式的设置
+  init-maxima		      available	 Maxima configuration
+  init-misc		      available	 Misc configuration with emacs
+  init-mldonkey		      available	 Mldonkey 的设置
+  init-newsticker	      available	 Newsticker configuration
+  init-org		      available	 Org configuration
+  init-paredit		      available	 Paredit configuration
+  init-predicate	      available	 Predicate configuration
+  init-predictive	      available	 Predictive configuration
+  init-rcirc		      available	 Rcirc init
+  init-sdcv		      available	 Configuration file for sdcv.el
+  init-shell		      available	 Some configuration for shell-mode
+  init-time		      available	 时间设置
+  init-w3m		      available	 W3m configuration
+  init-wget		      available	 Wget configuration
+  init-yasnippet	      available	 Yasnippet configuration
+  initsplit		      available	 Code to split customizations into different files
+  insert-time-string	      available	 Insert the current time. -*- coding: utf-8; -*-
+  install-elisp		      available	 Simple Emacs Lisp installer
+  instapaper		      available	 Some emacs functions for saving URLs to instapaper.com
+  intel-hex-mode	      available	 Mode for Intel Hex files.
+  interesting-buffers	      available	 Add keybinding to cleanup displayed buffers
+  interpreter-minor	      available	 provide navigation, clickability, folding, interpretation
+  io-mode		      available	 Major mode to edit Io language files in Emacs
+  ioccur		      available	 Incremental occur.
+  ipa			      available	 In-place annotations
+  ipp			      available	 implementation of the Internet Printing Protocol
+  iproject		      available	 Interactive Project Mode
+  ipython		      available	 Adds support for IPython to python-mode.el
+  irc			      available	 A user interface for the Internet Relay Chat
+  ireplace		      available	 replace functions invoked from isearch-mode
+  irfc			      available	 Interface for IETF RFC document.
+  isearch+		      available	 Extensions to `isearch.el'.
+  isearch-all		      available	 
+  isearch-extension	      available	 Extension for isearch.
+  iswitchb-highlight	      available	 Highlighting extension for iswitchb
+  iterator		      available	 A library to create and use elisp iterators objects.
+  itunes		      available	 utility functions to interact with iTunes
+  iy-go-to-char		      available	 Go to next CHAR which is similar to 
+  jabber-chatx		      available	 Add the ability to remember and extract old messages
+  jabber-libnotify	      available	 emacs-jabber interface to libnotify
+  jaspace		      available	 Make Japanese whitespaces visible
+  java-class-doc	      available	 Open the documentation for a Java class
+  java-complete		      available	 Java completion
+  java-mode-indent-annotations available Indentation for Java 5 annotations.
+  javacc-mode		      available	 A major mode for editing javacc and jjtree files.
+  javadoc-help		      available	 Javadoc-Help. Look up Java class on online javadocs in browser
+  jcl-command-subset	      available	 Like M-x but with only a subset of commands.
+  jda-minor-mode	      available	 Jong-Gyu Development Assistant minor mode for Developers(such as emacs-textmate or VisualAssist)
+  jde-eclipse-compiler-server available	 Eclipse compiler as a compile server for JDEE.
+  jde-findbugs		      available	 Findbugs interface for JDE
+  jde-flymake		      available	 an extension to flymake that uses JDEE and Jikes
+  jde-jalopy		      available	 JALOPY interface for JDE
+  jde-lint		      available	 lint4j interface for JDE
+  jde-maven		      available	 Use Apache Maven to build your JDE projects
+  jdee			      available	 The JDEE is an add-on software package that turns Emacs into a comprehensive system for creating, editing, debugging, and documenting Java applications.
+  jekyll-el		      available	 Jekyll Integration for emacs
+  jinja			      available	 Mostly ripped off django-mode by Lennart Borgman.
+  jira			      available	 Connect to JIRA issue tracking software
+  jiseki		      available	 Desktop for emacs.
+  jl-encrypt		      available	 Insert MML encryption tags if public keys are available
+  jl-smime		      available	 Improved support for S/MIME with MML
+  joccur		      available	 An improved 'occur' implementation.
+  joseph-autopair	      available	 
+  joseph-file-util	      available	 Function library about file and directory.
+  joseph-scroll-screen	      available	 Scroll half screen down or up, and highlight current line.
+  joseph-single-dired	      available	 Only Open One Dired Buffer.
+  joseph-util		      available	 util functions   -*- coding:utf-8 -*-
+  journal		      available	 The Emacs Journal
+  joystick		      available	 Lisp part of joystick interface for Emacs
+  jpl-reformat		      available	 Reformat source code, especially parameter
+  jquery-doc		      available	 jQuery api documentation interface for emacs
+  js-comint		      available	 Run javascript in an inferior process window.
+  js2-mode		      available	 An improved JavaScript editing mode
+  json			      available	 JavaScript Object Notation parser / generator
+  jsshell-bundle	      available	 JSShell generated bundle
+  jswat			      available	 JDEE interface to JSwat
+  judge-indent		      available	 judge indent and tab widths
+  jump			      available	 interactive function that jump directly to the thing at point
+  jump-char		      available	 navigate by typing chars (search)
+  jump-dls		      available	 Jump to definition of symbol using various methods
+  jump-or-exec		      available	 Jump to a buffer or create it.
+  kdic			      available	 Practice your Kanji using a dictionary.
+  keats			      available	 Keybinding Cheat mode for Emacs
+  keep-end		      available	 Keep some buffer always at end
+  key-choices		      available	 Key Choices -- Also Viper has different colors in different modes
+  key-chord		      available	 Map pairs of simultaneously pressed keys to commands.
+  keyboard-macro-timer	      available	 Run last keyboard macro with a timer
+  keychain-environment	      available	 Loads keychain environment variables into emacs
+  keywiz		      available	 Emacs key sequence quiz
+  kill-ring-ido		      available	 command for keyring browsing with ido
+  kis-interface		      available	 Extensions for kis-mode.
+  kis-project		      available	 Extensions for kis-mode.
+  kokopelli		      available	 List function declaration and jump to it  -*-mode: Emacs-Lisp; tab-width: 4;-*- .
+  kpm-list		      available	 An emacs buffer list that tries to intelligently group together buffers.
+  lacarte		      available	 Execute menu items as commands, with completion.
+  langtool		      available	 Grammer check utility using LanguageTool
+  later-do		      available	 execute lisp code ... later
+  latex-frame-mode	      available	 minor mode for latex beamer geeks equipped with folding power
+  latex-math-preview	      available	 preview LaTeX mathematical expressions.
+  latex-math-preview-extra-data	available Extra data for latex-math-preview.el.
+  layout-restore	      available	 
+  lazy-search		      available	 Lazy Search
+  lazy-search-extension	      available	 Lazy Search Extension
+  lazy-set-key		      available	 Lazy set keystroke.
+  lazycat-toolkit	      available	 My toolkit
+  lcomp			      available	 list completion hacks!
+  ledger-mode		      available	 A major mode for editing ledger .dat files
+  legalese		      available	 Add legalese to your program files
+  less			      available	 less style view mode
+  levenshtein		      available	 Edit distance between two strings.
+  lib-requires		      available	 Commands to list Emacs Lisp library dependencies.
+  line-comment-banner	      available	 Comment a line in a banner style.
+  line-num		      available	 Display line numbers in left-margin of buffer.
+  linkd			      available	 Make hypertext with active links in any buffer
+  linkify		      available	 Create clickable links to lines in files.
+  linum+		      available	 Extension of linum
+  linum-ace		      available	 display line number as character like ace-jump-line-mode
+  linum-ex		      available	 Display line numbers to the left of buffers
+  linum-off		      available	 Provides an interface for turning line-numbering off
+  linum-relative	      available	 display relative line number in the left margin
+  lisppaste		      available	 Interact with the lisppaste pastebot via XML-RPC.
+  lisppaste-extension	      available	 Some extension for lisppaste
+  lispxmp		      available	 Automagic emacs lisp code annotation
+  list-processes+	      available	 A enhance list processes command
+  list-register		      available	 List register
+  list-utils		      available	 List-manipulation utility functions
+  listing		      available	 Show columnized view of list elements
+  lively		      available	 Interactively updating text
+  ljupdate		      available	 LiveJournal client for Emacs
+  lnk			      available	 Follow Microsoft Explorer shortcuts
+  load-relative		      available	 Relative file load (within a multi-file Emacs package)
+  loc-changes		      available	 Emacs package to save marks on locations which may change. Intended use: editing a file which you are debugging
+  log-buffer		      available	 Log buffer utils
+  lojban		      available	 regexps, functions, commands to handle lojban text
+  lojban-mode		      available	 lojban text mode w/ syntactical highlighting
+  longlines		      available	 automatically wrap long lines
+  longlines-jp		      available	 automatically wrap long lines in Japanese text  -*- coding:utf-8 -*-
+  look-mode		      available	 quick file viewer for image and text file browsing
+  lookout		      available	 Tools for converting an Outlook-csv file to diary format
+  loops			      available	 detect loops in lists
+  lorem-ipsum		      available	 Lorem Ipsum Generator
+  ls-lisp+		      available	 Enhancements of standard library `ls-lisp.el'.
+  ls-lisp-20		      available	 emulate insert-directory completely in Emacs Lisp
+  lua-block		      available	 highlight matching block
+  lua-mode		      available	 A major-mode for editing Lua scripts
+  lui			      available	 Linewise User Interface
+  lusty-explorer	      available	 LustyExplorer is a fast and responsive way to manage files and buffers
+  lyric-mode		      available	 Major mode for editing lyric (.lrc) files
+  mac-print-mode	      available	 Pseudo-native print dialog for Cocoa/Carbon Emacs. Use M-p to generate an HTML version of the current buffer and print it with TextEdit
+  macro-utils		      available	 Utilities for writing macros.
+  macros+		      available	 Extensions to `macros.el'.
+  magit			      available	 It's Magit! An Emacs mode for Git.
+  magithub		      available	 Magit extensions for using GitHub
+  magpie		      available	 acronym expansion and others. 
+  mail-cmple-addr	      available	 complete mail address or expand mail alias interactively on the header field at mail mode
+  mail-field		      available	 Emulate Sun mailtool field movement
+  mail-notify		      available	 Notify you when have new mail.
+  mail-reorder-headers	      available	 Re-arrange mail headers into pleasing order.
+  mail-signature	      available	 Add context sensitive signature
+  mailcap-view		      available	 View files based on the mime-type of the file extension
+  mailcrypt		      available	 Mail encryption with PGP
+  mailq			      available	 A major mode for `mailq' interaction
+  mailrc		      available	 edit mailrc aliases
+  mailx			      available	 A front-end to mailx
+  man-page-fix		      available	 
+  map-progress		      available	 Mapping macros that report progress
+  mark-lines		      available	 triple-click like line marking functions
+  mark-multiple		      available	 mark several regions at once
+  markdown-mode		      available	 Major mode to edit Markdown files in Emacs
+  markerpen		      available	 Colour and highlight arbitrary sections of buffers
+  master		      available	 make a buffer the master over another buffer
+  matlab-mode		      available	 Major mode for MATLAB(R) dot-m files
+  maxframe		      available	 Maxframe provides the ability to maximize the emacs frame and stay within the display resolution.
+  mazemax		      available	 labyrinth generation and exploration
+  mb-depth+		      available	 Indicate minibuffer-depth in prompt
+  mbsync		      available
+  mc			      available	 Midnight Commander emulation for emacs using dired
+  mc-auto-encrypt	      available	 automatically encrypt and decrypt at file open and save
+  mc-gpg-file-mode	      available	 automatically gpg decrypt/encrypt files ending with '.gpg'
+  mcskels		      available	 C skeletons.
+  md-readme		      available	 Markdown-formatted READMEs for your ELisp
+  mdabbrev		      available	 Dynamic abbreviation expansion in the middle of a word
+  mediawiki		      available	 Mediawiki frontend
+  mee-conf		      available	 
+  mee-ibus		      available	 
+  member-functions	      available	 Expand C++ member functions into implementation file
+  memo-pop		      available	 Helps you pop up and pop out a specific file buffer easily.
+  menu-bar+		      available	 Extensions to `menu-bar.el'.
+  menu-tree		      available	 Mode: Emacs-Lisp ; Coding: utf-8 -*-
+  merriam		      available	 Look up a word in WWW Merriam-Webster dictionary
+  message-outlook	      available	 Create function for sending messages with M$ outlook
+  message-x		      available	 customizable completion in message headers
+  messenger-en		      available	 MSN Messenger on Emacs
+  mgrep			      available	 Search in the directory previously specified
+  mh-crypt		      available	 Manage encrypted or compressed MH messages.
+  mic-paren		      available	 advanced highlighting of matching parentheses
+  midje-mode		      available	 Midje is a testing framework for the Clojure programming language; midje-mode integrates it with Emacs, providing features like navigation and test reports.
+  migemo-viper		      available	 A extension for viper 'f,F,t,T' commands by migemo.
+  mingus		      available	 A client for the Music Player Daemon (MPD).
+  mingus-stays-home	      available	 Time-stamp: <2009-07-06 20:20:04 sharik>
+  minibuf-electric-gnuemacs   available	 
+  minibuffer-complete-cycle   available	 Cycle through the *Completions* buffer
+  minimal-session-saver	      available	 Very lean session saver
+  minimap		      available	 Minimap sidebar for Emacs
+  minor-mode-hack	      available	 Hack of minor-modes
+  mirror		      available	 Maintain a (remote) copy of a (local) file
+  mirror-mode		      available	 insert parens and string quotes in pairs
+  misc-cmds		      available	 Miscellaneous commands (interactive functions).
+  misc-fns		      available	 Miscellaneous non-interactive functions.
+  miscutils		      available	 Miscallaneous utility functions for Editing,
+  mistilteinn		      available	 minor-mode for mistilteinn
+  mk-project		      available	  Lightweight project handling
+  mkhtml		      available	  Create HTML with links.  (Extensions to `htmlize.el'.)
+  mkhtml-htmlize	      available	 HTML-ize font-lock buffers
+  mm2mw			      available	 A MoinMoin 1.2.x -> MediaWiki 1.7.x converter
+  mmm-mode		      available	 Allow Multiple Major Modes in a buffer
+  mo-git-blame		      available	 An interactive, iterative 'git blame' mode for Emacs
+  mo-rot13		      available	 convert text buffer to and from ROT13
+  moccur-edit		      available	 apply replaces to multiple files
+  mode-compile		      available	 Smart command for compiling files according to major-mode.
+  mode-line-frame	      available	 Create information frame like mode-line^
+  modeline-posn		      available	 Set up `mode-line-position'.
+  mogo			      available	 Simple MoGo client
+  moikrug		      available	 (S)XEmacs interface to MoiKrug.
+  mojo			      available	 Interactive functions for webOS development
+  mon-aliases		      available	 consolidated aliases for functions provided by MON
+  mon-alphabet-list-utils     available	 return alphabetic sequences in various formats
+  mon-boxcutter		      available	 w32 screencaptures from Emacs
+  mon-buffer-utils	      available	 buffer related procedures for mon-*utils features
+  mon-button-utils	      available	 utilities for examining button properties
+  mon-cifs-utils	      available	 utilities for mounting CIFS domain using auth-source
+  mon-cl-compat		      available	 cl functions prefixed as cl::some-cl-function
+  mon-cl-compat-regexps	      available	 
+  mon-color-occur	      available	 color-occur.el with minor patches
+  mon-color-utils	      available	 fncns for manipulating/examinaning color values
+  mon-css-check		      available	 optimize CSS attributes and properties with Emacs interface to csstidy
+  mon-css-color		      available	 Highlight and edit CSS colors
+  mon-css-complete	      available	 complete css attributes and properties
+  mon-default-loads	      available	 Constants and vars for MON system portability
+  mon-default-start-loads     available	 fncns for initializing MON Emacs environment
+  mon-dir-locals-alist	      available	 MON global vars bound to commonly used local-site paths
+  mon-dir-utils		      available	 functions and commands for directories and files
+  mon-dir-utils-local	      available	 local directory and file utilities 
+  mon-doc-help-CL	      available	 utils for documenting Common Lisp from within Emacs
+  mon-doc-help-char-encoding-lossage available Show charset encoding lossage
+  mon-doc-help-css	      available	 extends mon-doc-help-utils with CSS related docs
+  mon-doc-help-mail	      available	 extends mon-doc-help-utils package with mail xrefs
+  mon-doc-help-pacman	      available	 
+  mon-doc-help-proprietary    available	 extends mon-doc-help-utils with MS related docs
+  mon-doc-help-tidy	      available	 extends mon-doc-help-utils package with HTML tidy docs
+  mon-doc-help-utils	      available	 documentation enabling and generation extensions
+  mon-doc-help-utils-supplemental available functions to bootstrap mon-doc-help-utils
+  mon-drive-transfer-utils    available	 tools for transferring backing up large harddrives.
+  mon-empty-registers	      available	 fill and empty register locations en masse.
+  mon-env-proc-utils	      available	 procedures for interacting w/ process environment
+  mon-error-utils	      available	 extensions for conditions and error handling
+  mon-event-utils	      available	 event related procedures for mon-*utils features
+  mon-get-mon-packages	      available	 snarf MON libraries with wget.
+  mon-hash-utils	      available	  procedures to extend Emacs lisp hashtables
+  mon-image-utils	      available	 interfacing with image manipulation processes
+  mon-insertion-utils	      available	 insertion utils, licences, file templates, etc.
+  mon-iptables-regexps	      available	 
+  mon-iptables-vars	      available	 
+  mon-jg-directory-creator    available	 utils for massive directory hierarchy creation
+  mon-keybindings	      available	 MON keybindings for fncns used across sites
+  mon-line-utils	      available	 line centric procedures for mon-*utils features
+  mon-macs		      available	 macros for use with mon-*utils features
+  mon-mysql-utils	      available	 procedures for extracting from MySQL query results
+  mon-name-utils	      available	 procedures to rotatate or permute string-like name forms
+  mon-plist-utils	      available	 functions for working plist-like lists
+  mon-post-load-hooks	      available	 fncns to perform after initializing MON Emacsen
+  mon-randomize-utils	      available	 procedures for generating pseudo randomness
+  mon-rectangle-utils	      available	 procedures for manipulating rectangles
+  mon-regexp-symbols	      available	 Regexp lists of common match/replace a pairs
+  mon-region-utils	      available	 region oriented procedures for mon-*utils features
+  mon-rename-image-utils      available	 utility fncns for image manipulation
+  mon-rename-image-utils-supplemental available	
+  mon-replacement-utils	      available	 common regexp and subsitiution procedures 
+  mon-seq-utils		      available	 procedures for frobbing sequences
+  mon-site-local-defaults     available	 load/init fncns, vars, const for MON packages
+  mon-string-utils	      available	 string frobbing procedures for mon-*utils features
+  mon-testme-utils	      available	 tests and template for inserting them
+  mon-text-property-utils     available	 extensions for text-properties/overlays
+  mon-time-utils	      available	 utilities for working with time.
+  mon-tramp-utils	      available	 
+  mon-type-utils	      available	 procedures for interogating lisp objects
+  mon-type-utils-vars	      available	 variables useful for interogating lisp objects
+  mon-url-utils		      available	 interactive utils for URL data lookups
+  mon-utils		      available	 common utilities and BIG require for other of MON packages
+  mon-w32-load		      available	 
+  mon-wget-utils	      available	 routines for pulling files with wget 
+  mon-window-utils	      available	 window related procedures for mon-*utils features
+  mon-word-syntax-utils	      available	 counting things with word syntax
+  monDOTemacs		      available	 
+  monky			      available	 Magit for Hg
+  monokai-theme		      available	 TextMate theme Monokai port for Emacs color-theme.
+  motion-and-kill-dwim	      available	 Motion and kill DWIM commands
+  mouse+		      available	 Extensions to `mouse.el'.
+  mouse-drag-fix	      available	 Bug fixed version of mouse-drag
+  mouse3		      available	 Customizable behavior for `mouse-3'.
+  move-and		      available	 Move point and perform some other action
+  move-text		      available	 Move current line or region with M-up or M-down.
+  moz-repl		      available	 Lets current buffer interact with inferior mozilla.
+  mp3player		      available	 Interface to mpg123 or winamp
+  mp3player-scores	      available	 Scoring system for mp3player
+  mpcel			      available	 A mpd (Music Player Daemon) client
+  mpris-dbus		      available	 MPRIS call via dbus
+  mpris-track-list	      available	 MPRIS track list
+  msearch		      available	 Search for mouse selection
+  msf-abbrev		      available	 maintain abbrevs in a directory tree
+  msgcodes		      available	 common and rare Usenet message 
+  mss			      available	 Make smart shortcuts to programs in your Win95/98/NT4 start menu
+  mthesaur		      available	 Thesaurus look-up of a word or phrase.
+  mtrace		      available	 keep track of hidden buffer changes
+  mu			      available	 play on a MUSH or MUD within Emacs
+  mudel			      available	 The Mudel MUD Client
+  mule-menu		      available	 Add multiple language support for menubar
+  multi-eshell		      available	 Create and manage multiple shells within Emacs
+  multi-scratch		      available	 Multiple scratches manager
+  multi-shell		      available	 Multi-Shell Manager
+  multi-term		      available	 A mode based on term.el, for managing multiple terminal buffers in Emacs.
+  multi-web-mode	      available	 Multi Web Mode is a minor mode which makes web editing in Emacs much easier
+  multiple-cursors	      available	 An experiment in adding multiple cursors to emacs
+  multiple-line-edit	      available	 Edit multiple line at a time.
+  multitran		      available	 
+  multiverse		      available	 manage multiple versions of buffers in an Emacs session
+  mumamo-noweb		      available	 MuMaMo noweb goo
+  muse			      available	 An authoring and publishing tool for Emacs
+  muse-blog		      available	 Keep and publish a blog
+  muse-ess		      available	 emacs muse speaks statistics
+  muse-tree		      available	 Show muse project using tree-widget
+  muse-website		      available	 Generate a website from Muse
+  mustache-mode		      available	 Emacs Major Mode for Mustache
+  mutt			      available	 Use Emacs 20 as an external editor for the Mutt mailer
+  muttrc-mode		      available	 Major mode to edit muttrc under Emacs
+  mwe-log-commands	      available	 Log keyboard commands to buffer
+  mybuffers		      available	 Switch buffers with Ctrl-Tab (or another keystroke)
+  myfixme		      available	 minor mode to automatically font-lock FIXME notes
+  mysql			      available	 mysql front-end
+  mysql-query		      available	 execute sql select using mysql. -*- coding:utf-8 -*-
+  mysql-table2entity-4csharp  available	 mysql table2entity for csharp   -*- coding:utf-8 -*-
+  mysql-table2entity-4java    available	 mysql table2entity for java   -*- coding:utf-8 -*-
+  mythryl-mode		      available	 Major mode for editing Mythryl code
+  mz-comment-fix	      available	 fixes nested comments for XML and other languages
+  n3-mode		      available	 Mode for Notation 3
+  naf-mode		      available	 
+  naf-mode-art-keywords	      available	 
+  naf-mode-awards-prizes      available	 
+  naf-mode-benezit-flags      available	 
+  naf-mode-city-names-us      available	 
+  naf-mode-classes	      available	 
+  naf-mode-dates	      available	 regexp variables for matching dates in naf-mode
+  naf-mode-db-fields	      available	 
+  naf-mode-db-flags	      available	 keyword lists and regexps for font-locking in `naf-mode'
+  naf-mode-english-roles      available	 
+  naf-mode-events	      available	 
+  naf-mode-faces	      available	 
+  naf-mode-french-months      available	 
+  naf-mode-french-roles	      available	 
+  naf-mode-group-period-styles available 
+  naf-mode-insertion-utils    available	 insertion procedures for working in `naf-mode' buffer
+  naf-mode-institution	      available	 
+  naf-mode-intnl-city-names   available	 
+  naf-mode-nation-english     available	 
+  naf-mode-nation-french      available	 
+  naf-mode-nationality-english available 
+  naf-mode-nationality-french available	 
+  naf-mode-publications-periodicals-english available 
+  naf-mode-publications-periodicals-french available 
+  naf-mode-publications-periodicals-intnl available 
+  naf-mode-regions	      available	 
+  naf-mode-state-names	      available	 
+  naf-mode-students-of-julian available	 
+  naf-mode-ulan-utils	      available	 utility fncns for converting ULAN data for naf-mode
+  naf-mode-xrefs	      available	 xrefing variable list of corelated naf-mode symbols
+  nagios-mode		      available	 An Emacs mode for Nagios <http://www.nagios.org/>
+  naked			      available	 Provide for naked key descriptions: no angle brackets.
+  naquadah-theme	      available	 Naquadah theme for Emacs
+  nav			      available	 Emacs mode for filesystem navigation
+  nav-flash		      available	 Briefly highlight the current line
+  nc			      available	 emulate famos ms-dog file browser
+  ncl-mode		      available	 ncl-mode and other goodies for editing Ncar Command        line Language(NCL) files.
+  ne2wm			      available	 Perspectives, plugins, functions and commands for e2wm
+  netrexx-mode		      available	 highlight and indent Netrexx program files.
+  newpaste		      available	 Paste directly from Emacs to http://paste.lisp.org using Emacs `url' library
+  newpastebin		      available	 
+  newsticker-extension	      available	 Some extension function for newsticker
+  newsticker-notify	      available	 Notify newsticker news in mode-line
+  nginx-mode		      available	 major mode for editing nginx config files
+  nmcobol-mode		      available	 For use with Tandem Cobol only - Sorry.
+  nnir			      available	 
+  no-word		      available	 use antiword program to view word documents in emacs
+  nognus		      available	 A newsreader for GNU Emacs
+  notify		      available	 Notification front-end
+  notmuch		      available	 Run notmuch(thread-based email index, search and tagging) within emacs
+  novice+		      available	 Extensions to `novice.el'.
+  nrepl			      available	 An Emacs client for nREPL, the Clojure networked REPL server.
+  nsis-mode		      available	 A major mode for editing NSIS files
+  ntcmd			      available	 major mode for editing cmd scripts
+  nterm			      available	 New TERMinal emulator
+  nxhtml		      available	 An addon for Emacs mainly for web development.
+  nyan-mode		      available	 Nyan Cat for Emacs! Nyanyanyanyanyanyanyanyanyan!
+  o-blog		      available	 Stand alone org-mode blog exporter.
+  oauth			      available	 Oauth library.
+  oauth2		      available	 OAuth 2.0 Authorization Protocol
+  occur-schroeder	      available	 Invoke occur from within isearch
+  oddmuse		      available	 Edit pages on an Oddmuse wiki
+  oddmuse-curl		      available	 edit pages on an Oddmuse wiki using curl
+  offlineimap		      available	 Run OfflineIMAP from Emacs
+  oggel			      available	 OGG encoding for EmacsLisp 
+  oicq			      available	 A front-end to perl OICQ
+  one-key		      available	 Easy access configurable popup menus to display keybindings and other things.
+  one-key-bmkp		      available	 one-key menus for bookmarks
+  one-key-config	      available	 Configuration for one-key.el
+  one-key-default	      available	 one-key-ize default key bindings
+  one-key-dir		      available	 Functions for quickly navigating directory trees with one-key menus
+  one-key-regs		      available	 Code for handling registers, macros and bookmarks using one-key menus.
+  one-key-yas		      available	 functions for using one-key menus to access yasnippets
+  oneonone		      available	 Frame configuration that uses one frame per window.
+  onkey			      available	 
+  online-search		      available	 Online dictionary or intelligent api search engine for developers
+  opa-mode		      available	 Major mode for editing OPA programs
+  open-junk-file	      available	 Open a junk (memo) file to try-and-error
+  openpaste		      available	 Emacs interface for OpenPastebin
+  openwith		      available	 Open files with external programs
+  oprofile-mode		      available	 An oprofile callgraph viewer
+  options+		      available	 Extensions to `options.el'.
+  oracle-query		      available	 execute sql select using sqlplus. -*- coding:utf-8 -*-
+  oracle-shell-query	      available	 execute a select sql using sqlplus . -*- coding:utf-8 -*-
+  oracle-table2entity-4csharp available	 oracle table2entity for csharp   -*- coding:utf-8 -*-
+  oracle-table2entity-4java   available	 oracle table2entity for java   -*- coding:utf-8 -*-
+  org			      available	 Carsten's outline mode for keeping track of everything.
+  org-annotate-file	      available	 Annotate a file with org syntax
+  org-assoc-tags	      available	 Automatically associate tags when key-tagging an item
+  org-blog		      available	 create and publish a blog with org-mode
+  org-buffers		      available	 An Org-mode tool for buffer management
+  org-cua-dwim		      available	 Allow C-c, C-v, C-x etc to work as you would expect elsewhere when using CUA mode.
+  org-export-blocks-format-plantuml available 
+  org-extension		      available	 Some extensions for Org mode
+  org-fstree		      available	 Emacs orgmode extension for generating filesystem tree representations with annotations.
+  org-html5presentation	      available	 html5 presentation from org files
+  org-jira		      available	 add a jira:ticket protocol to org.
+  org-json		      available	 conversion between org and json
+  org-mairix		      available	 Support for hooking mairix search into Org for different MUAs
+  org-mode		      available	 Org-mode is for keeping notes, maintaining ToDo lists, doing project planning, and authoring with a fast and effective plain-text system.
+  org-occur-goto	      available	 search open org buffers with an occur interface
+  org-oddmuse		      available	 Transform from Org-mode to Oddmuse Wiki format.
+  org-outlook		      available	 Integrate Microsoft Outlook with org-mode
+  org-pua		      available	 Org pop-up annotation
+  org-publish		      available	 publish related org-mode files as a website
+  org-readme		      available	 Integrates Readme.org and Commentary/Change-logs.
+  org-search-goto	      available	 Use search to go to locations in your org buffers
+  org-search-goto-ml	      available	 Use multiline search to go to locations in your org buffers
+  org-table-comment	      available	 Org tables in comments
+  org-website		      available	 Generate multi-level website from org
+  org2blog		      available	 Blog from Org mode to wordpress
+  organizer-mode	      available	 major mode for editing organizer list files
+  orgfold		      available	 
+  orgfold-separate-file	      available	 
+  orgindent		      available	 
+  osc			      available	 Open Sound Control
+  osx-browse		      available	 Web browsing helpers for OS X
+  otp			      available	 a one-time password creator for Emacs -*- emacs-lisp -*-
+  outline+		      available	 Extensions to `outline.el'.
+  outline-magic		      available	 outline mode extensions for Emacs
+  outline-wiki		      available	 An outline-based wiki-like mode
+  outlook-org		      available	 Outlook org
+  override-keymaps	      available	 
+  pabbrev		      available	 Predictive abbreviation expansion
+  package		      available	 ELPA implementation ("package.el") from Emacs 24
+  paint			      available	 Makes a Emacs to the Paint Tool
+  palette		      available	 Color palette useful with RGB, HSV, and color names
+  paredit		      available	 Minor mode for editing parentheses
+  paredit-extension	      available	 Simple extension base on paredit.el
+  parenface		      available	 Provide a face for parens in lisp modes.
+  parenthesis		      available	 Insert pair of parenthesis
+  parser		      available	 Elisp Macro DSL Parser Compiler
+  parser-fn		      available	 
+  paste2		      available	 Simple interface for paste2.org
+  pastebin		      available	 An Emacs interface to pastebin.com.
+  pastebox		      available	 Emacs lisp lib for pasting to PasteBox-powered bins.
+  pastie		      available	 Emacs integration for pastie.org
+  pbotutil		      available	 interface to pbotutil.pl
+  pc-keys		      available	 Smart `home' and `end' keys.
+  pcmpl-git		      available	 pcomplete support for git
+  pcmpl-ssh		      available	 functions for completing SSH hostnames
+  pddl-mode		      available	 A Planning and Domain Definition Language editing mode    -*-coding: iso-8859-1;-*-
+  pdftools		      available	 a collection of pdf tools to mimic ps-spool- functions
+  peg			      available	 Parsing Expression Grammars in Emacs Lisp
+  per-window-point	      available	 persisent per-window values of point
+  perl-completion	      available	 minor mode provides useful features for editing perl codes
+  perl-find-library	      available	 Functions for locating perl libraries on your system
+  perlcritic		      available	 Call perlcritic in Emacs
+  perldb-ui		      available	 User Interface for perl debugger
+  perlisisms		      available	 
+  perlmonks		      available	 A simple interface to www.perlmonks.org
+  perltidy		      available	 Tidy perl code
+  persistent-soft	      available	 Persistent storage, returning nil on failure
+  perspective		      available	 switch between named perspectives of the editor
+  pg			      available	 Emacs Lisp interface to the PostgreSQL RDBMS
+  pgsql-linum-format	      available	 A linum-mode hook to display PostgreSQL functions line numbers
+  pgsrc-el		      available	 PostgreSQL source editing facilities for Emacs
+  phonetic		      available	 Phonetize (Alpha, Bravo, Charlie...) the region
+  php-completion	      available	 complete everything PHP with Anything.el
+  php-doc		      available	 Php document helper
+  php-mode		      available	 A PHP mode for GNU Emacs 
+  php-mode-improved	      available	 Major mode for editing PHP code. This is a version of the php-mode from http://php-mode.sourceforge.net that fixes a few bugs which make using php-mode much more palatable
+  phutball		      available	 play phutball in Emacs
+  pianobar		      available	 Run Pandora as an inferior process in emacs by using pianobar
+  pic-basic-mode	      available	 Editing mode for MELabs PIC Basic
+  pinbar		      available	 Display a pin bar in the header line
+  pink-bliss		      available	 a pink color theme for Emacs
+  pinot			      available	 Use pinot desktop meta search engine via Emacs anything/helm interface.
+  pkb-0.2		      available	 tools to print keymap bindings in a pretty fashion
+  pkb-html-0.2		      available	 print bindings in a pretty fashion in html format
+  pkgbuild-mode		      available	 Major mode for editing PKGBUILD files
+  place-windows		      available	 commands for placing active windows
+  planner		      available	 Planner is an organizer and day planner for Emacs. It helps you keep track of your pending and completed tasks, daily schedule, dates to remember, notes and inspirations.
+  planner-favoris	      available	 add some bookmarks in a planner day page
+  planner-frame		      available	 Devote a frame to the Planner
+  planner-hierarchy	      available	 Hierarchical Planning
+  planner-notes-index-page    available	 create index of notes in a particular page
+  planner-todo-index	      available	 find todos in files of project and display to planner page
+  plsql			      available	 Programming support for PL/SQL code
+  plt-completions	      available	 Completion for PLT Scheme
+  plural		      available	 Pluralize english nouns.
+  pmenu			      available	 Easily customizable paged menu system
+  pmenu-config		      available	 Customisation file. Pairs with pmenu.el
+  pmx-mode		      available	 Generic mode for font-lock support and pmx.
+  po-mode		      available	 Major mode for GNU gettext PO files
+  po-mode+		      available	 Extensions to GNU gettext's `po-mode.el'.
+  point-ring		      available	 Cycle between point positions
+  point-stack		      available	 Like forward/back for browser, but for emacs point
+  point-undo		      available	 undo/redo position
+  pointback		      available	 Restore window points when returning to buffers
+  poker			      available	 A simple poker game for Emacs
+  policy-switch		      available	 Window configuration navigation utility.
+  pom			      available	 Utility functions for dealing with maven project.xml files
+  pom-parser		      available	 Tools for using attributes from a Maven POM in JDE project files
+  pomodoro		      available	 Pomodoro Technique for emacs
+  pony-mode		      available	 A Django mode for Emacs.
+  poor-mans-bidi	      available	 BiDirectional editing mode  -*-coding: utf-8;-*-
+  popbiff		      available	 Checks for mail using POP3
+  popbiff2		      available	 Checks for mail using POP3
+  popup			      available	 Visual Popup Interface Library for Emacs
+  popup-kill-ring	      available	 Interactively insert item from kill-ring
+  popup-pos-tip		      available	 pos-tip.el wrapper library for programs using popup.el
+  popup-ruler		      available	 Displays a ruler at point.
+  popup-select-window	      available	 selecting a window by popup-menu*
+  popwin		      available	 Popup Window Manager.
+  portage		      available	 search and install Gentoo packages
+  pos-tip		      available	 Show tooltip at point
+  pov-mode		      available	 Major mode for Povray scene files
+  powerline		      available	 Powerline for Emacs
+  pp+			      available	 Extensions to `pp.el'.
+  pp-c-l		      available	 Display Control-l characters in a pretty way
+  ppindent		      available	 Indents C preprocessor directives
+  ppm-gen		      available	 simple & slow ppm generation in emacs.
+  prand			      available	 generate pesudo-random number
+  predictive		      available	 The Emacs Predictive Completion package adds a new minor-mode to the GNU Emacs editor.
+  prefixkey		      available	 Prefix key processing.
+  pretty-greek		      available	 
+  pretty-lambdada	      available	 Show the word `lambda' as the Greek letter.
+  pretty-mode		      available	 Redisplay parts of the buffer as pretty symbols
+  prev-next-buffer	      available	 Surrogates of `next-buffer' and `previous-buffer'
+  processing-mode	      available	 Processing mode for Emacs. Written by Rudolf Olah. This mode is a derivative of the java-mode. It adds key-bindings for running/compiling Processing sketches and it also highlights keywords found in the Processing language, such as ``setup'', ``draw'', and ``frameRate''.
+  procmaillog		      available	 Read the procmail log file in Gnus
+  procomm-mode		      available	 Major mode for editing PROCOMM ASPECT scripts
+  profile-dotemacs	      available	 profiles your .emacs
+  profile-lisp		      available	 
+  profile-template	      available	 
+  profiles		      available	 profile management system
+  project-buffer-mode	      available	 Generic mode to browse project file
+  project-buffer-mode+	      available	 Extension for project-buffer-mode
+  project-buffer-occur	      available	 Occur functionality for Project Mode
+  project-local-variables     available	 Set project-local variables from a file.
+  projman		      available	 Simple source file project management
+  prolog-el		      available	 A major mode for Prolog programming under Emacs and offers to my knowledge the best Prolog IDE out there, especially when used from within XEmacs.
+  protbuf		      available	 protect buffers from accidental killing
+  protbuf-by-name	      available	 Extend protbuf.el to allow protecting specific buffer names.
+  protobuf-mode		      available	 Major mode for editing protocol buffers.
+  ps-print-19		      available	 Print text from the buffer as PostScript
+  ps2pdf		      available	 Convert Postscript to PDF
+  pstricks		      available	 jpgeorget
+  psvn			      available	 Subversion interface for emacs
+  puppet-mode		      available	 A simple mode for editing puppet manifests
+  pushy			      available	 pushy completion
+  puzzle		      available	 slide puzzle for Emacs
+  pwsafe		      available	 Emacs interface to pwsafe, by Stefan Reichoer
+  py-indent		      available	 Python indentation with annotations
+  pycomplete+		      available	 complete symbols at point using Pymacs
+  pydoc-info		      available	 Emacs package for searching Python documentation in Info
+  pylit			      available	 support for the PyLit literate programming tool
+  pylookup		      available	 Emacs mode for searching python documents with convenience
+  pymacs		      available	 Interface between Emacs Lisp and Python
+  python		      available	 Python's flying circus support for Emacs
+  python-magic		      available	 outline mode extension for python mode
+  python-mode		      available	 Major mode for editing Python programs
+  python-pep8		      available	 Minor mode for running `pep8'
+  q-mode		      available	 kdbp-mode + q-minor-mode combined for easy installation and using.
+  qmake-mode		      available	 Qmake mode for emacs
+  qml-mode		      available	 Qt Declarative UI (QML) mode for Emacs
+  qq-mode		      available	 Modes for creating valid XHTML 1.0 Transitional pages.
+  qsearch		      available	 simple isearch implemented as a quasimode
+  quack			      available	 Enhanced support for editing and running Scheme code
+  query			      available	 Functions to query the user
+  queue-mail		      available	 Queue draft e-mail in a directory
+  quick-buffer-switch	      available	 Quick switch to file or dir buffers.
+  quick-jump		      available	 
+  quickrun		      available	 Run commands quickly
+  r-autoyas		      available	 Automatic yasnippet creation for emacs lisp.
+  r5rs			      available	 
+  rails-el		      available	 It is minor mode for editing Ruby On Rails code with Emacs
+  rainbow-delimiters	      available	 Color nested parentheses, brackets, and braces according to their depth.
+  rainbow-mode		      available	 Colorize color names in buffers
+  random-idle-quote	      available	 display a random quote during idle
+  random-quote		      available	 chooses a random quote from a file
+  rational		      available	 Rational number in factorial-base format.
+  rcirc			      available	 emacs irc client
+  rcirc-alias		      available	 provide a local alias for nicks
+  rcirc-auto-away	      available	 
+  rcirc-color		      available	 color nicks
+  rcirc-color-22	      available	 color nicks
+  rcirc-controls	      available	 control sequences
+  rcirc-dbus		      available	 rcirc dbus notifications
+  rcirc-ding		      available	 do something such as beep on channel activity
+  rcirc-extension	      available	 The extensions that i collect.
+  rcirc-groups		      available	 An emacs buffer in rcirc-groups major mode
+  rcirc-late-fix	      available	 Replace s/wrong/right strings on rcirc buffers
+  rcirc-nonames-on-join	      available	 
+  rcirc-notify		      available	 libnotify popups
+  rcirc-notify+		      available	 Rcirc notify library
+  rcirc-notify-mode	      available	 an emacs buffer in rcirc-notify-mode major mode
+  rcirc-pounce		      available	 maintain a message queue for offline nicks
+  rcirc-random-names	      available	 randomize names
+  rcirc-sound		      available	 CTCP SOUND support for rcirc 
+  rcov-overlay		      available	 colorize untested ruby code
+  rdebug		      available	 Ruby debugger user interface, startup file.
+  rdict			      available	 Interface to rus<->eng online dictionary.
+  re-builder+		      available	 Re-builder+
+  re-builder-from-xemacs-patched available building Regexps with visual feedback
+  read-float		      available	 Read float values in binary format from literal buffer
+  really-simple-wiki	      available	 edit local raw wiki pages
+  rebox2		      available	 create, remove, edit boxes
+  recentf-buffer	      available	 creates the buffer with the list of recently open files.
+  recentf-ext		      available	 Recentf extensions
+  reco			      available	 'Reco'gnize what is playing on a streaming audio
+  record-processor	      available	 
+  record-type		      available	 Define record type for Emacs Lisp
+  rect-extension	      available	 Some extensions for rect.el
+  rect-mark		      available	 Mark a rectangle of text with highlighting.
+  redo+			      available	 Redo/undo system for Emacs
+  redshank		      available	 A collection of code-wrangling Emacs macros mostly geared towards Common Lisp, but some are useful for other Lisp dialects, too.
+  redspace		      available	 a minor mode for highlighting empty space at end of lines
+  reflected-buffers	      available	 Indirect buffers w/o shared font lock
+  reftex		      available	 Version and autoloads of RefTeX
+  regex-tool		      available	 A regular expression evaluation tool for programmers
+  regexpl		      available	 Search and replace list of patterns and replacements.
+  region-list-edit	      available	 
+  register-list		      available	  Interactively list/edit registers
+  relative-linum	      available	 show relative line number and allow offset jumping
+  remember		      available	 Remember is an Emacs mode for quickly remembering data.
+  remind-to-diary	      available	 convert remind `simple calendar' output to diary format
+  rep-words		      available	 find repeat words that repeat too much
+  repdet		      available	 detect repetition in user activity
+  repeat-insert		      available	 Repetitititive insertion functions.
+  replace+		      available	 Extensions to `replace.el'.
+  replace-eval-xmas	      available	 Xemacs port of gnu emacs query-replace-* functions.
+  repository-root	      available	 deduce the repository root directory for a given file
+  require-or-install	      available	 Download and automagically install Emacs Lisp
+  revbufs		      available	 Reverts out-of-date buffers safely
+  revive		      available	 Revive.el saves current editing status including the window splitting configuration, which can't be recovered by `desktop.el' nor by `saveconf.el', into a file and reconstructs that status correctly.
+  revive-plus		      available	 Serialize your window configurations in Emacs
+  rewrite		      available	  Utility to rewrite text files with easier regular expression handling
+  rfc			      available	 view RFC
+  rfringe		      available	 display the relative location of the region, in the fringe
+  rgrep-append		      available	 
+  rhtml-mode		      available	 Major mode for editing RHTML files
+  ri			      available	 Ruby Documentation Lookup
+  ri-emacs		      available	 Ruby ri help inside emacs
+  ricette-mode		      available	 vedere ricette
+  rijndael		      available	 Rijndael (AES) block cipher implementation
+  rinari		      available	 Rinari Is Not A Rails IDE
+  ring+			      available	 Extensions to `ring.el'.
+  rmail-extras		      available	 remote inboxes for RMAIL, extend 
+  rmail-saver		      available	 An easy way of saving mail messages to files
+  rmail-spamprobe	      available	 interact with spamprobe from within RMAIL
+  rmailgen		      available	 generates guesses for RMAIL output files and FCC files.
+  rmime			      available	 read MIME messages
+  rnc-mode		      available	 A major mode for editing RELAX NG Compact syntax.
+  rope			      available	 A python refactoring library
+  ropemacs		      available	 An Emacs minor mode for using rope python refactoring library in emacs.
+  ropemode		      available	 Common parts of ropemacs and ropevim.
+  rspec-mode		      available	 Enhance ruby-mode for RSpec
+  rss			      available	 Create and update RSS(version 2.0)
+  rst-mode		      available	 Mode for viewing and editing reStructuredText-documents.
+  rt-liberation		      available	 An interface to the RT system.
+  rtf-mode		      available	 Emacs major mode for viewing/editing raw RTF source
+  rtrt-script		      available	 
+  rubai			      available	 random display of collection of strings (rhymes, rubai ...)
+  ruby-block		      available	 Highlight matching block
+  ruby-compilation	      available	 Run a ruby process in a compilation buffer
+  ruby-electric		      available	 Electric commands editing for ruby files
+  ruby-end		      available	 Emacs minor mode for automatic insertion of end blocks for Ruby
+  ruby-mode		      available	 Major mode for editing Ruby files. RubyMode provides font-locking, indentation support, and navigation for Ruby code.
+  ruby-test		      available	 Test runner for ruby unit tests.
+  ruby-test-mode	      available	 Emacs minor mode for Behaviour and Test Driven Development in Ruby
+  rudel			      available	 A collaborative editing framework for Emacs
+  run-assoc		      available	 Run program or lisp function associated with a file.
+  rusewiki		      available	 edit pages on an RuseWiki wiki using curl
+  rust-mode		      available	 Emacs mode for Rust
+  rv-font-23		      available	 set font(cjk) for emacs-23
+  rvm			      available	 Emacs integration for rvm
+  rxvt			      available	 define function key sequences for rxvt
+  sass-mode		      available	 Major mode for editing Sass files
+  sauron		      available	 enhanced tracking of the world inside and outside your emacs
+  save-abbreviation-mode      available	 
+  save-and-dwim		      available	 save, then do something after saving.
+  save-load-path	      available	 save load-path and reuse it to test
+  savehist-20+		      available	 Save minibuffer history.
+  savekill		      available	 Save kill ring to disk
+  saw-client		      available	 Interaction with sawfish
+  scala-mode		      available	 Major mode for editing Scala code.
+  scheme-complete	      available	 Context-sensitive completion for Scheme code.
+  scheme-here		      available	 cmuscheme extension for multiple inferior processes
+  scheme48		      available	 A major mode for Scheme48 development
+  school-points-off	      available	 Display grades based on number of problems on the test
+  scilab		      available	 SCILAB INTEGRATED SHELL, EDITING AND  HELP in GNU-Emacs/Xemacs 
+  scim-bridge-extension	      available	 Simple extension for scim-bridge.el
+  scion			      available	 IDE library for Haskell based on the GHC API.
+  scpaste		      available	 Paste to the web via scp.
+  scratch		      available	 Mode-specific scratch buffers
+  screen-term		      available	 
+  screencast		      available	 demonstrate the capabilities of Emacs
+  screencast-cyedt	      available	 
+  screencast-graphviz-dot-mode available 
+  screencast-nxml	      available	 
+  screencast-outline	      available	 
+  screencast-record	      available	 record your screencasts as movies
+  screencast-rectangles	      available	 
+  screencast-registers	      available	 
+  screenplay		      available	 support writing of plain text screen plays
+  screenshot		      available	 Take a screenshot in Emacs
+  screenwriter		      available	 EMacs mode to format screenplays
+  scrl-margs		      available	 scroll margins minor mode
+  scrmable		      available	 scrmable chtrcaaers in wdors
+  scroll-mode-line-mode	      available	 
+  scss-mode		      available	 Major mode for editing SCSS files(http://sass-lang.com)
+  sdcv			      available	 Interface for sdcv (StartDict console version).
+  sdic-inline		      available	 Program to view dictionary.
+  sdic-inline-pos-tip	      available	 Extension for sdic-inline-mode using pos-tip.el
+  second-sel		      available	 Secondary selection commands
+  seinquote		      available	 Seinfeld Quotes
+  selective-undo-xmas	      available	 
+  selectkey		      available	 Select buffers by type with a single key
+  semantic-tag-folding	      available	 semantic decoration style to enable folding of semantic tags
+  semi			      available	 SEMI is a library to provide MIME feature for GNU Emacs.
+  sentence-highlight	      available	 highlight the current sentence
+  sequential-command	      available	 Many commands into one command
+  sequential-command-config   available	 Examples of sequential-command.el 
+  session		      available	 When you start Emacs, package Session restores various variables (e.g., input histories) from your last session. It also provides a menu containing recently changed/visited files and restores the places (e.g., point) of such a file when you revisit it.
+  setnu			      available	 vi-style line number mode for Emacs
+  setnu+		      available	 Extensions to `setnu.el'.
+  setup			      available	 Startup assignments: hooks etc.
+  setup-cygwin		      available	 Set up Emacs for using Cygwin
+  setup-helper		      available	 Functions for installation and setup of Emacs
+  setup-keys		      available	 Some key bindings.
+  sfst			      available	 major mode for editing SFST files
+  shadow		      available	 That's not the file. That's shadow.
+  shell-command		      available	 enables tab-completion for `shell-command'
+  shell-command-extension     available	 Some extension for shell-command
+  shell-command-queue	      available	 Queue shell commands for execution
+  shell-completion	      available	 provides tab completion for shell commands
+  shell-current-directory     available	 Create new shell based on buffer directory
+  shell-history		      available	 integration with shell history
+  shell-pop		      available	 Helps you pop up and pop out shell buffer easily.
+  shell-switcher	      available	 An emacs mode to easily switch between shell buffers (like with alt+tab)
+  shen-mode		      available	 Major mode for editing Shen source code
+  shime			      available	 Superior Haskell Interaction Mode for Emacs
+  shortlist		      available	 
+  show-help		      available	 Show help as showtip
+  show-point-mode	      available	 show point position in status bar
+  show-wspace		      available	 OBSOLETE - replaced by library `highlight-chars.el'.
+  showtip		      available	 Show tip at cursor
+  sicp			      available	 The second edition of the book Structure and Interpretation of Computer Programs (SICP) in info format
+  sie			      available	 Interpreter of a Scheme-like language
+  sierotki		      available	 Introduce tildes after single-letter words
+  sig-quote		      available	  Add quotes to signature according to recipients (Gnus/RMAIL/MH-E/vm)
+  simple+		      available	 Extensions to standard library `simple.el'.
+  simple-call-tree	      available	 analyze source code based on font-lock text-properties
+  simple-call-tree+	      available	 Extensions to simple-call-tree
+  simple-emacswiki	      available	 edit emacswiki.org within Emacs
+  simple-wiki-completion      available	 
+  simple-wiki-recent-changes  available	 view recent changes 
+  simplenote		      available	 Helper functions for simple-note.appspot.com
+  singlebind		      available	 Bind commands to single characters
+  ska-skel-matlab	      available	 my matlab skeletons
+  skype			      available	 Skype UI for emacs users.
+  sl			      available	 sl for emacs lisp
+  slim-mode		      available	 Syntax highlighting for Slim
+  slime			      available	 Superior Lisp Interaction Mode for Emacs
+  slime-company		      available	 slime completion backend for company mode
+  slime-loads		      available	 stub to indirect slime/swank configs on GNU
+  slime-loads-GNU-clbuild     available	 conform slime/swank to current environment
+  sln-mode		      available	 Create a project-buffer using sln file
+  slurp			      available	 Search a file hierarchy for files with matching names
+  smart-compile		      available	 an interface to `compile'
+  smart-compile+	      available	 an interface to `compile' -*- folded-file: t -*-
+  smart-dabbrev		      available	 smarter dabbrev-expand
+  smart-dnd		      available	 user-configurable drag-n-drop feature
+  smart-operator	      available	 Beautify the operators in codes
+  smart-tab		      available	 Intelligent tab completion and indentation.
+  smartchr		      available	 Emacs version of smartchr.vim
+  smartrep		      available	 Support sequential operation which omitted prefix keys.
+  smarttabs		      available	 Emacs smart tabs - indent with tabs, align with spaces!
+  smarty-mode		      available	 Smarty-Mode is a mode allowing easy edit of Smarty templates: highlight, templates, navigation into source files.
+  smex			      available	 M-x interface with Ido-style fuzzy matching.
+  sml-mode		      available	 SML-mode is a major Emacs mode for editing Standard ML source code.
+  sml-modeline		      available	 Show position in a scrollbar like way in mode-line
+  smooth-scroll		      available	 Minor mode for smooth scrolling.
+  smooth-scrolling	      available	 Make emacs scroll smoothly, keeping the point away from the top and bottom of the current buffer's window in order to keep lines of context around the point visible as much as possible, whilst avoiding sudden scroll jumps which are visually confusing.
+  sms			      available	 major mode for composing and sending SMS text messages
+  snipplr		      available	 Emacs interface to snipplr.com
+  sort+			      available	 Extensions to `sort.el'.
+  sourcepair		      available	 Load the corresponding C/C++ header or source file for the current buffer.
+  space-chord		      available	 Key chord with Space
+  spam-stat		      available	 detecting spam based on statistics
+  spanish		      available	 
+  spartan-wiki		      available	 a really spartan personal wiki
+  speck			      available	 minor mode for spell checking
+  speedbar-extension	      available	 Some extensions for speedbar
+  spell-number		      available	 Spell out an integer or currency in words.  -*- coding: utf-8 -*-
+  sql			      available	 specialized comint.el for SQL interpreters
+  sql-complete		      available	 provide completion for tables and columns
+  sql-completion	      available	 Completion in *SQL* for mysql
+  sql-indent		      available	 indentation of SQL statements
+  sql-transform		      available	 transform SQL statements
+  sql-with-placeholders	      available	 handle SQL statements with placeholders gently
+  sqled-mode		      available	 Major Mode for editing sql, sqlplus and pl/sql code
+  sqlparser-mysql-complete    available	 completing tablename,column name for mysql. -*- coding:utf-8 -*-
+  sqlparser-oracle-complete   available	 completing tablename,column name for oracle. -*- coding:utf-8 -*-
+  sqlparser-sqlserver-complete available complete tablename and columnname when editing sql -*- coding:utf-8 -*-
+  sqlplus		      available	 User friendly interface to SQL*Plus and support for PL/SQL compilation
+  sqlserver-query	      available	 execute sql select using sqlcmd.exe or osql.exe on SQL SERVER. -*- coding:utf-8 -*-
+  sqlserver-table2entity-4csharp available sqlserver table2entity for csharp   -*- coding:utf-8 -*-
+  sqlserver-table2entity-4java available sqlserver table2entity for csharp   -*- coding:utf-8 -*-
+  squirrel-mode		      available	 A major mode for editing Squirrel scripts.
+  sr-monotone		      available	 
+  sr-speedbar		      available	 Same frame speedbar
+  srep			      available	 the smart text repeater
+  srfi			      available	 View Scheme requests for implementation
+  ssh			      available	 This is a comint-based interface for connecting to remote hosts via ssh.
+  ssh-config		      available	 Manage both ssh and dsh confguration from emacs
+  stardict		      available	 stardict dictionary library
+  start			      available	 Main Emacs startup file: require/autoload other files.
+  start-opt		      available	 Some customizations to be done at the end of startup.
+  startup		      available	 
+  steersman		      available	 Control Emacs over XMPP/Jabber
+  steno			      available	 edit time-stamped entries in text notepads under Emacs.
+  sticky		      available	 Sticky key for capital letters
+  sticky-windows	      available	 Make windows stay visible
+  stream		      available	 a stream library in elisp
+  string-template	      available	 Support for $-substitution.
+  string-utils		      available	 String-manipulation utilities
+  strings		      available	 Miscellaneous string functions.
+  stripe-buffer		      available	 Make stripe color with buffer.
+  stripes		      available	 alternate the background color of lines
+  strptime		      available	 partial implementation of POSIX date and time parsing
+  struct+		      available	 
+  stuffcast		      available	 Stuff a PMP with content
+  subedit		      available	 edit part of a buffer in a new buffer
+  submerge		      available	 
+  subr-21		      available	 Provides Emacs 20 with Emacs 21 subr.el and built-in functions.
+  sudo-ext		      available	 sudo support
+  sudo-save		      available	 Allow saving files using sudo
+  sumatra-forward	      available	 (X)Emacs frontend to forward search with SumatraPDF
+  summarye		      available	 list up matched strings from a buffer, and display them in summary buffer
+  sunrise-commander	      available	 Two-pane file manager for Emacs based on Dired and inspired by MC
+  sunrise-x-buttons	      available	 Mouse-clickable shortcut buttons for the Sunrise Commander File Manager
+  sunrise-x-checkpoints	      available	 Checkpoint bookmarks for the Sunrise Commander File Manager
+  sunrise-x-loop	      available	 Asynchronous execution of filesystem operations for the Sunrise Commander File Manager
+  sunrise-x-mirror	      available	 Full read/write access to compressed archives for the Sunrise Commander File Manager
+  sunrise-x-modeline	      available	 Navigable mode line for the Sunrise Commander File Manager
+  sunrise-x-old-checkpoints   available	 backward compatibility checkpoint functions for the Sunrise Commander File Manager
+  sunrise-x-popviewer	      available	 Floating viewer window for the Sunrise Commander
+  sunrise-x-tabs	      available	 Tabs for the Sunrise Commander File Manager
+  sunrise-x-tree	      available	 Tree View for the Sunrise Commander File Manager
+  sunrise-x-w32-addons	      available	 MS-Windows-specific utilities for the Sunrise Commander File Manager -*- lexical-binding: t -*-
+  suomalainen-kalenteri	      available	 
+  superego		      available	 highlight your name
+  swank-clojure		      available	 Slime adapter for clojure
+  swank-js		      available	 SLIME REPL and other development tools for in-browser JavaScript and Node.JS
+  swbuff-x		      available	 Modifications to David Ponce's swbuff
+  sweat			      available	 
+  switch-color-theme-matlab-latex available color themes for matlab
+  switch-file		      available	 switch from one file to another.
+  switch-to-new-buffer	      available	 Switch to a new buffer with default name
+  switch-window		      available	 A *visual* way to choose a window to switch to
+  symlink-fix		      available	 Remove symbolic links from file pathnames.
+  synonyms		      available	 Look up synonyms for a word or phrase in a thesaurus.
+  syntactic-sugar	      available	 Effect-free forms such as if/then/else
+  sys			      available	 Determine which kind of system Emacs is running.
+  tab-in-tabular	      available	 Treat ampersands like table field separators
+  tabbar		      available	 Display a tab bar in the header line
+  tabbar-extension	      available	 Some extension for tabbar.
+  tabbar-ruler		      available	 Tabbar ruler is an emacs package that allows both the tabbar and the ruler to be used together. In addition it allows auto-hiding of the menu-bar and tool-bar.
+  tablature-mode	      available	 Modes for editing guitar tablature in GNU emacs
+  tacl-mode		      available	 Handles the Tandem/NSK/Guardian TACL language.
+  tacl-syntax		      available	 
+  tag			      available	 tagging files
+  tagbody		      available	 Common Lisp `tagbody' for Emacs Lisp
+  tagger		      available	 Tagged information handler
+  tagging		      available	 A global Status bar for emacs
+  tags-tree		      available	 Display tree of TAGS
+  tail			      available	 Tail files within Emacs
+  tal-indent		      available	 Handles indentation functions for tal-mode.
+  tal-mode		      available	 Handles the Tandem/NSK/Guardian TAL & PTAL languages.
+  task-timer		      available	 Simple task timer package.
+  tc			      available	 cite text with proper filling
+  tcp-client		      available	 Providing a network interface
+  teco			      available	 Dale Worley's teco-in-elisp interpreter
+  tellicopy		      available	 A minor mode for saving the thing at point to `kill-ring'
+  telnet-contrib	      available	 Telnet commands for Emacs on MS Windows.
+  tempbuf		      available	 kill unused buffers in the background
+  template-simple	      available	 Simple template functions and utils
+  tempo-c-cpp		      available	 abbrevs for c/c++ programming
+  tempo-x		      available	 More elements for tempo
+  term-toggle		      available	 Toggle to and from the *terminal* buffer
+  terminal-notifier-el	      available	 Emacs interface for terminal-notifier for MacOSX notification center.
+  test			      available	 
+  test-unit		      available	 Unit Test Framework for Emacs Lisp
+  testr			      available	 Quick and easy Ruby TDD
+  texlabel		      available	 Auto insertion of equation labels in TeX
+  texmate-import	      available	 
+  text-translator	      available	 Translate text within GNU Emacs by online translators
+  text-translator-load	      available	 Text Translator
+  text-translator-vars	      available	 Text Translator
+  textile-mode		      available	 Textile editing mode
+  textlint		      available	 Allows the integration of TextLint within Emacs
+  textmate		      available	 TextMate minor mode for Emacs
+  textmate-to-yas	      available	 Convert Textmate snippets to Yasnippets
+  textmenu		      available	 alternate text mode access to menu-bar
+  tfs			      available	 MS Team Foundation Server commands for Emacs.
+  theme-roller		      available	 A collection of activly maintained emacs themes
+  thesaurus		      available	 replace a word with a synonym looked up in a web service.
+  thing-cmds		      available	 Commands that use things, as defined by `thingatpt.el'.
+  thing-edit		      available	 Extension thing edit
+  thing-edit-extension	      available	 Some enhanced functions for thing-edit.el
+  thing-opt		      available	 Thing at Point optional utilities
+  thingatpt+		      available	 Extensions to `thingatpt.el'.
+  thingatpt-ext		      available	 Thing at point extensions
+  thumb-frm		      available	 Commands for thumbnail frames.
+  thumb-page		      available	 create a muse file with thumbs
+  thumbs		      available	 Thumbnails previewer for images files
+  thumbs-xmas		      available	 Thumbnails previewer for images files
+  tidy			      available	 Interface to the HTML Tidy program
+  tie-mode		      available	 Tie code editing commands for GNU Emacs
+  tiling		      available	 changing window layout
+  time-ext		      available	 more function for time/date
+  timeclock-x		      available	 Extra features for John Wiegley's timeclock package
+  timer+		      available	 Extensions to `timer.el'.
+  timid			      available	 timid completion
+  title-time		      available	 like display-time but in the title-bar
+  tjic-blog		      available	 
+  tjic-shell		      available	 
+  tjic-website		      available	 
+  tjicutil-funcs	      available	 
+  todochiku		      available	 A mode for interfacing with Growl, Snarl, and the like.
+  todostack		      available	 keep a to-do list as a simple stack
+  toggle		      available	 quickly open corresponding file (eg test vs impl).
+  toggle-backslash-line	      available	  toggle between slashes and backslashes in the current line
+  toggle-friend-file	      available	 Toggles between friend files (e.g. h and cpp). See customize-group toggle-friend-file.
+  token-example		      available	 example for Parser Compiler introducing tokens.
+  tomatinho		      available	 Pomodoro technique timer with a lean and usable interface.
+  tomorrow-night-paradise-theme	available A light-on-dark Emacs theme which is essentially a tweaked version of Chris Kempson's Tomorrow Night Bright theme.
+  tomorrow-theme	      available	 Colour Schemes for Hackers
+  tool-bar+		      available	 Extensions to standard library tool-bar.el
+  toolbox		      available	 create simple menus in buffers
+  tooltip-help		      available	 show help as tooltip
+  top-mode		      available	 run 
+  topsongs		      available	 a song database for the lazy emacser
+  tortoise-svn		      available	 
+  tpum			      available	 Popup menus in text mode.
+  traad			      available	 A XMLRPC server for the rope Python refactoring library
+  track-scroll		      available	 Enable direct scrolling with the mouse
+  tracker-dired		      available	 
+  tracking		      available	 Buffer modification tracking
+  tramp-adb		      available	 use adb in tramp
+  trans-ej		      available	 English-Japanese translator using web translation service -*- Coding: utf-8 -*-
+  trans-regions		      available	 Transpose regions command.
+  transpar		      available	 Transpose paragraph text as a table.
+  transpose-frame	      available	 Transpose windows arrangement in a frame
+  trantab		      available	 translation table bundles
+  trash-settings	      available	 Intelligent integration with system trash
+  trashcan		      available	 A recoverable file deletion system
+  traverselisp		      available	 walk through directories and perform actions on files.
+  tree-mode		      available	 A mode to manage tree widgets
+  truthy		      available	 Test the content of a value
+  ts-mode		      available	 An Emacs major mode for editing TypoScript files
+  tsql-indent		      available	 indents TSQL (and other SQL) statements
+  tsv-mode		      available	 Major mode for edit table files
+  tuareg-mode		      available	 A  GOOD Emacs mode to edit Objective Caml code.
+  tumbl			      available	 Post to tumblr.com from emacs
+  tumme			      available	 use dired to browse and manipulate your images
+  twilight-anti-bright-theme  available	 A light-on-dark Emacs theme inspired by the dark-on-light Twilight Bright TextMate theme.
+  twilight-bright-theme	      available	 A Emacs port of the TextMate theme by the same name with some minor tweaks and additions.
+  twit			      available	 Interface with twitter.com
+  twitter		      available	 Simple Emacs-based client for Twitter
+  twittering-mode	      available	 Major mode for Twitter
+  two-mode-mode		      available	 switches between tcl and sgml(html) modes
+  txt2tags-mode		      available	 Major mode for editing Txt2Tags files
+  type-test		      available	 Typing test
+  typing		      available	 The Typing Of Emacs
+  typopunct		      available	 Automatic typographical punctuation marks
+  tzhelp		      available	 very simple time zone tools
+  ucs-cmds		      available	 Macro to create commands that insert Unicode chars.
+  ucs-utils		      available	 Utilities for Unicode characters
+  ucs-utils-6.0-delta	      available	 Unicode 5.2 to 6.0 delta
+  uim-el		      available	 A multilingual input method framework for Emacs
+  ukrainian-holidays	      available	 
+  ul			      available	 insert/remove underlining in Emacs
+  unaccent		      available	 Functions dealing with accented characters.
+  unbound		      available	 find convenient unbound keystrokes
+  undo-tree		      available	 Treat undo history as a tree
+  unicad		      available	 an elisp port of Mozilla Universal Charset Auto Detector
+  unicode-enbox		      available	 Surround a string with box-drawing characters
+  unicode-fonts		      available	 Configure Unicode fonts
+  unicode-helper	      available	 Unicode helper functions
+  unicode-progress-reporter   available	 Progress-reporter with fancy characters
+  unicode-whitespace	      available	 teach whitespace-mode about fancy characters
+  unidiff		      available	 editing unified format patches
+  unify-buffer		      available	 Concatenate multiple buffers
+  unit-test		      available	 Run unit tests from Emacs with visual feedback
+  unparen		      available	 show elisp code without parenthesis'
+  url-asciionly		      available	 ffap url handling workaround
+  usage-memo		      available	 integration of Emacs help system and memo
+  use-package		      available	 Arrange use of an elisp package
+  uuid			      available	 Provides uuid generating functions
+  vbnet-mode		      available	 A mode for editing Visual Basic .NET programs.
+  vbs-repl		      available	 Support for VBScript programming in Emacs
+  vc+			      available	 Extensions for `vc.el'.
+  vc-			      available	 Extensions to `vc.el'.
+  vc-bzr		      available	 VC backend for the bzr revision control system
+  vc-darcs		      available	 A VC backend for darcs
+  vc-fossil		      available	 VC integration for Fossil-scm in Emacs
+  vc-hooks+		      available	 Extensions to `vc-hooks.el'.
+  vc-jump		      available	 jump to status buffer for the current VC
+  vcl-mode		      available	 Syntax highlighting for Varnish Command Language
+  vcomp			      available	 Compare version strings
+  vector-utils		      available	 Vector-manipulation utility functions
+  vel			      available	 keyboard/mouse-based 
+  verbiste		      available	 Word conjugation
+  versions		      available	 version string comparison
+  vertical-consistency	      available	 make opposite vertical movement go back its track
+  vhdl-goto-def		      available	 Jumps to definition of signal, constant or function
+  vhdl-process-wave	      available	 processes waveform saved of modelsim
+  viewer		      available	 View-mode extension
+  vim-elscreen		      available	 
+  vimpulse		      available	 Vimpulse is an add-on for the Emacs text editor. Vimpulse makes Emacs emulate the Vim editor's most useful features, including Visual mode.
+  vimpulse-surround	      available	 Emulate surround.vim in Vimpulse
+  viper-in-more-modes	      available	 vi-like keybindings for various Emacs modes
+  virtual-desktops	      available	 allows you to save/restore a frame configuration: windows and buffers.
+  virtualenv		      available	 Virtualenv for Python
+  visible-lines		      available	 move across visible lines instead of logic lines
+  visible-mark		      available	 Make marks visible.
+  visual-basic-mode	      available	 A mode for editing Visual Basic programs.
+  visws			      available	 Make whitespace visible    -*- coding: latin-1 -*-
+  vkill			      available	 View and kill Unix processes from within Emacs
+  vlf			      available	 View Large Files
+  vline			      available	 show vertical line (column highlighting) mode.
+  vm-thread		      available	 Functions for collapsing threads in a VM Summary buffer
+  vnesting		      available	 Show form nesting with vertical bars
+  volatile-highlights	      available	 Minor mode for visual feedback on some operations in Emacs
+  volctrl		      available	 Elisp interface to controling audio output 
+  vsh-mode		      available	 
+  w32-browser		      available	 Run Windows application associated with a file.
+  w32-exec-predef	      available	 execute Start Menu shortcuts from inside Emacs
+  w32-find-dired	      available	 light w32 replacement for `find-dired'
+  w32-send-mapi		      available	 send e-mail messages using MAPI
+  w32-shell-execute	      available	 w32 specific.  execute any of the 'Explorer verbs' available for a file or directory
+  w32-shell-verb	      available	 ShellExecute verbs on a file
+  w32-symlinks		      available	 MS Windows symbolic link (shortcut) support
+  w32-utl		      available	 small utility functions implemented using vbscript
+  w32browser-dlgopen	      available	 Use w32browser with standard Windows Open File box.
+  w3m-extension		      available	 Emacs-W3m extensions
+  w3m-fb		      available	 frame-local buffers support for Emacs-w3m
+  w3m-session		      available	 Persistent emacs-w3m sessions
+  w3m-type-ahead	      available	 type ahead support for Emacs-w3m
+  w3xt			      available	 extended MIME control in w3m
+  wajig			      available	 an interface for wajig
+  wanderlust		      available	 Wanderlust bootstrap.
+  warn-mail		      available	 warn for mails incoming
+  waveform-mode		      available	 
+  wb-line-number	      available	 wb-line-number
+  wc			      available	 count words
+  wc-mode		      available	 show wc-like information in status bar
+  wcheck-mode		      available	 
+  wcy-complete		      available	 extremely simple version of tempo, not as powerful as tempo. 
+  wcy-compose		      available	 some helper function that is not defined by default
+  wcy-desktop		      available	 faster than desktop.el and less features.
+  wcy-display-line-number     available	 line number mode for Emacs
+  wcy-recentf		      available	 open recent saved file and recent opened file
+  wcy-swbuff		      available	 switch buffer quickly
+  wdired		      available	 Rename files editing their names in dired buffers
+  wdired-extension	      available	 Some extension functions for `wdired.el'.
+  webgen-mode		      available	 webgen mode
+  webjump++		      available	 Easy search web on engines.
+  weblogger		      available	 
+  weblogger-el		      available	 Weblog maintenance via XML-RPC APIs
+  websocket		      available	 A websocket implementation in elisp, for emacs.
+  weekly-view		      available	 bar graph view of the week's diary events
+  wget-extension	      available	 Some enhanced functions for wget.el
+  wgrep			      available	 Writable grep buffer and apply the changes to files
+  whine			      available	 complaint generator for GNU Emacs
+  whitespace		      available	 minor mode to visualize TAB, (HARD) SPACE, NEWLINE
+  whole-line-or-region	      available	 Operate on current line if region undefined
+  wid-edit+		      available	 Extensions to standard library `wid-edit.el'.
+  wide-n		      available	 Cycle among buffer restrictions
+  widen-window		      available	 Widening selecting window
+  widget-demo		      available	 Some recipes for creating widgets
+  wiki			      available	 hypertext authoring the WikiWay
+  wiki-inter		      available	 interwikis for wiki.el
+  wiki-nav		      available	 Simple file navigation using [[WikiStrings]]
+  wiki-remote		      available	 edit pages on a remote wiki
+  wikiarea		      available	 Interface to the Emacs Wiki's Elisp area
+  wikiarea-fixed	      available	 Interface to the Emacs Wiki's Elisp area
+  wikidoc		      available	 use elisp doc strings to make other documentation
+  wikify-ell		      available	 Transform the ELL into a Wiki page.
+  wikipedia-mode	      available	 Mode for editing Wikipedia articles off-line
+  wikirel		      available	 Visit relevant pages on the Emacs Wiki
+  wikitext-mode		      available	 Mode for editing Wikitexts
+  wimpy-del		      available	 Require confirmation for large region deletion.
+  win-switch		      available	 fast, dynamic bindings for window-switching/resizing
+  windata		      available	 convert window configuration to list
+  window+		      available	 Extensions to `window.el'.
+  window-end-visible	      available	 Find the last visible point in a window
+  window-extension	      available	 Some extension functions manipulate window.
+  window-layout		      available	 window layout manager
+  window-number		      available	 Select windows by numbers
+  windows		      available	 Window manager for GNU Emacs.
+  windows-path		      available	 Teach cygwin EMACS about windows styles path
+  windresize-extension	      available	 Some extension functions for `windresize.el'
+  winpoint		      available	 Remember buffer positions per-window, not per buffer
+  wl-gravatar		      available	 Gravatar fetch/store functions
+  wl-list		      available	 List all W3M buffers.
+  wn-mode		      available	 numeric window switching shortcuts
+  wn-org		      available	 an org-mode interface for Word Net
+  wordfreq		      available	 Get word's frequency of usage.
+  wordnik		      available	  lookup a word on wordnik
+  work-timer		      available	 A timer so you know when telax, and when to work
+  workgroups		      available	 Workgroups for windows (for Emacs)
+  worklog		      available	 
+  workspaces		      available	 implemented using registers
+  wpdl-mode		      available	 Major mode for editing WPDL files
+  wrap-region		      available	 Wrap text with punctation or tag
+  write-or-die		      available	 deletes word from buffer if you stop typing for to long
+  ws-tests		      available	 automated tests for win-switch
+  wsh-repl		      available	 Windows Scripting Host REPL (in javascript)
+  wthreetwo-winprint	      available	 
+  wuxch-bookmark	      available	 
+  wuxch-browse-kill-ring      available	 
+  wuxch-buffer		      available	 
+  wuxch-cc		      available	 
+  wuxch-cua		      available	 
+  wuxch-current-point	      available	 
+  wuxch-cursor		      available	 
+  wuxch-date		      available	 
+  wuxch-desktop		      available	 
+  wuxch-diary		      available	 
+  wuxch-dict		      available	 
+  wuxch-dired		      available	 
+  wuxch-dired-copy-paste      available	 
+  wuxch-dos-unix	      available	 
+  wuxch-ediff		      available	 
+  wuxch-elisp		      available	 
+  wuxch-elisp-tag	      available	 
+  wuxch-fill-column	      available	 
+  wuxch-find-grep	      available	 
+  wuxch-font		      available	 
+  wuxch-fontlock	      available	 
+  wuxch-fringe		      available	 
+  wuxch-fringe-bookmark	      available	 
+  wuxch-goto-char	      available	 
+  wuxch-hex		      available	 
+  wuxch-hideshow	      available	 
+  wuxch-ibookmark	      available	 
+  wuxch-icicles		      available	 
+  wuxch-imenu		      available	 
+  wuxch-indent		      available	 
+  wuxch-mode		      available	 
+  wuxch-mode-line	      available	 
+  wuxch-org		      available	 
+  wuxch-outline		      available	 
+  wuxch-point-stack	      available	 
+  wuxch-predictive	      available	 
+  wuxch-register	      available	 
+  wuxch-sgml		      available	 
+  wuxch-shell		      available	 
+  wuxch-tag		      available	 
+  wuxch-tex		      available	 
+  wwtime		      available	 Insert a time of day with appropriate world-wide localization
+  x-face-magic		      available	 various x-face utils
+  x-face-mini		      available	 Create MINI X-Face image for XEmacs/Emacs21+.
+  x-migrant		      available	 Support for subprocesses handling remote X displays
+  xahk-mode		      available	 Major mode for editing AHK (AutoHotKey) scripts.
+  xclip			      available	 Emacs Interface to XClip
+  xcode			      available	 
+  xcscope		      available	 Cscope interface for (X)Emacs
+  xcscope+		      available	 Providing an extension to xcscope.
+  xgtags		      available	 gtags facility for Emacs
+  xgtags-extension	      available	 Some extension for xgtags.el
+  xlicense		      available	 Insert a pre-defined license text
+  xml-parse		      available	 Code to efficiently read/write XML data with Elisp
+  xml-rpc		      available	 An elisp implementation of clientside XML-RPC
+  xml-rpc-el		      available	 An elisp implementation of clientside XML-RPC
+  xml-weather		      available	 Get xml-weather infos in emacs. 
+  xpath			      available	 XPATH implementation
+  xpath-parser		      available	 XPATH parser
+  xquery-mode		      available	 A simple mode for editing xquery programs
+  xray			      available	 Display internal object structures in a temporary buffer.
+  xs-mode		      available	 A simple major mode for write perl XS code
+  xsl-mode		      available	 XSL Mode
+  xsocks		      available	 emacs sockets extender
+  xt-mouse-xmas		      available	 Xemacs port of xt-mouse.el - Support the mouse when emacs run in an xterm.
+  yahoo-weather		      available	 Get the weather from yahoo.
+  yalinum		      available	 Yet another display line numbers.
+  yaml-mode		      available	 Simple major mode to edit YAML file for emacs
+  yang-mode		      available	 
+  yaoddmuse		      available	 Yet Another Oddmuse Mode
+  yaoddmuse-extension	      available	 Some enhanced functions for yaoddmuse.el
+  yari			      available	 Yet Another RI interface for Emacs
+  yas-jit		      available	 Just in time loading of yasnippets
+  yascroll		      available	 Yet Another Scroll Bar Mode
+  yasnippet		      available	 YASnippet is a template system for Emacs.
+  yasnippet-config	      available	 Configuration of yasnippet.el
+  yatm			      available	 Yet Another Text Menu
+  yiddish		      available	 
+  zenburn		      available	 
+  zenburn-theme		      available	 Zenburn theme for Emacs
+  zencoding-mode	      available	 Unfold CSS-selector-like expressions to markup
+  zenirc-chanbuf	      available	 zenirc one channel per buffer support
+  zjl-hl		      available	 
+  zoom-frm		      available	 Commands to zoom frame font size.
+  zotexo		      available	 integrate zotero collections to emacs RefTex/BibTex
