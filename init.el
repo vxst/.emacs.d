@@ -1,18 +1,17 @@
-;; Time-stamp: <2012-12-02 14:20:31 Zeno Zeng>
+;; Time-stamp: <2012-12-03 18:24:27 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
-(add-to-list 'load-path "~/.emacs.d/modes")
-(add-to-list 'load-path "~/.emacs.d/require")
-(add-to-list 'load-path "~/.emacs.d/require/php-eldoc")
-(add-to-list 'load-path "~/.emacs.d/require/css-eldoc")
-(add-to-list 'load-path "~/.emacs.d/modes/less-css-mode")
-(add-to-list 'load-path "~/.emacs.d/modes/js3-mode")
+(add-to-list 'load-path "~/.emacs.d/plugins")
+(add-to-list 'load-path "~/.emacs.d/plugins/php-eldoc")
+(add-to-list 'load-path "~/.emacs.d/plugins/css-eldoc")
+(add-to-list 'load-path "~/.emacs.d/plugins/less-css-mode")
+(add-to-list 'load-path "~/.emacs.d/plugins/js3-mode")
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.4")
 (add-to-list 'load-path "~/.emacs.d/elpa/php+-mode-20121004.1439")
 (add-to-list 'load-path "~/.emacs.d/elpa/popup-0.5")
 (add-to-list 'load-path "~/.emacs.d/elpa/gitty-1.0")
-(add-to-list 'load-path "~/.emacs.d/require/emacs-w3m")
-(add-to-list 'load-path "~/.emacs.d/require/o-bloger")
+(add-to-list 'load-path "~/.emacs.d/plugins/emacs-w3m")
+(add-to-list 'load-path "~/.emacs.d/plugins/o-bloger")
 (add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-0.5.4")
 (add-to-list 'load-path "~/.emacs.d/elpa/org-20120903")
 
@@ -28,8 +27,8 @@
 (require 'init-html)
 (require 'init-lisp)
 
-
 (require 'init-elpa)
+(require 'init-elget)
 (require 'init-hs)
 (require 'init-auto-complete)
 (require 'init-backup)

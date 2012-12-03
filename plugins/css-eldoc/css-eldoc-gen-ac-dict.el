@@ -1,4 +1,4 @@
-;;; css-eldoc.el --- 
+;;; css-eldoc-gen-ac-dict.el --- 
 
 ;; Copyright (C) 2012  Zeno Zeng
 
@@ -23,22 +23,7 @@
 ;; 
 
 ;;; Code:
-(eval-when-compile
-  (require 'cl nil t))
 
-(require 'css-eldoc-hash-table)
 
-(defun css-eldoc-function()
-  (ignore-errors
-    (save-excursion
-      (save-restriction
-	(narrow-to-region (line-beginning-position) (point))
-	(let* ((beg (+ 1 (re-search-backward "\\(;\\|{\\)" nil t)))
-	       (end (- (re-search-forward ":" nil t) 1))
-	       (property (buffer-substring-no-properties beg end)))
 
-	  (setq property (replace-regexp-in-string " " "" property))
-	  (gethash property css-eldoc-hash-table))))))
-
-(provide 'css-eldoc)
-;;; css-eldoc.el ends here
+;;; css-eldoc-gen-ac-dict.el ends here
