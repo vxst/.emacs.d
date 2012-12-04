@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-12-03 18:24:27 Zeno Zeng>
+;; Time-stamp: <2012-12-04 19:05:07 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/plugins")
@@ -77,7 +77,7 @@
  '(js3-consistent-level-indent-inner-bracket t)
  '(js3-curly-indent-offset 2)
  '(js3-enter-indents-newline t)
- '(js3-global-externs (quote ("$" "localStorage" "JSON" "setInterval" "clearInterval" "setTimeout")))
+ '(js3-global-externs (quote ("$" "localStorage" "JSON" "setInterval" "clearInterval" "setTimeout" "console")))
  '(js3-indent-level 2)
  '(js3-indent-on-enter-key t)
  '(less-css-compile-at-save t)
