@@ -30,19 +30,27 @@
 
 (defun css-eldoc-function()
   (ignore-errors
-    (save-excursion
-      (save-restriction
-	(narrow-to-region (line-beginning-position) (point))
-	(let* ((beg (+ 1 (re-search-backward "\\(;\\|{\\)" nil t)))
-	       (end (- (re-search-forward ":" nil t) 1))
-	       (property (buffer-substring-no-properties beg end)))
+    (save-restriction
+      (narrow-to-region (line-beginning-position) (point))
+      (let* ((beg
+	      (save-excursion
+		(+ 1 (or
+		      (re-search-backward "\\(;\\|{\\)" nil t)
+		      (- (point-min) 1)))))
+	     (end
+	      (save-excursion
+		(or
+		 (re-search-backward ":" nil t)
+		 (point-max))))
+	     (property (buffer-substring-no-properties beg end)))
 
-	  (setq property (replace-regexp-in-string " " "" property))
+	(setq property (replace-regexp-in-string "[\t\n ]+" "" property))
 
+	(message property)
 
-	  (replace-regexp-in-string "|"
-				    (propertize "|" 'face 'compilation-mode-line-run)
-				    (gethash property css-eldoc-hash-table)))))))
+	(replace-regexp-in-string "|"
+				  (propertize "|" 'face 'compilation-mode-line-run)
+				  (gethash property css-eldoc-hash-table))))))
 
 (provide 'css-eldoc)
 ;;; css-eldoc.el ends here
