@@ -19,5 +19,11 @@
 	      (make-local-variable 'eldoc-documentation-function)
 	      'css-eldoc-function)
 	     (eldoc-mode)))
+(add-hook 'less-mode-hook
+	  '(lambda ()
+	     (set
+	      (make-local-variable 'eldoc-documentation-function)
+	      'css-eldoc-function)
+	     (eldoc-mode)))
 
 (provide 'init-css)
