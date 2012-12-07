@@ -31,3 +31,4 @@ abbrev_defs
 /.mc-lists.el
 /elpa
 /el-get
+/bookmarks
