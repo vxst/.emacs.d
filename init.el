@@ -1,9 +1,7 @@
-;; Time-stamp: <2012-12-04 19:05:07 Zeno Zeng>
+;; Time-stamp: <2012-12-07 21:36:19 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/plugins")
-(add-to-list 'load-path "~/.emacs.d/plugins/php-eldoc")
-(add-to-list 'load-path "~/.emacs.d/plugins/css-eldoc")
 (add-to-list 'load-path "~/.emacs.d/plugins/less-css-mode")
 (add-to-list 'load-path "~/.emacs.d/plugins/js3-mode")
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.4")

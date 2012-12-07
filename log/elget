@@ -376,6 +376,7 @@
   cruisecontrol		      available	 Talking to a cruisecontrol server with emacs
   cscope		      available	 Interface to cscope browser
   csharp-mode		      available	 This is a mode for editing C# in emacs. It's based on cc-mode, v5.30.3 and above.
+  css-eldoc		      installed	 eldoc plugin for CSS
   css-mode		      available	 Minor mode for CSS
   css-mode-simple	      available	 A (very) minimal CSS mode.
   css-palette		      available	 
@@ -434,7 +435,7 @@
   dig			      available	 Domain Name System dig interface
   dim-google		      available	 
   diminish		      available	 An Emacs package that diminishes the amount of space taken on the mode line by the names of minor modes.
-  dired+		      available	 Extensions to Dired
+  dired+		      removed	 Extensions to Dired
   dired-column-widths	      available	 Corrects column widths after entry modification.
   dired-details		      available	 Make file details hide-able in dired
   dired-details+	      available	 Extensions to `dired-details.el'.
@@ -1477,6 +1478,7 @@
   phonetic		      available	 Phonetize (Alpha, Bravo, Charlie...) the region
   php-completion	      available	 complete everything PHP with Anything.el
   php-doc		      available	 Php document helper
+  php-eldoc		      installed	 eldoc plugin for PHP
   php-mode		      available	 A PHP mode for GNU Emacs 
   php-mode-improved	      available	 Major mode for editing PHP code. This is a version of the php-mode from http://php-mode.sourceforge.net that fixes a few bugs which make using php-mode much more palatable
   phutball		      available	 play phutball in Emacs
@@ -1869,7 +1871,7 @@
   switch-color-theme-matlab-latex available color themes for matlab
   switch-file		      available	 switch from one file to another.
   switch-to-new-buffer	      available	 Switch to a new buffer with default name
-  switch-window		      available	 A *visual* way to choose a window to switch to
+  switch-window		      installed	 A *visual* way to choose a window to switch to
   symlink-fix		      available	 Remove symbolic links from file pathnames.
   synonyms		      available	 Look up synonyms for a word or phrase in a thesaurus.
   syntactic-sugar	      available	 Effect-free forms such as if/then/else

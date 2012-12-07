@@ -89,4 +89,6 @@
 (require 'english-writing-mode)
 
 
+(require 'switch-window)
+
 (provide 'init-etc)

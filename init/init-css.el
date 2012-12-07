@@ -12,18 +12,10 @@
                 lisp-mode-hook))
   (add-hook hook (lambda () (rainbow-mode 1))))
 
-(require 'css-eldoc)
 (add-hook 'css-mode-hook
 	  '(lambda ()
 	     (set
 	      (make-local-variable 'eldoc-documentation-function)
 	      'css-eldoc-function)
 	     (eldoc-mode)))
-(add-hook 'less-mode-hook
-	  '(lambda ()
-	     (set
-	      (make-local-variable 'eldoc-documentation-function)
-	      'css-eldoc-function)
-	     (eldoc-mode)))
-
 (provide 'init-css)

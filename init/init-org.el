@@ -21,4 +21,14 @@
 	("j" "Journal" entry (file+datetree "~/org/journal.org")
 	 "* %?")))
 
+;; Org Bible
+
+;; active Babel languages
+;; (org-babel-do-load-languages
+;;  'org-babel-load-languages
+;;  '((R . t)
+;;    (emacs-lisp . t)
+;;    (scheme . t)
+;;    ))
+
 (provide 'init-org)
