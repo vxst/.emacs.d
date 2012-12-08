@@ -91,4 +91,11 @@
 
 (require 'switch-window)
 
+(require 'application)
+(setq application-caller-list
+      '(
+	(".*\\.pdf$" . "evince")
+	))
+
+
 (provide 'init-etc)
