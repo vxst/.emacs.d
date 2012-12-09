@@ -9,7 +9,8 @@
 (emms-lyrics-disable)
 
 ;; 打开时自动加载，完毕后暂停
-(emms-add-directory-tree "~/音乐/")
+(emms-play-directory-tree "~/音乐/")
+(emms-stop)
 (emms-shuffle)
 (emms-start)
 (emms-pause)
