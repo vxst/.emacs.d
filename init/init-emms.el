@@ -1,20 +1,19 @@
-(require 'emms-setup)
+;; 记得在开始前装上mplayer,mpg123等等的需要软件，否则会遇到奇怪的问题
 
-(emms-devel)
+(require 'emms-setup)
+(emms-standard)
+(require 'emms-score)
 (emms-default-players)
 
-;; 不要在modeline显示
-(emms-mode-line-disable)
-(emms-playing-time-disable-display)
-(emms-lyrics-disable)
+;; 循环设置
+(setq emms-repeat-track nil)
+(setq emms-repeat-playlist t)
 
 ;; 打开时自动加载，完毕后暂停
 (emms-play-directory-tree "~/音乐/")
-(emms-stop)
 (emms-shuffle)
-(emms-start)
+(emms-next)
 (emms-pause)
-
 
 ;; global key-map
 ;; all global keys prefix is C-c e
