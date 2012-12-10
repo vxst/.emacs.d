@@ -140,7 +140,7 @@
 			   "<div id=\"info-etc\">"
 			   info-etc
 			   "</div>"
-			   "<div id=\"abstract\"><strong class=\"hei\">摘要</strong>："
+			   "<div id=\"abstract\"><strong class=\"hei\"><span>摘</span>要</strong>："
 			   abstract
 			   "</div>"
 			   "<div id=\"keywords\"><strong class=\"hei\">关键词</strong>："
@@ -154,8 +154,9 @@
 body{max-width:560pt;width:90%;padding:10pt 0;margin:0 auto;font-size:12pt;}
 .hei {font-family:\"Hiragino Sans GB\",\"ST Heiti\",\"LiHei Pro Medium\",\"Microsoft YaHei\",\"Wenquanyi Micro Hei\",\"WenQuanYi Zen Hei\";}
 #abstract, #keywords, #author, #info-etc {font-family:\"STKaiti\",\"KaiTi\",\"AR PL KaitiM GB\",\"TW\-Kai\";}
-#abstract, #keywords {padding-left:24pt;padding-top:1em;font-size:.8em;}
-#author{font-size:1.5em;padding-bottom:.5em;text-align:center;}
+#abstract, #keywords {padding-left:24pt;padding-top:1em;font-size:.9em;}
+#abstract strong span{letter-spacing:1em;}
+#author{font-size:1.5em;padding-bottom:1em;text-align:center;}
 #info-etc {text-align:center;padding-bottom:1em;}
 a{color:#000000;text-decoration:none;}
 .outline-3{page-break-inside:avoid;}
