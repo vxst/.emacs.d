@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-12-10 12:53:42 Zeno Zeng>
+;; Time-stamp: <2012-12-10 18:31:04 Zeno Zeng>
 ;; TODO: count cn chars
 
 (add-to-list 'load-path "~/.emacs.d/init")
@@ -72,6 +72,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(chm-view-delay 1)
+ '(golden-ratio-exclude-modes (quote ("shell-mode" "calendar-mode" "gud-mode" "ediff-mode" "eshell-mode" "help-mode" "org-mode")))
  '(hl-paren-colors (quote ("#f00" "#ff0" "#0f0" "#00ced1" "#9400d3")))
  '(js3-allow-member-expr-as-function-name t)
  '(js3-auto-indent-p t)
