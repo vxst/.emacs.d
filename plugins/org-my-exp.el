@@ -178,9 +178,32 @@ h1,h2,h3,h4,h5,h6{font-family:\"Hiragino Sans GB\",\"ST Heiti\",\"LiHei Pro Medi
 	  (when org-export-kill-product-buffer-when-displayed
 	    (kill-buffer (current-buffer))))))))
 
-(defun org-my-exp-english ()
-  "导出org到合理的英语作文格式"
-  (interactive))
+(defun org-my-exp-english (arg)
+  "导出org文件到大英作文格式"
+  (interactive "P")
+
+  (save-excursion
+    (save-restriction
+      (save-match-data
+	(widen)
+	(goto-char (point-min))
+
+	(org-export-as-html arg 'hidden)
+
+	(replace-regexp "</style>"
+			"input,textarea,select{outline:none;}
+body{max-width:560pt;width:90%;padding:10pt 0;margin:0 auto;font-size:14pt;font-family:DejaVu Serif;}
+h1.title{font-size:24pt;}
+a{color:#000000;text-decoration:none;}
+p{text-indent:2em;line-height:1.5em;}
+#table-of-contents{display:none;}
+#postamble{display:none;}
+</style>"
+			nil (point-min) (point-max))
+	(save-buffer)
+	(org-open-file buffer-file-name)
+	(when org-export-kill-product-buffer-when-displayed
+	  (kill-buffer (current-buffer)))))))
 
 
 
