@@ -98,4 +98,13 @@
 	))
 
 
+(defun count-cn-chars-occurences (regex string)
+  (recursive-count regex string 0))
+
+(defun recursive-count (regex string start)
+  (if (string-match regex string start)
+      (+ 1 (recursive-count regex string (match-end 0)))
+    0))
+
+
 (provide 'init-etc)

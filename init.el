@@ -1,10 +1,11 @@
-;; Time-stamp: <2012-12-08 20:01:30 Zeno Zeng>
+;; Time-stamp: <2012-12-10 12:53:42 Zeno Zeng>
+;; TODO: count cn chars
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (add-to-list 'load-path "~/.emacs.d/plugins/less-css-mode")
 (add-to-list 'load-path "~/.emacs.d/plugins/js3-mode")
-(add-to-list 'load-path "~/.emacs.d/plugins/emms/lisp")
+(add-to-list 'load-path "~/.emacs.d/plugins/emms-3.0")
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.4")
 (add-to-list 'load-path "~/.emacs.d/elpa/php+-mode-20121004.1439")
 (add-to-list 'load-path "~/.emacs.d/elpa/popup-0.5")

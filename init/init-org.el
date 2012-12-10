@@ -31,4 +31,21 @@
 ;;    (scheme . t)
 ;;    ))
 
+
+;; Org Export Generic
+(require 'org-export-generic)
+
+(org-set-generic-type
+ "really-basic-text" 
+ '(:file-suffix     ".txt"
+   :key-binding     ?R
+   :title-format "=== %s ===\n"
+   :body-header-section-numbers t
+   :body-header-section-number-format "%s) "
+   :body-section-header-prefix  "\n"
+   :body-section-header-suffix "\n"
+   :body-line-format "  %s\n"
+   :body-line-wrap   75
+   ))
+
 (provide 'init-org)
