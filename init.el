@@ -1,5 +1,4 @@
-;; Time-stamp: <2012-12-10 18:31:04 Zeno Zeng>
-;; TODO: count cn chars
+;; Time-stamp: <2012-12-11 10:30:06 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/plugins")

@@ -97,8 +97,44 @@
 	(".*\\.pdf$" . "evince")
 	))
 
+(defun my-count ()
+  (interactive)
+  (let ((start)
+        (end))
+    (if (region-active-p)
+        (setq start (region-beginning)
+              end (region-end))
+      (setq start (point-min)
+            end (point-max)))
+    (let* ((cn-chars (count-cn-chars (buffer-substring start end)))
+           (cn-chars-etc (count-cn-chars-etc (buffer-substring start end)))
+           (chars (- end start))
+           (words (count-words start end))
+           (lines (count-lines start end))
+           (result
+            (format "汉字: %d 字符: %d 单词: %d 行数: %d"
+                    (- cn-chars cn-chars-etc)
+                    chars
+                    lines
+                    words
+                    chars))
+           (result   
+            (dolist (var '("汉字" "字符" "单词" "行数") result)
+              (setq result 
+                    (replace-regexp-in-string
+                     var
+                     (propertize var 'face 'font-lock-variable-name-face)
+                     result)))))
+      (message result)
+      )))
 
-(defun count-cn-chars-occurences (regex string)
+(defun count-cn-chars (string)
+  (count-regex-occurences "\\cc" string))
+
+(defun count-cn-chars-etc (string)
+  (count-regex-occurences "[，。（）、……￥]" string))
+
+(defun count-regex-occurences (regex string)
   (recursive-count regex string 0))
 
 (defun recursive-count (regex string start)
@@ -106,5 +142,6 @@
       (+ 1 (recursive-count regex string (match-end 0)))
     0))
 
+(global-set-key (kbd "M-=") 'my-count)
 
 (provide 'init-etc)
