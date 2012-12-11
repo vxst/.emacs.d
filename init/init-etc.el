@@ -135,12 +135,13 @@
   (count-regex-occurences "[，。（）、……￥]" string))
 
 (defun count-regex-occurences (regex string)
-  (recursive-count regex string 0))
-
-(defun recursive-count (regex string start)
-  (if (string-match regex string start)
-      (+ 1 (recursive-count regex string (match-end 0)))
-    0))
+  (let ((count 0))
+    (with-temp-buffer
+      (insert string)
+      (goto-char (point-min))
+      (while (re-search-forward regex nil t)
+        (setq count (+ count 1))))
+    count))
 
 (global-set-key (kbd "M-=") 'my-count)
 
