@@ -5,7 +5,6 @@
 (setq time-stamp-format "%:y-%02m-%02d %02H:%02M:%02S %U")
 (add-hook 'before-save-hook 'time-stamp)
 ;; 不要使用tab进行缩进
-(setq indent-tabs-mode nil)
 
 
 
@@ -115,8 +114,8 @@
             (format "汉字: %d 字符: %d 单词: %d 行数: %d"
                     (- cn-chars cn-chars-etc)
                     chars
+		    words
                     lines
-                    words
                     chars))
            (result   
             (dolist (var '("汉字" "字符" "单词" "行数") result)
@@ -144,5 +143,8 @@
     count))
 
 (global-set-key (kbd "M-=") 'my-count)
+
+;; 保证不使用tab缩进
+(setq indent-tabs-mode nil)
 
 (provide 'init-etc)

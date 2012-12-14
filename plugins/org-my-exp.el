@@ -32,10 +32,11 @@
 	 (rege (and (org-region-active-p) (region-end)))
 	 (help "Org My Exp
 \[l] 论文
-\[e] 英语作文")
+\[e] 英语作文 [p] 英语作文（&Postamble）")
 	 (cmds
 	  '((?e org-my-exp-english t)
-	    (?l org-my-exp-lunwen t)))
+	    (?l org-my-exp-lunwen t)
+	    (?p org-my-exp-english-with-postamble t)))
 	 r1 r2 ass
 	 (cpos (point)) (cbuf (current-buffer)) bpos)
     (save-excursion
@@ -128,11 +129,12 @@
 	(let* ((info-etc (org-my-exp-get-header "INFOETC"))
 	       (author (org-my-exp-get-header "AUTHOR"))
 	       (abstract (org-my-exp-get-header "ABSTRACT"))
-	       (keywords (org-my-exp-get-header "KEYWORDS")))
+	       (keywords (org-my-exp-get-header "KEYWORDS"))
+	       (showtoc (org-my-exp-get-header "SHOWTOC")))
 
 	  (org-export-as-html arg 'hidden)
 
-	  (replace-regexp "<div id=\"outline-container-1\""
+	  (replace-regexp "<div id=\"table-of-contents\""
 			  (concat
 			   "<div id=\"author\">"
 			   author
@@ -147,7 +149,7 @@
 			   keywords
 			   "</div>"
 			   "<br><br>"
-			   "<div id=\"outline-container-1\""))
+			   "<div id=\"table-of-contents\""))
 
 	  (replace-regexp "</style>"
 			  "input,textarea,select{outline:none;}
@@ -160,8 +162,23 @@ body{max-width:560pt;margin:0 auto;font-size:12pt;-webkit-text-size-adjust:none;
 #info-etc {text-align:center;padding-bottom:1em;}
 a{color:#000000;text-decoration:none;}
 .outline-3{page-break-inside:avoid;}
-p{text-indent:2em;line-height:1.5em;font-family:\"NSimSun\",\"STSong\",\"AR PL SungtiL GB\",\"TW\-Sung\",\"SimSun\";}p sup{line-height:.8em;}
-h1,h2,h3,h4,h5,h6{font-family:\"Hiragino Sans GB\",\"ST Heiti\",\"LiHei Pro Medium\",\"Microsoft YaHei\",\"Wenquanyi Micro Hei\",\"WenQuanYi Zen Hei\";font-weight:normal;}
+p{text-indent:24pt;line-height:1.5em;font-family:\"NSimSun\",\"STSong\",\"AR PL SungtiL GB\",\"TW\-Sung\",\"SimSun\";}p sup{line-height:.8em;}
+p img{margin-left:-24pt;max-width:100%;}
+h1,h2,h3,h4,h5,h6{font-family:\"Hiragino Sans GB\",\"ST Heiti\",\"LiHei Pro Medium\",\"Microsoft YaHei\",\"Wenquanyi Micro Hei\",\"WenQuanYi Zen Hei\";}
+pre {
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+  padding: 1em;
+  margin-left: 32px;
+  white-space: pre-wrap;
+line-height:1.2em;
+border:none;
+}
+pre a {
+  color: #008fff;
+  text-decoration: underline;
+}
 #footnotes{padding-top:1em;font-size:8pt;color:#000000;}#footnotes::before{content:\"参考文献\";font-size:18pt;}
 #footnotes p{text-indent:0;}
 #footnotes h2.footnotes{display:none;}
@@ -173,6 +190,10 @@ h1,h2,h3,h4,h5,h6{font-family:\"Hiragino Sans GB\",\"ST Heiti\",\"LiHei Pro Medi
 #postamble{display:none;}
 </style>"
 			  nil (point-min) (point-max))
+	  (if showtoc
+	      (replace-regexp "</style>"
+			      "#table-of-contents{display:block;}</style>"
+			      nil (point-min) (point-max)))
 	  (save-buffer)
 	  (org-open-file buffer-file-name)
 	  (when org-export-kill-product-buffer-when-displayed
@@ -193,12 +214,43 @@ h1,h2,h3,h4,h5,h6{font-family:\"Hiragino Sans GB\",\"ST Heiti\",\"LiHei Pro Medi
 	(replace-regexp "</style>"
 			"input,textarea,select{outline:none;}
 body{max-width:560pt;width:90%;padding:10pt 0;margin:0 auto;font-size:14pt;font-family:DejaVu Serif;}
-h1.title{font-size:24pt;}
+h1.title{font-size:24pt;line-height:72pt;}
 a{color:#000000;text-decoration:none;}
 p{text-indent:2em;line-height:1.5em;}
 #table-of-contents{display:none;}
 #postamble{display:none;}
 </style>"
+			nil (point-min) (point-max))
+	(save-buffer)
+	(org-open-file buffer-file-name)
+	(when org-export-kill-product-buffer-when-displayed
+	  (kill-buffer (current-buffer)))))))
+
+(defun org-my-exp-english-with-postamble (arg)
+  "导出org文件到大英作文格式"
+  (interactive "P")
+
+  (save-excursion
+    (save-restriction
+      (save-match-data
+	(widen)
+	(goto-char (point-min))
+
+	(org-export-as-html arg 'hidden)
+
+	(replace-regexp "</style>"
+			"input,textarea,select{outline:none;}
+body{max-width:560pt;width:90%;padding:10pt 0;margin:0 auto;font-size:14pt;font-family:DejaVu Serif;}
+h1.title{font-size:24pt;line-height:72pt;}
+a{color:#000000;text-decoration:none;}
+p{text-indent:2em;line-height:1.5em;}
+#table-of-contents{display:none;}
+#postamble{display:block;font-size:8.5pt;margin-top:28pt;-webkit-text-size-adjust:none;}
+#postamble p {text-indent:28pt;}
+</style>"
+			nil (point-min) (point-max))
+	(replace-regexp "Validate XHTML 1.0"
+			""
 			nil (point-min) (point-max))
 	(save-buffer)
 	(org-open-file buffer-file-name)

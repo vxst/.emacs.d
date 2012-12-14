@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-12-11 10:30:06 Zeno Zeng>
+;; Time-stamp: <2012-12-14 11:29:36 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/plugins")
@@ -42,6 +42,8 @@
 
 (require 'init-etc)
 
+
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -71,6 +73,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(chm-view-delay 1)
+ '(emms-cache-get-function (quote emms-cache-get))
+ '(emms-cache-modified-function (quote emms-cache-dirty))
+ '(emms-cache-set-function (quote emms-cache-set))
+ '(emms-player-next-function (quote emms-next))
+ '(emms-playlist-default-major-mode (quote emms-playlist-mode))
+ '(emms-playlist-update-track-function (quote emms-playlist-mode-update-track-function))
+ '(emms-repeat-playlist t)
+ '(emms-track-description-function (quote emms-info-track-description))
+ '(emms-track-initialize-functions (quote (emms-info-initialize-track)))
  '(golden-ratio-exclude-modes (quote ("shell-mode" "calendar-mode" "gud-mode" "ediff-mode" "eshell-mode" "help-mode" "org-mode")))
  '(hl-paren-colors (quote ("#f00" "#ff0" "#0f0" "#00ced1" "#9400d3")))
  '(js3-allow-member-expr-as-function-name t)
