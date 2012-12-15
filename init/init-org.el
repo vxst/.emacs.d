@@ -7,7 +7,7 @@
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
               (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)")
-	      (sequence "|"  "FAILED(f)" ))))
+	      (sequence "|"  "FAILED(f@/!)" ))))
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "orange red" :weight bold)
               ("NEXT" :foreground "deepskyblue" :weight bold)
