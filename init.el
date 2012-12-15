@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-12-14 11:29:36 Zeno Zeng>
+;; Time-stamp: <2012-12-15 16:41:05 Zeno Zeng>
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/plugins")
@@ -64,6 +64,8 @@
  '(org-clock-overlay ((t (:background "#000"))))
  '(org-level-1 ((t (:inherit outline-1))))
  '(org-level-4 ((t (:background "black" :foreground "hot pink"))))
+ '(org-todo ((t (:foreground "red" :weight bold))))
+ '(org-warning ((t (:foreground "red" :weight bold))))
  '(region ((t (:background "#333" :foreground "#fff"))))
  '(secondary-selection ((t (:background "#111")))))
 
