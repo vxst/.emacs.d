@@ -3,7 +3,7 @@
 ;; Copyright © 2012 Sébastien Gross <seb•ɑƬ•chezwam•ɖɵʈ•org> and Zeno Zeng <zenoes@qq.com>
 
 ;; Author: Zeno Zeng
-;; Time-stamp: <2012-10-29 19:10:34 Zeno Zeng>
+;; Time-stamp: <2012-12-18 13:29:19 Zeno Zeng>
 ;; Keywords: emacs,org,blog
 ;; Created: 2012-07-16
 ;; Version: 0.0.2
@@ -197,7 +197,7 @@ This is a good place for o-blog parser plugins."
   (save-current-buffer
     (let* ((blog-update-time-string (format-time-string "blog-%Y-%m-%d-%H-%M-%S"))
 	   (blogfile (concat "~/.cache/" blog-update-time-string ".org")))
-      (copy-file "~/org/blog/blog.org" blogfile t)
+      (copy-file "~/git/doc/blog/blog.org" blogfile t)
       (org-publish-blog-sync blogfile)
       (kill-buffer (concat blog-update-time-string ".org")))))
 
