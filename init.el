@@ -1,5 +1,6 @@
-;; Time-stamp: <2012-12-15 16:41:05 Zeno Zeng>
+;; Time-stamp: <2012-12-20 15:16:01 Zeno Zeng>
 
+(add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (add-to-list 'load-path "~/.emacs.d/plugins/less-css-mode")

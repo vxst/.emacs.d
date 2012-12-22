@@ -1,5 +1,6 @@
 (setq org-agenda-files (list
 			"~/org/new-gtd.org"
+			"~/org/journal.org.gpg"
 			"~/git/doc/study.org"
 			"~/git/doc/pp.org"
 			"~/org/work.org"
@@ -8,14 +9,10 @@
 (setq org-hide-leading-stars t)
 (define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map "\C-cs" 'org-gtd-summary)
+(require 'org-gtd-summary)
+
 (define-key global-map "\C-cp" 'org-personal-agenda)
 
-(defun org-personal-agenda ()
-  "my personal agenda"
-  (interactive)
-  (let ((org-agenda-files
-	 (append org-agenda-files (list "~/org/journal.org.gpg"))))
-    (org-agenda-list)))
 
 ;; 全屏显示agenda视图
 (add-hook 'org-agenda-mode-hook (lambda ()

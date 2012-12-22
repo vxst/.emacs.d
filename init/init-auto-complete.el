@@ -12,7 +12,7 @@
 (dolist (hook '(
                 js3-mode-hook
                 html-mode-hook
-                php+-mode-hook
+                php-mode-hook
 		emacs-lisp-mode-hook
                 less-css-mode-hook
                 ))

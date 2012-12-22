@@ -3,7 +3,7 @@
 ;; Copyright © 2012 Sébastien Gross <seb•ɑƬ•chezwam•ɖɵʈ•org> and Zeno Zeng <zenoes@qq.com>
 
 ;; Author: Zeno Zeng
-;; Time-stamp: <2012-12-18 13:29:19 Zeno Zeng>
+;; Time-stamp: <2012-12-21 15:54:40 Zeno Zeng>
 ;; Keywords: emacs,org,blog
 ;; Created: 2012-07-16
 ;; Version: 0.0.2
@@ -22,14 +22,10 @@
   (require 'browse-url nil t))
 (require 'time-stamp nil t)
 (require 'org-xhtml nil t)
-(require 'dired-sync nil t)
 (require 'find-func nil t)
 
 (mapcar (lambda (x) (require (intern (format "o-blog-%s" x)) nil t))
 	'("alert" "copy-files" "source" "grid" "i18n" "bootstrap"))
-
-(defgroup o-blog nil "o-blog customization group"
-  :group 'org-export)
 
 (defcustom o-blog-async-opts nil
   "Extra options to be used when compiling with
@@ -220,80 +216,80 @@ defined, or interactivelly called with `prefix-arg'.
   "Publish FILE synchronously."
   (with-temp-buffer (set-buffer (find-file-noselect file))
 
-    (run-hooks 'o-blog-before-publish-hook)
+		    (run-hooks 'o-blog-before-publish-hook)
 
-    (setq BLOG (ob-parse-blog-headers))
-
-
-    ;; (setq blog::ini (buffer-string))
-    (goto-char (point-min))
-
-    (while (re-search-forward "blog::insert::.*" nil t)
-      (progn
-	(setq blog::insert (buffer-substring (point-at-bol) (point-at-eol)))
-	(beginning-of-line)
-	(replace-regexp blog::insert
-			(replace-regexp-in-string "^*" "**"
-						  (file-string
-						   (replace-regexp-in-string ".*blog::insert::" "" blog::insert))))))
+		    (setq BLOG (ob-parse-blog-headers))
 
 
-    (goto-char (point-min))
-    (while (re-search-forward "blog::album::.*" nil t)
-      (progn
-	(setq blog::album (buffer-substring (point-at-bol) (point-at-eol)))
-	(beginning-of-line)
-	(replace-regexp blog::album
-			(ob:album (replace-regexp-in-string ".*blog::album::" "" blog::album)))))
+		    ;; (setq blog::ini (buffer-string))
+		    (goto-char (point-min))
+
+		    (while (re-search-forward "blog::insert::.*" nil t)
+		      (progn
+			(setq blog::insert (buffer-substring (point-at-bol) (point-at-eol)))
+			(beginning-of-line)
+			(replace-regexp blog::insert
+					(replace-regexp-in-string "^*" "**"
+								  (file-string
+								   (replace-regexp-in-string ".*blog::insert::" "" blog::insert))))))
 
 
-    (let* ((start-time (current-time)) ;; for statistic purposes only
-	   ;; make sure we are on the correct directory.
-	   (default-directory (file-name-directory file))
-	   STATIC
-	   (STATIC (append STATIC
-			   (ob-parse-entries
-			    (org-map-entries 'point-marker
-					     (ob:blog-static-filter BLOG)
-					     'file-with-archives))))
-	   (POSTS (ob-parse-entries
-	   	   (org-map-entries 'point-marker
-	   			    (ob:blog-posts-filter BLOG)
-	   			    'file-with-archives)))
-	   (ALL-POSTS POSTS)
-
-	   (SNIPPETS (ob-parse-entries
-		      (org-map-entries 'point-marker
-				       (ob:blog-snippet-filter BLOG)
-				       'file-with-archives)))
-
-	   (TAGS (ob-compute-tags POSTS)))
-
-      ;; (erase-buffer)
-      ;; (insert blog::ini)
-      (save-buffer)
-      (goto-char (point-min))
-
-      (ob-write-albums)
-      (ob-write-static)
-      (ob-write-posts)
-      (ob-write-tags)
-      (ob-write-index)
-      (ob-write-style)
+		    (goto-char (point-min))
+		    (while (re-search-forward "blog::album::.*" nil t)
+		      (progn
+			(setq blog::album (buffer-substring (point-at-bol) (point-at-eol)))
+			(beginning-of-line)
+			(replace-regexp blog::album
+					(ob:album (replace-regexp-in-string ".*blog::album::" "" blog::album)))))
 
 
+		    (let* ((start-time (current-time)) ;; for statistic purposes only
+			   ;; make sure we are on the correct directory.
+			   (default-directory (file-name-directory file))
+			   STATIC
+			   (STATIC (append STATIC
+					   (ob-parse-entries
+					    (org-map-entries 'point-marker
+							     (ob:blog-static-filter BLOG)
+							     'file-with-archives))))
+			   (POSTS (ob-parse-entries
+				   (org-map-entries 'point-marker
+						    (ob:blog-posts-filter BLOG)
+						    'file-with-archives)))
+			   (ALL-POSTS POSTS)
 
-      (let ((syncf (if (functionp 'dired-do-sync)
-		       'dired-do-sync 'copy-directory)))
-	(funcall syncf (format "%s/%s"
-			       (ob:blog-template-dir BLOG)
-			       (ob:blog-style-dir BLOG))
-		 (ob:blog-publish-dir BLOG)))
-      (run-hooks 'o-blog-after-publish-hook)
-      (message (format "Blog %s published in %ss"
-		       file
-		       (format-time-string "%s.%3N"
-					   (time-subtract (current-time) start-time)))))))
+			   (SNIPPETS (ob-parse-entries
+				      (org-map-entries 'point-marker
+						       (ob:blog-snippet-filter BLOG)
+						       'file-with-archives)))
+
+			   (TAGS (ob-compute-tags POSTS)))
+
+		      ;; (erase-buffer)
+		      ;; (insert blog::ini)
+		      (save-buffer)
+		      (goto-char (point-min))
+
+		      (ob-write-albums)
+		      (ob-write-static)
+		      (ob-write-posts)
+		      (ob-write-tags)
+		      (ob-write-index)
+		      (ob-write-style)
+
+
+
+		      (let ((syncf (if (functionp 'dired-do-sync)
+				       'dired-do-sync 'copy-directory)))
+			(funcall syncf (format "%s/%s"
+					       (ob:blog-template-dir BLOG)
+					       (ob:blog-style-dir BLOG))
+				 (ob:blog-publish-dir BLOG)))
+		      (run-hooks 'o-blog-after-publish-hook)
+		      (message (format "Blog %s published in %ss"
+				       file
+				       (format-time-string "%s.%3N"
+							   (time-subtract (current-time) start-time)))))))
 
 (defun ob-do-copy (src dst &optional copyf args)
   "Copy SRC into DST. If `dired-do-sync' is found it would be
@@ -765,19 +761,9 @@ when publishing a page."
   (goto-char (point-min))
   (replace-regexp "^ *</pre>" "</pre>")
 
-  ;; 只有文件变化才输出
-  (unless (equal (zeno-string (buffer-string)) (zeno-string (file-string file)))
-    (progn
-      (mkdir (file-name-directory file) t)
-      (write-file file)
-      (setq ftpfile (concat blog::ftpdir (car (last (split-string file (ob:blog-publish-dir BLOG)))))
-	    diffiles (concat "~/public_html/diffiles" (car (last (split-string file (ob:blog-publish-dir BLOG))))))
-      ;; 只有ftp地址设定才同步
-      (if (string-match "/ftp:" blog::ftpdir)
-	  (write-file ftpfile)
-	(progn
-	  (mkdir (file-name-directory diffiles) t)
-	  (write-file diffiles))))))
+  (mkdir (file-name-directory file) t)
+  (write-file file)
+  )
 
 (defun ob-write-index()
   "Publish all indexes (default, categories, year, month)"
@@ -1029,7 +1015,7 @@ Returns only fist match except if ALL is defined."
       ;; 	  (ob:blog-buffer BLOG)
       ;; 	(current-buffer))
 
-    (current-buffer)
+      (current-buffer)
 
     (save-excursion
       (save-restriction

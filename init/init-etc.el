@@ -6,10 +6,6 @@
 (add-hook 'before-save-hook 'time-stamp)
 ;; 不要使用tab进行缩进
 
-
-
-
-
 ;;设定删除保存记录为200，可以方便以后无限恢复
 (setq kill-ring-max 200)
 
@@ -21,11 +17,9 @@
 ;;; easypg，emacs 自带
 (require 'epa-file)
 (epa-file-enable)
-;; 总是使用对称加密
 (setq epa-file-encrypt-to nil)
-;;(setq epa-file-cache-passphrase-for-symmetric-encryption t)
-;; 允许自动保存
-;;(setq epa-file-inhibit-auto-save nil)
+;; (setq epa-file-cache-passphrase-for-symmetric-encryption t)
+;; (setq epa-file-inhibit-auto-save nil)
 
 ;;;; END 文件加密
 
