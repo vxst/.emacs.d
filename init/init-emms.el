@@ -6,6 +6,64 @@
 (require 'emms-score)
 (require 'emms-playlist-sort)
 
+(require 'emms-lyrics)
+(emms-lyrics 1)
+(setq emms-lyrics-display-format "%s")
+(setq emms-lyrics-scroll-p t)
+(setq emms-lyrics-scroll-timer-interval 0.4)
+(setq emms-lyrics-display-on-minibuffer nil)
+(setq emms-lyrics-display-on-modeline nil)
+
+;; 覆盖EMMS函数定义
+
+(defun emms-lyrics-scroll (lyric next-lyric diff)
+  "Scroll LYRIC to left smoothly in DIFF seconds.
+DIFF is the timestamp differences between current LYRIC and
+NEXT-LYRIC."
+  (setq diff (floor diff))
+  (setq emms-lyrics-scroll-timers '())
+  (let ((scrolled-lyric (concat lyric " " next-lyric))
+        (time 0)
+        (pos 0))
+    (catch 'return
+      (while (< time diff)
+        (setq emms-lyrics-scroll-timers
+              (append emms-lyrics-scroll-timers
+                      (list
+                       (run-at-time time
+                                    nil
+                                    'emms-lyrics-display
+                                    (if (>= (length lyric) pos)
+                                        (substring scrolled-lyric pos)
+                                      (throw 'return t))))))
+        (setq time (+ time emms-lyrics-scroll-timer-interval))
+        ;; (setq pos (1+ pos))
+	))))
+(defun emms-lyrics-display (lyric)
+  "Display LYRIC now.
+See `emms-lyrics-display-on-modeline' and
+`emms-lyrics-display-on-minibuffer' on how to config where to
+display."
+  (when emms-lyrics-alist
+    (when emms-lyrics-display-on-modeline
+      (emms-lyrics-mode-line)
+      (setq emms-lyrics-mode-line-string lyric)
+      ;;       (setq emms-lyrics-mode-line-string ; make it fit scroller width
+      ;;             (concat emms-lyrics-mode-line-string
+      ;;                     (make-string
+      ;;                      (abs (- emms-lyrics-scroll-width (length lyric)))
+      ;;                      (string-to-char " "))))
+      (force-mode-line-update))
+    (when emms-lyrics-display-on-minibuffer
+      (unless (minibuffer-window-active-p (selected-window))
+	(let* ((lyric (concat "> " lyric))
+	       (lyric (propertize lyric
+				  'face 'info-title-1)
+		      ))
+
+	  (message lyric))
+	))))
+
 
 (defun set-emms-font ()
   (interactive)
@@ -14,11 +72,12 @@
                'face '(:family "WenQuanYi Zen Hei Mono")))
 
 
-
 (emms-cache-disable)
 
 (emms-default-players)
 (emms-score-enable)
+
+(add-hook 'emms-player-finished-hook 'emms-random)
 
 ;;修复该死的播放完后的BUG
 (setq emms-player-next-function 'emms-next)
@@ -29,6 +88,10 @@
 ;; default 循环设置
 (setq emms-repeat-track nil)
 (setq emms-repeat-playlist t)
+
+
+(setq emms-playlist-sort-function       ;设置播放列表用自然的方法排序: 艺术家 -> 专辑 -> 序号
+      'emms-playlist-sort-by-natural-order)
 
 (defun kid-emms-info-simple-plus (track)
   "Get info from the filename.
@@ -43,7 +106,9 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
       (if (string-match regexp name)
 	  (let* ((dirname (match-string 1 name))
 		 (filename (match-string 2 name))
-		 (filename (replace-regexp-in-string " " "" filename)))
+		 (filename (replace-regexp-in-string "\\(^[ ]*\\|[ ]*$\\)" "" filename))
+		 (filename (replace-regexp-in-string " *- *" "-" filename))
+		 )
             (emms-track-set track 'info-artist dirname)
             (emms-track-set track 'info-title filename)
 
@@ -57,9 +122,9 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 	      (emms-track-set track 'info-artist (match-string 1 filename))
 	      (emms-track-set track 'info-title (match-string 3 filename)))
 	    )
-          (emms-track-set track
-                          'info-title
-                          (file-name-nondirectory name))))))
+	(emms-track-set track
+			'info-title
+			(file-name-nondirectory name))))))
 (setq emms-info-functions (list 'kid-emms-info-simple-plus))
 
 
@@ -77,6 +142,7 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 (global-set-key (kbd "C-c e n") (lambda ()
 				  (interactive)
 				  (emms-score-down-playing)
+				  (emms-random)
 				  (emms-next)))
 (global-set-key (kbd "C-c e p") (lambda ()
 				  (interactive)
@@ -89,7 +155,10 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 (global-set-key (kbd "C-c e g") (lambda ()
 				  (interactive)
 				  (emms-playlist-mode-go)
-				  (set-emms-font)))
+				  (set-emms-font)
+				  (make-local-variable 'emms-lyrics-display-on-minibuffer)
+				  (setq emms-lyrics-display-on-minibuffer t)
+				  ))
 (global-set-key (kbd "C-c e t") 'emms-play-directory-tree)
 (global-set-key (kbd "C-c e r") (lambda ()
 				  (interactive)
