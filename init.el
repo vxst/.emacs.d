@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-12-20 15:16:01 Zeno Zeng>
+;; Time-stamp: <2012-12-22 22:47:43 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/.emacs.d/init")
@@ -42,6 +42,7 @@
 
 
 (require 'init-etc)
+(require 'init-gpg)
 
 
 

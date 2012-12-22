@@ -12,16 +12,7 @@
 ;;允许emacs和外部其他程式的粘贴
 (setq x-select-enable-clipboard t)
 
-;;;;  文件加密
 
-;;; easypg，emacs 自带
-(require 'epa-file)
-(epa-file-enable)
-(setq epa-file-encrypt-to nil)
-;; (setq epa-file-cache-passphrase-for-symmetric-encryption t)
-;; (setq epa-file-inhibit-auto-save nil)
-
-;;;; END 文件加密
 
 ;;;; UNDO TREE
 (require 'undo-tree)
