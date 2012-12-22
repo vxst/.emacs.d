@@ -8,11 +8,29 @@
 
 (require 'emms-lyrics)
 (emms-lyrics 1)
+(setq emms-lyrics-dir "~/.lyrics")
 (setq emms-lyrics-display-format "%s")
 (setq emms-lyrics-scroll-p t)
 (setq emms-lyrics-scroll-timer-interval 0.4)
 (setq emms-lyrics-display-on-minibuffer nil)
 (setq emms-lyrics-display-on-modeline nil)
+
+(defun emms-fetch-lrc(key output)
+  (shell-command-to-string
+   (concat "wget http://localhost/getlrc/?key=" key " -O \"" output "\"")))
+
+(setq emms-lyrics-find-lyric-function (lambda(file)
+					(message (emms-track-name track))
+					(let* ((orifile (emms-track-get track 'name))
+					       (target (replace-regexp-in-string ".mp3" ".lrc" orifile))
+					       (title (emms-track-get track 'info-title))
+					       (artist (emms-track-get track 'info-artist))
+					       )
+					  (emms-fetch-lrc
+					   (concat  title " " artist)
+					   target)
+					  (emms-lyrics-find-lyric file))))
+
 
 ;; 覆盖EMMS函数定义
 
@@ -23,21 +41,21 @@ NEXT-LYRIC."
   (setq diff (floor diff))
   (setq emms-lyrics-scroll-timers '())
   (let ((scrolled-lyric (concat lyric " " next-lyric))
-        (time 0)
-        (pos 0))
+	(time 0)
+	(pos 0))
     (catch 'return
       (while (< time diff)
-        (setq emms-lyrics-scroll-timers
-              (append emms-lyrics-scroll-timers
-                      (list
-                       (run-at-time time
-                                    nil
-                                    'emms-lyrics-display
-                                    (if (>= (length lyric) pos)
-                                        (substring scrolled-lyric pos)
-                                      (throw 'return t))))))
-        (setq time (+ time emms-lyrics-scroll-timer-interval))
-        ;; (setq pos (1+ pos))
+	(setq emms-lyrics-scroll-timers
+	      (append emms-lyrics-scroll-timers
+		      (list
+		       (run-at-time time
+				    nil
+				    'emms-lyrics-display
+				    (if (>= (length lyric) pos)
+					(substring scrolled-lyric pos)
+				      (throw 'return t))))))
+	(setq time (+ time emms-lyrics-scroll-timer-interval))
+	;; (setq pos (1+ pos))
 	))))
 (defun emms-lyrics-display (lyric)
   "Display LYRIC now.
@@ -69,7 +87,7 @@ display."
   (interactive)
   (message "set emms font")
   (overlay-put (make-overlay (point-min) (point-max) nil nil t)
-               'face '(:family "WenQuanYi Zen Hei Mono")))
+	       'face '(:family "WenQuanYi Zen Hei Mono")))
 
 
 (emms-cache-disable)
@@ -83,7 +101,7 @@ display."
 (setq emms-player-next-function 'emms-next)
 
 ;;关闭EMMS信息异步模式
-(setq emms-info-asynchronously nil)            
+(setq emms-info-asynchronously nil)
 
 ;; default 循环设置
 (setq emms-repeat-track nil)
@@ -109,8 +127,8 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 		 (filename (replace-regexp-in-string "\\(^[ ]*\\|[ ]*$\\)" "" filename))
 		 (filename (replace-regexp-in-string " *- *" "-" filename))
 		 )
-            (emms-track-set track 'info-artist dirname)
-            (emms-track-set track 'info-title filename)
+	    (emms-track-set track 'info-artist dirname)
+	    (emms-track-set track 'info-title filename)
 
 	    ;; 歌手-歌曲 模式
 	    (when (string-match regexp-2 filename)
@@ -131,11 +149,11 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 (defun kid-emms-info-track-description (track)
   "Return a description of the current track."
   (let ((artist (emms-track-get track 'info-artist))
-        (title (emms-track-get track 'info-title)))
+	(title (emms-track-get track 'info-title)))
     (format "%-16s ->   %s"
-            (or artist
-                "")
-            title)))
+	    (or artist
+		"")
+	    title)))
 (setq emms-track-description-function 'kid-emms-info-track-description)
 
 (global-set-key (kbd "C-c e <SPC>") 'emms-pause)
