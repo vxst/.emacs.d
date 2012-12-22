@@ -1,4 +1,3 @@
-
 ;; 记得在开始前装上mplayer,mpg123等等的需要软件，否则会遇到奇怪的问题
 (require 'emms-setup)
 (emms-standard)
@@ -16,20 +15,24 @@
 (setq emms-lyrics-display-on-modeline nil)
 
 (defun emms-fetch-lrc(key output)
+  (unless (or (file-exists-p output)
+	      (equal
+	       "w3m: Can't load http://baidu.com.\n"
+	       (shell-command-to-string "w3m http://baidu.com")))
   (shell-command-to-string
-   (concat "wget http://localhost/getlrc/?key=" key " -O \"" output "\"")))
+   (concat "wget http://localhost/getlrc/?key=" key " -O \"" output "\""))))
 
-(setq emms-lyrics-find-lyric-function (lambda(file)
-					(message (emms-track-name track))
-					(let* ((orifile (emms-track-get track 'name))
-					       (target (replace-regexp-in-string ".mp3" ".lrc" orifile))
-					       (title (emms-track-get track 'info-title))
-					       (artist (emms-track-get track 'info-artist))
-					       )
-					  (emms-fetch-lrc
-					   (concat  title " " artist)
-					   target)
-					  (emms-lyrics-find-lyric file))))
+(defun my-find-lrc(file)
+  (let* ((orifile (emms-track-get track 'name))
+	 (target (replace-regexp-in-string ".mp3" ".lrc" orifile))
+	 (title (emms-track-get track 'info-title))
+	 (artist (emms-track-get track 'info-artist))
+	 )
+    (emms-fetch-lrc
+     (concat  title " " artist)
+     target)
+    (emms-lyrics-find-lyric file)))
+
 
 
 ;; 覆盖EMMS函数定义
@@ -160,8 +163,7 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 (global-set-key (kbd "C-c e n") (lambda ()
 				  (interactive)
 				  (emms-score-down-playing)
-				  (emms-random)
-				  (emms-next)))
+				  (emms-random)))
 (global-set-key (kbd "C-c e p") (lambda ()
 				  (interactive)
 				  (emms-previous)
@@ -176,6 +178,8 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 				  (set-emms-font)
 				  (make-local-variable 'emms-lyrics-display-on-minibuffer)
 				  (setq emms-lyrics-display-on-minibuffer t)
+				  (make-local-variable 'emms-lyrics-find-lyric-function)
+				  (setq emms-lyrics-find-lyric-function 'my-find-lrc)
 				  ))
 (global-set-key (kbd "C-c e t") 'emms-play-directory-tree)
 (global-set-key (kbd "C-c e r") (lambda ()
