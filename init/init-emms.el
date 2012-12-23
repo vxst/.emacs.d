@@ -16,7 +16,7 @@
 
 (defun emms-fetch-lrc(key output)
   (setq key (replace-regexp-in-string " " "%20" key))
-  (message "%s" key)
+  ;; (message "%s" key)
   (unless (file-exists-p output)
     (let* ((regexp ".*<a class=\"down-lrc-btn { 'href':'\\(.*\\)")
     	   (regexp-2 "\\(.*\\)' }\" href=\"#\">.*")
@@ -37,13 +37,7 @@
 	       (replace-regexp-in-string
 		"^\n" "" 
 		(replace-regexp-in-string "^[^\\[]*" "" lrc)))
-	      (write-file output)
-	      )
-	    )
-	  )
-	)
-      
-      )))
+	      (write-file output))))))))
 
 
 (defun my-find-lrc(file)
@@ -122,10 +116,10 @@ display."
 (emms-default-players)
 (emms-score-enable)
 
-(add-hook 'emms-player-finished-hook 'emms-random)
+(setq emms-player-next-function 'emms-random)
 
 ;;修复该死的播放完后的BUG
-(setq emms-player-next-function 'emms-next)
+;;(setq emms-player-next-function 'emms-next)
 
 ;;关闭EMMS信息异步模式
 (setq emms-info-asynchronously nil)
