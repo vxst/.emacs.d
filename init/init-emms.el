@@ -151,10 +151,19 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 	    (emms-track-set track 'info-artist dirname)
 	    (emms-track-set track 'info-title filename)
 
-	    ;; 歌手-歌曲 模式
+
 	    (when (string-match regexp-2 filename)
-	      (emms-track-set track 'info-artist (match-string 1 filename))
-	      (emms-track-set track 'info-title (match-string 2 filename)))
+	      (let ((before (match-string 1 filename))
+		    (after (match-string 2 filename)))
+		;; 歌曲-歌手 模式
+		(if (equal dirname (replace-regexp-in-string " " "" after))
+		    (progn
+		      (emms-track-set track 'info-artist after)
+		      (emms-track-set track 'info-title before))
+		  ;; 歌手-歌曲 模式
+		  (progn
+		    (emms-track-set track 'info-artist before)
+		    (emms-track-set track 'info-title after)))))
 
 	    ;; 歌手-专辑-歌曲 模式
 	    (when (string-match regexp-3 filename)
