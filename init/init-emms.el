@@ -14,20 +14,9 @@
 (setq emms-lyrics-display-on-minibuffer nil)
 (setq emms-lyrics-display-on-modeline nil)
 
-
-
-;; (defun emms-fetch-lrc(key output)
-;;   (unless (file-exists-p output)
-;;     (let* ((html))
-;;       (setq html (shell-command-to-string
-;; 		  (concat
-;; 		   "curl --connect-timeout 3 --url \"http://music.baidu.com/search/lrc?key="
-;; 		   key
-;; 		   "\"")))
-;;       )
-;;     ))
-
 (defun emms-fetch-lrc(key output)
+  (setq key (replace-regexp-in-string " " "%20" key))
+  (message "%s" key)
   (unless (file-exists-p output)
     (let* ((regexp ".*<a class=\"down-lrc-btn { 'href':'\\(.*\\)")
     	   (regexp-2 "\\(.*\\)' }\" href=\"#\">.*")
@@ -35,16 +24,24 @@
 	   (html))
 
       (setq html (shell-command-to-string
-		  (concat "curl --connect-timeout 3 --url http://music.baidu.com/search/lrc?key=" key)))
+		  (concat "curl --connect-timeout 5 --url http://music.baidu.com/search/lrc?key=" key)))
 
       (when (string-match regexp html)
-	(message "match")
     	(setq html (match-string 1 html))
     	(when (string-match regexp-2 html)
     	  (setq lrc (match-string 1 html))
-    	  (setq lrc (shell-command-to-string (concat "curl http://music.baidu.com" lrc)))
-    	  (message "%s" lrc))
-    	)
+    	  (setq lrc (shell-command-to-string (concat "curl --connect-timeout 5 --url http://music.baidu.com" lrc)))
+	  (when (string-match "\\[\\(.*\\)" lrc)
+	    (with-temp-buffer
+	      (insert
+	       (replace-regexp-in-string
+		"^\n" "" 
+		(replace-regexp-in-string "^[^\\[]*" "" lrc)))
+	      (write-file output)
+	      )
+	    )
+	  )
+	)
       
       )))
 
