@@ -17,27 +17,27 @@
 (defun emms-fetch-lrc(key output)
   (unless (file-exists-p output)
     (message "emms-fetch-lyric")
+    (setq html (shell-command-to-string
+		(concat "curl --connect-timeout 3 --url http://music.baidu.com/search/lrc?key=" key)))
 
-    ;; (async-shell-command
-    ;;  (concat "curl --connect-timeout 3  --url http://music.baidu.com/search/lrc?key=" key)
-    ;;  "*EMMS Fetch Lyric*")
-    (let* ((html (shell-command-to-string (concat "curl --connect-timeout 3 --url http://music.baidu.com/search/lrc?key=" key)))
-    	   (regexp ".*<a class=\"down-lrc-btn { 'href':'\\(.*\\)")
-    	   (regexp-2 "\\(.*\\) }\" href=\"#\">.*")
-    	   (lrc))
-      
+    ;; (let* ((regexp ".*<a class=\"down-lrc-btn { 'href':'\\(.*\\)")
+    ;; 	   (regexp-2 "\\(.*\\) }\" href=\"#\">.*")
+    ;; 	   (lrc))
+    ;;   )
+    
 
-      (message html)
-      (message regexp)
-      (when (string-match regexp html)
-	(setq html (match-string 1 html))
-	(when (string-match regexp-2 html)
-	  (setq lrc (match-string 1 html))
-	  (setq lrc (shell-command-to-string (concat "curl http://music.baidu.com" lrc)))
-	  (message lrc))
-	)
-      
-      )))
+    (message html)
+    (message regexp)
+
+    ;; (when (string-match regexp html)
+    ;; 	(setq html (match-string 1 html))
+    ;; 	(when (string-match regexp-2 html)
+    ;; 	  (setq lrc (match-string 1 html))
+    ;; 	  (setq lrc (shell-command-to-string (concat "curl http://music.baidu.com" lrc)))
+    ;; 	  (message lrc))
+    ;; 	)
+    
+    ))
 
 (defun my-find-lrc(file)
   (let* ((orifile (emms-track-get track 'name))
