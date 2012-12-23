@@ -15,12 +15,29 @@
 (setq emms-lyrics-display-on-modeline nil)
 
 (defun emms-fetch-lrc(key output)
-  (unless (or (file-exists-p output)
-	      (equal
-	       "w3m: Can't load http://baidu.com.\n"
-	       (shell-command-to-string "w3m http://baidu.com")))
-  (shell-command-to-string
-   (concat "wget http://localhost/getlrc/?key=" key " -O \"" output "\""))))
+  (unless (file-exists-p output)
+    (let* ((html (shell-command-to-string "w3m http://music.baidu.com"))
+	   (regexp ".*<a class=\"down-lrc-btn { 'href':'\\(.*\\)")
+	   (regexp-2 "\\(.*\\) }\" href=\"#\">.*")
+	   (lrc))
+      
+
+      (when (string-match regexp html)
+	  (setq html (match-string 1 html))
+	  (when (string-match regexp-2 html)
+	    (setq lrc (match-string 1 html))
+	    (setq lrc (shell-command-to-string (concat "w3m http://music.baidu.com" lrc)))
+	    (message lrc))
+      )
+    
+
+
+    ;; (shell-command-to-string
+    ;;  (concat "wget http://localhost/getlrc/?key=" key " -O \"" output "\""))
+
+    ;; (async-shell-command 
+    ;;  (concat "wget http://localhost/getlrc/?key=" key " -O \"" output "\""))
+    )))
 
 (defun my-find-lrc(file)
   (let* ((orifile (emms-track-get track 'name))
