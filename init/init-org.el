@@ -1,6 +1,6 @@
 (setq org-agenda-files (list
 			"~/org/new-gtd.org"
-			"~/org/journal.org.gpg"
+			"~/db/core/journal.org.gpg"
 			"~/git/doc/study.org"
 			"~/git/doc/pp.org"
 			"~/org/work.org"
