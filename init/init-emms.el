@@ -243,14 +243,6 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 (global-set-key (kbd "C-c e D") 'emms-delete-current-playing-file)
 (setq emms-score-file "~/.emms/scores")
 
-
-;;autodetect musci files id3 tags encodeing
-;; (require 'emms-i18n)
-;; ;; 解决乱码
-;; (setq emms-info-mp3info-coding-system 'gbk
-;;       emms-cache-file-coding-system 'utf-8)
-
-
 (defun emms-playlist-update()
   (emms-playlist-current-clear)
   (emms-add-directory-tree "~/data/music/")
