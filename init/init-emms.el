@@ -252,11 +252,9 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 
 
 (defun emms-playlist-update()
-;;  (split-window-below)
   (emms-playlist-current-clear)
   (emms-add-directory-tree "~/data/music/")
   (emms-add-directory-tree "~/git/BD_music_downloader/")
-;;  (delete-window)
   )
 
 
