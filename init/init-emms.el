@@ -233,6 +233,7 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 				  (setq emms-lyrics-display-on-minibuffer t)
 				  (make-local-variable 'emms-lyrics-find-lyric-function)
 				  (setq emms-lyrics-find-lyric-function 'my-find-lrc)
+				  (emms-playlist-sort-by-info-artist)
 				  ))
 (global-set-key (kbd "C-c e t") 'emms-play-directory-tree)
 (global-set-key (kbd "C-c e r") (lambda ()
