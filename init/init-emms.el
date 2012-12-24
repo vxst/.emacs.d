@@ -147,10 +147,16 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 		 (filename (match-string 2 name))
 		 (filename (replace-regexp-in-string "\\(^[ ]*\\|[ ]*$\\)" "" filename))
 		 (filename (replace-regexp-in-string " *- *" "-" filename))
+		 (artist-tmp)
 		 )
 	    (emms-track-set track 'info-artist dirname)
 	    (emms-track-set track 'info-title filename)
 
+
+	    ;; 特例: A-Lin
+	    (when (string-match "A-Lin" filename)
+	      (setq artist-tmp "A-Lin")
+	      (setq filename (replace-regexp-in-string "A-Lin" "ALin" filename)))
 
 
 	    (when (string-match regexp-2 filename)
@@ -166,14 +172,15 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 		    (emms-track-set track 'info-artist after)
 		    (emms-track-set track 'info-title before)))))
 
+
 	    ;; 歌手-专辑-歌曲 模式
 	    (when (string-match regexp-3 filename)
 	      (emms-track-set track 'info-artist (match-string 1 filename))
 	      (emms-track-set track 'info-title (match-string 3 filename)))
 
-	    ;; 一个特例: A-Lin
-	    (when (string-match "A-Lin" filename)
-	      (emms-track-set track 'info-artist "A-Lin"))
+
+	    (if artist-tmp
+		(emms-track-set track 'info-artist artist-tmp))
 	    )
 	(emms-track-set track
 			'info-title
