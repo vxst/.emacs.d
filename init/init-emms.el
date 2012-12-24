@@ -142,6 +142,7 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 	  (regexp-2 "^\\([^-]+\\)-\\([^-]+\\)$")
 	  (regexp-3 "^\\([^-]+\\)-\\([^-]+\\)-\\([^-]+\\)$")
 	  )
+      (emms-track-set track 'my-file-url name)
       (if (string-match regexp name)
 	  (let* ((dirname (match-string 1 name))
 		 (filename (match-string 2 name))
@@ -187,6 +188,18 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 			(file-name-nondirectory name))))))
 (setq emms-info-functions (list 'kid-emms-info-simple-plus))
 
+(defun emms-delete-current-playing-file ()
+  (interactive)
+  (let* ((this (emms-playlist-current-selected-track))
+	 (url (emms-track-get this 'my-file-url)))
+    (when this
+      (when (yes-or-no-p (concat "Delete " url " ?"))
+	(delete-file url)
+	(emms-playlist-update)
+	(emms-start)
+	(emms-next)
+	(message "Deleted"))
+      )))
 
 (defun kid-emms-info-track-description (track)
   "Return a description of the current track."
@@ -226,7 +239,7 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 				  (emms-play-directory-tree "~/data/music/")))
 (global-set-key (kbd "C-c e u") 'emms-score-up-playing)
 (global-set-key (kbd "C-c e d") 'emms-score-down-playing)
-
+(global-set-key (kbd "C-c e D") 'emms-delete-current-playing-file)
 (setq emms-score-file "~/.emms/scores")
 
 
@@ -237,13 +250,21 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 ;;       emms-cache-file-coding-system 'utf-8)
 
 
+(defun emms-playlist-update()
+  (split-window-below)
+  (emms)
+  (emms-playlist-clear)
+  (emms-add-directory-tree "~/data/music/")
+  (emms-add-directory-tree "~/git/BD_music_downloader/")
+  (delete-window)
+  )
+
 
 ;; 打开时自动加载，完毕后暂停
-(emms-play-directory-tree "~/data/music/")
+(emms-add-directory-tree "~/data/music/")
 (emms-add-directory-tree "~/git/BD_music_downloader/")
-(emms-next)
+(emms-start)
 (emms-pause)
-
 
 (require 'emms-tag-editor)
 
