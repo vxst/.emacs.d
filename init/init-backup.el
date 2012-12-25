@@ -1,5 +1,12 @@
-;; 备份文档路径
-(setq backup-directory-alist (quote (("~/.backups"))))
+;; Annoyed by those pesky ~ files?
+;; Write backup files to own directory
+(setq backup-directory-alist
+      `(("." . ,(expand-file-name
+                 (concat user-emacs-directory "backups")))))
+
+;; Files covered by version control don't get backups.
+(setq vc-make-backup-files nil)
+
 ;;生成临时文件
 (setq-default make-backup-file t)
 (setq make-backup-file t)
