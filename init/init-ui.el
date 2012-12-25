@@ -1,13 +1,15 @@
 ;;;; Frames and Graphical Displays
 
+;; Turn off mouse interface
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
 ;;; UI
 ;; 关闭Emacs启动时提示信息
 ;; (setq inhibit-startup-message t)
 ;; 各种bar
-(set-scroll-bar-mode nil)
 (blink-cursor-mode -1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
 ;; (menu-bar-mode (quote toggle))
 ;;; Modeline
 ;; 电池
@@ -76,5 +78,17 @@
 (add-to-list 'sml/replacer-regexp-list '("^~/Dropbox/" ":DB:"))
 (add-to-list 'sml/replacer-regexp-list '("^~/Git-Projects/" ":Git:"))
 (add-to-list 'sml/replacer-regexp-list '("^:Git:\\(.*\\)/src/main/java/" ":G/\\1/SMJ:"))
+
+;; Show line numbers temporarily, while prompting for the line number input
+(global-set-key [remap goto-line] 'goto-line-with-feedback)
+
+(defun goto-line-with-feedback ()
+  "Show line numbers temporarily, while prompting for the line number input"
+  (interactive)
+  (unwind-protect
+      (progn
+        (linum-mode 1)
+        (goto-line (read-number "Goto line: ")))
+    (linum-mode -1)))
 
 (provide 'init-ui)
