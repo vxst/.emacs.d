@@ -1,11 +1,10 @@
 (setq org-agenda-files (list
-			"~/org/new-gtd.org"
-			"~/db/core/journal.org.gpg"
-			"~/git/doc/study.org"
-			"~/git/doc/pp.org"
-			"~/org/work.org"
-			"~/org/ppro.org"))
-(setq org-mobile-directory "~/org/mobileorg")
+			"~/private/doc/gtd/new-gtd.org"
+			"~/private/core/journal.org.gpg"
+			"~/private/doc/gtd/study.org"
+			"~/private/doc/gtd/pp.org"
+			"~/private/doc/gtd/work.org"
+			"~/private/doc/gtd/ppro.org"))
 (setq org-hide-leading-stars t)
 (define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map "\C-cs" 'org-gtd-summary)
@@ -14,7 +13,6 @@
 (define-key global-map "\C-cp" 'org-personal-agenda)
 
 
-;; 全屏显示agenda视图
 (add-hook 'org-agenda-mode-hook (lambda ()
 				  (delete-other-windows)))
 
@@ -37,17 +35,9 @@
 
 ;; Capture
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/org/new-gtd.org" "Inbox")
+      '(("t" "Todo" entry (file+headline "~/private/doc/gtd/new-gtd.org" "Inbox")
 	 "* TODO %?\n")
-	("h" "Homework" entry (file+headline "~/org/study.org" "Homework")
-	 "* TODO %?\n")
-	("e" "Emacs Notes" entry (file+headline "~/org/notes/emacs.org" "Notes")
-	 "* %?\n %i\n %a")
-	("p" "Emacs Notes" entry (file+headline "~/org/notes/php.org" "capture")
-	 "* %?\n %i\n %a")
-	("l" "Emacs Lisp Notes" entry (file+headline "~/org/notes/lisp.org" "Notes")
-	 "* %?\n %i\n %a")
-	("j" "Journal" entry (file+datetree "~/db/core/journal.org.gpg")
+	("j" "Journal" entry (file+datetree "~/private/core/journal.org.gpg")
 	 "* %?")))
 
 (defalias 'zeno 'org-gtd-summary)
