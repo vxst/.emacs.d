@@ -47,7 +47,7 @@
 	 "* %?\n %i\n %a")
 	("l" "Emacs Lisp Notes" entry (file+headline "~/org/notes/lisp.org" "Notes")
 	 "* %?\n %i\n %a")
-	("j" "Journal" entry (file+datetree "~/org/journal.org.gpg")
+	("j" "Journal" entry (file+datetree "~/db/core/journal.org.gpg")
 	 "* %?")))
 
 (defalias 'zeno 'org-gtd-summary)
