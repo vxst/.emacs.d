@@ -129,8 +129,8 @@ display."
 
 (add-hook 'emms-player-finished-hook 'emms-random)
 
-(setq emms-playlist-sort-function       ;设置播放列表用自然的方法排序: 艺术家 -> 专辑 -> 序号
-      'emms-playlist-sort-by-natural-order)
+(setq emms-playlist-sort-function
+      'emms-playlist-sort-by-score)
 
 (defun kid-emms-info-simple-plus (track)
   "Get info from the filename.
@@ -199,47 +199,77 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 	(emms-start)
 	(emms-next)
 	(emms-random)
-	(message "Deleted"))
-      )))
+      ))))
 
-(defun kid-emms-info-track-description (track)
+
+;; 覆盖默认函数
+(defun emms-info-track-description (track)
   "Return a description of the current track."
   (let ((artist (emms-track-get track 'info-artist))
-	(title (emms-track-get track 'info-title)))
-    (format "%-16s ->   %s"
+	(title (emms-track-get track 'info-title))
+	(score (emms-score-get-score (emms-track-get track 'my-file-url))))
+    (format "%-16s ->   %-30s   Score:: %s"
 	    (or artist
 		"")
-	    title)))
-(setq emms-track-description-function 'kid-emms-info-track-description)
+	    title
+	    (or score 0))))
+(setq emms-track-description-function 'emms-info-track-description)
 
 (global-set-key (kbd "C-c e <SPC>") 'emms-pause)
 (global-set-key (kbd "C-c e n") (lambda ()
 				  (interactive)
 				  (emms-score-down-playing)
+				  (emms-playlist-update)
 				  (emms-random)))
 (global-set-key (kbd "C-c e p") (lambda ()
 				  (interactive)
-				  (emms-previous)
-				  (emms-score-up-playing)))
+				  (emms-previous)))
 (global-set-key (kbd "C-c e s") (lambda ()
 				  (interactive)
 				  (emms-score-up-playing)
 				  (emms-show)))
-(global-set-key (kbd "C-c e g") 'emms-playlist-mode-go)
+(global-set-key (kbd "C-c e g") (lambda ()
+				  (interactive)
+				  (emms-playlist-mode-go)
+				  (emms-playlist-update)))
 (global-set-key (kbd "C-c e t") 'emms-play-directory-tree)
 (global-set-key (kbd "C-c e r") (lambda ()
 				  (interactive)
 				  (emms-play-directory-tree "~/data/music/")))
-(global-set-key (kbd "C-c e u") 'emms-score-up-playing)
-(global-set-key (kbd "C-c e d") 'emms-score-down-playing)
+(global-set-key (kbd "C-c e u") (lambda ()
+				  (interactive)
+				  (emms-score-up-playing)
+				  (emms-playlist-update)))
+(global-set-key (kbd "C-c e d") (lambda ()
+				  (interactive)
+				  (emms-score-down-playing)
+				  (emms-playlist-update)))
 (global-set-key (kbd "C-c e D") 'emms-delete-current-playing-file)
 (setq emms-score-file "~/.emms/scores")
 
 (defun emms-playlist-update()
-  (emms-playlist-current-clear)
-  (emms-add-directory-tree "~/data/music/")
-  (emms-add-directory-tree "~/git/BD_music_downloader/")
-  )
+  "detect whether file exists and update the score"
+  (interactive)
+  (emms-playlist-ensure-playlist-buffer)
+  (ignore-errors
+    (emms-with-inhibit-read-only-t
+     (save-excursion
+       (goto-char (point-min))
+       (let ((first-try t))
+	 (while (or first-try (re-search-forward "\n"))
+	   (setq first-try nil)
+	   (let* ((track (emms-playlist-track-at))
+		  (file (emms-track-get track 'my-file-url))
+		  (score (emms-score-get-score file)))
+	     (if (file-exists-p file)
+		 (progn
+		   (goto-char (line-beginning-position))
+		   (when (re-search-forward "Score:: [-0-9]*$" nil t 1)
+		     (replace-match
+		      (propertize (format "Score:: %d" (or score 0))
+				  'face 'emms-playlist-track-face)
+		      nil nil)))
+	       (emms-playlist-mode-kill-entire-track)))))))))
 
 
 ;; 打开时自动加载，完毕后暂停
@@ -254,7 +284,8 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 (setq emms-lyrics-display-on-minibuffer t)
 (make-local-variable 'emms-lyrics-find-lyric-function)
 (setq emms-lyrics-find-lyric-function 'my-find-lrc)
-(emms-playlist-sort-by-info-artist)
+(emms-uniq)
+(emms-sort)
 
 (require 'emms-tag-editor)
 
