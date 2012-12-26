@@ -116,10 +116,8 @@ display."
 (emms-default-players)
 (emms-score-enable)
 
-(setq emms-player-next-function 'emms-random)
-
 ;;修复该死的播放完后的BUG
-;;(setq emms-player-next-function 'emms-next)
+(setq emms-player-next-function 'emms-next)
 
 ;;关闭EMMS信息异步模式
 (setq emms-info-asynchronously nil)
@@ -128,6 +126,8 @@ display."
 (setq emms-repeat-track nil)
 (setq emms-repeat-playlist t)
 
+
+(add-hook 'emms-player-finished-hook 'emms-random)
 
 (setq emms-playlist-sort-function       ;设置播放列表用自然的方法排序: 艺术家 -> 专辑 -> 序号
       'emms-playlist-sort-by-natural-order)
@@ -225,16 +225,7 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 				  (interactive)
 				  (emms-score-up-playing)
 				  (emms-show)))
-(global-set-key (kbd "C-c e g") (lambda ()
-				  (interactive)
-				  (emms-playlist-mode-go)
-				  (set-emms-font)
-				  (make-local-variable 'emms-lyrics-display-on-minibuffer)
-				  (setq emms-lyrics-display-on-minibuffer t)
-				  (make-local-variable 'emms-lyrics-find-lyric-function)
-				  (setq emms-lyrics-find-lyric-function 'my-find-lrc)
-				  (emms-playlist-sort-by-info-artist)
-				  ))
+(global-set-key (kbd "C-c e g") 'emms-playlist-mode-go)
 (global-set-key (kbd "C-c e t") 'emms-play-directory-tree)
 (global-set-key (kbd "C-c e r") (lambda ()
 				  (interactive)
@@ -254,8 +245,16 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 ;; 打开时自动加载，完毕后暂停
 (emms-add-directory-tree "~/data/music/")
 (emms-add-directory-tree "~/git/BD_music_downloader/")
+(emms-playlist-mode-go)
 (emms-start)
+(emms-random)
 (emms-pause)
+(set-emms-font)
+(make-local-variable 'emms-lyrics-display-on-minibuffer)
+(setq emms-lyrics-display-on-minibuffer t)
+(make-local-variable 'emms-lyrics-find-lyric-function)
+(setq emms-lyrics-find-lyric-function 'my-find-lrc)
+(emms-playlist-sort-by-info-artist)
 
 (require 'emms-tag-editor)
 
