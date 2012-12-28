@@ -37,6 +37,10 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/private/doc/gtd/new-gtd.org" "Inbox")
 	 "* TODO %?\n")
+	("h" "Homework" entry (file+headline "~/private/doc/gtd/study.org" "Homework")
+	 "* TODO %?\n")
+	("s" "Study Plan" entry (file+headline "~/private/doc/gtd/study.org" "Plans")
+	 "* TODO %?\n")
 	("j" "Journal" entry (file+datetree "~/private/core/journal.org.gpg")
 	 "* %?")))
 
