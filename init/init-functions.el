@@ -24,5 +24,27 @@
           (ignore-errors
             (indent-for-tab-command)))))))
 
+(global-set-key [remap delete-horizontal-space] 'zeno-delete-horizontal-space)
+
+(defun zeno-delete-horizontal-space ()
+  (interactive)
+  (let ((start)
+        (end))
+    (if (region-active-p)
+	(progn
+	  (setq start (region-beginning)
+		end (region-end))
+	  (save-excursion
+	    (save-restriction
+	      (narrow-to-region start end)
+	      (goto-char (point-min))
+	      (delete-horizontal-space)
+	      (while (search-forward "\n" nil t)
+		(ignore-errors
+		  (move-beginning-of-line nil)
+		  (delete-horizontal-space)))
+	      ))
+	  )
+      (delete-horizontal-space))))
 
 (provide 'init-functions)
