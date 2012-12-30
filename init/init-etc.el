@@ -51,13 +51,13 @@
 		      (dired default-directory))))
 
 ;; 这里重启两次是为了 防止toggle类的fun出现问题
-(global-set-key (kbd "H-i") '(lambda ()
+(global-set-key (kbd "s-i") '(lambda ()
 			       (interactive)
 			       (indent-buffer)))
-(global-set-key (kbd "H-x") 'execute-extended-command)
-(global-set-key (kbd "H-r") 'replace-regexp)
+(global-set-key (kbd "s-x") 'execute-extended-command)
+(global-set-key (kbd "s-r") 'replace-regexp)
 (global-set-key [f2] 'hs-hide-all)
-(global-set-key (kbd "H-e") '(lambda ()
+(global-set-key (kbd "s-e") '(lambda ()
 			       (interactive)
 			       (eval-buffer)))
 (global-set-key [f6] 'toggle-truncate-lines)
@@ -74,12 +74,6 @@
 
 
 (require 'switch-window)
-
-(require 'application)
-(setq application-caller-list
-      '(
-	(".*\\.pdf$" . "evince")
-	))
 
 (defun my-count ()
   (interactive)

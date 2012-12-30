@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-12-22 22:47:43 Zeno Zeng>
+;; Time-stamp: <2012-12-29 13:54:36 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/.emacs.d/init")
@@ -14,6 +14,7 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/o-bloger")
 (add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-0.5.4")
 (add-to-list 'load-path "~/.emacs.d/elpa/org-20120903")
+
 
 (require 'init-ui)
 (require 'init-personal)
@@ -41,8 +42,9 @@
 (require 'init-org)
 
 
-(require 'init-etc)
 (require 'init-gpg)
+(require 'init-app)
+(require 'init-etc)
 
 
 
@@ -62,7 +64,7 @@
  '(js3-private-function-call-face ((t (:foreground "firebrick"))))
  '(mode-line ((t (:background "#000" :foreground "#999" :box (:line-width 1 :color "#999") :height 0.75))))
  '(mode-line-highlight ((t (:box (:line-width 2 :color "grey40" :style released-button) :height 0.6))))
- '(mode-line-inactive ((t (:inherit mode-line :background "#000" :foreground "#333"))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "#010101" :foreground "gray60"))))
  '(org-clock-overlay ((t (:background "#000"))))
  '(org-level-1 ((t (:inherit outline-1))))
  '(org-level-4 ((t (:background "black" :foreground "hot pink"))))

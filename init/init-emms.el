@@ -199,7 +199,7 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 	(emms-start)
 	(emms-next)
 	(emms-random)
-      ))))
+	))))
 
 
 ;; 覆盖默认函数
@@ -250,8 +250,8 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 (defun emms-playlist-update()
   "detect whether file exists and update the score"
   (interactive)
-  (emms-playlist-ensure-playlist-buffer)
   (ignore-errors
+    (emms-playlist-ensure-playlist-buffer)
     (emms-with-inhibit-read-only-t
      (save-excursion
        (goto-char (point-min))
