@@ -124,8 +124,8 @@ display."
 (setq emms-repeat-track nil)
 (setq emms-repeat-playlist t)
 
-(setq emms-player-next-function nil)
-(add-hook 'emms-player-finished-hook 'emms-random)
+;;(setq emms-player-next-function 'emms-next-noerror)
+(setq emms-player-next-function 'emms-random)
 
 (setq emms-playlist-sort-function
       'emms-playlist-sort-by-score)
@@ -245,7 +245,8 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 (global-set-key (kbd "C-c e t") 'emms-play-directory-tree)
 (global-set-key (kbd "C-c e r") (lambda ()
 				  (interactive)
-				  (emms-play-directory-tree "~/data/music/")))
+				  (emms-toggle-repeat-track)
+				  (emms-score-up-playing)))
 (global-set-key (kbd "C-c e u") (lambda ()
 				  (interactive)
 				  (emms-score-up-playing)
@@ -284,7 +285,7 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 
 ;; 打开时自动加载，完毕后暂停
 (emms-add-directory-tree "~/data/music/")
-(emms-add-directory-tree "~/git/BD_music_downloader/")
+(emms-add-directory-tree "~/git/bdmd/")
 (emms-playlist-mode-go)
 (emms-start)
 (emms-random)
