@@ -116,8 +116,6 @@ display."
 (emms-default-players)
 (emms-score-enable)
 
-;;修复该死的播放完后的BUG
-(setq emms-player-next-function 'emms-next)
 
 ;;关闭EMMS信息异步模式
 (setq emms-info-asynchronously nil)
@@ -126,7 +124,7 @@ display."
 (setq emms-repeat-track nil)
 (setq emms-repeat-playlist t)
 
-
+(setq emms-player-next-function nil)
 (add-hook 'emms-player-finished-hook 'emms-random)
 
 (setq emms-playlist-sort-function
@@ -215,6 +213,17 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 	    (or score 0))))
 (setq emms-track-description-function 'emms-info-track-description)
 
+(defun emms-playlist-mode-delete-track-file ()
+  "kill track and delete the file"
+  (interactive)
+  (let* ((this (emms-playlist-track-at))
+	 (url (emms-track-get this 'my-file-url)))
+    (when this
+      (when (yes-or-no-p (concat "Delete " url " ?"))
+	(delete-file url)
+	(emms-playlist-update)
+	))))
+
 (global-set-key (kbd "C-c e <SPC>") 'emms-pause)
 (global-set-key (kbd "C-c e n") (lambda ()
 				  (interactive)
@@ -231,7 +240,8 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 (global-set-key (kbd "C-c e g") (lambda ()
 				  (interactive)
 				  (emms-playlist-mode-go)
-				  (emms-playlist-update)))
+				  (emms-playlist-update)
+				  (local-set-key (kbd "D") 'emms-playlist-mode-delete-track-file)))
 (global-set-key (kbd "C-c e t") 'emms-play-directory-tree)
 (global-set-key (kbd "C-c e r") (lambda ()
 				  (interactive)
