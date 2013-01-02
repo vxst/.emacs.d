@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-12-29 13:54:36 Zeno Zeng>
+;; Time-stamp: <2012-12-31 18:28:48 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/.emacs.d/init")
@@ -19,6 +19,7 @@
 (require 'init-ui)
 (require 'init-personal)
 (require 'init-functions)
+(require 'init-file)
 
 (require 'init-gimp)
 (require 'init-js)
@@ -82,7 +83,6 @@
  '(emms-cache-get-function (quote emms-cache-get))
  '(emms-cache-modified-function (quote emms-cache-dirty))
  '(emms-cache-set-function (quote emms-cache-set))
- '(emms-player-next-function (quote emms-next))
  '(emms-playlist-default-major-mode (quote emms-playlist-mode))
  '(emms-playlist-update-track-function (quote emms-playlist-mode-update-track-function))
  '(emms-repeat-playlist t)
@@ -106,3 +106,4 @@
  '(sml/show-client t)
  '(sml/show-time t)
  '(tags-table-list (quote ("~/src/emacs-24.1/lisp/TAGS"))))
+(put 'narrow-to-region 'disabled nil)

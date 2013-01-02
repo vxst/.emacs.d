@@ -48,7 +48,7 @@
 
 (require 'org-my-exp)
 (add-hook 'org-mode-hook (lambda ()
-			   (local-unset-key (kbd "H-e"))
-			   (local-set-key (kbd "H-e") 'org-my-exp)))
+			   (local-unset-key (kbd "s-e"))
+			   (local-set-key (kbd "s-e") 'org-my-exp)))
 
 (provide 'init-org)
