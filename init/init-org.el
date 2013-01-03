@@ -10,9 +10,6 @@
 (define-key global-map "\C-cs" 'org-gtd-summary)
 (require 'org-gtd-summary)
 
-(define-key global-map "\C-cp" 'org-personal-agenda)
-
-
 (add-hook 'org-agenda-mode-hook (lambda ()
 				  (delete-other-windows)))
 
@@ -44,7 +41,27 @@
 	("j" "Journal" entry (file+datetree "~/private/core/journal.org.gpg")
 	 "* %?")))
 
-(defalias 'zeno 'org-gtd-summary)
+;; AGENDA
+(setq org-deadline-warning-days 7)
+
+(setq org-agenda-custom-commands 
+      '(
+	("g" "Agenda GTD Summary"
+	 org-gtd-summary)
+	;; ("u" "Agenda Study" todo "TODO"
+	;;  ((org-agenda-files '("~/private/doc/gtd/study.org")))
+	;; )
+	("u" "Agenda View -> Study"
+	 ((agenda
+	   ""
+	   ((org-agenda-files '("~/private/doc/gtd/study.org")))))
+	 "")	
+	("w" "Agenda View -> Work"
+	 ((agenda
+	   ""
+	   ((org-agenda-files '("~/private/doc/gtd/work.org")))))
+	 "")	
+	))
 
 (require 'org-my-exp)
 (add-hook 'org-mode-hook (lambda ()
