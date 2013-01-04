@@ -7,6 +7,11 @@
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
 
+;; Make dired less verbose
+(require 'dired-details)
+(setq-default dired-details-hidden-string "--- ")
+(dired-details-install)
+
 (require 'dired-filetype-face)
 (provide 'init-dired)
 ;;; init-dired.el ends here
