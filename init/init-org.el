@@ -46,6 +46,9 @@
 
 (setq org-agenda-custom-commands 
       '(
+	("d" "Agenda View -> Today"
+	 ((agenda "" ((org-agenda-ndays 1))))
+	 "")
 	("g" "Agenda GTD Summary"
 	 org-gtd-summary)
 	;; ("u" "Agenda Study" todo "TODO"
@@ -54,12 +57,24 @@
 	("u" "Agenda View -> Study"
 	 ((agenda
 	   ""
-	   ((org-agenda-files '("~/private/doc/gtd/study.org")))))
+	   ((org-agenda-files '("~/private/doc/gtd/study.org"))
+	    (org-agenda-ndays 1)))
+	  (todo "TODO" ((org-agenda-files '("~/private/doc/gtd/study.org"))))
+	  (todo "NEXT" ((org-agenda-files '("~/private/doc/gtd/study.org"))))
+	  (todo "WAITING" ((org-agenda-files '("~/private/doc/gtd/study.org"))))
+	  (todo "HOLD" ((org-agenda-files '("~/private/doc/gtd/study.org"))))
+	  )
 	 "")	
 	("w" "Agenda View -> Work"
 	 ((agenda
 	   ""
-	   ((org-agenda-files '("~/private/doc/gtd/work.org")))))
+	   ((org-agenda-files '("~/private/doc/gtd/work.org"))
+	    (org-agenda-ndays 3)))
+	  (todo "TODO" ((org-agenda-files '("~/private/doc/gtd/work.org"))))
+	  (todo "NEXT" ((org-agenda-files '("~/private/doc/gtd/work.org"))))
+	  (todo "WAITING" ((org-agenda-files '("~/private/doc/gtd/work.org"))))
+	  (todo "HOLD" ((org-agenda-files '("~/private/doc/gtd/work.org"))))
+	  )	 
 	 "")	
 	))
 
