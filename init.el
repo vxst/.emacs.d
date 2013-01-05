@@ -1,4 +1,4 @@
-;; Time-stamp: <2012-12-31 18:28:48 Zeno Zeng>
+;; Time-stamp: <2013-01-05 16:14:25 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/.emacs.d/init")
@@ -67,6 +67,8 @@
  '(mode-line-highlight ((t (:box (:line-width 2 :color "grey40" :style released-button) :height 0.6))))
  '(mode-line-inactive ((t (:inherit mode-line :background "#010101" :foreground "gray60"))))
  '(org-clock-overlay ((t (:background "#000"))))
+ '(org-column ((t (:background "black" :strike-through nil :underline nil :slant normal :weight normal :height 120 :family "WenQuanYi Zen Hei Mono"))))
+ '(org-column-title ((t (:inherit org-column :background "black" :foreground "white"))))
  '(org-level-1 ((t (:inherit outline-1))))
  '(org-level-4 ((t (:background "black" :foreground "hot pink"))))
  '(org-todo ((t (:foreground "red" :weight bold))))
@@ -100,8 +102,10 @@
  '(js3-indent-on-enter-key t)
  '(less-css-compile-at-save t)
  '(less-css-lessc-options (list "-x"))
+ '(org-agenda-menu-two-columns t)
  '(org-agenda-span (quote month))
  '(org-clock-out-remove-zero-time-clocks t)
+ '(org-global-properties (quote (("Effort_ALL" . "0:10 0:20 0:30 1:00 2:00 4:00 6:00 8:00") ("COLUMNS" . "%38ITEM(Details) %TAGS(Context) %7TODO(To Do) %5Effort(Time){:} %6CLOCKSUM{Total}"))))
  '(sml/show-battery nil)
  '(sml/show-client t)
  '(sml/show-time t)

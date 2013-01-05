@@ -11,12 +11,21 @@
 (require 'org-gtd-summary)
 
 (add-hook 'org-agenda-mode-hook (lambda ()
-				  (delete-other-windows)))
+				  (delete-other-windows)
+				  (set-org-font)))
 
-(define-key org-mode-map [(super p)] 'org-priority-up)
-(define-key org-mode-map [(super meta p)] 'org-priority-down)
+(add-hook 'org-mode-hook (lambda ()
+			   (define-key org-mode-map [(super p)] 'org-priority-up)
+			   (define-key org-mode-map [(super meta p)] 'org-priority-down)
+			   (set-org-font)))
 
 (local-set-key [(super meta u)] 'org-priority-up)
+
+(defun set-org-font ()
+  (interactive)
+  (overlay-put (make-overlay (point-min) (point-max) nil nil t)
+	       'face '(:family "WenQuanYi Zen Hei Mono")))
+
 
 (setq org-log-done 'time)
 
