@@ -13,6 +13,11 @@
 (add-hook 'org-agenda-mode-hook (lambda ()
 				  (delete-other-windows)))
 
+(define-key org-mode-map [(super p)] 'org-priority-up)
+(define-key org-mode-map [(super meta p)] 'org-priority-down)
+
+(local-set-key [(super meta u)] 'org-priority-up)
+
 (setq org-log-done 'time)
 
 (setq org-todo-keywords
@@ -42,13 +47,14 @@
 	 "* %?")))
 
 ;; AGENDA
+
+(setq org-agenda-skip-deadline-if-done t)
+(setq org-agenda-skip-scheduled-if-done t)
 (setq org-deadline-warning-days 7)
+(setq org-agenda-ndays 1)
 
 (setq org-agenda-custom-commands 
       '(
-	("d" "Agenda View -> Today"
-	 ((agenda "" ((org-agenda-ndays 1))))
-	 "")
 	("g" "Agenda GTD Summary"
 	 org-gtd-summary)
 	;; ("u" "Agenda Study" todo "TODO"
