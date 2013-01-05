@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-01-05 16:14:25 Zeno Zeng>
+;; Time-stamp: <2013-01-05 17:53:44 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/.emacs.d/init")
@@ -7,13 +7,13 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/js3-mode")
 (add-to-list 'load-path "~/.emacs.d/plugins/emms-3.0")
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.4")
-(add-to-list 'load-path "~/.emacs.d/elpa/php+-mode-20121004.1439")
 (add-to-list 'load-path "~/.emacs.d/elpa/popup-0.5")
 (add-to-list 'load-path "~/.emacs.d/elpa/gitty-1.0")
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-w3m")
 (add-to-list 'load-path "~/.emacs.d/plugins/o-bloger")
 (add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-0.5.4")
-(add-to-list 'load-path "~/.emacs.d/elpa/org-20120903")
+(add-to-list 'load-path "~/.emacs.d/elpa/org-20121231")
+
 
 
 (require 'init-ui)
@@ -103,9 +103,10 @@
  '(less-css-compile-at-save t)
  '(less-css-lessc-options (list "-x"))
  '(org-agenda-menu-two-columns t)
+ '(org-agenda-skip-deadline-prewarning-if-scheduled 0)
  '(org-agenda-span (quote month))
  '(org-clock-out-remove-zero-time-clocks t)
- '(org-global-properties (quote (("Effort_ALL" . "0:10 0:20 0:30 1:00 2:00 4:00 6:00 8:00") ("COLUMNS" . "%38ITEM(Details) %TAGS(Context) %7TODO(To Do) %5Effort(Time){:} %6CLOCKSUM{Total}"))))
+ '(org-default-priority 67)
  '(sml/show-battery nil)
  '(sml/show-client t)
  '(sml/show-time t)

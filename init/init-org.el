@@ -10,22 +10,35 @@
 (define-key global-map "\C-cs" 'org-gtd-summary)
 (require 'org-gtd-summary)
 
-(add-hook 'org-agenda-mode-hook (lambda ()
-				  (delete-other-windows)
-				  (set-org-font)))
+(add-hook 'org-agenda-mode-hook
+	  (lambda ()
+	    (local-set-key [remap org-agenda-columns] 'zeno-org-agenda-columns)				  
+	    (delete-other-windows)
+	    (set-org-font)))
 
 (add-hook 'org-mode-hook (lambda ()
 			   (define-key org-mode-map [(super p)] 'org-priority-up)
 			   (define-key org-mode-map [(super meta p)] 'org-priority-down)
 			   (set-org-font)))
 
-(local-set-key [(super meta u)] 'org-priority-up)
+(local-set-key [(super meta u)] 'org-priority-down)
+(local-set-key [(super u)] 'org-priority-up)
+
+(setq org-global-properties
+      (quote (("COLUMNS" . "%38ITEM(Item)  %7TODO(Status) %5Effort(Estimates){:} %5CLOCKSUM_T(Clock){Total}"))))
 
 (defun set-org-font ()
   (interactive)
   (overlay-put (make-overlay (point-min) (point-max) nil nil t)
 	       'face '(:family "WenQuanYi Zen Hei Mono")))
 
+(defun zeno-org-agenda-columns ()
+  (interactive)
+  (dolist (org-agenda-file org-agenda-files)
+    (switch-to-buffer (find-file-noselect org-agenda-file))
+    (org-clock-sum-today))
+  (switch-to-buffer "*Org Agenda*")
+  (org-agenda-columns))
 
 (setq org-log-done 'time)
 
@@ -98,4 +111,7 @@
 			   (local-unset-key (kbd "s-e"))
 			   (local-set-key (kbd "s-e") 'org-my-exp)))
 
+;; Bug Fix
+(require 'org)
+(require 'org-clock)
 (provide 'init-org)
