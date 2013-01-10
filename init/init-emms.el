@@ -124,8 +124,8 @@ display."
 (setq emms-repeat-track nil)
 (setq emms-repeat-playlist t)
 
-;;(setq emms-player-next-function 'emms-next-noerror)
-(setq emms-player-next-function 'emms-random)
+;;(setq emms-player-next-function 'emms-random)
+(setq emms-player-next-function 'emms-next-noerror)
 
 (setq emms-playlist-sort-function
       'emms-playlist-sort-by-score)
@@ -242,6 +242,12 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 				  (emms-playlist-mode-go)
 				  (emms-playlist-update)
 				  (local-set-key (kbd "D") 'emms-playlist-mode-delete-track-file)))
+(global-set-key (kbd "C-c e l") (lambda ()
+				  (interactive)
+				  (unless emms-lyrics-display-on-minibuffer
+				    (emms-score-up-playing)
+				    (emms-score-up-playing))
+				  (emms-lyrics-toggle-display-on-minibuffer)))
 (global-set-key (kbd "C-c e t") 'emms-play-directory-tree)
 (global-set-key (kbd "C-c e r") (lambda ()
 				  (interactive)

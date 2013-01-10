@@ -21,8 +21,8 @@
 			   (define-key org-mode-map [(super meta p)] 'org-priority-down)
 			   (set-org-font)))
 
-(local-set-key [(super meta u)] 'org-priority-down)
-(local-set-key [(super u)] 'org-priority-up)
+(local-set-key [(super meta p)] 'org-priority-down)
+(local-set-key [(super p)] 'org-priority-up)
 
 (setq org-global-properties
       (quote (("COLUMNS" . "%38ITEM(Item)  %7TODO(Status) %5Effort(Estimates){:} %5CLOCKSUM_T(Clock){Total}"))))
