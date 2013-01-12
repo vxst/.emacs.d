@@ -93,6 +93,17 @@
 	  (todo "HOLD" ((org-agenda-files '("~/private/doc/gtd/study.org"))))
 	  )
 	 "")	
+	("p" "Agenda View -> Personal Programming"
+	 ((agenda
+	   ""
+	   ((org-agenda-files '("~/private/doc/gtd/ppro.org"))
+	    (org-agenda-ndays 1)))
+	  (todo "TODO" ((org-agenda-files '("~/private/doc/gtd/ppro.org"))))
+	  (todo "NEXT" ((org-agenda-files '("~/private/doc/gtd/ppro.org"))))
+	  (todo "WAITING" ((org-agenda-files '("~/private/doc/gtd/ppro.org"))))
+	  (todo "HOLD" ((org-agenda-files '("~/private/doc/gtd/ppro.org"))))
+	  )
+	 "")	
 	("w" "Agenda View -> Work"
 	 ((agenda
 	   ""
