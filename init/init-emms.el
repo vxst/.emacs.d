@@ -196,7 +196,6 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 	(emms-playlist-update)
 	(emms-start)
 	(emms-next)
-	(emms-random)
 	))))
 
 
@@ -224,12 +223,20 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 	(emms-playlist-update)
 	))))
 
+(defun zeno-emms-playlist-mode-play-smart ()
+  (interactive)
+  ;; (emms-score-down-playing)
+  (emms-playlist-mode-play-smart)
+  (emms-score-up-playing)
+  (emms-playlist-update))
+
+
 (global-set-key (kbd "C-c e <SPC>") 'emms-pause)
 (global-set-key (kbd "C-c e n") (lambda ()
 				  (interactive)
 				  (emms-score-down-playing)
 				  (emms-playlist-update)
-				  (emms-next-noerror)))
+				  (emms-next)))
 (global-set-key (kbd "C-c e p") (lambda ()
 				  (interactive)
 				  (emms-previous)))
@@ -241,7 +248,9 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 				  (interactive)
 				  (emms-playlist-mode-go)
 				  (emms-playlist-update)
-				  (local-set-key (kbd "D") 'emms-playlist-mode-delete-track-file)))
+				  (local-set-key (kbd "D") 'emms-playlist-mode-delete-track-file)
+				  (local-set-key [remap emms-playlist-mode-play-smart] 'zeno-emms-playlist-mode-play-smart)
+				  ))
 (global-set-key (kbd "C-c e l") (lambda ()
 				  (interactive)
 				  (unless emms-lyrics-display-on-minibuffer
@@ -293,8 +302,6 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 (emms-add-directory-tree "~/data/music/")
 (emms-add-directory-tree "~/git/bdmd/")
 (emms-playlist-mode-go)
-(emms-start)
-(emms-pause)
 (set-emms-font)
 (make-local-variable 'emms-lyrics-display-on-minibuffer)
 (setq emms-lyrics-display-on-minibuffer t)
@@ -302,6 +309,9 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 (setq emms-lyrics-find-lyric-function 'my-find-lrc)
 (emms-uniq)
 (emms-sort)
+(goto-char 3)
+(emms-playlist-mode-play-smart)
+(emms-pause)
 
 (require 'emms-tag-editor)
 

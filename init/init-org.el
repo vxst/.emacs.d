@@ -45,7 +45,7 @@
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
               (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)")
-	      (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(e)")
+	      (sequence "REPORT(r)" "BUG(b)" "|" "FIXED(e)")
 	      (sequence "TRY(y)" "|"  "FAILED(f@/!)" ))))
 
 (setq org-todo-keyword-faces
@@ -93,11 +93,23 @@
 	  (todo "HOLD" ((org-agenda-files '("~/private/doc/gtd/study.org"))))
 	  )
 	 "")	
+	("P" "Agenda View -> Physical Plan"
+	 ((agenda
+	   ""
+	   ((org-agenda-files '("~/private/doc/gtd/pp.org"))
+	    (org-agenda-ndays 1)))
+	  (todo "TODO" ((org-agenda-files '("~/private/doc/gtd/pp.org"))))
+	  (todo "NEXT" ((org-agenda-files '("~/private/doc/gtd/pp.org"))))
+	  (todo "WAITING" ((org-agenda-files '("~/private/doc/gtd/pp.org"))))
+	  (todo "HOLD" ((org-agenda-files '("~/private/doc/gtd/pp.org"))))
+	  )
+	 "")	
 	("p" "Agenda View -> Personal Programming"
 	 ((agenda
 	   ""
 	   ((org-agenda-files '("~/private/doc/gtd/ppro.org"))
 	    (org-agenda-ndays 1)))
+	  (todo "BUG" ((org-agenda-files '("~/private/doc/gtd/ppro.org"))))
 	  (todo "TODO" ((org-agenda-files '("~/private/doc/gtd/ppro.org"))))
 	  (todo "NEXT" ((org-agenda-files '("~/private/doc/gtd/ppro.org"))))
 	  (todo "WAITING" ((org-agenda-files '("~/private/doc/gtd/ppro.org"))))
@@ -109,6 +121,7 @@
 	   ""
 	   ((org-agenda-files '("~/private/doc/gtd/work.org"))
 	    (org-agenda-ndays 3)))
+	  (todo "BUG" ((org-agenda-files '("~/private/doc/gtd/work.org"))))
 	  (todo "TODO" ((org-agenda-files '("~/private/doc/gtd/work.org"))))
 	  (todo "NEXT" ((org-agenda-files '("~/private/doc/gtd/work.org"))))
 	  (todo "WAITING" ((org-agenda-files '("~/private/doc/gtd/work.org"))))
