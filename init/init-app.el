@@ -9,6 +9,43 @@
   (interactive)
   (my-async-shell-command "google-chrome"))
 
+(defun rss ()
+  "open my RSS Reader"
+  (interactive)
+  (let ((origin-buffer (buffer-name)))
+    (switch-to-buffer (find-file-noselect "~/private/doc/gtd/new-gtd.org"))
+    (save-excursion
+      (goto-char (point-min))
+      (re-search-forward "** RSS")
+      (org-clock-in))
+    (my-async-shell-command "thunderbird")
+    (switch-to-buffer origin-buffer)))
+
+(defun net ()
+  "open my RSS Reader"
+  (interactive)
+  (let ((origin-buffer (buffer-name)))
+    (switch-to-buffer (find-file-noselect "~/private/doc/gtd/new-gtd.org"))
+    (save-excursion
+      (goto-char (point-min))
+      (re-search-forward "** 上网")
+      (org-clock-in))
+    (my-async-shell-command "google-chrome")
+    (switch-to-buffer origin-buffer)))
+
+
+(defun qmail ()
+  "open QQ mail"
+  (interactive)
+  (let ((origin-buffer (buffer-name)))
+    (switch-to-buffer (find-file-noselect "~/private/doc/gtd/new-gtd.org"))
+    (save-excursion
+      (goto-char (point-min))
+      (re-search-forward "** Mail")
+      (org-clock-in))
+    (my-async-shell-command "google-chrome mail.qq.com")
+    (switch-to-buffer origin-buffer)))
+
 (defun gimp ()
   "open gimp with shell-command"
   (interactive)
