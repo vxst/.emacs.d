@@ -50,6 +50,19 @@
     (my-async-shell-command "google-chrome mail.qq.com")
     (switch-to-buffer origin-buffer)))
 
+(defun weibo ()
+  "open QQ mail"
+  (interactive)
+  (let ((origin-buffer (buffer-name)))
+    (switch-to-buffer (find-file-noselect "~/private/doc/gtd/new-gtd.org"))
+    (save-excursion
+      (goto-char (point-min))
+      (re-search-forward "** 微博")
+      (org-clock-in))
+    (my-async-shell-command "google-chrome weibo.com")
+    (switch-to-buffer origin-buffer)))
+
+
 (defun gimp ()
   "open gimp"
   (interactive)
