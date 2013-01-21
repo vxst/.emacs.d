@@ -33,6 +33,10 @@
     (my-async-shell-command "google-chrome")
     (switch-to-buffer origin-buffer)))
 
+(defun yacy ()
+  "start yacy"
+  (interactive)
+  (shell-command "/home/zys/pro/yacy/startYACY.sh"))
 
 (defun qmail ()
   "open QQ mail"
