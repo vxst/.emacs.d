@@ -79,6 +79,8 @@
       '(
 	("g" "Agenda GTD Summary"
 	 org-gtd-summary)
+	("6" "Agenda GTD Summary 60 days"
+	 org-gtd-summary-60-days)
 	;; ("u" "Agenda Study" todo "TODO"
 	;;  ((org-agenda-files '("~/private/doc/gtd/study.org")))
 	;; )

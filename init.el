@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-01-05 17:53:44 Zeno Zeng>
+;; Time-stamp: <2013-01-18 14:04:46 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/.emacs.d/init")
@@ -54,7 +54,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#000" :foreground "#fff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "Source Code Pro"))))
+ '(default ((t (:inherit nil :stipple nil :background "#000" :foreground "#fff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal :foundry "unknown"))))
+ '(emms-lyrics-minibuffer-face ((t (:foreground "green yellow" :height 300))))
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:background "#111" :foreground "#999" :height 1.0))))
  '(font-lock-constant-face ((t (:foreground "#20b2aa"))))

@@ -126,4 +126,15 @@
 ;; 保证不使用tab缩进
 (setq indent-tabs-mode nil)
 
+;; 编译无错不弹窗
+(setq compilation-finish-function
+      (lambda (buf str)
+        (if (string-match "exited abnormally" str)
+            ;;there were errors
+            (message "compilation errors, press C-x ` to visit")
+          ;;no errors, make the compilation window go away in 0.5 seconds
+          (run-at-time 0.5 nil 'delete-windows-on buf)
+      (message "NO COMPILATION ERRORS! Thank you dear compiler..."))))
+
+
 (provide 'init-etc)

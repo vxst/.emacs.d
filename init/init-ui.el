@@ -90,4 +90,11 @@
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
 
+;; Font
+;; English
+(set-face-attribute 'default nil
+		    :family "Source Code Pro"
+		    :height 120)
+(set-fontset-font t 'han (font-spec :family "WenQuanYi Zen Hei Mono"))
+
 (provide 'init-ui)

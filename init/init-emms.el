@@ -97,11 +97,24 @@ display."
       (unless (minibuffer-window-active-p (selected-window))
 	(let* ((lyric (concat "> " lyric))
 	       (lyric (propertize lyric
-				  'face 'info-title-1)
+				  'face 'emms-lyrics-minibuffer-face)
 		      ))
 
 	  (message lyric))
 	))))
+
+(defface emms-lyrics-minibuffer-face
+  '((((class color) (background dark))
+     (:foreground "DeepSkyBlue" :height 300)
+     )
+    (((class color) (background light))
+     (:foreground "red3"))
+    (((type tty) (class mono))
+     (:inverse-video t))
+    (t (:background "WhiteSmoke")))
+  "Face for the lyrics-minibuffer"
+  :group 'emms-metaplaylist-mode)
+
 
 
 (defun set-emms-font ()
@@ -258,6 +271,7 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 				    (emms-score-up-playing))
 				  (emms-lyrics-toggle-display-on-minibuffer)))
 (global-set-key (kbd "C-c e t") 'emms-play-directory-tree)
+(global-set-key (kbd "C-c e T") 'emms-tag-this)
 (global-set-key (kbd "C-c e r") (lambda ()
 				  (interactive)
 				  (emms-toggle-repeat-track)
