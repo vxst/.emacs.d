@@ -12,4 +12,24 @@
                 lisp-mode-hook))
   (add-hook hook (lambda () (rainbow-mode 1))))
 
+;; search 很卡的一个dirty workround
+(defun isearch-forward-noeldoc ()
+  "close eldoc temperaily"
+  (interactive)
+  (eldoc-mode -1)
+  (isearch-forward)
+  (eldoc-mode 1))
+(add-hook 'less-css-mode-hook (lambda ()
+				(local-set-key [remap isearch-forward] 'isearch-forward-noeldoc)))
+
+(defun isearch-backward-noeldoc ()
+  "close eldoc temperaily"
+  (interactive)
+  (eldoc-mode -1)
+  (isearch-backward)
+  (eldoc-mode 1))
+(add-hook 'less-css-mode-hook (lambda ()
+				(local-set-key [remap isearch-backward] 'isearch-backward-noeldoc)))
+
+
 (provide 'init-css)
