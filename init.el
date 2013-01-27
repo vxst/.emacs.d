@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-01-18 14:04:46 Zeno Zeng>
+;; Time-stamp: <2013-01-24 18:23:58 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/.emacs.d/init")
@@ -10,7 +10,6 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/popup-0.5")
 (add-to-list 'load-path "~/.emacs.d/elpa/gitty-1.0")
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-w3m")
-(add-to-list 'load-path "~/.emacs.d/plugins/o-bloger")
 (add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-0.5.4")
 (add-to-list 'load-path "~/.emacs.d/elpa/org-20121231")
 
@@ -41,7 +40,7 @@
 (require 'init-w3m)
 (require 'init-emms)
 (require 'init-org)
-
+(require 'init-blog)
 
 (require 'init-gpg)
 (require 'init-app)

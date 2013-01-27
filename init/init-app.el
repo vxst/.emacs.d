@@ -62,9 +62,13 @@
     (my-async-shell-command "google-chrome taobao.com")
     (switch-to-buffer origin-buffer)))
 
+(defun push ()
+  (interactive)
+  (my-async-shell-command "git commit -a -m 'auto async shell push' && git push")
+  )
+(global-set-key [f10] 'push)
 
 (defun weibo ()
-  "open QQ mail"
   (interactive)
   (let ((origin-buffer (buffer-name)))
     (switch-to-buffer (find-file-noselect "~/private/doc/gtd/new-gtd.org"))
@@ -73,6 +77,51 @@
       (re-search-forward "** 微博")
       (org-clock-in))
     (my-async-shell-command "google-chrome weibo.com")
+    (switch-to-buffer origin-buffer)))
+
+(defun tieba ()
+  (interactive)
+  (let ((origin-buffer (buffer-name)))
+    (switch-to-buffer (find-file-noselect "~/private/doc/gtd/new-gtd.org"))
+    (save-excursion
+      (goto-char (point-min))
+      (re-search-forward "** 贴吧")
+      (org-clock-in))
+    (my-async-shell-command "google-chrome tieba.baidu.com")
+    (switch-to-buffer origin-buffer)))
+
+(defun zhihu ()
+  (interactive)
+  (let ((origin-buffer (buffer-name)))
+    (switch-to-buffer (find-file-noselect "~/private/doc/gtd/new-gtd.org"))
+    (save-excursion
+      (goto-char (point-min))
+      (re-search-forward "** 知乎")
+      (org-clock-in))
+    (my-async-shell-command "google-chrome zhihu.com")
+    (switch-to-buffer origin-buffer)))
+
+
+(defun renren ()
+  (interactive)
+  (let ((origin-buffer (buffer-name)))
+    (switch-to-buffer (find-file-noselect "~/private/doc/gtd/new-gtd.org"))
+    (save-excursion
+      (goto-char (point-min))
+      (re-search-forward "** 人人")
+      (org-clock-in))
+    (my-async-shell-command "google-chrome renren.com")
+    (switch-to-buffer origin-buffer)))
+
+(defun github ()
+  (interactive)
+  (let ((origin-buffer (buffer-name)))
+    (switch-to-buffer (find-file-noselect "~/private/doc/gtd/new-gtd.org"))
+    (save-excursion
+      (goto-char (point-min))
+      (re-search-forward "** Github")
+      (org-clock-in))
+    (my-async-shell-command "google-chrome github.com")
     (switch-to-buffer origin-buffer)))
 
 
