@@ -7,6 +7,19 @@
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
 
+;; C-x C-j open the directory of current buffer
+(global-set-key (kbd "C-x C-j")
+		(lambda ()
+		  (interactive)
+		  (if (buffer-file-name)
+		      (dired default-directory))
+		  ;; 如果实在dired-mode，直接返回上级目录
+		  (when (equal major-mode 'dired-mode)
+		    (dired "..")
+		    )
+		  ))
+
+
 ;; Make dired less verbose
 (require 'dired-details)
 (setq-default dired-details-hidden-string "--- ")

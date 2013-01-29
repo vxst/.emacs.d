@@ -43,12 +43,6 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map "\C-cc" 'org-capture)
 
-;; C-x C-j open the directory of current buffer
-(global-set-key (kbd "C-x C-j")
-		(lambda ()
-		  (interactive)
-		  (if (buffer-file-name)
-		      (dired default-directory))))
 
 ;; 这里重启两次是为了 防止toggle类的fun出现问题
 (global-set-key (kbd "s-i") '(lambda ()

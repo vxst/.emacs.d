@@ -184,9 +184,10 @@
 
 
 
-
+;;#+BEGIN: clocktable :maxlevel 4 :scope agenda  :tstart "<2013-01-24 四 00:00>"  :tend "<2013-02-25 一 00:00>"
 
 ;; Bug Fix
 (require 'org)
+(require 'org-faces)
 (require 'org-clock)
 (provide 'init-org)

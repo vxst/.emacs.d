@@ -30,12 +30,7 @@
   "format json in current buffer"
   (interactive)
   ;; $str=preg_replace("#\\\u([0-9a-f]{4})#ie", "iconv('UCS-2BE', 'UTF-8', pack('H4', '\\1'))", $str);
-  (let* ((json (buffer-string))
-	 (json (replace-regexp-in-string "\"" (regexp-quote "\\") json t t)))
-  (setq json 
-	(shell-command-to-string
-	 (concat  "iconv -f 'UCS-2BE' -t 'UTF-8'" json)))
-  (message json))
+  (call-process-region (point-min) (point-max) "iconv" t t nil "--from-code=UCS-2" "--to-code=UTF-8//TRANSLIT") 
   )
 
 (provide 'json-format)
