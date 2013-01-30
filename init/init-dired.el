@@ -11,12 +11,11 @@
 (global-set-key (kbd "C-x C-j")
 		(lambda ()
 		  (interactive)
+		  ;; 如果在dired-mode，直接返回上级目录
+		  (when (equal major-mode 'dired-mode)
+		    (dired ".."))
 		  (if (buffer-file-name)
 		      (dired default-directory))
-		  ;; 如果实在dired-mode，直接返回上级目录
-		  (when (equal major-mode 'dired-mode)
-		    (dired "..")
-		    )
 		  ))
 
 

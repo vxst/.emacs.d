@@ -43,8 +43,6 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map "\C-cc" 'org-capture)
 
-
-;; 这里重启两次是为了 防止toggle类的fun出现问题
 (global-set-key (kbd "s-i") '(lambda ()
 			       (interactive)
 			       (indent-buffer)))
