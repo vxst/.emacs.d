@@ -7,7 +7,7 @@
 (defun chrome ()
   "open google-chrome with shell-command"
   (interactive)
-  (my-async-shell-command "google-chrome"))
+  (my-async-shell-command "google-chrome --proxy-pac-url=http://localhost/proxy/auto.pac"))
 
 (defun rss ()
   "open my RSS Reader"
@@ -19,18 +19,6 @@
       (re-search-forward "** RSS")
       (org-clock-in))
     (my-async-shell-command "thunderbird")
-    (switch-to-buffer origin-buffer)))
-
-(defun net ()
-  "open my RSS Reader"
-  (interactive)
-  (let ((origin-buffer (buffer-name)))
-    (switch-to-buffer (find-file-noselect "~/private/doc/gtd/new-gtd.org"))
-    (save-excursion
-      (goto-char (point-min))
-      (re-search-forward "** 上网")
-      (org-clock-in))
-    (my-async-shell-command "google-chrome")
     (switch-to-buffer origin-buffer)))
 
 (defun yacy ()

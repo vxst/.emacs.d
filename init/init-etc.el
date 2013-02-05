@@ -49,9 +49,6 @@
 (global-set-key (kbd "s-x") 'execute-extended-command)
 (global-set-key (kbd "s-r") 'replace-regexp)
 (global-set-key [f2] 'hs-hide-all)
-(global-set-key (kbd "s-e") '(lambda ()
-			       (interactive)
-			       (eval-buffer)))
 (global-set-key [f6] 'toggle-truncate-lines)
 
 ;; 全屏

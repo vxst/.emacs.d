@@ -1,3 +1,7 @@
+(require 'org)
+(require 'org-faces)
+(require 'org-clock)
+
 (setq org-agenda-files (list
 			"~/private/doc/gtd/new-gtd.org"
 			"~/private/core/journal.org.gpg"
@@ -13,7 +17,7 @@
 (add-hook 'org-agenda-mode-hook
 	  (lambda ()
 	    (local-set-key [remap org-agenda-columns] 'zeno-org-agenda-columns)				  
-	    (delete-other-windows)
+	    ;;	    (delete-other-windows)
 	    (set-org-font)))
 
 (add-hook 'org-mode-hook (lambda ()
@@ -132,6 +136,25 @@
 	 "")	
 	))
 
+
+(org-add-agenda-custom-command
+ '("d" "Today've Done"
+   (
+    (todo "DONE"
+	  ((org-agenda-skip-function '(org-agenda-skip-subtree-if
+				       'notregexp
+				       (format-time-string "%Y-%m-%d")))
+	   (org-agenda-overriding-header "CLOSED TODAY: ")
+	   (org-agenda-todo-keyword-format "")))
+    (todo "TODO"
+	  ((org-agenda-skip-function '(org-agenda-skip-subtree-if
+				       'notregexp
+				       (format-time-string "State \"DONE\"       from \"TODO\"       \\[%Y-%m-%d")))
+	   (org-agenda-overriding-header "DONE TODAY: ")
+	   (org-agenda-todo-keyword-format "")))
+    )
+))
+
 (require 'org-my-exp)
 (add-hook 'org-mode-hook (lambda ()
 			   (local-unset-key (kbd "s-e"))
@@ -146,48 +169,44 @@
 (org-set-generic-type
  "Markdown" 
  '(:file-suffix ".markdown"
-   :key-binding ?M
-   :title-format "%s\n"
-   :title-suffix ?=
-   :body-header-section-numbers t
-   :body-header-section-number-format "%s) "
-   :body-section-header-prefix	("\n## " "\n### " "\n#### " "\n##### " "\n###### ")
-   :body-section-header-format	"%s"
-   :body-section-header-suffix "\n"
-   :todo-keywords-export t
-   :body-line-format "  %s\n"
-   :body-tags-export	t
-   :body-tags-prefix	" <tags>"
-   :body-tags-suffix	"</tags>\n"
-   ;;:body-section-prefix	"<secprefix>\n"
-   ;;:body-section-suffix	"</secsuffix>\n"
-   :body-line-export-preformated	t
-   :body-line-fixed-prefix	"<pre>\n"
-   :body-line-fixed-suffix	"\n</pre>\n"
-   :body-line-fixed-format	"%s\n"
-   :body-list-prefix	"\n"
-   :body-list-suffix	"\n"
-   :body-list-format	"  * %s\n"
-   ;;:body-number-list-prefix	"<ol>\n"
-   ;;:body-number-list-suffix	"</ol>\n"
-   ;;:body-number-list-format	"<li>%s</li>\n"
-   ;;:body-number-list-leave-number	t
-   :body-list-checkbox-todo	"[_] "
-   :body-list-checkbox-todo-end	""
-   :body-list-checkbox-done	"[X] "
-   :body-list-checkbox-done-end ""
-   :body-line-format	"%s"
-   :body-line-wrap	75
-   :body-text-prefix	""
-   :body-text-suffix	""
-   ))
+		:key-binding ?M
+		:title-format "%s\n"
+		:title-suffix ?=
+		:body-header-section-numbers t
+		:body-header-section-number-format "%s) "
+		:body-section-header-prefix	("\n## " "\n### " "\n#### " "\n##### " "\n###### ")
+		:body-section-header-format	"%s"
+		:body-section-header-suffix "\n"
+		:todo-keywords-export t
+		:body-line-format "  %s\n"
+		:body-tags-export	t
+		:body-tags-prefix	" <tags>"
+		:body-tags-suffix	"</tags>\n"
+		;;:body-section-prefix	"<secprefix>\n"
+		;;:body-section-suffix	"</secsuffix>\n"
+		:body-line-export-preformated	t
+		:body-line-fixed-prefix	"<pre>\n"
+		:body-line-fixed-suffix	"\n</pre>\n"
+		:body-line-fixed-format	"%s\n"
+		:body-list-prefix	"\n"
+		:body-list-suffix	"\n"
+		:body-list-format	"  * %s\n"
+		;;:body-number-list-prefix	"<ol>\n"
+		;;:body-number-list-suffix	"</ol>\n"
+		;;:body-number-list-format	"<li>%s</li>\n"
+		;;:body-number-list-leave-number	t
+		:body-list-checkbox-todo	"[_] "
+		:body-list-checkbox-todo-end	""
+		:body-list-checkbox-done	"[X] "
+		:body-list-checkbox-done-end ""
+		:body-line-format	"%s"
+		:body-line-wrap	75
+		:body-text-prefix	""
+		:body-text-suffix	""
+		))
 
 
 
 ;;#+BEGIN: clocktable :maxlevel 4 :scope agenda  :tstart "<2013-01-24 四 00:00>"  :tend "<2013-02-25 一 00:00>"
 
-;; Bug Fix
-(require 'org)
-(require 'org-faces)
-(require 'org-clock)
 (provide 'init-org)
