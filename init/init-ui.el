@@ -56,8 +56,7 @@
 
 ;; 黄金比例显示当前窗口
 (require 'golden-ratio)
-(setq golden-ratio-exclude-modes '("shell-mode"
-                                   "calendar-mode"
+(setq golden-ratio-exclude-modes '("calendar-mode"
                                    "gud-mode"
                                    "ediff-mode"
                                    "eshell-mode"))
