@@ -18,6 +18,17 @@
 		      (dired default-directory))
 		  ))
 
+;; just press ~ to go home. 
+(add-hook 'ido-setup-hook
+ (lambda ()
+   ;; Go straight home
+   (define-key ido-file-completion-map
+     (kbd "~")
+     (lambda ()
+       (interactive)
+       (if (looking-back "/")
+           (insert "~/")
+         (call-interactively 'self-insert-command)))))
 
 ;; Make dired less verbose
 (require 'dired-details)
