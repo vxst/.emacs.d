@@ -28,7 +28,7 @@
        (interactive)
        (if (looking-back "/")
            (insert "~/")
-         (call-interactively 'self-insert-command)))))
+         (call-interactively 'self-insert-command))))))
 
 ;; Make dired less verbose
 (require 'dired-details)

@@ -120,7 +120,7 @@
     (switch-to-buffer (find-file-noselect "~/private/doc/gtd/new-gtd.org"))
     (save-excursion
       (goto-char (point-min))
-      (re-search-forward "* GMIP")
+      (re-search-forward "* GIMP")
       (org-clock-in))
     (my-async-shell-command "gimp")
     (switch-to-buffer origin-buffer)))
