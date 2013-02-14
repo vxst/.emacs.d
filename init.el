@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-01-24 18:23:58 Zeno Zeng>
+;; Time-stamp: <2013-02-13 11:44:00 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/.emacs.d/init")
@@ -24,6 +24,7 @@
 (require 'init-js)
 (require 'init-css)
 (require 'init-php)
+(require 'init-R)
 (require 'init-markdown)
 (require 'init-html)
 (require 'init-lisp)

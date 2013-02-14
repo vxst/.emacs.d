@@ -15,6 +15,7 @@
                 php-mode-hook
 		emacs-lisp-mode-hook
                 less-css-mode-hook
+		ess-mode-hook
                 ))
   (add-hook hook 'my-ac-mode))
 
