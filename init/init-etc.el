@@ -115,15 +115,23 @@
 ;; 保证不使用tab缩进
 (setq indent-tabs-mode nil)
 
+;;; Compile 
+
+;;下面代码保证emacs在新打开compile窗口的时候只会水平分割窗口
+(setq split-height-threshold 0)
+(setq split-width-threshold nil)
+(add-hook 'compilation-start-hook
+          (lambda ()
+            (split-window)))
+
 ;; 编译无错不弹窗
 (setq compilation-finish-function
       (lambda (buf str)
-        (if (string-match "exited abnormally" str)
-            ;;there were errors
-            (message "compilation errors, press C-x ` to visit")
-          ;;no errors, make the compilation window go away in 0.5 seconds
-          (run-at-time 0.5 nil 'delete-windows-on buf)
-      (message "NO COMPILATION ERRORS! Thank you dear compiler..."))))
+        (unless (string-match "grep" str)
+          (if (string-match "exited abnormally" str)
+              (message "compilation errors, press C-x ` to visit")
+            (run-at-time 0.1 nil 'delete-windows-on buf)
+            (message "NO COMPILATION ERRORS! Thank you dear compiler...")))))
 
 
 (provide 'init-etc)
