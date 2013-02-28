@@ -1,3 +1,7 @@
+;; 函数库
+
+(defun file-string )
+
 ;; MY YANK
 ;; 例子：
 ;; C-u 100 C-y
