@@ -313,6 +313,8 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 
 
 ;; 打开时自动加载，完毕后暂停
+(defun zeno-emms()
+(interactive)
 (emms-add-directory-tree "~/data/music/")
 (emms-add-directory-tree "~/git/bdmd/")
 (emms-playlist-mode-go)
@@ -325,7 +327,7 @@ mp3 标签的乱码问题总是很严重，幸好我系统里面的音乐文件
 (emms-sort)
 (goto-char 3)
 (emms-playlist-mode-play-smart)
-(emms-pause)
+(emms-pause))
 
 (require 'emms-tag-editor)
 

@@ -1,6 +1,6 @@
 ;; 函数库
 
-(defun file-string )
+;; (defun file-string )
 
 ;; MY YANK
 ;; 例子：

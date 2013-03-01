@@ -2,7 +2,7 @@
 (unless (boundp 'hippie-expand-try-functions-list)
 (setq hippie-expand-try-functions-list '()))
 
-(load "/home/zys/.emacs.d/plugins/gimp-mode/gimp-init.el")
+(load "~/.emacs.d/plugins/gimp-mode/gimp-init.el")
 (global-set-key "\C-cg" 'gimp-selector)
 
 ;; Now you can run the GIMP with `M-x run-gimp'.

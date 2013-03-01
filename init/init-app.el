@@ -50,12 +50,6 @@
     (my-async-shell-command "google-chrome taobao.com")
     (switch-to-buffer origin-buffer)))
 
-(defun push ()
-  (interactive)
-  (my-async-shell-command "git commit -a -m 'auto async shell push' && git push")
-  )
-(global-set-key [f10] 'push)
-
 (defun weibo ()
   (interactive)
   (let ((origin-buffer (buffer-name)))
