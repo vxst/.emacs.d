@@ -6,22 +6,6 @@
 ;; 依照缩进来折叠代码
 (define-key global-map (kbd "C-'") 'zeno-floding)
 
-(defun test()
-  (interactive)
-  ;; if at the behind of the overlay
-  (if (car (overlays-at (- (point) 1)))
-      (backward-char))
-  ;; check if have the overlay
-  (my-next-line)
-  (back-to-indentation)
-  
-  (let ((overlay (car (overlays-at (+ (point) 1)))))
-    (if overlay
-	(message "%s" (prin1-to-string (overlay-properties overlay))))
-    (if (and
-	 overlay
-	 (memq "zeno-folding" (overlay-properties overlay)))
-	overlay)))
 ;;;###autoload
 (defun zeno-floding ()
   "floding based on indeneation"
@@ -50,7 +34,10 @@
 	      (next-line-exists-p))
 	(my-next-line))
       (if (line-string-match-p "^[ {\t]*$")
-	  (setq first-line-data "{"))))
+	  (setq first-line-data "{"))
+      (if (line-string-match-p "^[ \\(\t]*$")
+	  (setq first-line-data "("))
+      ))
 
   (defun get-last-line-data()
     (save-excursion
@@ -59,7 +46,10 @@
 	      (previous-line-exists-p))
 	(previous-line))
       (if (line-string-match-p "^[ }\t]*$")
-	  (setq last-line-data "}"))))
+	  (setq last-line-data "}"))
+      (if (line-string-match-p "^[ \\)\t]*$")
+	  (setq last-line-data ")"))
+      ))
 
   (defun show ()
     (delete-overlay (get-overlay)))
@@ -84,15 +74,19 @@
 	    (overlay-put new-overlay 'invisible t)
 	    (overlay-put new-overlay 'intangible t)
 	    (overlay-put new-overlay 'category "zeno-folding")
+
+	    ;; for emacs-lisp-mode
+	    (if (and
+		 (equal major-mode 'emacs-lisp-mode)
+		 (not last-line-data))
+		(setq last-line-data ")"))
+
 	    (if first-line-data
 		(overlay-put new-overlay 'before-string
 			     (concat first-line-data "..."))
 	      (overlay-put new-overlay 'before-string "..."))
 	    (if last-line-data
-		(overlay-put new-overlay 'after-string last-line-data))
-	    (message "%s %s" first-line-data last-line-data)
-	    )
-	  ))))
+		(overlay-put new-overlay 'after-string last-line-data)))))))
 
   (defun get-column()
     (back-to-indentation)
