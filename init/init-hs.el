@@ -1,41 +1,104 @@
 ;; 代码折叠
 
-(add-hook 'c-mode-common-hook   'my-hs)
-(add-hook 'emacs-lisp-mode-hook 'my-hs)
-(add-hook 'java-mode-hook       'my-hs)
-(add-hook 'perl-mode-hook       'my-hs)
-(add-hook 'sh-mode-hook         'my-hs)
-(add-hook 'scheme-mode-hook     'my-hs)
-(add-hook 'css-mode-hook        'my-hs)
-(add-hook 'less-mode-hook       'my-hs)
-(add-hook 'php-mode-hook     (lambda ()
-                               (my-hs)
-                               (hs-hide-level 2)))
-
-
 ;; 导出的时候就不必隐藏了。
-(add-hook 'htmlize-before-hook   'hs-show-all)
-
-(setq hs-hide-comments-when-hiding-all nil)
-
-(defun my-hs ()
-  "My hideshow mode."
-  (hs-minor-mode)
-  (local-set-key (kbd "C-'") 'hs-toggle-hiding)
-  (hs-hide-all))
+;; (add-hook 'htmlize-before-hook   'hs-show-all)
 
 ;; 依照缩进来折叠代码
-;; (define-key global-map (kbd "H-'") 'my-toggle-selective-display)
-(defun my-toggle-selective-display()
-  "set-selective-display to current column or toggle selective-display --lgfang"
+(define-key global-map (kbd "C-'") 'zeno-floding)
+
+;;;###autoload
+(defun zeno-floding ()
+  "floding based on indeneation"
   (interactive)
-  (let ((arg (progn (back-to-indentation) (current-column))))
-    (set-selective-display (if (eq arg selective-display) nil arg))))
 
-(add-hook 'html-mode-hook (lambda ()
-			    (local-set-key (kbd "C-'") 'my-toggle-selective-display)))
+  (defun get-overlay ()
+    (save-excursion
+      ;; if at the behind of the overlay
+      (if (car (overlays-at (- (point) 1)))
+	  (backward-char))
+      ;; check if have the overlay
+      (my-next-line)
+      (back-to-indentation)
+      (car (overlays-at (- (point) 1)))))
 
-(add-hook 'js3-mode-hook (lambda ()
-			   (local-set-key (kbd "C-'") 'js3-mode-toggle-element)))
+  (defun get-first-line-data()
+    (save-excursion
+      (while (and
+	      (line-string-match-p "^[ \t]*$")
+	      (next-line-exists-p))
+	(my-next-line))
+      (if (line-string-match-p "^[ {\t]*$")
+	  (setq first-line-data "{"))))
+
+  (defun get-last-line-data()
+    (save-excursion
+      (while (and
+	      (line-string-match-p "^[ \t]*$")
+	      (previous-line-exists-p))
+	(previous-line))
+      (if (line-string-match-p "^[ }\t]*$")
+	  (setq last-line-data "}"))))
+
+  (defun show ()
+    (delete-overlay (get-overlay)))
+
+  (defun hide ()
+    (save-excursion
+      (let* ((parent-level (get-column))
+	     (beg (line-end-position))
+	     (end beg)
+	     (first-line-data)
+	     (last-line-data))
+	(my-next-line)
+	(get-first-line-data)
+	(when (is-child)
+	  (while (and (is-child)
+		      (search-forward "\n" nil t nil)))
+	  (unless (is-child)
+	    (previous-line))
+	  (setq end (line-end-position))
+	  (get-last-line-data)
+	  (let ((new-overlay (make-overlay beg end)))
+	    (overlay-put new-overlay 'invisible t)
+	    (overlay-put new-overlay 'intangible t)
+	    (if first-line-data
+		(overlay-put new-overlay 'before-string
+			     (concat first-line-data "..."))
+	      (overlay-put new-overlay 'before-string "..."))
+	    (if last-line-data
+		(overlay-put new-overlay 'after-string last-line-data))
+	    (message "%s %s" first-line-data last-line-data)
+	    )
+	  ))))
+
+  (defun get-column()
+    (back-to-indentation)
+    (current-column))
+
+  (defun line-string-match-p(regexp)
+    (string-match-p regexp
+		    (buffer-substring-no-properties
+		     (line-beginning-position)
+		     (line-end-position))))
+
+  (defun next-line-exists-p()
+    (save-excursion
+      (search-forward "\n" nil t nil)))
+
+  (defun previous-line-exists-p()
+    (save-excursion
+      (search-backward "\n" nil t nil)))
+
+  (defun is-child()
+    (or (> (get-column) parent-level)
+	(line-string-match-p "^[ {}\t]*$")))
+
+  (defun my-next-line()
+    (search-forward "\n" nil t nil))
+
+  (if (get-overlay)
+      (show)
+    (hide)))
+
 
 (provide 'init-hs)

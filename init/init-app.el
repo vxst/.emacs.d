@@ -83,7 +83,6 @@
     (my-async-shell-command "google-chrome zhihu.com")
     (switch-to-buffer origin-buffer)))
 
-
 (defun renren ()
   (interactive)
   (let ((origin-buffer (buffer-name)))
@@ -105,7 +104,6 @@
       (org-clock-in))
     (my-async-shell-command "google-chrome github.com")
     (switch-to-buffer origin-buffer)))
-
 
 (defun gimp ()
   "open gimp"

@@ -7,7 +7,7 @@
 
 ;;; UI
 ;; 关闭Emacs启动时提示信息
-;; (setq inhibit-startup-message t)
+(setq inhibit-startup-message t)
 ;; 各种bar
 (blink-cursor-mode -1)
 ;; (menu-bar-mode (quote toggle))

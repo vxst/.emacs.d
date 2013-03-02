@@ -1,9 +1,47 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
+
+;; emacs-lisp
+(defvar ac-emacs-lisp-sources
+  '(ac-source-symbols))
+(defvar ac-emacs-lisp-features nil)
+(defvar ac-source-emacs-lisp-features
+  '((init
+     . (lambda ()
+         (unless ac-emacs-lisp-features
+           (let ((suffix (concat (regexp-opt (find-library-suffixes) t) "\\'")))
+             (setq
+              ac-emacs-lisp-features
+              (delq nil
+                    (apply 'append
+                           (mapcar (lambda (dir)
+                                     (if (file-directory-p dir)
+                                         (mapcar (lambda (file)
+                                                   (if (string-match suffix file)
+                                                       (substring file 0 (match-beginning 0))))
+                                                 (directory-files dir))))
+                                   load-path))))))))
+    (candidates . (lambda () (all-completions ac-prefix ac-emacs-lisp-features)))))
+(add-hook 'emacs-lisp-mode-hook
+	  (lambda ()
+	    (let ((ac-sources
+		   '(ac-source-emacs-lisp-features
+		     ac-source-symbols
+		     ac-source-abbrev
+		     ac-source-words-in-buffer
+		     ac-source-words-in-same-mode-buffers
+		     ac-source-files-in-current-dir
+		     ac-source-filename)))
+	      (auto-complete-mode))))
+
+
+
+
 (set-default 'ac-sources
              '(ac-source-dictionary
                ac-source-words-in-buffer
                ac-source-words-in-same-mode-buffers))
+
 
 (defun my-ac-mode ()
   (auto-complete-mode 1)
@@ -13,7 +51,6 @@
                 js3-mode-hook
                 html-mode-hook
                 php-mode-hook
-		emacs-lisp-mode-hook
                 less-css-mode-hook
 		ess-mode-hook
                 ))
@@ -33,4 +70,4 @@
 (setq skeleton-pair t)
 (setq skeleton-pair-alist '((?\" _ "\"" >)(?\' _ "\'" >)(?《 _"》">)(?（ _"）">)(?\( _ ")" >)(?\[ _ "]" >)(?\{ _ "}" >)))
 
-(provide 'init-auto-complete)
+			    (provide 'init-auto-complete)

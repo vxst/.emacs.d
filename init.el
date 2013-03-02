@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-02-27 15:43:47 Zeno Zeng>
+;; Time-stamp: <2013-03-01 17:57:47 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/.emacs.d/init")
@@ -110,6 +110,6 @@
  '(org-default-priority 67)
  '(sml/show-battery nil)
  '(sml/show-client t)
- '(sml/show-time t)
+ '(sml/show-time nil)
  '(tags-table-list (quote ("~/src/emacs-24.1/lisp/TAGS"))))
 (put 'narrow-to-region 'disabled nil)
