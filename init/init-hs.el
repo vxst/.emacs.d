@@ -6,6 +6,19 @@
 ;; 依照缩进来折叠代码
 (define-key global-map (kbd "C-'") 'zeno-floding)
 
+(defun test()
+  (interactive)
+  ;; check if have the overlay
+  (goto-char (line-end-position))
+  (let ((overlay (car (overlays-at (- (point) 1)))))
+    (if overlay
+	(message "%s" (prin1-to-string (overlay-properties overlay)))
+      )
+    (if (and
+	 overlay
+	 (memq "zeno-folding" (overlay-properties overlay)))
+	overlay)))
+
 ;;;###autoload
 (defun zeno-floding ()
   "floding based on indeneation"
@@ -13,15 +26,8 @@
 
   (defun get-overlay ()
     (save-excursion
-      ;; if at the behind of the overlay
-      (if (car (overlays-at (- (point) 1)))
-	  (backward-char))
-      ;; check if have the overlay
-      (my-next-line)
-      (back-to-indentation)
-      (let ((overlay (car (overlays-at (+ (point) 1)))))
-	(if overlay
-	    (message "%s" (prin1-to-string (overlay-properties overlay))))
+      (goto-char (line-end-position))
+      (let ((overlay (car (overlays-at (- (point) 1)))))
 	(if (and
 	     overlay
 	     (member "zeno-folding" (overlay-properties overlay)))
@@ -70,23 +76,26 @@
 	    (previous-line))
 	  (setq end (line-end-position))
 	  (get-last-line-data)
-	  (let ((new-overlay (make-overlay beg end)))
-	    (overlay-put new-overlay 'invisible t)
-	    (overlay-put new-overlay 'intangible t)
-	    (overlay-put new-overlay 'category "zeno-folding")
 
-	    ;; for emacs-lisp-mode
-	    (if (and
-		 (equal major-mode 'emacs-lisp-mode)
-		 (not last-line-data))
-		(setq last-line-data ")"))
+	  ;; 若仅仅为空行，则不处理
+	  (if (string-match-p "[^ \t\n\r]+" (buffer-substring beg end))
+	      (let ((new-overlay (make-overlay beg end)))
+		(overlay-put new-overlay 'invisible t)
+		(overlay-put new-overlay 'intangible t)
+		(overlay-put new-overlay 'category "zeno-folding")
 
-	    (if first-line-data
-		(overlay-put new-overlay 'before-string
-			     (concat first-line-data "..."))
-	      (overlay-put new-overlay 'before-string "..."))
-	    (if last-line-data
-		(overlay-put new-overlay 'after-string last-line-data)))))))
+		;; for emacs-lisp-mode
+		(if (and
+		     (equal major-mode 'emacs-lisp-mode)
+		     (not last-line-data))
+		    (setq last-line-data ")"))
+
+		(if first-line-data
+		    (overlay-put new-overlay 'before-string
+				 (concat first-line-data "..."))
+		  (overlay-put new-overlay 'before-string "..."))
+		(if last-line-data
+		    (overlay-put new-overlay 'after-string last-line-data))))))))
 
   (defun get-column()
     (back-to-indentation)
@@ -113,9 +122,12 @@
   (defun my-next-line()
     (search-forward "\n" nil t nil))
 
-  (if (get-overlay)
-      (show)
-    (hide)))
+
+  ;; 若非在空行，则执行
+  (if (line-string-match-p "[^ \t]+")
+    (if (get-overlay)
+	(show)
+      (hide))))
 
 
 (provide 'init-hs)
