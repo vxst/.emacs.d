@@ -6,6 +6,22 @@
 ;; 依照缩进来折叠代码
 (define-key global-map (kbd "C-'") 'zeno-floding)
 
+(defun test()
+  (interactive)
+  ;; if at the behind of the overlay
+  (if (car (overlays-at (- (point) 1)))
+      (backward-char))
+  ;; check if have the overlay
+  (my-next-line)
+  (back-to-indentation)
+  
+  (let ((overlay (car (overlays-at (+ (point) 1)))))
+    (if overlay
+	(message "%s" (prin1-to-string (overlay-properties overlay))))
+    (if (and
+	 overlay
+	 (memq "zeno-folding" (overlay-properties overlay)))
+	overlay)))
 ;;;###autoload
 (defun zeno-floding ()
   "floding based on indeneation"
@@ -19,7 +35,13 @@
       ;; check if have the overlay
       (my-next-line)
       (back-to-indentation)
-      (car (overlays-at (- (point) 1)))))
+      (let ((overlay (car (overlays-at (+ (point) 1)))))
+	(if overlay
+	    (message "%s" (prin1-to-string (overlay-properties overlay))))
+	(if (and
+	     overlay
+	     (member "zeno-folding" (overlay-properties overlay)))
+	    overlay))))
 
   (defun get-first-line-data()
     (save-excursion
@@ -61,6 +83,7 @@
 	  (let ((new-overlay (make-overlay beg end)))
 	    (overlay-put new-overlay 'invisible t)
 	    (overlay-put new-overlay 'intangible t)
+	    (overlay-put new-overlay 'category "zeno-folding")
 	    (if first-line-data
 		(overlay-put new-overlay 'before-string
 			     (concat first-line-data "..."))
