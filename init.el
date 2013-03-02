@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-03-01 17:57:47 Zeno Zeng>
+;; Time-stamp: <2013-03-02 18:45:32 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/.emacs.d/init")
@@ -31,7 +31,7 @@
 
 (require 'init-elpa)
 (require 'init-elget)
-(require 'init-hs)
+(require 'init-folding)
 (require 'init-auto-complete)
 (require 'init-backup)
 (require 'init-vc)
@@ -103,6 +103,7 @@
  '(js3-indent-on-enter-key t)
  '(less-css-compile-at-save t)
  '(less-css-lessc-options (list "-x"))
+ '(message-log-max 1000)
  '(org-agenda-menu-two-columns t)
  '(org-agenda-skip-deadline-prewarning-if-scheduled 0)
  '(org-agenda-span (quote month))

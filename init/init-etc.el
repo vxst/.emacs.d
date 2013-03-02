@@ -27,7 +27,6 @@
 (global-set-key (kbd "C-,") 'indent-buffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-y") 'my-yank)
-(global-set-key (kbd "C-'") 'hs-toggle-hiding)
 ;; 防止find-file时的误按
 (global-unset-key "\C-xf")
 ;; 大小写转换，这里默认转换左边的单词
