@@ -1,6 +1,7 @@
-;; Time-stamp: <2013-03-02 18:45:32 Zeno Zeng>
+;; Time-stamp: <2013-03-03 13:24:09 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
+(add-to-list 'load-path "~/git/yafolding")
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (add-to-list 'load-path "~/.emacs.d/plugins/less-css-mode")
@@ -111,6 +112,6 @@
  '(org-default-priority 67)
  '(sml/show-battery nil)
  '(sml/show-client t)
- '(sml/show-time nil)
+ '(sml/show-time t)
  '(tags-table-list (quote ("~/src/emacs-24.1/lisp/TAGS"))))
 (put 'narrow-to-region 'disabled nil)

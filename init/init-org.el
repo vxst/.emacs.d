@@ -62,21 +62,13 @@
               ("CANCELLED" :foreground "gray" :weight bold)
 	      ("FAILED" :foreground "dark grey" :weight bold))))
 
-;; 计算拖延数目
-(add-hook 'org-agenda-mode-hook
-	  (lambda ()
-	    (run-with-timer 1 nil 'cacl-tuoyan)))
-(defun cacl-tuoyan()
-  "计算拖延的项目个数，写入记录"
-  (let* ((count (count-matches "Sched\\.[ ]*[0-9]*x" (point-min) (point-max)))
-	 (hash (make-hash-table :test 'equal)))
-    (puthash (format-time-string) count hash)
-    ))
+
+
 
 
 ;; Capture
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/private/doc/gtd/new-gtd.org" "Inbox")
+      '(("~/private/doc/gtd/tuoyant" "Todo" entry (file+headline "~/private/doc/gtd/new-gtd.org" "Inbox")
 	 "* TODO %?\n")
 	("h" "Homework" entry (file+headline "~/private/doc/gtd/study.org" "Homework")
 	 "* TODO %?\n")

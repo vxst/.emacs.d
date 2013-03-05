@@ -1,4 +1,5 @@
 ;; 代码折叠
+(require 'yafolding)
 
 ;; 导出的时候就不必隐藏了。
 ;; (add-hook 'htmlize-before-hook   'hs-show-all)
@@ -8,6 +9,6 @@
 
 (add-hook 'emacs-lisp-mode-hook
 	  (lambda ()
-	    (yafolding-hide-all 2)))
+	    (yafolding-hide-all 1)))
 
 (provide 'init-folding)
