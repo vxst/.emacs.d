@@ -68,7 +68,7 @@
 
 ;; Capture
 (setq org-capture-templates
-      '(("~/private/doc/gtd/tuoyant" "Todo" entry (file+headline "~/private/doc/gtd/new-gtd.org" "Inbox")
+      '(("t" "Todo" entry (file+headline "~/private/doc/gtd/new-gtd.org" "Inbox")
 	 "* TODO %?\n")
 	("h" "Homework" entry (file+headline "~/private/doc/gtd/study.org" "Homework")
 	 "* TODO %?\n")
