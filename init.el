@@ -1,7 +1,8 @@
-;; Time-stamp: <2013-03-03 13:24:09 Zeno Zeng>
+;; Time-stamp: <2013-03-07 21:22:40 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/git/yafolding")
+(add-to-list 'load-path "~/.emacs.d/eim")
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (add-to-list 'load-path "~/.emacs.d/plugins/less-css-mode")
@@ -13,8 +14,6 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-w3m")
 (add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-0.5.4")
 (add-to-list 'load-path "~/.emacs.d/elpa/org-20121231")
-
-
 
 (require 'init-ui)
 (require 'init-personal)
@@ -47,8 +46,6 @@
 (require 'init-gpg)
 (require 'init-app)
 (require 'init-etc)
-
-
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

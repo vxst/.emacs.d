@@ -92,8 +92,12 @@
 ;; Font
 ;; English
 (set-face-attribute 'default nil
-		    :family "Source Code Pro"
+		    :family "WenQuanYi Zen Hei Mono"
 		    :height 120)
-(set-fontset-font t 'han (font-spec :family "WenQuanYi Zen Hei Mono"))
+
+;; (set-face-attribute 'default nil
+;; 		    :family "Source Code Pro"
+;; 		    :height 120)
+;; (set-fontset-font t 'han (font-spec :family "WenQuanYi Zen Hei Mono"))
 
 (provide 'init-ui)
