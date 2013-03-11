@@ -7,6 +7,7 @@
 ;; sudo pear install doc.php.net/pman
 (add-hook 'php-mode-hook
 	  (lambda ()
+	    (electric-pair-mode)
 	    (define-key php-mode-map "\C-hf" 'describe-function-via-pman)))
 (defun describe-function-via-pman (FUNCTION)
   "Display the full documentation of FUNCTION, using pman"
