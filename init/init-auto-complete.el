@@ -1,60 +1,54 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 
-;; emacs-lisp
-(defvar ac-emacs-lisp-sources
-  '(ac-source-symbols))
-(defvar ac-emacs-lisp-features nil)
-(defvar ac-source-emacs-lisp-features
-  '((init
-     . (lambda ()
-         (unless ac-emacs-lisp-features
-           (let ((suffix (concat (regexp-opt (find-library-suffixes) t) "\\'")))
-             (setq
-              ac-emacs-lisp-features
-              (delq nil
-                    (apply 'append
-                           (mapcar (lambda (dir)
-                                     (if (file-directory-p dir)
-                                         (mapcar (lambda (file)
-                                                   (if (string-match suffix file)
-                                                       (substring file 0 (match-beginning 0))))
-                                                 (directory-files dir))))
-                                   load-path))))))))
-    (candidates . (lambda () (all-completions ac-prefix ac-emacs-lisp-features)))))
-(add-hook 'emacs-lisp-mode-hook
-	  (lambda ()
-	    (let ((ac-sources
-		   '(ac-source-emacs-lisp-features
-		     ac-source-symbols
-		     ac-source-abbrev
-		     ac-source-words-in-buffer
-		     ac-source-words-in-same-mode-buffers
-		     ac-source-files-in-current-dir
-		     ac-source-filename)))
-	      (auto-complete-mode))))
+;;; basic config
+(setq ac-auto-show-menu 0.5) ; delay
+(setq ac-ignore-case nil)
+(setq ac-use-fuzzy t) ; 模糊匹配
+(ac-flyspell-workaround)
 
-
-
-
-(set-default 'ac-sources
-             '(ac-source-dictionary
-               ac-source-words-in-buffer
-               ac-source-words-in-same-mode-buffers))
-
+(setq-default
+ ac-sources
+ '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
 
 (defun my-ac-mode ()
-  (auto-complete-mode 1)
-  (ac-flyspell-workaround))
+  (auto-complete-mode 1))
+
+(add-hook 'css-mode-hook 'ac-css-mode-setup)
+(add-hook 'less-css-mode-hook 'ac-css-mode-setup)
+
+(add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
+(add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+(add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
+(add-hook 'auto-complete-mode-hook 'ac-common-setup)
+
+(define-key ac-completing-map (kbd "C-n") 'ac-next)
+(define-key ac-completing-map (kbd "C-p") 'ac-previous)
 
 (dolist (hook '(
-                js3-mode-hook
-                html-mode-hook
-                php-mode-hook
-                less-css-mode-hook
+		emacs-lisp-mode-hook
 		ess-mode-hook
+                html-mode-hook
+                js3-mode-hook
+                less-css-mode-hook
+                php-mode-hook
+		web-mode-hook
                 ))
-  (add-hook hook 'my-ac-mode))
+  (add-hook hook
+	    (lambda ()
+	      (auto-complete-mode 1))))
+
+;; hook AC into completion-at-point
+(defun set-auto-complete-as-completion-at-point-function ()
+  (setq completion-at-point-functions '(auto-complete)))
+(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+
+
+;; Exclude very large buffers from dabbrev
+(defun sanityinc/dabbrev-friend-buffer (other-buffer)
+  (< (buffer-size other-buffer) (* 1 1024 1024)))
+(setq dabbrev-friend-buffer-function 'sanityinc/dabbrev-friend-buffer)
+
 
 ;; 绑定全局键值
 ;; 也可以绑定单独到某个mode，比如cc-mode (define-key cc-mode-map (kbd "(") 'skeleton-pair-insert-maybe)
@@ -69,5 +63,4 @@
 ;; 填入大中小括号，双单引号的匹配
 (setq skeleton-pair t)
 (setq skeleton-pair-alist '((?\" _ "\"" >)(?\' _ "\'" >)(?《 _"》">)(?（ _"）">)(?\( _ ")" >)(?\[ _ "]" >)(?\{ _ "}" >)))
-
-			    (provide 'init-auto-complete)
+(provide 'init-auto-complete)
