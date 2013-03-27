@@ -12,7 +12,9 @@
 ;;允许emacs和外部其他程式的粘贴
 (setq x-select-enable-clipboard t)
 
-
+;; 不要tab
+(setq indent-tabs-mode nil)
+(setq tab-width 4)
 
 ;;;; UNDO TREE
 (require 'undo-tree)
@@ -110,9 +112,6 @@
     count))
 
 (global-set-key (kbd "M-=") 'my-count)
-
-;; 保证不使用tab缩进
-(setq indent-tabs-mode nil)
 
 ;;; Compile 
 
