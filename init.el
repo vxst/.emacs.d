@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-03-07 21:22:40 Zeno Zeng>
+;; Time-stamp: <2013-03-18 11:06:57 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/git/yafolding")
@@ -102,11 +102,16 @@
  '(less-css-compile-at-save t)
  '(less-css-lessc-options (list "-x"))
  '(message-log-max 1000)
+ '(org-agenda-log-mode-items (quote (closed clock state)))
  '(org-agenda-menu-two-columns t)
+ '(org-agenda-move-date-from-past-immediately-to-today nil)
  '(org-agenda-skip-deadline-prewarning-if-scheduled 0)
- '(org-agenda-span (quote month))
+ '(org-agenda-span (quote day))
+ '(org-agenda-start-with-clockreport-mode t)
  '(org-clock-out-remove-zero-time-clocks t)
  '(org-default-priority 67)
+ '(org-extend-today-until 0)
+ '(org-use-effective-time t)
  '(sml/show-battery nil)
  '(sml/show-client t)
  '(sml/show-time t)

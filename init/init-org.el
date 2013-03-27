@@ -77,6 +77,7 @@
 	("j" "Journal" entry (file+datetree "~/private/core/journal.org.gpg")
 	 "* %?")))
 
+
 ;; AGENDA
 
 (setq org-agenda-skip-deadline-if-done t)
@@ -84,6 +85,9 @@
 (setq org-deadline-warning-days 7)
 (setq org-agenda-ndays 1)
 
+(add-hook 'org-agenda-mode-hook
+	  (lambda ()
+	    (local-set-key [(super t)] 'org-agenda-todo-yesterday)))
 (setq org-agenda-custom-commands 
       '(
 	("g" "Agenda GTD Summary"

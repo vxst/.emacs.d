@@ -16,7 +16,6 @@
 (defun indent-buffer ()
   "Indent the current buffer"
   (interactive)
-  
   (condition-case nil
       ;; 尝试直接缩进区域
       (indent-region (point-min) (point-max))

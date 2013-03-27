@@ -6,9 +6,12 @@
 
 ;; 依照缩进来折叠代码
 (define-key global-map (kbd "C-'") 'yafolding)
+(define-key global-map (kbd "C-c C-f") 'yafolding-toggle-all)
 
-(add-hook 'emacs-lisp-mode-hook
+(add-hook 'js3-mode-hook
 	  (lambda ()
-	    (yafolding-hide-all 1)))
+	    (local-set-key (kbd "C-'") 'js3-mode-toggle-element)
+	    (local-set-key (kbd "C-c C-f") 'js3-mode-toggle-hide-functions)
+	    ))
 
 (provide 'init-folding)
