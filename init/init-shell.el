@@ -1,2 +1,2 @@
-(defalias 'sh 'eshell)
+(defalias 'sh 'shell)
 (provide 'init-shell)

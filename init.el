@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-03-18 11:06:57 Zeno Zeng>
+;; Time-stamp: <2013-04-13 14:34:18 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/git/yafolding")
@@ -25,6 +25,7 @@
 (require 'init-css)
 (require 'init-php)
 (require 'init-R)
+(require 'init-c)
 (require 'init-markdown)
 (require 'init-html)
 (require 'init-lisp)
@@ -99,7 +100,6 @@
  '(js3-global-externs (quote ("$" "localStorage" "JSON" "setInterval" "clearInterval" "setTimeout" "console")))
  '(js3-indent-level 2)
  '(js3-indent-on-enter-key t)
- '(less-css-compile-at-save t)
  '(less-css-lessc-options (list "-x"))
  '(message-log-max 1000)
  '(org-agenda-log-mode-items (quote (closed clock state)))
