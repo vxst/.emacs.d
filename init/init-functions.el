@@ -13,9 +13,12 @@
     (yank)))
 
 ;; 一键缩进
+(defvar indent-buffer-before-hook nil)
+(defvar indent-buffer-after-hook nil)
 (defun indent-buffer ()
   "Indent the current buffer"
   (interactive)
+  (run-hooks 'indent-buffer-before-hook)
   (condition-case nil
       ;; 尝试直接缩进区域
       (indent-region (point-min) (point-max))
@@ -25,7 +28,8 @@
         (goto-char (point-min))
         (while (search-forward "\n" nil t)                
           (ignore-errors
-            (indent-for-tab-command)))))))
+            (indent-for-tab-command))))))
+  (run-hooks 'indent-buffer-after-hook))
 
 (global-set-key [remap delete-horizontal-space] 'zeno-delete-horizontal-space)
 
