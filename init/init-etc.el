@@ -53,11 +53,21 @@
 (global-set-key [f6] 'toggle-truncate-lines)
 
 ;; 全屏
-(global-set-key [f11] '(lambda ()
-			 (interactive)
-			 (x-send-client-message
-			  nil 0 nil "_NET_WM_STATE" 32
-			  '(2 "_NET_WM_STATE_FULLSCREEN" 0))))
+;; (global-set-key [f11] '(lambda ()
+;; 			 (interactive)
+;; 			 (x-send-client-message
+;; 			  nil 0 nil "_NET_WM_STATE" 32
+;; 			  '(2 "_NET_WM_STATE_FULLSCREEN" 0))))
+;; (x-send-client-message
+;;  nil 0 nil "_NET_WM_STATE" 32
+;;  '(2 "_NET_WM_STATE_FULLSCREEN" 0))
+
+;;按f11让Emacs进入全屏显示
+;;参考： http://www.emacswiki.org/cgi-bin/wiki/FullScreen
+(defun fullscreen ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen
+		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
 
 ;;;; English Writing
 (require 'english-writing-mode)

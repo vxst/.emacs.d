@@ -91,13 +91,24 @@
 
 ;; Font
 ;; English
-(set-face-attribute 'default nil
-		    :family "WenQuanYi Zen Hei Mono"
-		    :height 120)
 
 ;; (set-face-attribute 'default nil
 ;; 		    :family "Source Code Pro"
 ;; 		    :height 120)
-(set-fontset-font t 'han (font-spec :family "WenQuanYi Zen Hei Mono"))
+
+
+;; 这些设置是在X下的frame创建时才有效的，而启动服务器的时候是没有创建frame的。
+(defun frame-setting ()
+  (set-face-attribute 'default nil
+		      :family "WenQuanYi Zen Hei Mono"
+		      :height 120)
+  (set-fontset-font t 'han (font-spec :family "WenQuanYi Zen Hei Mono")))
+
+(if (and (fboundp 'daemonp) (daemonp))
+    (add-hook 'after-make-frame-functions
+	      (lambda (frame)
+		(with-selected-frame frame
+		  (frame-setting))))
+  (frame-setting))
 
 (provide 'init-ui)
