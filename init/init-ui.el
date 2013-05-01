@@ -99,6 +99,9 @@
 
 ;; 这些设置是在X下的frame创建时才有效的，而启动服务器的时候是没有创建frame的。
 (defun frame-setting ()
+  (set-cursor-color "#fff")
+  (set-mouse-color "#fff")
+
   (set-face-attribute 'default nil
 		      :family "WenQuanYi Zen Hei Mono"
 		      :height 120)
