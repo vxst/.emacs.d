@@ -17,13 +17,14 @@
 
 (add-hook 'org-agenda-mode-hook
 	  (lambda ()
-	    (local-set-key [remap org-agenda-columns] 'zeno-org-agenda-columns)				  
+	    (local-set-key [remap org-agenda-columns] 'zeno-org-agenda-columns)
 	    (delete-other-windows)
 	    (set-org-font)))
 
 (add-hook 'org-mode-hook (lambda ()
 			   (define-key org-mode-map [(super p)] 'org-priority-up)
 			   (define-key org-mode-map [(super meta p)] 'org-priority-down)
+			   (setq truncate-lines nil) ;; 强制换行
 			   (set-org-font)))
 
 (local-set-key [(super meta p)] 'org-priority-down)
