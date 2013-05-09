@@ -8,20 +8,22 @@
 ;;; UI
 ;; 关闭Emacs启动时提示信息
 (setq inhibit-startup-message t)
+
+
 ;; 各种bar
 (blink-cursor-mode -1)
 ;; (menu-bar-mode (quote toggle))
 ;;; Modeline
 ;; 电池
-;; (setq battery-mode-line-format "[%b%p%%]")
-;; (display-battery-mode)
+;; (setq battery-mode-line-format "%b%p%")
+(display-battery-mode)
 ;; ;; 时间
 ;; (setq display-time-24hr-format t)
 ;; (setq display-time-day-and-date t)
-;; (setq display-time-format "[%m-%d %a %H:%M]")
-;;  ;; 不要显示load average
+;; (setq display-time-format " %m-%d %a %H:%M")
+ ;; 不要显示load average
 ;; (setq display-time-load-average-threshold 100)
-;; (display-time)
+ ;; (display-time)
 ;; (setq display-time-24hr-format t)
 ;; (setq column-number-mode t)
 ;; (setq line-number-mode t)
@@ -99,6 +101,11 @@
 
 ;; 这些设置是在X下的frame创建时才有效的，而启动服务器的时候是没有创建frame的。
 (defun frame-setting ()
+
+  ;; 确保不显示额外的信息在modeline
+  (setq global-mode-string '("" ""))
+
+
   (set-cursor-color "#fff")
   (set-mouse-color "#fff")
 
@@ -114,16 +121,16 @@
    '(default ((t (:inherit nil :stipple nil :background "#000" :foreground "#fff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal :foundry "unknown"))))
    '(emms-lyrics-minibuffer-face ((t (:foreground "green yellow" :height 300))))
    '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
-   '(font-lock-comment-face ((t (:background "#111" :foreground "#999" :height 1.0))))
+   '(font-lock-comment-face ((t (:foreground "#999" :height 1.0))))
    '(font-lock-constant-face ((t (:foreground "#20b2aa"))))
    '(font-lock-keyword-face ((t (:foreground "#f00"))))
    '(fringe ((t (:background "#000"))))
    '(header-line ((t (:background "#000" :foreground "#333"))))
    '(hl-paren-face ((t (:weight bold))) t)
    '(js3-private-function-call-face ((t (:foreground "firebrick"))))
-   '(mode-line ((t (:background "#000" :foreground "#999" :box (:line-width 1 :color "#999") :height 0.75))))
-   '(mode-line-highlight ((t (:box (:line-width 2 :color "grey40" :style released-button) :height 0.6))))
-   '(mode-line-inactive ((t (:inherit mode-line :background "#010101" :foreground "gray60"))))
+   '(mode-line ((t (:background "#000" :foreground "#000" :box (:line-width 1 :color "#999") :height 0.75))))
+   '(mode-line-highlight ((t (:box (:line-width 2 :color "#000" :style released-button) :height 0.6))))
+   '(mode-line-inactive ((t (:inherit mode-line :background "#010101" :foreground "#000"))))
    '(org-clock-overlay ((t (:background "#000"))))
    '(org-column ((t (:background "black" :strike-through nil :underline nil :slant normal :weight normal :height 120 :family "WenQuanYi Zen Hei Mono"))))
    '(org-column-title ((t (:inherit org-column :background "black" :foreground "white"))))
