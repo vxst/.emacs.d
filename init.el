@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-05-09 16:44:45 Zeno Zeng>
+;; Time-stamp: <2013-05-14 16:47:42 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/git/yafolding")
@@ -49,6 +49,7 @@
 
 (require 'init-gpg)
 (require 'init-app)
+(require 'init-alias)
 (require 'init-etc)
 
 
