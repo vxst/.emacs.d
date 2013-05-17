@@ -9,6 +9,8 @@
 ;; 关闭Emacs启动时提示信息
 (setq inhibit-startup-message t)
 
+;; 关闭蜂鸣提示音
+(setq ring-bell-function 'ignore)
 
 ;; 各种bar
 (blink-cursor-mode -1)
