@@ -18,7 +18,7 @@
 (add-hook 'org-agenda-mode-hook
 	  (lambda ()
 	    (local-set-key [remap org-agenda-columns] 'zeno-org-agenda-columns)
-	    (delete-other-windows)
+;;	    (delete-other-windows)
 	    (set-org-font)))
 
 (add-hook 'org-mode-hook (lambda ()
