@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-05-14 16:47:42 Zeno Zeng>
+;; Time-stamp: <2013-05-25 15:12:23 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/git/yafolding")
@@ -44,6 +44,7 @@
 
 (require 'init-w3m)
 (require 'init-emms)
+(require 'init-moz)
 (require 'init-org)
 (require 'init-blog)
 
@@ -69,6 +70,7 @@
  '(emms-track-initialize-functions (quote (emms-info-initialize-track)))
  '(golden-ratio-exclude-modes (quote ("shell-mode" "calendar-mode" "gud-mode" "ediff-mode" "eshell-mode" "help-mode" "org-mode")))
  '(hl-paren-colors (quote ("#f00" "#ff0" "#0f0" "#00ced1" "#9400d3")))
+ '(indent-tabs-mode nil)
  '(js3-allow-member-expr-as-function-name t)
  '(js3-auto-indent-p t)
  '(js3-consistent-level-indent-inner-bracket t)
