@@ -37,13 +37,16 @@
   nil " Reload" nil
   (if moz-reload-mode
       ;; Edit hook buffer-locally.
-      (add-hook 'post-command-hook 'moz-reload nil t)
-    (remove-hook 'post-command-hook 'moz-reload t)))
+      (add-hook 'after-save-hook 'moz-reload nil t)
+    (remove-hook 'after-save-hook 'moz-reload t)))
+
+;; (defun moz-reload ()
+;;   (when (buffer-modified-p)
+;;     (save-buffer)
+;;     (moz-firefox-reload)))
 
 (defun moz-reload ()
-  (when (buffer-modified-p)
-    (save-buffer)
-    (moz-firefox-reload)))
+  (moz-firefox-reload))
 
 (defun moz-lesscss-reload ()
   (interactive)
