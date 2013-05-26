@@ -58,8 +58,6 @@
 ;;;; English Writing
 (require 'english-writing-mode)
 
-(require 'switch-window)
-
 (defun my-count ()
   (interactive)
   (let ((start)
