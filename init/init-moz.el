@@ -8,20 +8,27 @@
 (defalias 'mozg 'moz-reload-global-mode)
 (defalias 'mozr 'moz-reload-mode)
 (defalias 'mozl 'moz-reload-lesscss-mode)
+(defalias 'mozc 'moz-update-css-mode)
 
-;;; Usage
-;; Run M-x moz-reload-mode to switch moz-reload on/off in the
-;; current buffer.
-;; When active, every change in the buffer triggers Firefox
-;; to reload its current page.
+(defun send-to-moz(str)
+  (comint-send-string (inferior-moz-process) str))
 
 (defun mozs()
   (interactive)
   (call-interactively 'run-mozilla)
-  (comint-send-string (inferior-moz-process) ";")
-  (comint-send-string (inferior-moz-process) "repl.whereAmI(); repl.look(); content"))
-
+  (send-to-moz ";")
+  (send-to-moz "repl.whereAmI(); repl.look(); content"))
 ;; use content.window content.documnet / document content.location
+
+(defun moz-inject-css(css)
+  (send-to-moz ""))
+
+(define-minor-mode moz-update-css-mode
+  "Moz Update CSS Minor Mode"
+  nil " MozCSS" nil
+  (send-to-moz "
+document.getElementsByName('style')  
+"))
 
 
 (define-minor-mode moz-reload-lesscss-mode
