@@ -1,3 +1,5 @@
+(add-to-list 'auto-mode-alist '("\\.rdf$" . xml-mode))
+
 (require 'moz)
 (autoload 'moz-minor-mode "moz" "Mozilla Minor and Inferior Mozilla Modes" t)
 
