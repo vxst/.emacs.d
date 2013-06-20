@@ -1,5 +1,5 @@
 ;; Less
-(setq less-css-compile-at-save t)
+(setq less-css-compile-at-save nil)
 
 (autoload 'less-css-mode "less-css-mode-rm-flymake.el"
   "Major mode for editing less-css files" t)
