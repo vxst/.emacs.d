@@ -26,6 +26,7 @@
 (define-key ac-completing-map (kbd "C-p") 'ac-previous)
 
 (dolist (hook '(
+                c-mode-hook
 		emacs-lisp-mode-hook
 		ess-mode-hook
                 html-mode-hook
@@ -49,18 +50,4 @@
   (< (buffer-size other-buffer) (* 1 1024 1024)))
 (setq dabbrev-friend-buffer-function 'sanityinc/dabbrev-friend-buffer)
 
-
-;; 绑定全局键值
-;; 也可以绑定单独到某个mode，比如cc-mode (define-key cc-mode-map (kbd "(") 'skeleton-pair-insert-maybe)
-(global-set-key (kbd "(")  'skeleton-pair-insert-maybe)
-(global-set-key (kbd "{")  'skeleton-pair-insert-maybe)
-(global-set-key (kbd "《")  'skeleton-pair-insert-maybe)
-(global-set-key (kbd "（")  'skeleton-pair-insert-maybe)
-;; (global-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
-(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
-;; (global-set-key (kbd "[")  'skeleton-pair-insert-maybe)
-
-;; 填入大中小括号，双单引号的匹配
-(setq skeleton-pair t)
-(setq skeleton-pair-alist '((?\" _ "\"" >)(?\' _ "\'" >)(?《 _"》">)(?（ _"）">)(?\( _ ")" >)(?\[ _ "]" >)(?\{ _ "}" >)))
 (provide 'init-auto-complete)

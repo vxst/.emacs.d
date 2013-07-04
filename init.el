@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-05-26 21:26:21 Zeno Zeng>
+;; Time-stamp: <2013-06-27 20:05:10 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/git/yafolding")
@@ -62,6 +62,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(chm-view-delay 1)
+ '(coffee-tab-width 2)
  '(emms-cache-get-function (quote emms-cache-get))
  '(emms-cache-modified-function (quote emms-cache-dirty))
  '(emms-cache-set-function (quote emms-cache-set))

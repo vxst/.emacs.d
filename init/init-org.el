@@ -4,7 +4,6 @@
 
 (setq org-agenda-files (list
 			"~/private/doc/gtd/new-gtd.org"
-			"~/private/core/journal.org.gpg"
 			"~/private/doc/gtd/study.org"
 			"~/private/doc/gtd/pp.org"
 			"~/private/doc/gtd/reading.org"
