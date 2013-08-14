@@ -2,6 +2,7 @@
 (require 'org-faces)
 (require 'org-clock)
 
+(setq org-confirm-babel-evaluate nil)
 (setq org-agenda-files (list
 			"~/private/doc/gtd/new-gtd.org"
 			"~/private/doc/gtd/study.org"
@@ -75,9 +76,10 @@
 	("s" "Study Plan" entry (file+headline "~/private/doc/gtd/study.org" "Plans")
 	 "* TODO %?\n")
 	("j" "Journal" entry (file+datetree "~/private/core/journal.org.gpg")
-	 "* %?")))
-
-
+	 "* %?")
+	("r" "Journal" entry (file+datetree "~/private/log/reading.org")
+	 "* %?")
+        ))
 ;; AGENDA
 
 (setq org-agenda-skip-deadline-if-done t)

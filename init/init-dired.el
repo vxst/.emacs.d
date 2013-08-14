@@ -9,13 +9,11 @@
 
 (defalias 'mkdir 'make-directory)
 (defalias 'mnt 'media)
+(defalias 'usb 'media)
 
 (defun media()
   (interactive)
   (dired "/media/"))
-(defun disk()
-  (interactive)
-  (dired "/dev/disk/by-id/"))
 (defun home()
   (interactive)
   (dired "~"))
@@ -34,7 +32,7 @@
     (interactive)
     (dired-do-shell-command "gnome-terminal -x sudo umount * ")))
 (define-key dired-mode-map (kbd "C-i") 'dired-umonut-device)
- 
+
 
 (setq dired-recursive-copies t)
 (setq dired-recursive-deletes t)
@@ -85,11 +83,12 @@
 		(lambda ()
 		  (interactive)
 		  ;; 如果在dired-mode，直接返回上级目录
-		  (when (equal major-mode 'dired-mode)
-		    (dired ".."))
-		  (if (buffer-file-name)
-		      (dired default-directory))
-		  ))
+		  (if (equal major-mode 'dired-mode)
+                      (dired "..")
+                    (if (buffer-file-name)
+                        (dired default-directory)
+                      (dired "~"))
+                    )))
 
 ;; just press ~ to go home. 
 (add-hook 'ido-setup-hook
