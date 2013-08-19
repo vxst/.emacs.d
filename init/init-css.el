@@ -1,5 +1,11 @@
-;; Less
+;;; Less
 (setq less-css-compile-at-save nil)
+
+;; 快捷转换
+(defun toggle-less-css-compile-at-save()
+  (interactive)
+  (setq less-css-compile-at-save (not less-css-compile-at-save)))
+(global-set-key [f10] 'toggle-less-css-compile-at-save)
 
 (autoload 'less-css-mode "less-css-mode-rm-flymake.el"
   "Major mode for editing less-css files" t)

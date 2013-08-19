@@ -7,7 +7,6 @@
 			"~/private/doc/gtd/new-gtd.org"
 			"~/private/doc/gtd/study.org"
 			"~/private/doc/gtd/pp.org"
-			"~/private/doc/gtd/reading.org"
 			"~/private/doc/gtd/work.org"
 			"~/private/doc/gtd/ppro.org"))
 (setq org-hide-leading-stars t)
