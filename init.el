@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-08-14 14:57:23 Zeno Zeng>
+;; Time-stamp: <2013-09-09 23:49:13 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/git/yafolding")
@@ -22,6 +22,8 @@
 (require 'init-personal)
 (require 'init-functions)
 (require 'init-file)
+
+(require 'init-wicd)
 
 (require 'init-move)
 
