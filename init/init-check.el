@@ -4,6 +4,6 @@
           (lambda ()
             (setq font-lock-keywords
                   (append font-lock-keywords
-                          '(("[（），；]"  (0 'error t)))))))
+                          '(("[（），；“”]"  (0 'error t)))))))
 
 (provide 'init-check)
