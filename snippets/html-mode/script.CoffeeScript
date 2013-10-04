@@ -1,0 +1,5 @@
+# contributor: Zeno Zeng <zenoofzeng@gmail.com>
+# name :<script type="text/coffeescript" src="..."></script>
+# key: script
+# --
+<script type="text/coffeescript" src="$1"></script>
