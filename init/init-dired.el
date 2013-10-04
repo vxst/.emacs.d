@@ -1,5 +1,4 @@
 (require 'dired-x)
-(require 'dired-single)
 
 ;;;;;;;;;;;;;;;;;;
 ;;;
