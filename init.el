@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-09-09 23:49:13 Zeno Zeng>
+;; Time-stamp: <2013-10-04 14:59:45 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/git/yafolding")
@@ -54,6 +54,7 @@
 
 (require 'init-gpg)
 (require 'init-alias)
+(require 'init-whitespace)
 (require 'init-etc)
 
 
@@ -107,6 +108,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#000" :foreground "#fff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal :foundry "unknown"))))
+ '(highlight-indentation-face ((t (:background "#111"))))
  '(emms-lyrics-minibuffer-face ((t (:foreground "green yellow" :height 300))))
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#999" :height 1.0))))
