@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-10-04 14:59:45 Zeno Zeng>
+;; Time-stamp: <2013-10-04 15:05:26 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/git/yafolding")
@@ -55,6 +55,7 @@
 (require 'init-gpg)
 (require 'init-alias)
 (require 'init-whitespace)
+(require 'init-check)
 (require 'init-etc)
 
 
@@ -108,19 +109,21 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#000" :foreground "#fff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal :foundry "unknown"))))
- '(highlight-indentation-face ((t (:background "#111"))))
  '(emms-lyrics-minibuffer-face ((t (:foreground "green yellow" :height 300))))
+ '(error ((t (:foreground "Red" :weight bold))))
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#999" :height 1.0))))
  '(font-lock-constant-face ((t (:foreground "#20b2aa"))))
  '(font-lock-keyword-face ((t (:foreground "#f00"))))
  '(fringe ((t (:background "#000"))))
  '(header-line ((t (:background "#000" :foreground "#333"))))
+ '(highlight-indentation-face ((t (:background "#111"))))
  '(hl-paren-face ((t (:weight bold))) t)
  '(js3-private-function-call-face ((t (:foreground "firebrick"))))
  '(mode-line ((t (:background "#000" :foreground "#999" :box (:line-width 1 :color "#999") :height 0.75))))
  '(mode-line-highlight ((t (:box (:line-width 2 :color "grey40" :style released-button) :height 0.6))))
  '(mode-line-inactive ((t (:inherit mode-line :background "#010101" :foreground "gray60"))))
+ '(my-indent-face ((((class color)) (:background "#111"))) t)
  '(org-clock-overlay ((t (:background "#000"))))
  '(org-column ((t (:background "black" :strike-through nil :underline nil :slant normal :weight normal :height 120 :family "WenQuanYi Zen Hei Mono"))))
  '(org-column-title ((t (:inherit org-column :background "black" :foreground "white"))))
