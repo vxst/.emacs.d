@@ -1,5 +1,11 @@
 (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
 
+(font-lock-add-keywords 'emacs-lisp-mode
+  '(("(\\(lambda\\)\\>" (0 (prog1 ()
+                             (compose-region (match-beginning 1)
+                                             (match-end 1)
+                                             ?λ))))))
+
 (global-set-key (kbd "s-e") 'my-eval-buffer)
 (defun my-eval-buffer ()
   (interactive)
