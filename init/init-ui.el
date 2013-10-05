@@ -92,7 +92,7 @@
 
 ;; 这些设置是在X下的frame创建时才有效的，而启动服务器的时候是没有创建frame的。
 (defun frame-setting()
- ;; 确保不显示额外的信息在modeline
+  ;; 确保不显示额外的信息在modeline
   (setq global-mode-string '("" ""))
   (set-cursor-color "#fff")
   (set-mouse-color "#fff")
@@ -129,7 +129,7 @@
    '(secondary-selection ((t (:background "#111")))))
   ;; lisp 的缩进提示线
   (require 'indent-hint-lisp)
-  (add-hook 'emacs-lisp-mode-hook 'indent-hint-lisp)
+  (add-hook 'emacs-lisp-mode-hook 'indent-hint-lisp))
 
 
 (if (and (fboundp 'daemonp) (daemonp))
