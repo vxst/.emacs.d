@@ -14,7 +14,7 @@
               (message "%d" (get-indentation-offset))
               (highlight-indentation-set-offset (get-indentation-offset))
               (highlight-indentation-mode)
-	      (highlight-indentation-current-column-mode))))
+              (highlight-indentation-current-column-mode))))
 
 ;; 高亮无意义空白及超过80的行
 
@@ -26,8 +26,8 @@
 
 
 
-;; (require 'indent-hint-lisp)
-;; (add-hook 'emacs-lisp-mode-hook 'indent-hint-lisp)
+(require 'indent-hint-lisp)
+(add-hook 'emacs-lisp-mode-hook 'indent-hint-lisp)
 
 
 ;; 高亮缩进
