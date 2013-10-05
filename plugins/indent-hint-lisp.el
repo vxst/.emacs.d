@@ -1,7 +1,7 @@
 ;; -*- encoding: utf-8-unix; -*-
 ;; File-name:    <indent-hint.el>
 ;; Create:       <2012-09-10 12:04:07 ran9er>
-;; Time-stamp:   <2013-10-05 16:33:31 Zeno Zeng>
+;; Time-stamp:   <2013-10-05 17:04:00 Zeno Zeng>
 ;; Mail:         <2999am@gmail.com>
 
 ;; *init

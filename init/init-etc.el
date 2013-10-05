@@ -47,8 +47,8 @@
 (define-key global-map "\C-cc" 'org-capture)
 
 (global-set-key (kbd "s-i") '(lambda ()
-			       (interactive)
-			       (indent-buffer)))
+                               (interactive)
+                               (indent-buffer)))
 (global-set-key (kbd "s-x") 'execute-extended-command)
 (global-set-key (kbd "s-r") 'replace-regexp)
 (global-set-key [f2] 'hs-hide-all)
@@ -78,12 +78,12 @@
             (format "汉字: %d 字符: %d 单词: %d 行数: %d"
                     (- cn-chars cn-chars-etc)
                     chars
-		    words
+                    words
                     lines
                     chars))
-           (result   
+           (result
             (dolist (var '("汉字" "字符" "单词" "行数") result)
-              (setq result 
+              (setq result
                     (replace-regexp-in-string
                      var
                      (propertize var 'face 'font-lock-variable-name-face)

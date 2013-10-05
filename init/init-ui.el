@@ -29,7 +29,7 @@
 ;; (setq display-time-24hr-format t)
 ;; (setq column-number-mode t)
 ;; (setq line-number-mode t)
-;; 标题栏 
+;; 标题栏
 (setq frame-title-format "%f")
 ;; bu显示匹配括号
 (show-paren-mode nil)
@@ -45,7 +45,7 @@
 (ido-mode nil)
 (global-set-key "\C-xk" (lambda ()
                           (interactive)
-			  (kill-buffer (buffer-name))))
+                          (kill-buffer (buffer-name))))
 ;; highlight-parentheses
 (require 'highlight-parentheses)
 (define-globalized-minor-mode global-highlight-parentheses-mode

@@ -28,7 +28,7 @@
   (isearch-forward)
   (eldoc-mode 1))
 (add-hook 'less-css-mode-hook (lambda ()
-				(local-set-key [remap isearch-forward] 'isearch-forward-noeldoc)))
+                                (local-set-key [remap isearch-forward] 'isearch-forward-noeldoc)))
 
 (defun isearch-backward-noeldoc ()
   "close eldoc temperaily"
@@ -37,7 +37,7 @@
   (isearch-backward)
   (eldoc-mode 1))
 (add-hook 'less-css-mode-hook (lambda ()
-				(local-set-key [remap isearch-backward] 'isearch-backward-noeldoc)))
+                                (local-set-key [remap isearch-backward] 'isearch-backward-noeldoc)))
 
 
 (provide 'init-css)
