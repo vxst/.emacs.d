@@ -1,6 +1,3 @@
-;;;; Frames and Graphical Displays
-
-;; Turn off mouse interface
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -23,9 +20,9 @@
 ;; (setq display-time-24hr-format t)
 ;; (setq display-time-day-and-date t)
 ;; (setq display-time-format " %m-%d %a %H:%M")
- ;; 不要显示load average
+;; 不要显示load average
 ;; (setq display-time-load-average-threshold 100)
- ;; (display-time)
+;; (display-time)
 ;; (setq display-time-24hr-format t)
 ;; (setq column-number-mode t)
 ;; (setq line-number-mode t)
@@ -46,6 +43,7 @@
 (global-set-key "\C-xk" (lambda ()
                           (interactive)
                           (kill-buffer (buffer-name))))
+
 ;; highlight-parentheses
 (require 'highlight-parentheses)
 (define-globalized-minor-mode global-highlight-parentheses-mode
@@ -66,8 +64,7 @@
                                    "eshell-mode"))
 (setq golden-ratio-exclude-buffer-names
       '(" *org tags*"
-        " *Org todo*"
-        ))
+        " *Org todo*"))
 (golden-ratio-enable)
 
 ;; SmartMode Line
@@ -93,27 +90,15 @@
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
 
-;; Font
-;; English
-
-;; (set-face-attribute 'default nil
-;; 		    :family "Source Code Pro"
-;; 		    :height 120)
-
-
 ;; 这些设置是在X下的frame创建时才有效的，而启动服务器的时候是没有创建frame的。
-(defun frame-setting ()
-
-  ;; 确保不显示额外的信息在modeline
+(defun frame-setting()
+ ;; 确保不显示额外的信息在modeline
   (setq global-mode-string '("" ""))
-
-
   (set-cursor-color "#fff")
   (set-mouse-color "#fff")
-
   (set-face-attribute 'default nil
-		      :family "WenQuanYi Zen Hei Mono"
-		      :height 120)
+                      :family "WenQuanYi Zen Hei Mono"
+                      :height 120)
   (set-fontset-font t 'han (font-spec :family "WenQuanYi Zen Hei Mono"))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
@@ -141,22 +126,17 @@
    '(org-todo ((t (:foreground "red" :weight bold))))
    '(org-warning ((t (:foreground "red" :weight bold))))
    '(region ((t (:background "#333" :foreground "#fff"))))
-   '(secondary-selection ((t (:background "#111"))))))
+   '(secondary-selection ((t (:background "#111")))))
+  ;; lisp 的缩进提示线
+  (require 'indent-hint-lisp)
+  (add-hook 'emacs-lisp-mode-hook 'indent-hint-lisp)
+
 
 (if (and (fboundp 'daemonp) (daemonp))
     (add-hook 'after-make-frame-functions
-	      (lambda (frame)
-		(with-selected-frame frame
-		  (frame-setting))))
+              (lambda (frame)
+                (with-selected-frame frame
+                  (frame-setting))))
   (frame-setting))
-
-;; 全屏
-(global-set-key [f11] '(lambda ()
-			 (interactive)
-			 (x-send-client-message
-			  nil 0 nil "_NET_WM_STATE" 32
-			  '(2 "_NET_WM_STATE_FULLSCREEN" 0))))
-
-
 
 (provide 'init-ui)

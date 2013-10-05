@@ -1,7 +1,7 @@
 ;; -*- encoding: utf-8-unix; -*-
 ;; File-name:    <indent-hint.el>
 ;; Create:       <2012-09-10 12:04:07 ran9er>
-;; Time-stamp:   <2013-10-05 17:04:00 Zeno Zeng>
+;; Time-stamp:   <2013-10-05 20:27:24 Zeno Zeng>
 ;; Mail:         <2999am@gmail.com>
 
 ;; *init
@@ -272,7 +272,7 @@ s1 ",\n" s2 "};"
 (defun indent-hint-lisp ()
   (interactive)
   (indent-hint-mode
-   '(("^[ \t]*\\((\\)")
+   '(("^[ \t]*\\((\\|'\\)")
      ("\\((lambda\\|(defun\\|(defmacro\\)" ih-img-mtd)
      ("\\((let\\*?\\|(if\\|(while\\|(cond\\|(and\\|(or\\|(map.*\\|(save-excursion\\)" ih-img-lgc)
      ("\\((setq\\|(defvar\\)" ih-img-dat)

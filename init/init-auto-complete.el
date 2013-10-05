@@ -27,8 +27,8 @@
 
 (dolist (hook '(
                 c-mode-hook
-		emacs-lisp-mode-hook
-		ess-mode-hook
+                emacs-lisp-mode-hook
+                ess-mode-hook
                 coffee-mode-hook
                 html-mode-hook
                 js3-mode-hook

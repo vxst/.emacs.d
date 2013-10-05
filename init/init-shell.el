@@ -3,6 +3,7 @@
     (async-shell-command cmd buffer-name nil)
     (delete-windows-on buffer-name nil)
     (add-to-list 'ido-ignore-buffers buffer-name)))
+
 (defun sh()
   (interactive)
   (message "%s" default-directory)
@@ -10,4 +11,5 @@
                                   (replace-regexp-in-string "~"
                                                             "/home/zeno"
                                                             default-directory))))
+
 (provide 'init-shell)
