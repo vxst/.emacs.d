@@ -19,12 +19,11 @@
       (forward-line))
     (if (> (current-indentation) 0)
         (current-indentation) ; for existing files, use current indent setting
-      (cond ((eq major-mode 'coffee-mode) ; for new files
-             2)
-            ((eq major-mode 'js3-mode)
-             4)
+      (cond ((eq major-mode 'coffee-mode) 2)
+            ((eq major-mode 'js3-mode) 4)
+            ((eq major-mode 'less-css-mode) 4)
             (t 4)))))
-(dolist (hook '(coffee-mode-hook js3-mode-hook))
+(dolist (hook '(coffee-mode-hook js3-mode-hook less-css-mode-hook))
   (add-hook hook
             (lambda ()
               (highlight-indentation-set-offset (get-indentation-offset))
