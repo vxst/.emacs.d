@@ -51,6 +51,14 @@
        '("\\.RMVB$" "mplayer * &")
        ))
 
+
+;;;;;;;;;;;;;;;;;;
+;;;
+;;; Config
+;;;
+;;;;;;;;;;;;;;;;;;
+(setq delete-by-moving-to-trash t)
+
 ;; TODO: debian 设置 自动挂载 （udev)
 ;; TODO: emacs 里设置 umount
 ;; TODO: d -> put to trash instead of rm

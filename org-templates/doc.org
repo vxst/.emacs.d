@@ -1,2 +1,0 @@
-#+OPTIONS: ^:nil
-#+STYLE: <link rel="stylesheet" title="Standard" href="http://zeno.gitcafe.com/css/doc.css" type="text/css" />

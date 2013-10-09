@@ -39,5 +39,9 @@
 (add-hook 'less-css-mode-hook (lambda ()
                                 (local-set-key [remap isearch-backward] 'isearch-backward-noeldoc)))
 
+(add-hook 'css-mode-hook
+          (lambda ()
+            (define-key css-mode-map "\M-\C-x" 'slime-js-refresh-css)
+            (define-key css-mode-map "\C-c\C-r" 'slime-js-embed-css)))
 
 (provide 'init-css)
