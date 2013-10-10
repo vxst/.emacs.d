@@ -3,7 +3,21 @@
 (require 'whitespace)
 (setq whitespace-line-colum 80)
 (setq whitespace-style '(face tabs lines-tail trailing))
-(global-whitespace-mode t)
+
+;; 注意 whitespace-mode 会破坏 web-mode 的高亮
+(dolist (hook '(
+                c-mode-hook
+                emacs-lisp-mode-hook
+                ess-mode-hook
+                coffee-mode-hook
+                js3-mode-hook
+                less-css-mode-hook
+                php-mode-hook
+                ))
+  (add-hook hook
+            (lambda ()
+              (whitespace-mode))))
+
 
 (provide 'init-whitespace)
 

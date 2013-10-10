@@ -1,5 +1,0 @@
-# contributor: Zeno Zeng <zenoofzeng@gmail.com>
-# name: link stylesheet/less
-# key: link
-# --
-<link rel="stylesheet/less" type="text/css" href="${1:styles.less}" />

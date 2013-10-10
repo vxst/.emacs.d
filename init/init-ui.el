@@ -126,10 +126,7 @@
    '(org-todo ((t (:foreground "red" :weight bold))))
    '(org-warning ((t (:foreground "red" :weight bold))))
    '(region ((t (:background "#333" :foreground "#fff"))))
-   '(secondary-selection ((t (:background "#111")))))
-  ;; lisp 的缩进提示线
-  (require 'indent-hint-lisp)
-  (add-hook 'emacs-lisp-mode-hook 'indent-hint-lisp))
+   '(secondary-selection ((t (:background "#111"))))))
 
 
 (if (and (fboundp 'daemonp) (daemonp))
