@@ -31,7 +31,7 @@
                 (< (line-number-at-pos (point))
                    (line-number-at-pos (point-max))))
       (forward-line))
-    (if (> (current-indentation) 0)
+    (if (> (current-indentation) 1) ;; indentation should nerver less than 2
         (current-indentation) ; for existing files, use current indent setting
       (cond ((eq major-mode 'coffee-mode) 2)
             ((eq major-mode 'js3-mode) 4)
