@@ -2,7 +2,7 @@
 (require 'ess-site)
 
 (setq ess-mode-R-shown nil)
-(define-key ess-mode-map (kbd "s-e")
+(define-key ess-mode-map (kbd "M-e")
   (lambda ()
     (interactive)
     (ess-eval-region (point-min) (point-max) t)

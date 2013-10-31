@@ -117,6 +117,11 @@
 
 (global-set-key (kbd "M-=") 'my-count)
 
+(add-hook 'post-self-insert-hook
+          (lambda ()
+            (when (equal major-mode 'markdown-mode)
+              (my-count))))
+
 ;;; Compile 
 
 ;;下面代码保证emacs在新打开compile窗口的时候只会水平分割窗口

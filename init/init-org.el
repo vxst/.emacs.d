@@ -4,11 +4,12 @@
 
 (setq org-confirm-babel-evaluate nil)
 (setq org-agenda-files (list
-			"~/private/doc/gtd/new-gtd.org"
-			"~/private/doc/gtd/study.org"
-			"~/private/doc/gtd/pp.org"
-			"~/private/doc/gtd/work.org"
-			"~/private/doc/gtd/ppro.org"))
+                        "~/private/doc/gtd/new-gtd.org"
+                        "~/private/doc/gtd/study.org"
+                        "~/private/plan/2013.P1.org"
+                        "~/private/doc/gtd/pp.org"
+                        "~/private/doc/gtd/work.org"
+                        "~/private/doc/gtd/ppro.org"))
 (setq org-hide-leading-stars t)
 (define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map "\C-cs" 'org-gtd-summary)
@@ -17,7 +18,7 @@
 (add-hook 'org-agenda-mode-hook
 	  (lambda ()
 	    (local-set-key [remap org-agenda-columns] 'zeno-org-agenda-columns)
-;;	    (delete-other-windows)
+            ;;	    (delete-other-windows)
 	    (set-org-font)))
 
 (add-hook 'org-mode-hook (lambda ()
