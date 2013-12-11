@@ -1,8 +1,9 @@
 ;; 高亮无意义空白及超过80的行
 
 (require 'whitespace)
-(setq whitespace-line-colum 80)
-(setq whitespace-style '(face tabs lines-tail trailing))
+;; (setq whitespace-line-colum 80)
+;; (setq whitespace-style '(face tabs lines-tail trailing))
+(setq whitespace-style '(face tabs trailing))
 
 ;; 注意 whitespace-mode 会破坏 web-mode 的高亮
 (dolist (hook '(

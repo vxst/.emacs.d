@@ -4,12 +4,9 @@
 
 (setq org-confirm-babel-evaluate nil)
 (setq org-agenda-files (list
-                        "~/private/doc/gtd/new-gtd.org"
-                        "~/private/doc/gtd/study.org"
-                        "~/private/plan/2013.P1.org"
-                        "~/private/doc/gtd/pp.org"
-                        "~/private/doc/gtd/work.org"
-                        "~/private/doc/gtd/ppro.org"))
+                        "~/private/plan/2013.P2.org"
+                        "~/private/plan/Y20.org"
+                        ))
 (setq org-hide-leading-stars t)
 (define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map "\C-cs" 'org-gtd-summary)
@@ -85,7 +82,7 @@
 (setq org-agenda-skip-deadline-if-done t)
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-deadline-warning-days 7)
-(setq org-agenda-ndays 1)
+(setq org-agenda-ndays 7)
 
 (add-hook 'org-agenda-mode-hook
 	  (lambda ()
