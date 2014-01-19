@@ -19,7 +19,16 @@
 					 (unless ess-mode-R-shown
 					   (setq ess-mode-R-shown t)
 					   (split-window-below)
-					   (switch-to-buffer "*R*"))))))
+					   (switch-to-buffer "*R*"))))
+			(local-set-key (kbd "s-e")
+				       (lambda ()
+					 (interactive)
+					 (ess-eval-region (point-min) (point-max) t)
+					 (unless ess-mode-R-shown
+					   (setq ess-mode-R-shown t)
+					   (split-window-below)
+					   (switch-to-buffer "*R*"))))
+                        ))
 
 (setq ess-eval-visibly-p nil) ;otherwise C-c C-r (eval region) takes forever
 (setq ess-ask-for-ess-directory nil) ;otherwise you are prompted each time you start an interactive R session

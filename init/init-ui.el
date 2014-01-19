@@ -15,7 +15,7 @@
 ;;; Modeline
 ;; 电池
 ;; (setq battery-mode-line-format "%b%p%")
-(display-battery-mode)
+;; (display-battery-mode)
 ;; ;; 时间
 ;; (setq display-time-24hr-format t)
 ;; (setq display-time-day-and-date t)

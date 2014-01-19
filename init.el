@@ -1,7 +1,8 @@
-;; Time-stamp: <2013-12-06 15:27:45 Zeno Zeng>
+;; Time-stamp: <2014-01-17 17:35:54 Zeno Zeng>
 
 (add-to-list 'load-path "~/git/org-gtd-summary")
 (add-to-list 'load-path "~/git/yafolding")
+(add-to-list 'load-path "~/git/candy-script-mode")
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (add-to-list 'load-path "~/.emacs.d/plugins/less-css-mode")
@@ -41,6 +42,7 @@
 (require 'init-markdown)
 (require 'init-html)
 (require 'init-lisp)
+(require 'init-candy)
 
 (require 'init-elpa)
 (require 'init-elget)
@@ -65,6 +67,8 @@
 (require 'init-whitespace)
 (require 'init-check)
 (require 'init-etc)
+
+(global-set-key "\M-\C-y" 'kill-ring-search)
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)

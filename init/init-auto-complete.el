@@ -34,7 +34,8 @@
                 js3-mode-hook
                 less-css-mode-hook
                 php-mode-hook
-		web-mode-hook
+                web-mode-hook
+                haskell-mode
                 ))
   (add-hook hook
 	    (lambda ()

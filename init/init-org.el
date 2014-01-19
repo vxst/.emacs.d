@@ -4,8 +4,9 @@
 
 (setq org-confirm-babel-evaluate nil)
 (setq org-agenda-files (list
-                        "~/private/plan/2013.P2.org"
                         "~/private/plan/Y20.org"
+                        "~/private/plan/blog.org"
+                        "~/private/plan/折腾.org"
                         ))
 (setq org-hide-leading-stars t)
 (define-key global-map "\C-ca" 'org-agenda)
