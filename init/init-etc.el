@@ -37,7 +37,6 @@
 (global-unset-key (kbd "C-."))
 (global-set-key (kbd "C-;") 'undo-tree-redo)
 (global-set-key (kbd "C-.") 'undo-tree-redo)
-(global-set-key (kbd "C-,") 'indent-buffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-y") 'my-yank)
 ;; 防止find-file时的误按
@@ -55,9 +54,7 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map "\C-cc" 'org-capture)
 
-(global-set-key (kbd "s-i") '(lambda ()
-                               (interactive)
-                               (indent-buffer)))
+;; (global-set-key (kbd "C-i") 'indent-buffer)
 (global-set-key (kbd "s-x") 'execute-extended-command)
 (global-set-key (kbd "s-r") 'replace-regexp)
 (global-set-key [f2] 'hs-hide-all)

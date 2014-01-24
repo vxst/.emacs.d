@@ -1,8 +1,8 @@
 ;; Time-stamp: <2014-01-17 17:35:54 Zeno Zeng>
 
-(add-to-list 'load-path "~/git/org-gtd-summary")
-(add-to-list 'load-path "~/git/yafolding")
-(add-to-list 'load-path "~/git/candy-script-mode")
+(add-to-list 'load-path "~/code/org-gtd-summary")
+(add-to-list 'load-path "~/code/yafolding")
+(add-to-list 'load-path "~/code/candy-script-mode")
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (add-to-list 'load-path "~/.emacs.d/plugins/less-css-mode")
