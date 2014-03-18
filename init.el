@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-01-17 17:35:54 Zeno Zeng>
+;; Time-stamp: <2014-03-18 19:03:35 Zeno Zeng>
 
 (add-to-list 'load-path "~/code/org-gtd-summary")
 (add-to-list 'load-path "~/code/yafolding")
@@ -48,6 +48,7 @@
 (require 'init-elget)
 (require 'init-folding)
 (require 'init-auto-complete)
+(require 'init-paredit)
 (require 'init-backup)
 (require 'init-vc)
 (require 'init-dired)

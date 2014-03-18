@@ -35,7 +35,10 @@
                 less-css-mode-hook
                 php-mode-hook
                 web-mode-hook
-                haskell-mode
+                haskell-mode-hook
+                stylus-mode-hook
+                clojure-mode-hook
+                jade-mode-hook
                 ))
   (add-hook hook
 	    (lambda ()

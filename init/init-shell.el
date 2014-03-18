@@ -9,7 +9,7 @@
   (message "%s" default-directory)
   (my-async-shell-command (concat "gnome-terminal --working-directory="
                                   (replace-regexp-in-string "~"
-                                                            "/home/zeno"
+                                                            "/home/zenozeng"
                                                             default-directory))))
 
 (provide 'init-shell)

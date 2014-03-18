@@ -38,7 +38,7 @@
             ((eq major-mode 'js3-mode) 4)
             ((eq major-mode 'less-css-mode) 4)
             (t 4)))))
-(dolist (hook '(coffee-mode-hook js3-mode-hook less-css-mode-hook))
+(dolist (hook '(coffee-mode-hook js3-mode-hook less-css-mode-hook stylus-mode-hook jade-mode-hook))
   (add-hook hook
             (lambda ()
               (highlight-indentation-set-offset (get-indentation-offset))

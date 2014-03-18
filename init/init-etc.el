@@ -1,3 +1,5 @@
+(global-set-key (kbd "S-SPC") 'set-mark-command)
+
 (defun what-face (pos)
   (interactive "d")
   (let ((face (or (get-char-property (point) 'read-face-name)
