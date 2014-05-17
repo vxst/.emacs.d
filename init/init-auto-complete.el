@@ -36,9 +36,11 @@
                 php-mode-hook
                 web-mode-hook
                 haskell-mode-hook
+                scheme-mode-hook
                 stylus-mode-hook
                 clojure-mode-hook
                 jade-mode-hook
+                python-mode-hook
                 ))
   (add-hook hook
 	    (lambda ()

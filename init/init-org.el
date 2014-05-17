@@ -10,8 +10,8 @@
                         ))
 (setq org-hide-leading-stars t)
 (define-key global-map "\C-ca" 'org-agenda)
-(define-key global-map "\C-cs" 'org-gtd-summary)
-(require 'org-gtd-summary)
+;; (define-key global-map "\C-cs" 'org-gtd-summary)
+;; (require 'org-gtd-summary)
 
 (add-hook 'org-agenda-mode-hook
 	  (lambda ()
@@ -90,10 +90,10 @@
 	    (local-set-key [(super t)] 'org-agenda-todo-yesterday)))
 (setq org-agenda-custom-commands 
       '(
-	("g" "Agenda GTD Summary"
-	 org-gtd-summary)
-	("6" "Agenda GTD Summary 60 days"
-	 org-gtd-summary-60-days)
+	;; ("g" "Agenda GTD Summary"
+	;;  org-gtd-summary)
+	;; ("6" "Agenda GTD Summary 60 days"
+	;;  org-gtd-summary-60-days)
 	;; ("u" "Agenda Study" todo "TODO"
 	;;  ((org-agenda-files '("~/private/doc/gtd/study.org")))
 	;; )

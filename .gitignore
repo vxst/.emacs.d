@@ -29,6 +29,5 @@ abbrev_defs
 /swank
 /swank
 /.mc-lists.el
-/elpa
 /el-get
 /bookmarks

@@ -26,7 +26,7 @@
     (ignore-errors
       (save-excursion
         (goto-char (point-min))
-        (while (search-forward "\n" nil t)                
+        (while (search-forward "\n" nil t)
           (ignore-errors
             (indent-for-tab-command))))))
   (run-hooks 'indent-buffer-after-hook))
