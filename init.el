@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-06-01 18:31:17 Zeno Zeng>
+;; Time-stamp: <2014-06-01 18:37:55 Zeno Zeng>
 
 ;; (add-to-list 'load-path "~/code/org-gtd-summary")
 ;; (add-to-list 'load-path "~/code/yafolding")
@@ -43,7 +43,7 @@
 ;; (require 'init-candy)
 
 (require 'init-elpa)
-(require 'init-elget)
+
 ;; (require 'init-folding)
 (require 'init-auto-complete)
 (require 'init-paredit)
