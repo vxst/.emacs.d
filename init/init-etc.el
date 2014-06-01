@@ -59,6 +59,7 @@
 ;; (global-set-key (kbd "C-i") 'indent-buffer)
 (global-set-key (kbd "C-7") 'indent-buffer)
 (global-set-key (kbd "s-x") 'execute-extended-command)
+(global-set-key (kbd "C-x C-x") 'execute-extended-command)
 (global-set-key (kbd "s-r") 'replace-regexp)
 (global-set-key [f2] 'hs-hide-all)
 (global-set-key [f6] 'toggle-truncate-lines)
