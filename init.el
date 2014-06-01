@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-05-17 22:11:55 Zeno Zeng>
+;; Time-stamp: <2014-06-01 18:29:43 Zeno Zeng>
 
 ;; (add-to-list 'load-path "~/code/org-gtd-summary")
 ;; (add-to-list 'load-path "~/code/yafolding")
@@ -28,8 +28,6 @@
 (require 'init-file)
 
 (require 'init-tramp)
-
-(require 'init-wicd)
 
 (require 'init-move)
 
