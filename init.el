@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-06-01 18:29:43 Zeno Zeng>
+;; Time-stamp: <2014-06-01 18:31:17 Zeno Zeng>
 
 ;; (add-to-list 'load-path "~/code/org-gtd-summary")
 ;; (add-to-list 'load-path "~/code/yafolding")
@@ -31,7 +31,7 @@
 
 (require 'init-move)
 
-(require 'init-gimp)
+; (require 'init-gimp)
 (require 'init-js)
 (require 'init-css)
 (require 'init-php)
