@@ -34,6 +34,8 @@
 (global-undo-tree-mode)
 ;;;; END Undo Tree
 
+(global-set-key (kbd "C-c m") 'set-mark-command)
+
 (global-set-key (kbd "C-c u") 'undo-tree-undo)
 (global-set-key (kbd "C-c r") 'undo-tree-redo)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
