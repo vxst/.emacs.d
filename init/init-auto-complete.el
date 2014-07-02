@@ -27,6 +27,7 @@
 
 (dolist (hook '(
                 c-mode-hook
+                c++-mode-hook
                 emacs-lisp-mode-hook
                 ess-mode-hook
                 coffee-mode-hook

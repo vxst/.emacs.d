@@ -75,7 +75,7 @@
 
 ;; DiredOmitMode
 (setq-default dired-omit-files-p t)
-(setq dired-omit-files "^\\.?#\\|^session\\.\\|^\\..*$")
+(setq dired-omit-files "^\\.?#\\|^\\..*$")
 
 
 ;;; Tired of seeing stale dired buffers?

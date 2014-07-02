@@ -1,7 +1,7 @@
-;; Time-stamp: <2014-06-01 18:37:55 Zeno Zeng>
+;; Time-stamp: <2014-07-02 13:19:32 Zeno Zeng>
 
 ;; (add-to-list 'load-path "~/code/org-gtd-summary")
-;; (add-to-list 'load-path "~/code/yafolding")
+(add-to-list 'load-path "~/code/yafolding.el/")
 ;; (add-to-list 'load-path "~/code/candy-script-mode")
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/plugins")
@@ -44,7 +44,7 @@
 
 (require 'init-elpa)
 
-;; (require 'init-folding)
+(require 'init-folding)
 (require 'init-auto-complete)
 (require 'init-paredit)
 (require 'init-backup)

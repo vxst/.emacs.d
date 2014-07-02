@@ -6,7 +6,7 @@
                                              (match-end 1)
                                              ?λ))))))
 
-(global-set-key (kbd "s-e") 'my-eval-buffer)
+(global-set-key (kbd "s-e") 'eval-buffer)
 (defun my-eval-buffer ()
   (interactive)
   (if (eq major-mode 'scheme-mode)
