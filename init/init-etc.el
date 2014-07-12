@@ -38,6 +38,8 @@
 
 (global-set-key (kbd "C-c u") 'undo-tree-undo)
 (global-set-key (kbd "C-c r") 'undo-tree-redo)
+(global-set-key (kbd "C-/") 'undo-tree-undo)
+(global-set-key (kbd "C-.") 'undo-tree-redo)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-y") 'my-yank)
 ;; 防止find-file时的误按

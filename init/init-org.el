@@ -7,7 +7,7 @@
 
 
 (setq org-agenda-files (list
-                        "~/org/life.org"
+			"~/work/ali/udata/udata.org"
                         ))
 (setq org-mobile-files org-agenda-files)
 
