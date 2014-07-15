@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-07-02 13:19:32 Zeno Zeng>
+;; Time-stamp: <2014-07-15 17:36:25 Zeno Zeng>
 
 ;; (add-to-list 'load-path "~/code/org-gtd-summary")
 (add-to-list 'load-path "~/code/yafolding.el/")
@@ -65,6 +65,7 @@
 (require 'init-alias)
 (require 'init-whitespace)
 (require 'init-check)
+(require 'init-git)
 (require 'init-etc)
 
 (global-set-key "\M-\C-y" 'kill-ring-search)
