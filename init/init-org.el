@@ -2,15 +2,6 @@
 (require 'org-faces)
 (require 'org-clock)
 
-(setq org-directory "~/org")
-(setq org-mobile-directory "~/Dropbox/org")
-
-
-(setq org-agenda-files (list
-			"~/work/ali/udata/udata.org"
-                        ))
-(setq org-mobile-files org-agenda-files)
-
 (setq org-hide-leading-stars t)
 (define-key global-map "\C-ca" 'org-agenda)
 
