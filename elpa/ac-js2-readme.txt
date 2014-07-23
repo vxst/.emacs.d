@@ -12,6 +12,10 @@ this snippet
 
 if you don't have it already to fetch packages from MELPA.
 
+Enable ac-js2 in js2-mode as follows:
+
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+
 Ac-js2 does not require auto-complete mode but I suggest you grab
 it anyway as ac-js2 is designed to work with a completion frontend.
 Support for Company mode is on its way.
@@ -43,7 +47,7 @@ foo.bar.baz();
 
 placing the cursor on `foo', `bar' or `baz' and executing M-. will
 take you straight to their respective definitions. Use M-, to jump
-back to where you were.
+back to where you were. Also works for object literals.
 
 Recently added `ac-js2-expand-function' that will expand a function's
 parameters bound to `C-c C-c`. Expansion will only work if the cursor

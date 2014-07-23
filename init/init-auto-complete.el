@@ -32,7 +32,7 @@
                 ess-mode-hook
                 coffee-mode-hook
                 html-mode-hook
-                js3-mode-hook
+                js2-mode-hook
                 less-css-mode-hook
                 php-mode-hook
                 web-mode-hook
