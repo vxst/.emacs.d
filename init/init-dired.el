@@ -26,13 +26,6 @@
 (define-key dired-mode-map (kbd "h") 'dired-omit-mode)
 (define-key dired-mode-map (kbd "s") 'dired-do-shell-command)
 (define-key dired-mode-map (kbd "S") 'dired-shell)
-(define-key dired-mode-map (kbd "U")
-  (lambda()
-    (interactive)
-    (dired-do-shell-command "gnome-terminal -x sudo umount * ")))
-(define-key dired-mode-map (kbd "C-i") 'dired-umonut-device)
-
-
 (setq dired-recursive-copies t)
 (setq dired-recursive-deletes t)
 (setq dired-guess-shell-alist-user

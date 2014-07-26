@@ -7,7 +7,7 @@
 (defun sh()
   (interactive)
   (message "%s" default-directory)
-  (my-async-shell-command (concat "gnome-terminal --working-directory="
+  (my-async-shell-command (concat "deepin-terminal --working-directory="
                                   (replace-regexp-in-string "~"
                                                             "/home/zenozeng"
                                                             default-directory))))
