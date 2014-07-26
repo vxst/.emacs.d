@@ -7,9 +7,10 @@
 (defun sh()
   (interactive)
   (message "%s" default-directory)
-  (my-async-shell-command (concat "deepin-terminal --working-directory="
+  (my-async-shell-command (concat "nohup deepin-terminal --working-directory="
                                   (replace-regexp-in-string "~"
                                                             "/home/zenozeng"
-                                                            default-directory))))
+                                                            default-directory)
+                                  " > /dev/null")))
 
 (provide 'init-shell)
