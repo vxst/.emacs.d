@@ -7,9 +7,6 @@
 ;;;;;;;;;;;;;;;;;;
 
 (defalias 'mkdir 'make-directory)
-(defalias 'mnt 'media)
-(defalias 'usb 'media)
-
 (defun media()
   (interactive)
   (dired "/media/"))
@@ -30,20 +27,7 @@
 (setq dired-recursive-deletes t)
 (setq dired-guess-shell-alist-user
       (list
-       (list "\\.tar\\.bz2$" "tar jxvf * &")
-       '("\\.xcf$" "gimp * &")
-       '("\\.tar\\.gz$" "tar zxvf * &")
-       '("\\.chm$" "chmsee * &")
-       '("\\.tar$" "tar xvvf * &")
-       '("\\.ps$" "gv * &")
-       '("\\.html?$" "firefox * &" "urxvt -e w3m * &")
-       '("\\.pdf$" "acroread * &" "evince * &")
-       '("\\.\\(jpe?g\\|gif\\|png\\|bmp\\|xbm\\|xpm\\|fig\\|eps\\)$" "gthumb * &" "gqview * &" "display * &" "xloadimage * &" )
-       '("\\.\\([Ww][Mm][Vv]\\|[Vv][Oo][Bb]\\|[Mm][Pp][Ee]?[Gg]\\|asf\\|[Rr][Aa]?[Mm]\\)$" "mplayer * &")
-       '("\\.rmvb$" "mplayer * &")
-       '("\\.RMVB$" "mplayer * &")
-       ))
-
+       (list ".*" "xdg-open * &")))
 
 ;;;;;;;;;;;;;;;;;;
 ;;;
@@ -51,19 +35,6 @@
 ;;;
 ;;;;;;;;;;;;;;;;;;
 (setq delete-by-moving-to-trash t)
-
-;; TODO: debian 设置 自动挂载 （udev)
-;; TODO: emacs 里设置 umount
-;; TODO: d -> put to trash instead of rm
-
-;; (defun mount()
-;;   ;; 挂载当前所指向的设备
-;;   (interactive)
-;;   ())
-;; (defun umount()
-;;   ;; 卸载当前所指向的设备
-;;   (interactive)
-;;   ())
 
 
 ;; DiredOmitMode
@@ -101,11 +72,6 @@
                 (if (looking-back "/")
                     (insert "~/")
                   (call-interactively 'self-insert-command))))))
-
-;; Make dired less verbose
-;; (require 'dired-details)
-;; (setq-default dired-details-hidden-string "--- ")
-;; (dired-details-install)
 
 (require 'dired-filetype-face)
 (provide 'init-dired)
