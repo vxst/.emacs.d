@@ -36,7 +36,7 @@
                 less-css-mode-hook
                 php-mode-hook
                 web-mode-hook
-                haskell-mode-hook
+                ;; haskell-mode-hook
                 scheme-mode-hook
                 stylus-mode-hook
                 clojure-mode-hook

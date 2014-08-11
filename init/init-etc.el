@@ -1,4 +1,8 @@
+(global-set-key (kbd "C-c C-j") 'ace-jump-mode)
+
 (global-set-key (kbd "S-SPC") 'set-mark-command)
+
+(global-unset-key (kbd "C-z"))
 
 (defun what-face (pos)
   (interactive "d")

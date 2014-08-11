@@ -7,7 +7,7 @@
 (defun sh()
   (interactive)
   (message "%s" default-directory)
-  (my-async-shell-command (concat "nohup deepin-terminal --working-directory="
+  (my-async-shell-command (concat "nohup xfce4-terminal --working-directory="
                                   (replace-regexp-in-string "~"
                                                             "/home/zenozeng"
                                                             default-directory)

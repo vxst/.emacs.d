@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-07-15 17:36:25 Zeno Zeng>
+;; Time-stamp: <2014-08-11 21:32:25 Zeno Zeng>
 
 ;; (add-to-list 'load-path "~/code/org-gtd-summary")
 (add-to-list 'load-path "~/code/yafolding.el/")
@@ -31,7 +31,7 @@
 
 (require 'init-move)
 
-; (require 'init-gimp)
+                                        ; (require 'init-gimp)
 (require 'init-js)
 (require 'init-css)
 (require 'init-php)
@@ -72,3 +72,14 @@
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
+
+(desktop-save-mode 1)
+(setq desktop-buffers-not-to-save
+      (concat "\\("
+              "^nn\\.a[0-9]+\\|\\.log\\|(ftp)\\|^tags\\|^TAGS"
+              "\\|\\.emacs.*\\|\\.diary\\|\\.newsrc-dribble\\|\\.bbdb"
+              "\\)$"))
+(add-to-list 'desktop-modes-not-to-save 'dired-mode)
+(add-to-list 'desktop-modes-not-to-save 'Info-mode)
+(add-to-list 'desktop-modes-not-to-save 'info-lookup-mode)
+(add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
