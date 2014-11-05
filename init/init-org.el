@@ -34,6 +34,7 @@
 
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+              (sequence "DOING(o)" "|")
               (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)")
 	      (sequence "REPORT(r)" "BUG(b)" "|" "FIXED(e)")
 	      (sequence "TRY(y)" "|"  "FAILED(f@/!)" ))))
@@ -41,6 +42,7 @@
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "orange red" :weight bold)
               ("NEXT" :foreground "deepskyblue" :weight bold)
+              ("DOING" :foreground "skyblue" :weight bold)
               ("DONE" :foreground "LawnGreen" :weight bold)
               ("WAITING" :foreground "tomato" :weight bold)
               ("HOLD" :foreground "deep pink" :weight bold)

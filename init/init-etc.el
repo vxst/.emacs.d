@@ -1,3 +1,15 @@
+;;; ispell
+(ispell-change-dictionary "american" t)
+
+;;; flyspell
+(dolist (hook '(text-mode-hook))
+  (add-hook hook 'flyspell-mode))
+(dolist (hook '(change-log-mode-hook log-edit-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode -1))))
+(dolist (hook '(prog-mode-hook))
+  (add-hook hook 'flyspell-prog-mode))
+
+
 (global-set-key (kbd "C-c C-j") 'ace-jump-mode)
 
 (global-set-key (kbd "S-SPC") 'set-mark-command)
@@ -63,7 +75,6 @@
 
 ;; (global-set-key (kbd "C-i") 'indent-buffer)
 (global-set-key (kbd "C-7") 'indent-buffer)
-(global-set-key (kbd "s-x") 'execute-extended-command)
 (global-set-key (kbd "C-x C-x") 'execute-extended-command)
 (global-set-key (kbd "s-r") 'replace-regexp)
 (global-set-key [f2] 'hs-hide-all)
