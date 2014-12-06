@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-08-11 22:38:30 Zeno Zeng>
+;; Time-stamp: <2014-12-06 21:38:32 Zeno Zeng>
 
 ;; (add-to-list 'load-path "~/code/org-gtd-summary")
 (add-to-list 'load-path "~/code/yafolding.el/")
@@ -72,3 +72,6 @@
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
+
+
+(css-eldoc-enable)

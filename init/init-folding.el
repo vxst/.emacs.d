@@ -13,4 +13,7 @@
 (add-hook 'prog-mode-hook
           (lambda () (yafolding-mode)))
 
+(add-hook 'html-mode-hook
+          (lambda () (yafolding-mode)))
+
 (provide 'init-folding)
